@@ -4,29 +4,27 @@ import Navbar from "./components/common/Navbar";
 import { Outlet, createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/main/Home";
 import About from "./pages/main/About";
+import { htmlRoutes } from "./services/programming/routes/Html_routes";
 
-const MainFunction = () => {
-  return (
-    <div>
-      <Navbar />
-      <Outlet />
-      <Footer />
-    </div>
-  );
-};
+const MainLayout = () => (
+  <>
+    <Navbar />
+    <Outlet />
+    <Footer />
+  </>
+);
 
 const router = createBrowserRouter([
   {
-    element: <MainFunction />,
+    element: <MainLayout />,
     children: [
-      { path: "", element: <Home /> },
-      { path: "/about-us", element: <About /> },
+      { index: true, element: <Home /> },
+      { path: "about-us", element: <About /> },
+      htmlRoutes,
     ],
   },
 ]);
 
-function App() {
+export default function App() {
   return <RouterProvider router={router} />;
 }
-
-export default App;
