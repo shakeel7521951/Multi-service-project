@@ -81,7 +81,7 @@ const Navbar = () => {
 
         {/* RIGHT SECTION: Icons */}
         <div className="hidden lg:flex items-center space-x-4 text-sm">
-          <div className="flex items-center space-x-1 text-purple-500 cursor-pointer text-nowrap">
+          {/* <div className="flex items-center space-x-1 text-purple-500 cursor-pointer text-nowrap">
             <FaCode className="text-xl" />
             <span className="text-black">Spaces</span>
           </div>
@@ -92,7 +92,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-1 text-purple-500 cursor-pointer text-nowrap">
             <FaShoppingCart className="text-xl" />
             <span className="text-black">Get Certified</span>
-          </div>
+          </div> */}
           <button className="bg-green-500 hover:bg-green-600 text-nowrap text-white px-4 py-2 rounded-sm flex items-center space-x-2 cursor-pointer">
             <FaUser className="text-base" />
             <span className="text-sm">Sign In</span>
