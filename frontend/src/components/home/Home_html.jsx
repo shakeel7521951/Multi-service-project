@@ -3,7 +3,7 @@ import React from "react";
 const Home_html = () => {
   return (
     <div className="flex justify-center bg-[#D9EEE1] py-10 px-4">
-      <div className="flex flex-col md:flex-row gap-10 items-center text-center">
+      <div className="flex flex-col md:flex-row md:gap-16 items-center text-center">
         {/* Left Section */}
         <div>
           <h1 className="text-4xl md:text-6xl font-bold">HTML</h1>
