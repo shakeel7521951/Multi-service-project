@@ -5,7 +5,7 @@ import Css_sidebar from "../side_bars/Css_sidebar";
 const CssLayout = () => (
   <div className="flex">
     <Css_sidebar />
-    <div className="flex-1 p-4">
+    <div className="flex-1 ">
       <Outlet />
     </div>
   </div>
