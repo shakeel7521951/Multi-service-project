@@ -25,6 +25,20 @@ import Html_Div from "../courses/html/Html_Div";
 import Html_Class from "../courses/html/Html_Class";
 import Html_Id from "../courses/html/Html_Id";
 import Html_Iframes from "../courses/html/Html_Iframes";
+import Html_Javascript from "../courses/html/Html_Javascript";
+import Html_File_Paths from "../courses/html/Html_File_Paths";
+import Html_Head_Element from "../courses/html/Html_Head_Element";
+import Html_Layout from "../courses/html/Html_Layout";
+import Html_Responsive from "../courses/html/Html_Responsive";
+import Html_Computer_Code from "../courses/html/Html_Computer_Code";
+import Html_Semantic from "../courses/html/Html_Semantic";
+import Html_Style_Guide from "../courses/html/Html_Style_Guide";
+import Html_Entities from "../courses/html/Html_Entities";
+import Html_Symbols from "../courses/html/Html_Symbols";
+import Html_Emojis from "../courses/html/Html_Emojis";
+import Html_Character from "../courses/html/Html_Character";
+import Html_Url_Resource from "../courses/html/Html_Url_Resource";
+import Html_Versus_XhtmL from "../courses/html/Html_Versus_XhtmL";
 
 
 const HtmlLayout = () => (
@@ -66,5 +80,19 @@ export const htmlRoutes = {
     { path: "class", element: <Html_Class /> },
     { path: "id", element: <Html_Id /> },
     { path: "iframes", element: <Html_Iframes /> },
+    { path: "javascript", element: <Html_Javascript /> },
+    { path: "filepaths", element: <Html_File_Paths /> },
+    { path: "headelement", element: <Html_Head_Element /> },
+    { path: "layout", element: <Html_Layout /> },
+    { path: "responsive", element: <Html_Responsive /> },
+    { path: "computercode", element: <Html_Computer_Code /> },
+    { path: "semantic", element: <Html_Semantic /> },
+    { path: "styleguide", element: <Html_Style_Guide /> },
+    { path: "entities", element: <Html_Entities /> },
+    { path: "symbols", element: <Html_Symbols /> },
+    { path: "emojis", element: <Html_Emojis /> },
+    { path: "character", element: <Html_Character /> },
+    { path: "urlresource", element: <Html_Url_Resource /> },
+    { path: "versusxhtmL", element: <Html_Versus_XhtmL /> },
   ],
 };
