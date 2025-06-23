@@ -76,7 +76,7 @@ const ServiceArray = [
   },
 ];
 
-const Services = () => {
+const   Services = () => {
 
     const [SearchTerm, setSearchTerm] = useState("")
 
