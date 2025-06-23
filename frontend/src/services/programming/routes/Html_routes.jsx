@@ -39,6 +39,19 @@ import Html_Emojis from "../courses/html/Html_Emojis";
 import Html_Character from "../courses/html/Html_Character";
 import Html_Url_Resource from "../courses/html/Html_Url_Resource";
 import Html_Versus_XhtmL from "../courses/html/Html_Versus_XhtmL";
+import Html_Forms from "../courses/html/Html_Forms";
+import Html_Form_Attributes  from "../courses/html/Html_Form_Attributes";
+import Html_Form_Elements  from "../courses/html/Html_Form_Elements";
+import Html_Input_Types  from "../courses/html/Html_Input_Types";
+import Html_Input_Attributes  from "../courses/html/Html_Input_Attributes";
+import Html_Input_Form_Attributes  from "../courses/html/Html_Input_Form_Attributes";
+import Html_Canvas_Graphics  from "../courses/html/Html_Canvas_Graphics";
+import Html_Svg_Graphics  from "../courses/html/Html_Svg_Graphics";
+import Html_Media  from "../courses/html/Html_Media";
+import Html_Video  from "../courses/html/Html_Video";
+import Html_Audio  from "../courses/html/Html_Audio";
+import Html_Plug_Ins  from "../courses/html/Html_Plug_Ins";
+import Html_You_Tube  from "../courses/html/Html_You_Tube";
 
 
 const HtmlLayout = () => (
@@ -94,5 +107,18 @@ export const htmlRoutes = {
     { path: "character", element: <Html_Character /> },
     { path: "urlresource", element: <Html_Url_Resource /> },
     { path: "versusxhtmL", element: <Html_Versus_XhtmL /> },
+    { path: "forms", element: <Html_Forms /> },
+    { path: "formattributes", element: <Html_Form_Attributes /> },
+    { path: "formelements", element: <Html_Form_Elements /> },
+    { path: "inputtypes", element: <Html_Input_Types /> },
+    { path: "inputattributes", element: <Html_Input_Attributes /> },
+    { path: "inputformattributes", element: <Html_Input_Form_Attributes /> },
+    { path: "canvasgraphics", element: <Html_Canvas_Graphics /> },
+    { path: "graphics", element: <Html_Svg_Graphics /> },
+    { path: "media", element: <Html_Media /> },
+    { path: "video", element: <Html_Video /> },
+    { path: "audio", element: <Html_Audio /> },
+    { path: "plugins", element: <Html_Plug_Ins /> },
+    { path: "youtube", element: <Html_You_Tube /> },
   ],
 };
