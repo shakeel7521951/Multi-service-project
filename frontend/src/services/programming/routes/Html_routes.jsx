@@ -52,6 +52,20 @@ import Html_Video  from "../courses/html/Html_Video";
 import Html_Audio  from "../courses/html/Html_Audio";
 import Html_Plug_Ins  from "../courses/html/Html_Plug_Ins";
 import Html_You_Tube  from "../courses/html/Html_You_Tube";
+import Html_Web_Api  from "../courses/html/Html_Web_Api";
+import Html_Geolocation_Api  from "../courses/html/Html_Geolocation_Api";
+import Html_Drag_Drop  from "../courses/html/Html_Drag_Drop";
+import Html_Storage_Api  from "../courses/html/Html_Storage_Api";
+import Html_Workers_Api  from "../courses/html/Html_Workers_Api";
+import Html_Server_Sent  from "../courses/html/Html_Server_Sent";
+import Html_Examples  from "../courses/html/Html_Examples";
+import Html_Online_Editor  from "../courses/html/Html_Online_Editor";
+import Html_Quiz  from "../courses/html/Html_Quiz";
+
+import Html_Website_Hosting from "../courses/html/Html_Website_Hosting.jsx";
+import Html_Syllabus from "../courses/html/Html_Syllabus";
+import Html_Study_Plan from "../courses/html/Html_Study_Plan";
+
 
 
 const HtmlLayout = () => (
@@ -120,5 +134,17 @@ export const htmlRoutes = {
     { path: "audio", element: <Html_Audio /> },
     { path: "plugins", element: <Html_Plug_Ins /> },
     { path: "youtube", element: <Html_You_Tube /> },
+    { path: "webapi", element: <Html_Web_Api /> },
+    { path: "geolocationapi", element: <Html_Geolocation_Api /> },
+    { path: "dragdrop", element: <Html_Drag_Drop /> },
+    { path: "storageapi", element: <Html_Storage_Api /> },
+    { path: "workersapi", element: <Html_Workers_Api /> },
+    { path: "serversent", element: <Html_Server_Sent /> },
+    { path: "examples", element: <Html_Examples /> },
+    { path: "online", element: <Html_Online_Editor /> },
+    { path: "quiz", element: <Html_Quiz /> },
+    { path: "websitehosting", element: <Html_Website_Hosting /> },
+    { path: "syllabus", element: <Html_Syllabus /> },
+    { path: "studyplan", element: <Html_Study_Plan /> }
   ],
 };
