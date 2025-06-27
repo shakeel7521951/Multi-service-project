@@ -1,24 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
-const Default = () => {
+const CssRefrencesEntity = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-body {
-  background-color: lightblue;
-}
-
-h1 {
-  color: white;
-  text-align: center;
-}
-
-p {
-  font-family: verdana;
-  font-size: 20px;
+h2:after {
+  content: ' \\00A7';
 }
   `;
 
@@ -48,29 +41,35 @@ p {
   ];
 
   return (
-    <div className="px-4 ">
+    <div className="px-4">
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Tutorial</h1>
+          <h1 className="text-4xl">CSS Entities</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
-          <div className="flex px-3 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          <Link
+            to="/"
+            className="flex px-3 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center"
+          >
             <MdKeyboardArrowLeft className="text-3xl" />
             Home
-          </div>
+          </Link>
         </div>
       </div>
 
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <h1 className="text-2xl">Learn CSS</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>CSS is the language we use to style an HTML document.</li>
-          <li>CSS describes how HTML elements should be displayed.</li>
-          <li>This tutorial will teach you CSS from basic to advanced.</li>
-        </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+        <p className="pb-3 text-lg">
+          If you use CSS to display special characters in HTML, you can use CSS
+          entities.
+        </p>
+        <h1 className="text-2xl">Complete CSS Entity Reference</h1>
+        <p className="mt-4">
+          The table of CSS entities lets you display various special symbols
+          directly through CSS, using the <code>content</code> property.
+        </p>
+        <div className="flex px-5 w-fit cursor-pointer py-2 mt-5 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
           Start Learning CSS Now
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
@@ -80,10 +79,10 @@ p {
 
       {/* Example Section */}
       <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Examples in Each Chapter</h1>
-        <p>This CSS tutorial contains hundreds of CSS examples.</p>
+        <h1 className="text-4xl">CSS Entity Example</h1>
         <p>
-          With our online editor, you can edit the CSS, and click on a button to view the result.
+          The example below adds the section (§) symbol after every <code>h2</code> tag
+          using a Unicode CSS entity:
         </p>
       </div>
 
@@ -108,8 +107,8 @@ p {
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with
-          syntax, examples, browser support, and more.
+          Explore our complete list of CSS references, covering all topics with
+          examples, syntax, and browser support.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -124,13 +123,23 @@ p {
           ))}
         </div>
 
-        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Next
-          <MdOutlineKeyboardArrowRight className="text-3xl" />
+        {/* Navigation Buttons */}
+        <div className="flex justify-between">
+          <Link
+            to="/css/cssDefaultValues"
+            className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center"
+          >
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Previous
+          </Link>
+          <div className="flex bg-green-700 cursor-pointer float-right mt-6 px-5 py-2 text-xl font-semibold rounded-lg text-white items-center cursor-not-allowed">
+            Next
+            <MdOutlineKeyboardArrowRight className="text-3xl" />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Default;
+export default CssRefrencesEntity;

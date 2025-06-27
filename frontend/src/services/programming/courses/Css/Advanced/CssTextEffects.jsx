@@ -1,26 +1,30 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
-const Default = () => {
+const CssTextEffects = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-body {
-  background-color: lightblue;
+p.test1 {
+  white-space: nowrap;
+  width: 200px;
+  border: 1px solid #000000;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
-h1 {
-  color: white;
-  text-align: center;
-}
-
-p {
-  font-family: verdana;
-  font-size: 20px;
-}
-  `;
+p.test2 {
+  white-space: nowrap;
+  width: 200px;
+  border: 1px solid #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}`;
 
   const copyText = () => {
     navigator.clipboard.writeText(cssCode).then(() => {
@@ -48,11 +52,10 @@ p {
   ];
 
   return (
-    <div className="px-4 ">
-      {/* Hero Section */}
+    <div className="px-4">
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Tutorial</h1>
+          <h1 className="text-4xl">CSS Text Effects</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -63,31 +66,35 @@ p {
         </div>
       </div>
 
-      <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <h1 className="text-2xl">Learn CSS</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>CSS is the language we use to style an HTML document.</li>
-          <li>CSS describes how HTML elements should be displayed.</li>
-          <li>This tutorial will teach you CSS from basic to advanced.</li>
+      <div className="px-5  mt-5 py-10 rounded-md">
+        <p className="pb-3">
+          In this chapter you will learn about the following properties:
+        </p>
+        <ul className="list-disc list-inside mb-5">
+          <li><code>text-overflow</code></li>
+          <li><code>word-wrap</code></li>
+          <li><code>word-break</code></li>
+          <li><code>writing-mode</code></li>
         </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Start Learning CSS Now
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
+
+        <h2 className="text-2xl font-semibold mt-5 mb-2">CSS Text Overflow</h2>
+        <p>
+          The <code>text-overflow</code> property specifies how overflowed content
+          that is not displayed should be signaled to the user.
+        </p>
+
+        <p className="mt-3">It can be clipped:</p>
+        <div className="border border-black p-2 w-[200px] overflow-hidden whitespace-nowrap text-ellipsis">
+          This is some long text that will not fit in the box
+        </div>
+
+        <p className="mt-3">Or it can be rendered as an ellipsis (...):</p>
+        <div className="border border-black p-2 w-[200px] overflow-hidden whitespace-nowrap overflow-ellipsis">
+          This is some long text that will not fit in the box
         </div>
       </div>
 
-      <hr className="text-gray-400 my-6" />
-
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Examples in Each Chapter</h1>
-        <p>This CSS tutorial contains hundreds of CSS examples.</p>
-        <p>
-          With our online editor, you can edit the CSS, and click on a button to view the result.
-        </p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
+      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md mt-8">
         <h1 className="text-2xl">CSS Example</h1>
         <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
           {cssCode}
@@ -102,14 +109,11 @@ p {
         </button>
       </div>
 
-      <hr className="text-gray-400 my-6" />
-
-      {/* References Section */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with
-          syntax, examples, browser support, and more.
+          At W3Schools you will find complete CSS references of all properties
+          and selectors with syntax, examples, browser support, and more.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -124,13 +128,19 @@ p {
           ))}
         </div>
 
-        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Next
-          <MdOutlineKeyboardArrowRight className="text-3xl" />
+        <div className="flex justify-between">
+          <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Previous
+          </div>
+          <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            Next
+            <MdOutlineKeyboardArrowRight className="text-3xl" />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Default;
+export default CssTextEffects;

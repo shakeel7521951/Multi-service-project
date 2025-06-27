@@ -1,26 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
-const Default = () => {
+const CssUnit = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-body {
-  background-color: lightblue;
-}
-
 h1 {
-  color: white;
-  text-align: center;
+  font-size: 60px;
 }
 
 p {
-  font-family: verdana;
-  font-size: 20px;
-}
-  `;
+  font-size: 25px;
+  line-height: 50px;
+}`;
 
   const copyText = () => {
     navigator.clipboard.writeText(cssCode).then(() => {
@@ -48,11 +45,11 @@ p {
   ];
 
   return (
-    <div className="px-4 ">
+    <div className="px-4">
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Tutorial</h1>
+          <h1 className="text-4xl">CSS Units</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -63,15 +60,23 @@ p {
         </div>
       </div>
 
-      <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <h1 className="text-2xl">Learn CSS</h1>
+      {/* Intro Content */}
+      <div className="px-5 mt-5 py-10 rounded-md">
+        <p className="pb-3">
+          CSS has several different units for expressing a length. Many CSS properties
+          like <code>width</code>, <code>padding</code>, <code>margin</code>, and <code>font-size</code>
+          use length values.
+        </p>
+        <h1 className="text-2xl">CSS Length Units</h1>
         <ul className="flex flex-col gap-3 my-5">
-          <li>CSS is the language we use to style an HTML document.</li>
-          <li>CSS describes how HTML elements should be displayed.</li>
-          <li>This tutorial will teach you CSS from basic to advanced.</li>
+          <li><strong>px</strong> - Pixels (relative to the viewing device)</li>
+          <li><strong>em</strong> - Relative to the font-size of the element</li>
+          <li><strong>rem</strong> - Relative to the font-size of the root element</li>
+          <li><strong>%</strong> - Relative to the parent element</li>
+          <li><strong>vw</strong> and <strong>vh</strong> - Relative to the viewport's width and height</li>
         </ul>
         <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Start Learning CSS Now
+          Try Units Example
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
       </div>
@@ -80,15 +85,14 @@ p {
 
       {/* Example Section */}
       <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Examples in Each Chapter</h1>
-        <p>This CSS tutorial contains hundreds of CSS examples.</p>
+        <h1 className="text-4xl">CSS Units Example</h1>
         <p>
-          With our online editor, you can edit the CSS, and click on a button to view the result.
+          Below is an example of how to apply pixel values to header and paragraph elements:
         </p>
       </div>
 
       <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Example</h1>
+        <h1 className="text-2xl">CSS Code</h1>
         <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
           {cssCode}
         </pre>
@@ -108,8 +112,8 @@ p {
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with
-          syntax, examples, browser support, and more.
+          At W3Schools you will find complete CSS references of all properties
+          and selectors with syntax, examples, browser support, and more.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -124,13 +128,20 @@ p {
           ))}
         </div>
 
-        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Next
-          <MdOutlineKeyboardArrowRight className="text-3xl" />
+        {/* Navigation Buttons */}
+        <div className="flex justify-between">
+          <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Previous
+          </div>
+          <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            Next
+            <MdOutlineKeyboardArrowRight className="text-3xl" />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Default;
+export default CssUnit;

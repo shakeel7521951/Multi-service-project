@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
-const Default = () => {
+const CssImageFilters = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-body {
-  background-color: lightblue;
-}
-
-h1 {
-  color: white;
-  text-align: center;
-}
-
-p {
-  font-family: verdana;
-  font-size: 20px;
+img {
+  filter: blur(5px);
+  filter: brightness(150%);
+  filter: contrast(200%);
+  filter: drop-shadow(8px 8px 10px gray);
+  filter: grayscale(100%);
+  filter: hue-rotate(90deg);
+  filter: invert(100%);
+  filter: opacity(50%);
+  filter: saturate(200%);
+  filter: sepia(100%);
 }
   `;
 
@@ -48,11 +50,11 @@ p {
   ];
 
   return (
-    <div className="px-4 ">
+    <div className="px-4">
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Tutorial</h1>
+          <h1 className="text-4xl">CSS Image Filter Effects</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -63,39 +65,41 @@ p {
         </div>
       </div>
 
+      {/* Content Section */}
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <h1 className="text-2xl">Learn CSS</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>CSS is the language we use to style an HTML document.</li>
-          <li>CSS describes how HTML elements should be displayed.</li>
-          <li>This tutorial will teach you CSS from basic to advanced.</li>
+        <p className="pb-3">
+          The <code>filter</code> property in CSS is used to add visual effects
+          (like blur, brightness, and contrast) to elements such as images.
+        </p>
+        <h2 className="text-2xl font-semibold pb-3">Available CSS Filters</h2>
+        <ul className="list-disc pl-6 space-y-2">
+          <li><code>blur()</code></li>
+          <li><code>brightness()</code></li>
+          <li><code>contrast()</code></li>
+          <li><code>drop-shadow()</code></li>
+          <li><code>grayscale()</code></li>
+          <li><code>hue-rotate()</code></li>
+          <li><code>invert()</code></li>
+          <li><code>opacity()</code></li>
+          <li><code>saturate()</code></li>
+          <li><code>sepia()</code></li>
         </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Start Learning CSS Now
+        <div className="flex px-5 w-fit cursor-pointer mt-6 py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          Start Learning CSS Filters
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
       </div>
 
-      <hr className="text-gray-400 my-6" />
-
       {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Examples in Each Chapter</h1>
-        <p>This CSS tutorial contains hundreds of CSS examples.</p>
-        <p>
-          With our online editor, you can edit the CSS, and click on a button to view the result.
-        </p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Example</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
+      <div className="my-10">
+        <h2 className="text-3xl font-semibold pb-4">CSS Filter Example</h2>
+        <p className="pb-3">Apply multiple filters to an image:</p>
+        <pre className="bg-[#E7E9EB] rounded-md p-5 overflow-auto text-sm font-mono whitespace-pre-wrap text-black">
           {cssCode}
         </pre>
-
         <button
           onClick={copyText}
-          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
+          className="flex items-center my-4 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white"
         >
           {copySuccess ? "Copied!" : "Copy text"}
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
@@ -108,10 +112,9 @@ p {
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with
-          syntax, examples, browser support, and more.
+          At W3Schools you will find complete CSS references of all properties
+          and selectors with syntax, examples, browser support, and more.
         </p>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {refArray.map((path) => (
             <Link
@@ -123,14 +126,20 @@ p {
             </Link>
           ))}
         </div>
-
-        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Next
-          <MdOutlineKeyboardArrowRight className="text-3xl" />
+        {/* Navigation Buttons */}
+        <div className="flex justify-between">
+          <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Previous
+          </div>
+          <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            Next
+            <MdOutlineKeyboardArrowRight className="text-3xl" />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Default;
+export default CssImageFilters;

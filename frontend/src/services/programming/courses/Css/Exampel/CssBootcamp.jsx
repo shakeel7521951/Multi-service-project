@@ -6,37 +6,7 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const CssTemplates = () => {
-  const [copySuccess, setCopySuccess] = useState(false);
-
-  const cssCode = `
-/* Simple header-content-footer layout */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header, footer {
-  background-color: #4CAF50;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-main {
-  flex: 1;
-  padding: 1rem;
-}
-  `;
-
-  const copyText = () => {
-    navigator.clipboard.writeText(cssCode).then(() => {
-      setCopySuccess(true);
-      setTimeout(() => setCopySuccess(false), 2000);
-    });
-  };
-
+const CssBootcamp = () => {
   const refArray = [
     { id: 1, name: "CSS Properties", link: "/css/cssProperties" },
     { id: 2, name: "CSS Browser Support", link: "/css/cssbrowseSupport" },
@@ -60,7 +30,7 @@ main {
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Templates</h1>
+          <h1 className="text-4xl">CSS Bootcamp</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -71,55 +41,77 @@ main {
         </div>
       </div>
 
-      {/* Intro Section */}
+      {/* Overview */}
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <p className="pb-3">
-          CSS templates are pre-designed layouts that help you structure your website using CSS. These often follow common patterns like header-content-footer, sidebar layouts, grid systems, etc.
+        <h1 className="text-2xl mb-4">W3Schools CSS Bootcamp</h1>
+        <p className="pb-2">
+          <strong>HTML & CSS Bootcamp</strong>
+          <br />
+          Learn Front-end with W3Schools.
+          <br />
+          Self-paced online courses.
+          <br />
+          Duration: Around 80 hours.
         </p>
-        <h1 className="text-2xl">Common Template Layouts</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>Header - Content - Footer</li>
-          <li>Sidebar - Content</li>
-          <li>Grid-based Layout</li>
-          <li>Sticky Footer Layout</li>
-          <li>Flexbox Centered Layout</li>
-        </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Try a Template
+        <p className="font-bold text-lg mt-3 tracking-widest text-[#03945F]">
+          w3schoolsBOOTCAMP.2025
+        </p>
+
+        <div className="mt-5">
+          <h2 className="text-xl font-semibold">What You Will Learn</h2>
+          <ul className="list-disc pl-5 mt-2 space-y-2">
+            <li>
+              <strong>HTML</strong>: Create your own Website using HTML5, format
+              text, add images, create forms, tables, links, etc.
+            </li>
+            <li>
+              <strong>CSS</strong>: Style and control layout of multiple pages
+              simultaneously.
+            </li>
+            <li>
+              <strong>JavaScript</strong>: Add interactivity and control page
+              behavior dynamically.
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-6">
+          <h2 className="text-xl font-semibold">Self-paced Courses</h2>
+          <p className="mt-2">
+            This program helps you build solid foundations in HTML, CSS, and
+            JavaScript through structured, interactive modules. Learn at your
+            own pace with text lessons, interactive examples, and certification
+            exams.
+          </p>
+        </div>
+
+        <div className="mt-6">
+          <h2 className="text-xl font-semibold">What You Get</h2>
+          <ul className="list-disc pl-5 mt-2 space-y-2">
+            <li>Certified HTML Developer</li>
+            <li>Certified CSS Developer</li>
+            <li>Certified JavaScript Developer</li>
+            <li>Certified Front-End Developer</li>
+            <li>
+              Certificate of Completion (shareable on LinkedIn, CV, Resume)
+            </li>
+          </ul>
+        </div>
+
+        <div className="flex px-5 w-fit mt-8 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          Start Learning CSS Now
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
       </div>
 
       <hr className="text-gray-400 my-6" />
 
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Example Template</h1>
-        <p>Here’s a basic layout template using Flexbox for a header-content-footer page structure:</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Template Code</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
-          {cssCode}
-        </pre>
-
-        <button
-          onClick={copyText}
-          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
-        >
-          {copySuccess ? "Copied!" : "Copy text"}
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
-        </button>
-      </div>
-
-      <hr className="text-gray-400 my-6" />
-
-      {/* References Section */}
+      {/* Reference Section */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with syntax, examples, browser support, and more.
+          Explore complete CSS references for all properties and selectors with
+          examples and browser support.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -129,12 +121,12 @@ main {
               key={path.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {path.name}
             </Link>
           ))}
         </div>
 
-        {/* Buttons */}
+        {/* Navigation Buttons */}
         <div className="flex justify-between">
           <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
@@ -150,4 +142,4 @@ main {
   );
 };
 
-export default CssTemplates;
+export default CssBootcamp;

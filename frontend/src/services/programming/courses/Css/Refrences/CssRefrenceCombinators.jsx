@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
-const Default = () => {
+const CssRefrenceCombinators = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-body {
-  background-color: lightblue;
+div ~ p {
+  background-color: yellow;
 }
 
-h1 {
-  color: white;
-  text-align: center;
+div p {
+  background-color: yellow;
 }
 
-p {
-  font-family: verdana;
-  font-size: 20px;
+div > p {
+  background-color: yellow;
 }
-  `;
+`;
 
   const copyText = () => {
     navigator.clipboard.writeText(cssCode).then(() => {
@@ -48,14 +49,14 @@ p {
   ];
 
   return (
-    <div className="px-4 ">
-      {/* Hero Section */}
+    <div className="px-4">
+      {/* Header Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Tutorial</h1>
+          <h1 className="text-4xl">CSS Combinators</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-start">
           <div className="flex px-3 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
             Home
@@ -63,13 +64,23 @@ p {
         </div>
       </div>
 
-      <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <h1 className="text-2xl">Learn CSS</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>CSS is the language we use to style an HTML document.</li>
-          <li>CSS describes how HTML elements should be displayed.</li>
-          <li>This tutorial will teach you CSS from basic to advanced.</li>
-        </ul>
+      {/* Intro Section */}
+      <div className="px-5 mt-5 py-10 rounded-md">
+        <p className="p-10 bg-yellow-200 mb-5">
+          A combinator is something that explains the relationship between the selectors.
+        </p>
+        <p>
+          A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator.
+        </p>
+        <div className="my-5">
+          <h1 className="font-semibold">There are four different combinators in CSS:</h1>
+          <ul className="list-disc list-inside mt-2 space-y-1">
+            <li>Descendant combinator (space)</li>
+            <li>Child combinator {"(>)"} </li>
+            <li>Next sibling combinator (+)</li>
+            <li>Subsequent-sibling combinator (~)</li>
+          </ul>
+        </div>
         <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
           Start Learning CSS Now
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
@@ -82,17 +93,14 @@ p {
       <div className="flex flex-col gap-4 mb-6">
         <h1 className="text-4xl">Examples in Each Chapter</h1>
         <p>This CSS tutorial contains hundreds of CSS examples.</p>
-        <p>
-          With our online editor, you can edit the CSS, and click on a button to view the result.
-        </p>
+       
       </div>
 
       <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Example</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
+        <h1 className="text-2xl mb-3">CSS Example</h1>
+        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 rounded-md">
           {cssCode}
         </pre>
-
         <button
           onClick={copyText}
           className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
@@ -104,12 +112,11 @@ p {
 
       <hr className="text-gray-400 my-6" />
 
-      {/* References Section */}
+      {/* Reference Section */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with
-          syntax, examples, browser support, and more.
+          At W3Schools you will find complete CSS references of all properties and selectors with syntax, examples, browser support, and more.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -119,18 +126,26 @@ p {
               key={path.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {path.name}
             </Link>
           ))}
         </div>
 
-        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Next
-          <MdOutlineKeyboardArrowRight className="text-3xl" />
+        {/* Navigation Buttons */}
+        <div className="flex justify-between mt-6">
+          <div className="flex px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Previous
+          </div>
+          <div className="flex px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            Next
+            <MdOutlineKeyboardArrowRight className="text-3xl" />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Default;
+export default CssRefrenceCombinators;
+

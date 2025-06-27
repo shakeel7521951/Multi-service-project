@@ -1,26 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
-const Default = () => {
+const CssMathFunctions = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-body {
-  background-color: lightblue;
-}
-
-h1 {
-  color: white;
-  text-align: center;
-}
-
-p {
-  font-family: verdana;
-  font-size: 20px;
-}
-  `;
+#div1 {
+  position: absolute;
+  left: 50px;
+  width: calc(100% - 100px);
+  border: 1px solid black;
+  background-color: yellow;
+  padding: 5px;
+}`;
 
   const copyText = () => {
     navigator.clipboard.writeText(cssCode).then(() => {
@@ -30,29 +27,18 @@ p {
   };
 
   const refArray = [
-    { id: 1, name: "CSS Properties", link: "/css/cssProperties" },
-    { id: 2, name: "CSS Browser Support", link: "/css/cssbrowseSupport" },
-    { id: 3, name: "CSS Selectors", link: "/css/cssSelectors" },
-    { id: 4, name: "CSS Combinators", link: "/css/cssCombinators" },
-    { id: 5, name: "CSS Pseudo-classes", link: "/css/cssPseudoClasses" },
-    { id: 6, name: "CSS Pseudo-elements", link: "/css/cssPseudoElements" },
-    { id: 7, name: "CSS At-rules", link: "/css/cssAtRules" },
-    { id: 8, name: "CSS Functions", link: "/css/cssFunctions" },
-    { id: 9, name: "CSS Web Safe Fonts", link: "/css/cssWebSafeFonts" },
-    { id: 10, name: "CSS Units", link: "/css/cssUnits" },
-    { id: 11, name: "Px to Em Conversion", link: "/css/pxToEmConversion" },
-    { id: 12, name: "CSS Colors", link: "/css/cssColors" },
-    { id: 13, name: "CSS Animatable", link: "/css/cssAnimatable" },
-    { id: 14, name: "CSS Default Values", link: "/css/cssDefaultValues" },
-    { id: 15, name: "CSS Entities", link: "/css/cssEntities" },
+    { id: 1, name: "CSS calc() Function", link: "/css/cssCalc" },
+    { id: 2, name: "CSS max() Function", link: "/css/cssMax" },
+    { id: 3, name: "CSS min() Function", link: "/css/cssMin" },
+    { id: 4, name: "CSS clamp() Function", link: "/css/cssClamp" },
   ];
 
   return (
-    <div className="px-4 ">
+    <div className="px-4">
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Tutorial</h1>
+          <h1 className="text-4xl">CSS Math Functions</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -64,11 +50,24 @@ p {
       </div>
 
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <h1 className="text-2xl">Learn CSS</h1>
+        <p className="pb-3">
+          CSS provides math functions that allow you to perform calculations
+          right in your stylesheet. Useful for responsive layouts!
+        </p>
+        <h1 className="text-2xl">CSS Math Functions</h1>
         <ul className="flex flex-col gap-3 my-5">
-          <li>CSS is the language we use to style an HTML document.</li>
-          <li>CSS describes how HTML elements should be displayed.</li>
-          <li>This tutorial will teach you CSS from basic to advanced.</li>
+          <li>
+            <b>calc()</b>: Performs calculations with length values.
+          </li>
+          <li>
+            <b>max()</b>: Uses the largest value from a list.
+          </li>
+          <li>
+            <b>min()</b>: Uses the smallest value from a list.
+          </li>
+          <li>
+            <b>clamp()</b>: Allows you to set a value between a defined range.
+          </li>
         </ul>
         <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
           Start Learning CSS Now
@@ -80,10 +79,10 @@ p {
 
       {/* Example Section */}
       <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Examples in Each Chapter</h1>
-        <p>This CSS tutorial contains hundreds of CSS examples.</p>
+        <h1 className="text-4xl">Example: Using calc()</h1>
         <p>
-          With our online editor, you can edit the CSS, and click on a button to view the result.
+          The calc() function lets you perform math operations inside CSS.
+          Below, we subtract 100px from 100% to set the width:
         </p>
       </div>
 
@@ -108,8 +107,8 @@ p {
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with
-          syntax, examples, browser support, and more.
+          Learn about other CSS math functions for more flexible layouts and
+          dynamic styling!
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -124,13 +123,20 @@ p {
           ))}
         </div>
 
-        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Next
-          <MdOutlineKeyboardArrowRight className="text-3xl" />
+        {/* Navigation Buttons */}
+        <div className="flex justify-between">
+          <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Previous
+          </div>
+          <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            Next
+            <MdOutlineKeyboardArrowRight className="text-3xl" />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Default;
+export default CssMathFunctions;

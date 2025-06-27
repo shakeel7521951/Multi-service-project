@@ -6,94 +6,32 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const CssExample = () => {
+const CssExercises = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
-  const cssCode = `
+  const sampleText = `
+/* CSS Exercises */
+
+body {
+  background-color: lightblue;
+}
+
 h1 {
-  color: blue;
+  color: white;
   text-align: center;
+}
+
+p {
+  font-family: verdana;
 }
   `;
 
   const copyText = () => {
-    navigator.clipboard.writeText(cssCode).then(() => {
+    navigator.clipboard.writeText(sampleText).then(() => {
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2000);
     });
   };
-
-  const cssTopics = [
-    "CSS Syntax",
-    "CSS Selectors",
-    "CSS How To / Where To",
-    "CSS Comments",
-    "CSS Colors",
-    "CSS Backgrounds",
-    "CSS Borders",
-    "CSS Margins",
-    "CSS Padding",
-    "CSS Height/Width",
-    "CSS Box Model",
-    "CSS Outline",
-    "CSS Text",
-    "CSS Fonts",
-    "CSS Icons",
-    "CSS Links",
-    "CSS Lists",
-    "CSS Tables",
-    "CSS Display",
-    "CSS Positioning",
-    "CSS Overflow",
-    "CSS Floating",
-    "CSS Inline-block",
-    "CSS Aligning Elements",
-    "CSS Combinators",
-    "CSS Pseudo-classes",
-    "CSS Pseudo-elements",
-    "CSS Opacity",
-    "CSS Navigation Bars",
-    "CSS Dropdowns",
-    "CSS Image Gallery",
-    "CSS Image Sprites",
-    "CSS Attribute Selectors",
-    "CSS Forms",
-    "CSS Counters",
-    "CSS Website Layout",
-    "CSS Rounded Corners",
-    "CSS Border Images",
-    "CSS Gradients",
-    "CSS Shadow Effects",
-    "CSS Text Effects",
-    "CSS Web Fonts",
-    "CSS 2D Transforms",
-    "CSS 3D Transforms",
-    "CSS Transitions",
-    "CSS Animations",
-    "CSS Tooltips",
-    "CSS Style Images",
-    "CSS Image Centering",
-    "CSS Image Filters",
-    "CSS Image Shapes",
-    "CSS Object-fit",
-    "CSS Object-position",
-    "CSS Buttons",
-    "CSS Pagination",
-    "CSS Multiple Columns",
-    "CSS User Interface",
-    "CSS Variables",
-    "CSS Box Sizing",
-    "CSS Media Queries",
-    "CSS Media Queries - More Examples",
-    "CSS Flexbox",
-    "CSS Flex Items",
-    "CSS Flexbox Responsive",
-    "CSS Grid Intro",
-    "CSS Grid Columns, Rows and Gap",
-    "CSS Grid Container",
-    "CSS Grid Item",
-    "CSS Responsive Webdesign",
-  ];
 
   const refArray = [
     { id: 1, name: "CSS Properties", link: "/css/cssProperties" },
@@ -113,12 +51,125 @@ h1 {
     { id: 15, name: "CSS Entities", link: "/css/cssEntities" },
   ];
 
+  const exerciseCategories = [
+    "Syntax",
+    "Selectors",
+    "How To",
+    "Comments",
+    "Colors",
+    "RGB",
+    "HEX",
+    "HSL",
+    "Background Color",
+    "Background Image",
+    "Background Repeat",
+    "Background Attachment",
+    "Background Shorthand",
+    "Border",
+    "Border Width",
+    "Border Color",
+    "Border Sides",
+    "Border Shorthand",
+    "Rounded Borders",
+    "Margins",
+    "Margin Collapse",
+    "Padding",
+    "Height and Width",
+    "Box Model",
+    "Outline",
+    "Outline Width",
+    "Outline Color",
+    "Outline Shorthand",
+    "Outline Offset",
+    "Text",
+    "Text Alignment",
+    "Text Decoration",
+    "Text Transformation",
+    "Text Spacing",
+    "Text Shadow",
+    "Font Family",
+    "Web Safe Fonts",
+    "Font Style",
+    "Font Size",
+    "Font Shorthand",
+    "Icons",
+    "Links",
+    "Lists",
+    "Tables",
+    "Table Size",
+    "Table Alignment",
+    "Table Style",
+    "Table Responsive",
+    "Display",
+    "Max Width",
+    "Position",
+    "Z-index",
+    "Overflow",
+    "Float",
+    "Clear",
+    "Inline-block",
+    "Align",
+    "Combinators",
+    "Pseudo Classes",
+    "Pseudo Elements",
+    "Opacity",
+    "Attribute Selectors",
+    "Forms",
+    "Counters",
+    "Units",
+    "Specificity",
+    "!important",
+    "Math Functions",
+    "Rounded Corners",
+    "Border Images",
+    "Multiple Backgrounds",
+    "Colors",
+    "Color Keywords",
+    "Linear Gradients",
+    "Radial Gradients",
+    "Conic Gradients",
+    "Shadow Effects",
+    "Box Shadow",
+    "Text Effects",
+    "Web Fonts",
+    "2D Transforms",
+    "3D Transforms",
+    "Transitions",
+    "Animations",
+    "Images",
+    "Image Centering",
+    "Image Filters",
+    "Image Shapes",
+    "Object Fit",
+    "Object Position",
+    "Masking",
+    "Multiple Columns",
+    "User Interface",
+    "Variables",
+    "The property Rule",
+    "Box Sizing",
+    "Media Queries",
+    "Flexbox",
+    "Flex Container",
+    "Flex Items",
+    "Flex Responsive",
+    "RWD Intro",
+    "RWD Viewport",
+    "RWD Grid View",
+    "RWD Media Queries",
+    "RWD Images",
+    "RWD Videos",
+    "Grid Columns and Rows",
+    "Grid Container",
+    "Grid Item",
+  ];
+
   return (
     <div className="px-4">
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Examples</h1>
+          <h1 className="text-4xl">CSS Exercises</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -129,43 +180,49 @@ h1 {
         </div>
       </div>
 
-      {/* Content List */}
-      <div className="px-5  mt-5 py-10 rounded-md">
+      <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
         <p className="pb-3">
-          Explore various CSS examples to master web styling techniques.
+          Test your CSS skills with exercises from all categories:
         </p>
-        <h1 className="text-2xl font-bold mb-4">CSS Topics</h1>
-        <ul className="list-disc ml-6 flex flex-col gap-2">
-          {cssTopics.map((topic, index) => (
-            <li key={index}>{topic}</li>
+        <ul className="list-disc pl-5 space-y-1 max-w-xl text-gray-700 mb-4">
+          {exerciseCategories.map((cat, i) => (
+            <li key={i}>{cat}</li>
           ))}
         </ul>
 
-        <div className="flex px-5 mt-6 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Start Learning CSS Now
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
-        </div>
+        <p className="mb-3">
+          The exercises are a mix of "multiple choice" and "fill in the blanks"
+          questions. The answer can be found in the corresponding tutorial
+          chapter. If you're stuck, you can try again or hit the "Show Answer"
+          button to see the correct answer.
+        </p>
+        <p className="mb-3">
+          Log in to track your progress and get points for every exercise you
+          complete.
+        </p>
       </div>
 
       <hr className="text-gray-400 my-6" />
 
       {/* Example Section */}
       <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Basic CSS Example</h1>
-        <p>This example shows how to style a heading element:</p>
+        <h1 className="text-4xl">Example Exercise Snippet</h1>
+        <p>
+          Here is a simple CSS snippet to get you started practicing CSS
+          exercises:
+        </p>
       </div>
 
       <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Example</h1>
         <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
-          {cssCode}
+          {sampleText}
         </pre>
 
         <button
           onClick={copyText}
           className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
         >
-          {copySuccess ? "Copied!" : "Copy text"}
+          {copySuccess ? "Copied!" : "Copy code"}
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </button>
       </div>
@@ -176,8 +233,8 @@ h1 {
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          Explore core CSS references including properties, selectors,
-          functions, and values.
+          At W3Schools you will find complete CSS references of all properties
+          and selectors with syntax, examples, browser support, and more.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -192,7 +249,7 @@ h1 {
           ))}
         </div>
 
-        {/* Navigation Buttons */}
+        {/* Buttons */}
         <div className="flex justify-between">
           <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
@@ -208,4 +265,4 @@ h1 {
   );
 };
 
-export default CssExample;
+export default CssExercises;
