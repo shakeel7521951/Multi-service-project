@@ -65,6 +65,18 @@ import Html_Quiz  from "../courses/html/Html_Quiz";
 import Html_Website_Hosting from "../courses/html/Html_Website_Hosting.jsx";
 import Html_Syllabus from "../courses/html/Html_Syllabus";
 import Html_Study_Plan from "../courses/html/Html_Study_Plan";
+import Html_Interview_Preparation from "../courses/html/Html_Interview_Preparation";
+import Html_Bootcamp from "../courses/html/Html_Bootcamp";
+import Html_Certificate from "../courses/html/Html_Certificate";
+import Html_Summary from "../courses/html/Html_Summary";
+import Html_Accessibility from "../courses/html/Html_Accessibility";
+import Html_Alphabet from "../courses/html/Html_Alphabet";
+import Html_Category from "../courses/html/Html_Category";
+import Html_Browser_Support from "../courses/html/Html_Browser_Support";
+import Html_Attribute_Reference from "../courses/html/Html_Attribute_Reference";
+import Html_Global_Attributes from "../courses/html/Html_Global_Attributes";
+import Html_Event_Attributes from "../courses/html/Html_Event_Attributes";
+import Html_Color_Names from "../courses/html/Html_Color_Names";
 
 
 
@@ -145,6 +157,18 @@ export const htmlRoutes = {
     { path: "quiz", element: <Html_Quiz /> },
     { path: "websitehosting", element: <Html_Website_Hosting /> },
     { path: "syllabus", element: <Html_Syllabus /> },
-    { path: "studyplan", element: <Html_Study_Plan /> }
+    { path: "studyplan", element: <Html_Study_Plan /> },
+    { path: "interviewpreparation", element: <Html_Interview_Preparation /> },
+    { path: "bootcamp", element: <Html_Bootcamp /> },
+    { path: "certificate", element: <Html_Certificate /> },
+    { path: "summary", element: <Html_Summary /> },
+    { path: "accessibility", element: <Html_Accessibility /> },
+    { path: "alphabet", element: <Html_Alphabet /> },
+    { path: "category", element: <Html_Category /> },
+    { path: "browsersupport", element: <Html_Browser_Support /> },
+    { path: "attributereference", element: <Html_Attribute_Reference /> },
+    { path: "globalattributes", element: <Html_Global_Attributes /> },
+    { path: "eventattributes", element: <Html_Event_Attributes /> },
+    { path: "colornames", element: <Html_Color_Names /> }
   ],
 };
