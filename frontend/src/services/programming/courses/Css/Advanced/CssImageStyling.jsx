@@ -1,42 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import {
-  MdKeyboardArrowLeft,
-  MdOutlineKeyboardArrowRight,
-} from "react-icons/md";
+import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 
-const CssTemplates = () => {
-  const [copySuccess, setCopySuccess] = useState(false);
-
-  const cssCode = `
-/* Simple header-content-footer layout */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header, footer {
-  background-color: #4CAF50;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-main {
-  flex: 1;
-  padding: 1rem;
-}
-  `;
-
-  const copyText = () => {
-    navigator.clipboard.writeText(cssCode).then(() => {
-      setCopySuccess(true);
-      setTimeout(() => setCopySuccess(false), 2000);
-    });
-  };
-
+const CssImageStyling = () => {
   const refArray = [
     { id: 1, name: "CSS Properties", link: "/css/cssProperties" },
     { id: 2, name: "CSS Browser Support", link: "/css/cssbrowseSupport" },
@@ -52,15 +19,14 @@ main {
     { id: 12, name: "CSS Colors", link: "/css/cssColors" },
     { id: 13, name: "CSS Animatable", link: "/css/cssAnimatable" },
     { id: 14, name: "CSS Default Values", link: "/css/cssDefaultValues" },
-    { id: 15, name: "CSS Entities", link: "/css/cssEntities" },
+    { id: 15, name: "CSS Entities", link: "/css/cssEntities" }
   ];
 
   return (
     <div className="px-4">
-      {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Templates</h1>
+          <h1 className="text-4xl">CSS Image Styling</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -71,51 +37,48 @@ main {
         </div>
       </div>
 
-      {/* Intro Section */}
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <p className="pb-3">
-          CSS templates are pre-designed layouts that help you structure your website using CSS. These often follow common patterns like header-content-footer, sidebar layouts, grid systems, etc.
-        </p>
-        <h1 className="text-2xl">Common Template Layouts</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>Header - Content - Footer</li>
-          <li>Sidebar - Content</li>
-          <li>Grid-based Layout</li>
-          <li>Sticky Footer Layout</li>
-          <li>Flexbox Centered Layout</li>
-        </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Try a Template
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
-        </div>
-      </div>
+        <p className="pb-4">CSS allows you to enhance and style images with rounded corners, borders, shadows, and responsiveness.</p>
 
-      <hr className="text-gray-400 my-6" />
+        <h2 className="text-xl font-semibold mt-6 mb-2">Rounded Images</h2>
+        <p className="pb-4">Use <code>border-radius</code> to create rounded corners or circular images.</p>
+        <pre className="bg-white rounded-md p-4 text-sm overflow-auto">
+{`/* Rounded corners */
+img {
+  border-radius: 8px;
+}
 
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Example Template</h1>
-        <p>Here’s a basic layout template using Flexbox for a header-content-footer page structure:</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Template Code</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
-          {cssCode}
+/* Circular image */
+img {
+  border-radius: 50%;
+}`}
         </pre>
 
-        <button
-          onClick={copyText}
-          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
-        >
-          {copySuccess ? "Copied!" : "Copy text"}
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
-        </button>
+        <h2 className="text-xl font-semibold mt-6 mb-2">Thumbnail Images</h2>
+        <pre className="bg-white rounded-md p-4 text-sm overflow-auto">
+{`img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}`}        </pre>
+
+        <p className="mt-4">Hover effect for thumbnail image as a link:</p>
+        <pre className="bg-white rounded-md p-4 text-sm overflow-auto">
+{`img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}`}
+        </pre>
+
+        <h2 className="text-xl font-semibold mt-6 mb-2">Responsive Images</h2>
+        <p className="pb-4">Use the following to ensure images scale with screen size:</p>
+        <pre className="bg-white rounded-md p-4 text-sm overflow-auto">
+{`img {
+  max-width: 100%;
+  height: auto;
+}`}        </pre>
       </div>
 
-      <hr className="text-gray-400 my-6" />
-
-      {/* References Section */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
@@ -129,12 +92,11 @@ main {
               key={path.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {path.name}
             </Link>
           ))}
         </div>
 
-        {/* Buttons */}
         <div className="flex justify-between">
           <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
@@ -150,4 +112,4 @@ main {
   );
 };
 
-export default CssTemplates;
+export default CssImageStyling;

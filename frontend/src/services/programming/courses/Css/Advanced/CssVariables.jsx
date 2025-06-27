@@ -6,15 +6,32 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const CssExample = () => {
+const CssVariables = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-h1 {
-  color: blue;
-  text-align: center;
+/* Traditional Way Without CSS Variables */
+body {
+  background-color: #1e90ff;
 }
-  `;
+
+h2 {
+  border-bottom: 2px solid #1e90ff;
+}
+
+.container {
+  color: #1e90ff;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+button {
+  background-color: #ffffff;
+  color: #1e90ff;
+  border: 1px solid #1e90ff;
+  padding: 5px;
+}
+`;
 
   const copyText = () => {
     navigator.clipboard.writeText(cssCode).then(() => {
@@ -22,78 +39,6 @@ h1 {
       setTimeout(() => setCopySuccess(false), 2000);
     });
   };
-
-  const cssTopics = [
-    "CSS Syntax",
-    "CSS Selectors",
-    "CSS How To / Where To",
-    "CSS Comments",
-    "CSS Colors",
-    "CSS Backgrounds",
-    "CSS Borders",
-    "CSS Margins",
-    "CSS Padding",
-    "CSS Height/Width",
-    "CSS Box Model",
-    "CSS Outline",
-    "CSS Text",
-    "CSS Fonts",
-    "CSS Icons",
-    "CSS Links",
-    "CSS Lists",
-    "CSS Tables",
-    "CSS Display",
-    "CSS Positioning",
-    "CSS Overflow",
-    "CSS Floating",
-    "CSS Inline-block",
-    "CSS Aligning Elements",
-    "CSS Combinators",
-    "CSS Pseudo-classes",
-    "CSS Pseudo-elements",
-    "CSS Opacity",
-    "CSS Navigation Bars",
-    "CSS Dropdowns",
-    "CSS Image Gallery",
-    "CSS Image Sprites",
-    "CSS Attribute Selectors",
-    "CSS Forms",
-    "CSS Counters",
-    "CSS Website Layout",
-    "CSS Rounded Corners",
-    "CSS Border Images",
-    "CSS Gradients",
-    "CSS Shadow Effects",
-    "CSS Text Effects",
-    "CSS Web Fonts",
-    "CSS 2D Transforms",
-    "CSS 3D Transforms",
-    "CSS Transitions",
-    "CSS Animations",
-    "CSS Tooltips",
-    "CSS Style Images",
-    "CSS Image Centering",
-    "CSS Image Filters",
-    "CSS Image Shapes",
-    "CSS Object-fit",
-    "CSS Object-position",
-    "CSS Buttons",
-    "CSS Pagination",
-    "CSS Multiple Columns",
-    "CSS User Interface",
-    "CSS Variables",
-    "CSS Box Sizing",
-    "CSS Media Queries",
-    "CSS Media Queries - More Examples",
-    "CSS Flexbox",
-    "CSS Flex Items",
-    "CSS Flexbox Responsive",
-    "CSS Grid Intro",
-    "CSS Grid Columns, Rows and Gap",
-    "CSS Grid Container",
-    "CSS Grid Item",
-    "CSS Responsive Webdesign",
-  ];
 
   const refArray = [
     { id: 1, name: "CSS Properties", link: "/css/cssProperties" },
@@ -115,10 +60,10 @@ h1 {
 
   return (
     <div className="px-4">
-      {/* Hero Section */}
+      {/* Header */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Examples</h1>
+          <h1 className="text-4xl">CSS Variables</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -129,38 +74,41 @@ h1 {
         </div>
       </div>
 
-      {/* Content List */}
-      <div className="px-5  mt-5 py-10 rounded-md">
-        <p className="pb-3">
-          Explore various CSS examples to master web styling techniques.
+      {/* Description */}
+      <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
+        <h2 className="text-xl font-semibold mb-3">The <code>var()</code> Function</h2>
+        <p className="mb-4">
+          The <code>var()</code> function is used to insert the value of a CSS variable.
         </p>
-        <h1 className="text-2xl font-bold mb-4">CSS Topics</h1>
-        <ul className="list-disc ml-6 flex flex-col gap-2">
-          {cssTopics.map((topic, index) => (
-            <li key={index}>{topic}</li>
-          ))}
-        </ul>
+        <p className="mb-4">
+          CSS variables have access to the DOM, allowing variables to have <strong>global</strong> or <strong>local scope</strong>, and even be manipulated with JavaScript or media queries.
+        </p>
+        <p className="mb-4">
+          A common and effective use of CSS variables is for defining theme colors or fonts. Instead of repeating the same color values, define them once as variables.
+        </p>
 
+        <h3 className="text-lg font-semibold mt-5 mb-2">The Traditional Way</h3>
+        <p className="mb-4">
+          Below is an example of defining color styles the traditional way, without using variables:
+        </p>
+
+        <div className="bg-white border-l-4 border-green-500 pl-4 py-3 text-sm">
+          This example uses fixed color values for every element.
+        </div>
+
+        {/* Try it yourself */}
         <div className="flex px-5 mt-6 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Start Learning CSS Now
+          Try It Yourself
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
       </div>
 
-      <hr className="text-gray-400 my-6" />
-
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Basic CSS Example</h1>
-        <p>This example shows how to style a heading element:</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Example</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
+      {/* Code Block */}
+      <div className="mt-6 px-4 py-5 bg-[#E7E9EB] rounded-md">
+        <h2 className="text-2xl mb-4">CSS Example</h2>
+        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 rounded-md">
           {cssCode}
         </pre>
-
         <button
           onClick={copyText}
           className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
@@ -170,35 +118,43 @@ h1 {
         </button>
       </div>
 
-      <hr className="text-gray-400 my-6" />
+      <div className="my-10 px-5">
+        <h2 className="text-2xl font-semibold mb-2">Why Use CSS Variables?</h2>
+        <ul className="list-disc list-inside">
+          <li>Improve maintainability by storing values in one place</li>
+          <li>Allow real-time style changes via JavaScript</li>
+          <li>Enable consistent theming and color schemes</li>
+        </ul>
+      </div>
 
-      {/* References Section */}
+      <hr className="text-gray-400 my-8" />
+
+      {/* Reference Section */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          Explore core CSS references including properties, selectors,
-          functions, and values.
+          Explore more essential CSS concepts from our reference library:
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {refArray.map((path) => (
+          {refArray.map((ref) => (
             <Link
-              to={path.link}
-              key={path.id}
+              to={ref.link}
+              key={ref.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {ref.name}
             </Link>
           ))}
         </div>
 
-        {/* Navigation Buttons */}
+        {/* Page Navigation */}
         <div className="flex justify-between">
-          <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          <div className="flex mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
             Previous
           </div>
-          <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          <div className="flex mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
             Next
             <MdOutlineKeyboardArrowRight className="text-3xl" />
           </div>
@@ -208,4 +164,4 @@ h1 {
   );
 };
 
-export default CssExample;
+export default CssVariables;

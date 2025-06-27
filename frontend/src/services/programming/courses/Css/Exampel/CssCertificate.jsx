@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
 import {
@@ -6,37 +6,7 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const CssTemplates = () => {
-  const [copySuccess, setCopySuccess] = useState(false);
-
-  const cssCode = `
-/* Simple header-content-footer layout */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header, footer {
-  background-color: #4CAF50;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-main {
-  flex: 1;
-  padding: 1rem;
-}
-  `;
-
-  const copyText = () => {
-    navigator.clipboard.writeText(cssCode).then(() => {
-      setCopySuccess(true);
-      setTimeout(() => setCopySuccess(false), 2000);
-    });
-  };
-
+const CssCertificate = () => {
   const refArray = [
     { id: 1, name: "CSS Properties", link: "/css/cssProperties" },
     { id: 2, name: "CSS Browser Support", link: "/css/cssbrowseSupport" },
@@ -60,7 +30,7 @@ main {
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Templates</h1>
+          <h1 className="text-4xl">CSS Certificate</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -71,46 +41,53 @@ main {
         </div>
       </div>
 
-      {/* Intro Section */}
+      {/* Content Section */}
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <p className="pb-3">
-          CSS templates are pre-designed layouts that help you structure your website using CSS. These often follow common patterns like header-content-footer, sidebar layouts, grid systems, etc.
-        </p>
-        <h1 className="text-2xl">Common Template Layouts</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>Header - Content - Footer</li>
-          <li>Sidebar - Content</li>
-          <li>Grid-based Layout</li>
-          <li>Sticky Footer Layout</li>
-          <li>Flexbox Centered Layout</li>
+        <h2 className="text-2xl mb-4">W3Schools CSS Certificate - 2025</h2>
+        <p className="pb-3">W3Schools offers an Online Certification Program.</p>
+        <ul className="list-disc ml-6 mb-4">
+          <li>The perfect solution for busy professionals who need to balance work, family, and career building.</li>
+          <li>More than 50,000 certificates already issued!</li>
         </ul>
+        <h3 className="text-xl font-semibold mt-5 mb-2">Why Get Certified?</h3>
+        <ul className="list-disc ml-6 mb-4">
+          <li>Document your skills</li>
+          <li>Improve your career</li>
+          <li>Study at your own pace</li>
+          <li>Save time and money</li>
+          <li>Known brand</li>
+          <li>Trusted by top companies</li>
+        </ul>
+
+        <h3 className="text-xl font-semibold mt-5 mb-2">Who Should Consider Getting Certified?</h3>
+        <p>
+          Any student or professional within the digital industry. Certifications are valuable assets to gain trust and
+          demonstrate knowledge to your clients, current or future employers in a competitive market.
+        </p>
+
+        <h3 className="text-xl font-semibold mt-5 mb-2">Exam Overview</h3>
+        <ul className="list-disc ml-6 mb-4">
+          <li><strong>Fee:</strong> 95 USD</li>
+          <li><strong>Certification Levels:</strong> Intermediate (40%), Advanced (75%), Professional (90%)</li>
+          <li><strong>Number of Questions:</strong> Adaptive, ~60 questions</li>
+          <li><strong>Requirement to Pass:</strong> Minimum 40% - Intermediate level</li>
+          <li><strong>Time Limit:</strong> 60 minutes</li>
+          <li><strong>Number of Attempts:</strong> 3</li>
+          <li><strong>Exam Deadline:</strong> None</li>
+          <li><strong>Certification Expiration:</strong> None</li>
+          <li><strong>Format:</strong> Online, multiple choice</li>
+        </ul>
+
+        <h3 className="text-xl font-semibold mt-5 mb-2">Advance Faster in Your Career</h3>
+        <p className="pb-3">
+          Getting certified proves your commitment to upgrading your skills. The certificate can be added to your CV,
+          Resume, or LinkedIn profile. It shows you’re ready for more responsibilities, bigger projects, and better pay.
+        </p>
+
         <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Try a Template
+          Start Learning CSS Now
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
-      </div>
-
-      <hr className="text-gray-400 my-6" />
-
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Example Template</h1>
-        <p>Here’s a basic layout template using Flexbox for a header-content-footer page structure:</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Template Code</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
-          {cssCode}
-        </pre>
-
-        <button
-          onClick={copyText}
-          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
-        >
-          {copySuccess ? "Copied!" : "Copy text"}
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
-        </button>
       </div>
 
       <hr className="text-gray-400 my-6" />
@@ -119,22 +96,23 @@ main {
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with syntax, examples, browser support, and more.
+          At W3Schools you will find complete CSS references of all properties and selectors with syntax, examples,
+          browser support, and more.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {refArray.map((path) => (
+          {refArray.map((ref) => (
             <Link
-              to={path.link}
-              key={path.id}
+              to={ref.link}
+              key={ref.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {ref.name}
             </Link>
           ))}
         </div>
 
-        {/* Buttons */}
+        {/* Navigation Buttons */}
         <div className="flex justify-between">
           <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
@@ -150,4 +128,4 @@ main {
   );
 };
 
-export default CssTemplates;
+export default CssCertificate;

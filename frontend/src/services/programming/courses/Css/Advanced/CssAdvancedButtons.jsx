@@ -6,29 +6,27 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const CssTemplates = () => {
+const CssAdvancedButtons = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-/* Simple header-content-footer layout */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header, footer {
-  background-color: #4CAF50;
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
   color: white;
-  padding: 1rem;
+  padding: 15px 32px;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
-main {
-  flex: 1;
-  padding: 1rem;
-}
-  `;
+.button1 { background-color: #04AA6D; } /* Green */
+.button2 { background-color: #008CBA; } /* Blue */
+.button3 { background-color: #f44336; } /* Red */
+.button4 { background-color: #e7e7e7; color: black; } /* Gray */
+.button5 { background-color: #555555; } /* Black */
+`;
 
   const copyText = () => {
     navigator.clipboard.writeText(cssCode).then(() => {
@@ -57,10 +55,10 @@ main {
 
   return (
     <div className="px-4">
-      {/* Hero Section */}
+      {/* Header */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Templates</h1>
+          <h1 className="text-4xl">CSS Advanced Buttons</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -71,39 +69,39 @@ main {
         </div>
       </div>
 
-      {/* Intro Section */}
-      <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
+      {/* Content */}
+      <div className="px-5  mt-5 py-10 rounded-md">
         <p className="pb-3">
-          CSS templates are pre-designed layouts that help you structure your website using CSS. These often follow common patterns like header-content-footer, sidebar layouts, grid systems, etc.
+          Learn how to create and style buttons using CSS. Buttons can be customized in many ways to fit your website's style.
         </p>
-        <h1 className="text-2xl">Common Template Layouts</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>Header - Content - Footer</li>
-          <li>Sidebar - Content</li>
-          <li>Grid-based Layout</li>
-          <li>Sticky Footer Layout</li>
-          <li>Flexbox Centered Layout</li>
-        </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Try a Template
+        <h2 className="text-xl font-semibold mb-2">Basic Button Styling</h2>
+        <p className="pb-3">Below is a simple button with background color, padding, and text styling:</p>
+        <div className="my-4">
+          <button className="button bg-[#04AA6D] text-white py-3 px-6 rounded-md font-semibold">Default Button</button>
+        </div>
+
+        <h2 className="text-xl font-semibold mt-6 mb-2">Button Colors</h2>
+        <p className="pb-3">Use the <code>background-color</code> property to change button colors:</p>
+        <div className="space-x-4 my-3">
+          <button className="button1 bg-[#04AA6D] text-white py-2 px-4 rounded">Green</button>
+          <button className="button2 bg-[#008CBA] text-white py-2 px-4 rounded">Blue</button>
+          <button className="button3 bg-[#f44336] text-white py-2 px-4 rounded">Red</button>
+          <button className="button4 bg-[#e7e7e7] text-black py-2 px-4 rounded">Gray</button>
+          <button className="button5 bg-[#555555] text-white py-2 px-4 rounded">Black</button>
+        </div>
+
+        <div className="flex px-5 w-fit mt-6 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          Start Practicing Now
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
       </div>
 
-      <hr className="text-gray-400 my-6" />
-
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Example Template</h1>
-        <p>Here’s a basic layout template using Flexbox for a header-content-footer page structure:</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Template Code</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
+      {/* Code Block */}
+      <div className="mt-6 px-4 py-5 bg-[#E7E9EB] rounded-md">
+        <h2 className="text-2xl mb-4">CSS Example</h2>
+        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 rounded-md">
           {cssCode}
         </pre>
-
         <button
           onClick={copyText}
           className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
@@ -113,34 +111,34 @@ main {
         </button>
       </div>
 
-      <hr className="text-gray-400 my-6" />
+      <hr className="text-gray-400 my-8" />
 
-      {/* References Section */}
+      {/* References */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with syntax, examples, browser support, and more.
+          Explore other core CSS topics and sharpen your styling knowledge.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {refArray.map((path) => (
+          {refArray.map((ref) => (
             <Link
-              to={path.link}
-              key={path.id}
+              to={ref.link}
+              key={ref.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {ref.name}
             </Link>
           ))}
         </div>
 
-        {/* Buttons */}
+        {/* Navigation */}
         <div className="flex justify-between">
-          <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          <div className="flex mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
             Previous
           </div>
-          <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          <div className="flex mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
             Next
             <MdOutlineKeyboardArrowRight className="text-3xl" />
           </div>
@@ -150,4 +148,4 @@ main {
   );
 };
 
-export default CssTemplates;
+export default CssAdvancedButtons;

@@ -1,24 +1,37 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
-const Default = () => {
+const CssPseudoElements = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-body {
-  background-color: lightblue;
+/* Add content before an element */
+p::before {
+  content: "Note: ";
+  color: red;
+  font-weight: bold;
 }
 
-h1 {
-  color: white;
-  text-align: center;
+/* Add content after an element */
+p::after {
+  content: " ✔";
+  color: green;
 }
 
-p {
-  font-family: verdana;
-  font-size: 20px;
+/* Style the first letter of a paragraph */
+p::first-letter {
+  font-size: 200%;
+  color: #8A2BE2;
+}
+
+/* Style the first line of a paragraph */
+p::first-line {
+  font-weight: bold;
 }
   `;
 
@@ -48,29 +61,36 @@ p {
   ];
 
   return (
-    <div className="px-4 ">
-      {/* Hero Section */}
+    <div className="px-4">
+      {/* Header */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Tutorial</h1>
+          <h1 className="text-4xl font-bold">CSS Pseudo-elements</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
-        <div className="flex justify-between">
-          <div className="flex px-3 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+        <div className="flex justify-start">
+          <div className="flex items-center px-3 py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] cursor-pointer">
             <MdKeyboardArrowLeft className="text-3xl" />
             Home
           </div>
         </div>
       </div>
 
-      <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <h1 className="text-2xl">Learn CSS</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>CSS is the language we use to style an HTML document.</li>
-          <li>CSS describes how HTML elements should be displayed.</li>
-          <li>This tutorial will teach you CSS from basic to advanced.</li>
-        </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+      {/* Intro Section */}
+      <div className="px-5 mt-5 py-10 rounded-md">
+        <h2 className="text-2xl font-semibold mb-2">What are Pseudo-elements?</h2>
+        <p className="mb-3">
+          A pseudo-element allows you to style specific parts of an element.
+        </p>
+        <div>
+          <h3 className="font-semibold mb-1">Common uses include:</h3>
+          <ul className="list-disc list-inside space-y-1">
+            <li>Styling the first letter or line of a text block</li>
+            <li>Inserting content before or after an element</li>
+            <li>Creating custom bullets or quotes</li>
+          </ul>
+        </div>
+        <div className="flex mt-5 w-fit px-5 py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center cursor-pointer">
           Start Learning CSS Now
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
@@ -80,22 +100,18 @@ p {
 
       {/* Example Section */}
       <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Examples in Each Chapter</h1>
-        <p>This CSS tutorial contains hundreds of CSS examples.</p>
-        <p>
-          With our online editor, you can edit the CSS, and click on a button to view the result.
-        </p>
+        <h2 className="text-4xl font-bold">CSS Pseudo-element Examples</h2>
+        <p>This section demonstrates how pseudo-elements enhance your styling.</p>
       </div>
 
       <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Example</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
+        <h3 className="text-2xl font-semibold mb-3">CSS Example</h3>
+        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 rounded-md">
           {cssCode}
         </pre>
-
         <button
           onClick={copyText}
-          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
+          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white transition-colors"
         >
           {copySuccess ? "Copied!" : "Copy text"}
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
@@ -104,12 +120,11 @@ p {
 
       <hr className="text-gray-400 my-6" />
 
-      {/* References Section */}
+      {/* Reference Section */}
       <div className="px-1 my-10">
-        <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
+        <h2 className="text-3xl font-semibold pb-4">CSS References</h2>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with
-          syntax, examples, browser support, and more.
+          Learn more about CSS pseudo-elements and other important concepts from the reference section below.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -119,18 +134,25 @@ p {
               key={path.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {path.name}
             </Link>
           ))}
         </div>
 
-        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Next
-          <MdOutlineKeyboardArrowRight className="text-3xl" />
+        {/* Navigation Buttons */}
+        <div className="flex justify-between mt-6">
+          <div className="flex items-center px-3 py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] cursor-pointer">
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Previous
+          </div>
+          <div className="flex items-center px-5 py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] cursor-pointer">
+            Next
+            <MdOutlineKeyboardArrowRight className="text-3xl" />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Default;
+export default CssPseudoElements;

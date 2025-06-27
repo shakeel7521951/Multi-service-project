@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
 import {
@@ -6,37 +6,7 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const CssTemplates = () => {
-  const [copySuccess, setCopySuccess] = useState(false);
-
-  const cssCode = `
-/* Simple header-content-footer layout */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header, footer {
-  background-color: #4CAF50;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-main {
-  flex: 1;
-  padding: 1rem;
-}
-  `;
-
-  const copyText = () => {
-    navigator.clipboard.writeText(cssCode).then(() => {
-      setCopySuccess(true);
-      setTimeout(() => setCopySuccess(false), 2000);
-    });
-  };
-
+const Css2DTransforms = () => {
   const refArray = [
     { id: 1, name: "CSS Properties", link: "/css/cssProperties" },
     { id: 2, name: "CSS Browser Support", link: "/css/cssbrowseSupport" },
@@ -60,7 +30,7 @@ main {
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Templates</h1>
+          <h1 className="text-4xl">CSS 2D Transforms</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -71,55 +41,77 @@ main {
         </div>
       </div>
 
-      {/* Intro Section */}
+      {/* Content Section */}
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <p className="pb-3">
-          CSS templates are pre-designed layouts that help you structure your website using CSS. These often follow common patterns like header-content-footer, sidebar layouts, grid systems, etc.
+        <p className="pb-4">
+          CSS transforms allow you to move, rotate, scale, and skew elements.
         </p>
-        <h1 className="text-2xl">Common Template Layouts</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>Header - Content - Footer</li>
-          <li>Sidebar - Content</li>
-          <li>Grid-based Layout</li>
-          <li>Sticky Footer Layout</li>
-          <li>Flexbox Centered Layout</li>
-        </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Try a Template
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
+        <p className="pb-4">
+          Mouse over the element below to see a 2D transformation:
+        </p>
+
+        {/* Transform Demo Box */}
+        <div className="flex justify-center my-6">
+          <div className="bg-white p-10 text-lg font-semibold rounded-md transition-transform duration-500 hover:rotate-12 shadow-md">
+            Hover to Rotate Me
+          </div>
         </div>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-3">
+          CSS 2D Transform Property
+        </h2>
+        <p className="pb-4">
+          The <code>transform</code> property is used to apply 2D (and 3D)
+          transformation functions to elements.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6 mb-2">
+          Available 2D Transform Functions:
+        </h2>
+        <ul className="list-disc list-inside space-y-2 pl-2">
+          <li>
+            <code>translate()</code> – Moves the element from its current
+            position.
+          </li>
+          <li>
+            <code>rotate()</code> – Rotates the element clockwise or
+            counter-clockwise.
+          </li>
+          <li>
+            <code>scaleX()</code> – Scales the element along the X-axis.
+          </li>
+          <li>
+            <code>scaleY()</code> – Scales the element along the Y-axis.
+          </li>
+          <li>
+            <code>scale()</code> – Scales the element in both directions.
+          </li>
+          <li>
+            <code>skewX()</code> – Skews the element along the X-axis.
+          </li>
+          <li>
+            <code>skewY()</code> – Skews the element along the Y-axis.
+          </li>
+          <li>
+            <code>skew()</code> – Skews the element in both directions.
+          </li>
+          <li>
+            <code>matrix()</code> – Allows you to combine all 2D transform
+            methods into one.
+          </li>
+        </ul>
+
+        <p className="mt-6 italic text-gray-700">
+          Tip: You will learn about 3D transformations in the next chapter.
+        </p>
       </div>
 
-      <hr className="text-gray-400 my-6" />
-
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Example Template</h1>
-        <p>Here’s a basic layout template using Flexbox for a header-content-footer page structure:</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Template Code</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
-          {cssCode}
-        </pre>
-
-        <button
-          onClick={copyText}
-          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
-        >
-          {copySuccess ? "Copied!" : "Copy text"}
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
-        </button>
-      </div>
-
-      <hr className="text-gray-400 my-6" />
-
-      {/* References Section */}
+      {/* Reference Section */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with syntax, examples, browser support, and more.
+          At W3Schools you will find complete CSS references of all properties
+          and selectors with syntax, examples, browser support, and more.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -129,12 +121,12 @@ main {
               key={path.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {path.name}
             </Link>
           ))}
         </div>
 
-        {/* Buttons */}
+        {/* Navigation Buttons */}
         <div className="flex justify-between">
           <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
@@ -150,4 +142,4 @@ main {
   );
 };
 
-export default CssTemplates;
+export default Css2DTransforms;

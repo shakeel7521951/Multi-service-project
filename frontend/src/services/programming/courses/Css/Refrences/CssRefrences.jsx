@@ -1,24 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
-const Default = () => {
+const CssReferences = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-body {
-  background-color: lightblue;
-}
-
 h1 {
-  color: white;
-  text-align: center;
-}
-
-p {
-  font-family: verdana;
-  font-size: 20px;
+  font-size: 2em;
+  color: #03945F;
 }
   `;
 
@@ -48,11 +42,11 @@ p {
   ];
 
   return (
-    <div className="px-4 ">
+    <div className="px-4">
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Tutorial</h1>
+          <h1 className="text-4xl">CSS References</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -64,11 +58,16 @@ p {
       </div>
 
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <h1 className="text-2xl">Learn CSS</h1>
+        <p className="pb-3">
+          CSS references are essential for learning all the available styling properties, syntax, units, and functions. These references help you develop faster and more accurately.
+        </p>
+        <h1 className="text-2xl">Why Use CSS References?</h1>
         <ul className="flex flex-col gap-3 my-5">
-          <li>CSS is the language we use to style an HTML document.</li>
-          <li>CSS describes how HTML elements should be displayed.</li>
-          <li>This tutorial will teach you CSS from basic to advanced.</li>
+          <li>Find the right syntax and value formats quickly</li>
+          <li>Discover browser compatibility for each property</li>
+          <li>Understand default behaviors and values</li>
+          <li>Learn new or advanced functions and units</li>
+          <li>Efficient debugging by validating correct usage</li>
         </ul>
         <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
           Start Learning CSS Now
@@ -80,10 +79,9 @@ p {
 
       {/* Example Section */}
       <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Examples in Each Chapter</h1>
-        <p>This CSS tutorial contains hundreds of CSS examples.</p>
+        <h1 className="text-4xl">CSS Reference Example</h1>
         <p>
-          With our online editor, you can edit the CSS, and click on a button to view the result.
+          This example uses a few common CSS properties like `font-size` and `color` to style an `h1` heading.
         </p>
       </div>
 
@@ -106,10 +104,9 @@ p {
 
       {/* References Section */}
       <div className="px-1 my-10">
-        <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
+        <h1 className="text-3xl font-semibold pb-4">CSS Reference Topics</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with
-          syntax, examples, browser support, and more.
+          Click on any of the following categories to explore comprehensive guides, syntax usage, browser support details, and practical examples.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -124,13 +121,20 @@ p {
           ))}
         </div>
 
-        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Next
-          <MdOutlineKeyboardArrowRight className="text-3xl" />
+        {/* Navigation Buttons */}
+        <div className="flex justify-between">
+          <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Previous
+          </div>
+          <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            Next
+            <MdOutlineKeyboardArrowRight className="text-3xl" />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Default;
+export default CssReferences;

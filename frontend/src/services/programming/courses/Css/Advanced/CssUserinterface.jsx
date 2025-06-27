@@ -6,22 +6,15 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const CssBorders = () => {
+const CssUserinterface = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-p.dotted {border-style: dotted;}
-p.dashed {border-style: dashed;}
-p.solid {border-style: solid;}
-p.double {border-style: double;}
-p.groove {border-style: groove;}
-p.ridge {border-style: ridge;}
-p.inset {border-style: inset;}
-p.outset {border-style: outset;}
-p.none {border-style: none;}
-p.hidden {border-style: hidden;}
-p.mix {border-style: dotted dashed solid double;}
-  `;
+div {
+  resize: horizontal;
+  overflow: auto;
+}
+`;
 
   const copyText = () => {
     navigator.clipboard.writeText(cssCode).then(() => {
@@ -50,10 +43,10 @@ p.mix {border-style: dotted dashed solid double;}
 
   return (
     <div className="px-4">
-      {/* Hero Section */}
+      {/* Header */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Borders</h1>
+          <h1 className="text-4xl">CSS User Interface</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -64,39 +57,44 @@ p.mix {border-style: dotted dashed solid double;}
         </div>
       </div>
 
-      <div className="px-5 mt-5 py-10 rounded-md">
-        <p className="pb-3">
-          The CSS border properties allow you to specify the style, width, and
-          color of an element's border.
+      {/* Description */}
+      <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
+        <p className="pb-4">
+          In this chapter, you will learn about the following CSS user interface properties:
         </p>
-        <h1 className="text-2xl">CSS Borders</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li className="border p-4">I have borders on all sides.</li>
-          <li className="border-b border-red-500 p-4">
-            I have a red bottom border.
-          </li>
+        <ul className="list-disc list-inside mb-4">
+          <li><strong>resize</strong></li>
+          <li><strong>outline-offset</strong></li>
         </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Start Learning CSS Now
+
+        <h2 className="text-xl font-semibold mb-2">CSS Resizing</h2>
+        <p className="mb-4">
+          The <code>resize</code> property specifies if (and how) an element should be resizable by the user.
+        </p>
+
+        <p className="mb-4">
+          Try resizing this element by dragging the bottom-right corner:
+        </p>
+
+        <div
+          className="bg-white text-black p-4 border border-gray-400 rounded-md resize overflow-auto max-w-md"
+          style={{ resize: "horizontal", overflow: "auto", minWidth: "150px" }}
+        >
+          This <code>&lt;div&gt;</code> element is resizable by the user!
+        </div>
+
+        <div className="flex px-5 w-fit mt-6 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          Try It Yourself
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
       </div>
 
-      <hr className="text-gray-400 my-6" />
-
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Examples in Each Chapter</h1>
-        <p>This CSS tutorial contains hundreds of CSS examples.</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl"> Example</h1>
-        <p>Demonstration of the different border styles:</p>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
+      {/* CSS Code Block */}
+      <div className="mt-6 px-4 py-5 bg-[#E7E9EB] rounded-md">
+        <h2 className="text-2xl mb-4">CSS Example</h2>
+        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 rounded-md">
           {cssCode}
         </pre>
-
         <button
           onClick={copyText}
           className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
@@ -106,43 +104,48 @@ p.mix {border-style: dotted dashed solid double;}
         </button>
       </div>
 
-      <hr className="text-gray-400 my-6" />
+      <div className="my-10 px-5">
+        <h2 className="text-2xl font-semibold mb-2">More UI Properties</h2>
+        <ul className="list-disc list-inside">
+          <li><code>outline-offset</code>: Sets the space between an outline and the edge/border of an element.</li>
+        </ul>
+      </div>
 
-      {/* References Section */}
+      <hr className="text-gray-400 my-8" />
+
+      {/* References */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties
-          and selectors with syntax, examples, browser support, and more.
+          Continue learning CSS with these related topics:
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {refArray.map((path) => (
+          {refArray.map((ref) => (
             <Link
-              to={path.link}
-              key={path.id}
+              to={ref.link}
+              key={ref.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {ref.name}
             </Link>
           ))}
         </div>
 
-        {/* <!-- ========== Buttons  ========== --> */}
+        {/* Navigation */}
         <div className="flex justify-between">
-          <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          <div className="flex mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
             Previous
           </div>
-          <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          <div className="flex mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
             Next
             <MdOutlineKeyboardArrowRight className="text-3xl" />
           </div>
         </div>
-        {/* <!-- =========Buttons  ========== --> */}
       </div>
     </div>
   );
 };
 
-export default CssBorders;
+export default CssUserinterface;

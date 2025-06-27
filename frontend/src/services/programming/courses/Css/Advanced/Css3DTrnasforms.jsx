@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
 import {
@@ -6,20 +6,7 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const Flexcontainer = () => {
-  const [copySuccess, setCopySuccess] = useState(false);
-
-  const cssCode = `.flex-container {
-  display: flex;
-}`;
-
-  const copyText = () => {
-    navigator.clipboard.writeText(cssCode).then(() => {
-      setCopySuccess(true);
-      setTimeout(() => setCopySuccess(false), 2000);
-    });
-  };
-
+const Css3DTransforms = () => {
   const refArray = [
     { id: 1, name: "CSS Properties", link: "/css/cssProperties" },
     { id: 2, name: "CSS Browser Support", link: "/css/cssbrowseSupport" },
@@ -40,74 +27,73 @@ const Flexcontainer = () => {
 
   return (
     <div className="px-4">
+      {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Flex Container</h1>
+          <h1 className="text-4xl">CSS 3D Transforms</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
-      </div>
-
-      <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <p className="pb-3">
-          The <code>flex-container</code> becomes flexible by setting the <code>display</code> property to <code>flex</code>. This enables a flex formatting context for all of its direct children (flex items).
-        </p>
-        <p className="pb-3">
-          Example of enabling flex behavior:
-        </p>
-      </div>
-
-      <hr className="text-gray-400 my-6" />
-
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Flex Container Example</h1>
-        <p>This basic example uses <code>display: flex</code> to make the container flexible and align items in a row by default.</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Example</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
-          {cssCode}
-        </pre>
-
-        <button
-          onClick={copyText}
-          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
-        >
-          {copySuccess ? "Copied!" : "Copy text"}
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
-        </button>
-
-        <div className="pt-6">
-          <h1 className="text-xl font-bold pb-2">Flex Container with 3 Items</h1>
-          <div className="flex-container">
-            <div className="item">1</div>
-            <div className="item">2</div>
-            <div className="item">3</div>
+        <div className="flex justify-between">
+          <div className="flex px-3 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Home
           </div>
-          <style>{`
-            .flex-container {
-              display: flex;
-              background-color: #2196F3;
-              padding: 10px;
-              gap: 10px;
-            }
-            .item {
-              background-color: #f1f1f1;
-              padding: 20px;
-              font-size: 20px;
-              text-align: center;
-              flex: 1;
-            }
-          `}</style>
         </div>
       </div>
 
-      <hr className="text-gray-400 my-6" />
+      {/* Content Section */}
+      <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
+        <p className="pb-4">
+          CSS also supports <strong>3D transformations</strong> that allow elements to be transformed in 3D space.
+        </p>
 
+        <p className="pb-4">
+          Mouse over the elements below to see the difference between a 2D and a 3D transformation:
+        </p>
+
+        {/* 2D vs 3D Box */}
+        <div className="flex flex-col md:flex-row gap-8 justify-center mt-8">
+          <div className="bg-white p-10 text-center font-semibold transition-transform duration-500 hover:rotate-45 shadow-md rounded-md">
+            2D rotate
+          </div>
+          <div className="bg-white p-10 text-center font-semibold transition-transform duration-500 hover:rotate-y-180 shadow-md rounded-md">
+            3D rotate
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-semibold mt-10 mb-3">
+          CSS 3D Transform Property
+        </h2>
+        <p className="pb-4">
+          The <code>transform</code> property is used to apply 3D transformations in addition to 2D effects.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6 mb-2">
+          Common 3D Transform Functions:
+        </h2>
+        <ul className="list-disc list-inside space-y-2 pl-2">
+          <li>
+            <code>rotateX()</code> – Rotates the element around the X-axis.
+          </li>
+          <li>
+            <code>rotateY()</code> – Rotates the element around the Y-axis.
+          </li>
+          <li>
+            <code>rotateZ()</code> – Rotates the element around the Z-axis.
+          </li>
+        </ul>
+
+        <p className="mt-6 italic text-gray-700">
+          Tip: Use the <code>transform-style</code> and <code>perspective</code> properties for better 3D control.
+        </p>
+      </div>
+
+      {/* Reference Section */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with syntax, examples, browser support, and more.
+          At W3Schools you will find complete CSS references of all properties
+          and selectors with syntax, examples, browser support, and more.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -117,11 +103,12 @@ const Flexcontainer = () => {
               key={path.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {path.name}
             </Link>
           ))}
         </div>
 
+        {/* Navigation Buttons */}
         <div className="flex justify-between">
           <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
@@ -137,4 +124,4 @@ const Flexcontainer = () => {
   );
 };
 
-export default Flexcontainer;
+export default Css3DTransforms;

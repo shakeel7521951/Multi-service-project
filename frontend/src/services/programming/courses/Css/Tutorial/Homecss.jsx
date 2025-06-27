@@ -48,8 +48,7 @@ p {
   ];
 
   return (
-    <div className="px-4  ">
-{/* <!-- ========== Start Hero Section  ========== --> */}
+    <div className="px-4 ">
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
@@ -57,7 +56,7 @@ p {
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
-          <div className="flex px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          <div className="flex px-3 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
             Home
           </div>
@@ -78,10 +77,7 @@ p {
       </div>
 
       <hr className="text-gray-400 my-6" />
-{/* <!-- ========== End Hero Section  ========== --> */}
 
-
-{/* <!-- ========== Start Examples Section  ========== --> */}
       {/* Example Section */}
       <div className="flex flex-col gap-4 mb-6">
         <h1 className="text-4xl">Examples in Each Chapter</h1>
@@ -108,11 +104,6 @@ p {
 
       <hr className="text-gray-400 my-6" />
 
-
-{/* <!-- ========== End Examples Section  ========== --> */}
-
-
-    {/* <!-- ========== Start References Section ========== --> */}
       {/* References Section */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
@@ -133,15 +124,14 @@ p {
           ))}
         </div>
 
-        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
           Next
           <MdOutlineKeyboardArrowRight className="text-3xl" />
         </div>
       </div>
-    {/* <!-- ========== End References Section ========== --> */}
-    
     </div>
   );
 };
 
 export default Homecss;
+

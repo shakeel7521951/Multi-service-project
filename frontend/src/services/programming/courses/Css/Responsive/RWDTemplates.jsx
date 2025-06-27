@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
 import {
@@ -6,20 +6,7 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const Flexcontainer = () => {
-  const [copySuccess, setCopySuccess] = useState(false);
-
-  const cssCode = `.flex-container {
-  display: flex;
-}`;
-
-  const copyText = () => {
-    navigator.clipboard.writeText(cssCode).then(() => {
-      setCopySuccess(true);
-      setTimeout(() => setCopySuccess(false), 2000);
-    });
-  };
-
+const RWDTemplates = () => {
   const refArray = [
     { id: 1, name: "CSS Properties", link: "/css/cssProperties" },
     { id: 2, name: "CSS Browser Support", link: "/css/cssbrowseSupport" },
@@ -42,64 +29,24 @@ const Flexcontainer = () => {
     <div className="px-4">
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Flex Container</h1>
+          <h1 className="text-4xl">Responsive Web Design - Templates</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
       </div>
 
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
         <p className="pb-3">
-          The <code>flex-container</code> becomes flexible by setting the <code>display</code> property to <code>flex</code>. This enables a flex formatting context for all of its direct children (flex items).
+          <strong>W3.CSS Web Site Templates</strong>
         </p>
         <p className="pb-3">
-          Example of enabling flex behavior:
+          We have created some responsive templates with the W3.CSS framework.
         </p>
-      </div>
-
-      <hr className="text-gray-400 my-6" />
-
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Flex Container Example</h1>
-        <p>This basic example uses <code>display: flex</code> to make the container flexible and align items in a row by default.</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Example</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
-          {cssCode}
-        </pre>
-
-        <button
-          onClick={copyText}
-          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
-        >
-          {copySuccess ? "Copied!" : "Copy text"}
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
-        </button>
-
-        <div className="pt-6">
-          <h1 className="text-xl font-bold pb-2">Flex Container with 3 Items</h1>
-          <div className="flex-container">
-            <div className="item">1</div>
-            <div className="item">2</div>
-            <div className="item">3</div>
-          </div>
-          <style>{`
-            .flex-container {
-              display: flex;
-              background-color: #2196F3;
-              padding: 10px;
-              gap: 10px;
-            }
-            .item {
-              background-color: #f1f1f1;
-              padding: 20px;
-              font-size: 20px;
-              text-align: center;
-              flex: 1;
-            }
-          `}</style>
-        </div>
+        <p className="pb-3">
+          You are free to modify, save, share, and use them in all your projects.
+        </p>
+        <p className="pb-3 font-semibold">
+          Tip: All templates below can be hosted for free with W3Schools Spaces.
+        </p>
       </div>
 
       <hr className="text-gray-400 my-6" />
@@ -137,4 +84,4 @@ const Flexcontainer = () => {
   );
 };
 
-export default Flexcontainer;
+export default RWDTemplates;

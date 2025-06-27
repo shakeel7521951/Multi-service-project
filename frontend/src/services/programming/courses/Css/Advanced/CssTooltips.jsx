@@ -6,13 +6,39 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const CssExample = () => {
+const CssTooltips = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-h1 {
-  color: blue;
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
   text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Show the tooltip on hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
   `;
 
@@ -22,78 +48,6 @@ h1 {
       setTimeout(() => setCopySuccess(false), 2000);
     });
   };
-
-  const cssTopics = [
-    "CSS Syntax",
-    "CSS Selectors",
-    "CSS How To / Where To",
-    "CSS Comments",
-    "CSS Colors",
-    "CSS Backgrounds",
-    "CSS Borders",
-    "CSS Margins",
-    "CSS Padding",
-    "CSS Height/Width",
-    "CSS Box Model",
-    "CSS Outline",
-    "CSS Text",
-    "CSS Fonts",
-    "CSS Icons",
-    "CSS Links",
-    "CSS Lists",
-    "CSS Tables",
-    "CSS Display",
-    "CSS Positioning",
-    "CSS Overflow",
-    "CSS Floating",
-    "CSS Inline-block",
-    "CSS Aligning Elements",
-    "CSS Combinators",
-    "CSS Pseudo-classes",
-    "CSS Pseudo-elements",
-    "CSS Opacity",
-    "CSS Navigation Bars",
-    "CSS Dropdowns",
-    "CSS Image Gallery",
-    "CSS Image Sprites",
-    "CSS Attribute Selectors",
-    "CSS Forms",
-    "CSS Counters",
-    "CSS Website Layout",
-    "CSS Rounded Corners",
-    "CSS Border Images",
-    "CSS Gradients",
-    "CSS Shadow Effects",
-    "CSS Text Effects",
-    "CSS Web Fonts",
-    "CSS 2D Transforms",
-    "CSS 3D Transforms",
-    "CSS Transitions",
-    "CSS Animations",
-    "CSS Tooltips",
-    "CSS Style Images",
-    "CSS Image Centering",
-    "CSS Image Filters",
-    "CSS Image Shapes",
-    "CSS Object-fit",
-    "CSS Object-position",
-    "CSS Buttons",
-    "CSS Pagination",
-    "CSS Multiple Columns",
-    "CSS User Interface",
-    "CSS Variables",
-    "CSS Box Sizing",
-    "CSS Media Queries",
-    "CSS Media Queries - More Examples",
-    "CSS Flexbox",
-    "CSS Flex Items",
-    "CSS Flexbox Responsive",
-    "CSS Grid Intro",
-    "CSS Grid Columns, Rows and Gap",
-    "CSS Grid Container",
-    "CSS Grid Item",
-    "CSS Responsive Webdesign",
-  ];
 
   const refArray = [
     { id: 1, name: "CSS Properties", link: "/css/cssProperties" },
@@ -118,7 +72,7 @@ h1 {
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Examples</h1>
+          <h1 className="text-4xl">CSS Tooltips</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -129,55 +83,90 @@ h1 {
         </div>
       </div>
 
-      {/* Content List */}
+      {/* Tooltip Explanation */}
       <div className="px-5  mt-5 py-10 rounded-md">
         <p className="pb-3">
-          Explore various CSS examples to master web styling techniques.
+          Tooltips are small pop-up boxes that appear when the user moves the
+          mouse pointer over an element. They provide additional information
+          without cluttering the interface.
         </p>
-        <h1 className="text-2xl font-bold mb-4">CSS Topics</h1>
-        <ul className="list-disc ml-6 flex flex-col gap-2">
-          {cssTopics.map((topic, index) => (
-            <li key={index}>{topic}</li>
-          ))}
-        </ul>
 
-        <div className="flex px-5 mt-6 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Start Learning CSS Now
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
+        <h2 className="text-2xl font-semibold mb-4">Basic Tooltip Example</h2>
+        <p className="pb-4">
+          You can create a tooltip using simple CSS by toggling visibility on
+          hover.
+        </p>
+
+        <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
+          <h1 className="text-2xl">CSS Tooltip Example</h1>
+          <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
+            {cssCode}
+          </pre>
+          <button
+            onClick={copyText}
+            className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
+          >
+            {copySuccess ? "Copied!" : "Copy text"}
+            <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
+          </button>
         </div>
       </div>
 
       <hr className="text-gray-400 my-6" />
 
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Basic CSS Example</h1>
-        <p>This example shows how to style a heading element:</p>
-      </div>
+      {/* Tooltip Demo */}
+      <div className="mb-10">
+        <h2 className="text-3xl font-semibold mb-4">Live Demo:</h2>
+        <div className="tooltip inline-block border-b border-dotted border-black text-lg text-gray-900 cursor-pointer">
+          Hover over me
+          <span className="tooltiptext bg-black text-white text-sm px-2 py-1 rounded-md absolute z-10 left-1/2 -translate-x-1/2 mt-1 whitespace-nowrap hidden group-hover:block">
+            Tooltip text
+          </span>
+        </div>
 
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Example</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
-          {cssCode}
-        </pre>
+        {/* Internal tooltip CSS */}
+        <style>
+          {`
+            .tooltip {
+              position: relative;
+              display: inline-block;
+              border-bottom: 1px dotted black;
+              cursor: pointer;
+            }
 
-        <button
-          onClick={copyText}
-          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
-        >
-          {copySuccess ? "Copied!" : "Copy text"}
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
-        </button>
+            .tooltip .tooltiptext {
+              visibility: hidden;
+              width: 120px;
+              background-color: black;
+              color: #fff;
+              text-align: center;
+              padding: 5px 0;
+              border-radius: 6px;
+              position: absolute;
+              z-index: 1;
+              bottom: 125%;
+              left: 50%;
+              transform: translateX(-50%);
+              opacity: 0;
+              transition: opacity 0.3s;
+            }
+
+            .tooltip:hover .tooltiptext {
+              visibility: visible;
+              opacity: 1;
+            }
+          `}
+        </style>
       </div>
 
       <hr className="text-gray-400 my-6" />
 
-      {/* References Section */}
+      {/* Reference Section */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          Explore core CSS references including properties, selectors,
-          functions, and values.
+          At W3Schools you will find complete CSS references of all properties
+          and selectors with syntax, examples, browser support, and more.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -187,7 +176,7 @@ h1 {
               key={path.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {path.name}
             </Link>
           ))}
         </div>
@@ -208,4 +197,4 @@ h1 {
   );
 };
 
-export default CssExample;
+export default CssTooltips;

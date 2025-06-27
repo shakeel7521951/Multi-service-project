@@ -1,24 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
-const Default = () => {
+const CssAtrule = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-body {
-  background-color: lightblue;
-}
-
-h1 {
-  color: white;
-  text-align: center;
-}
-
-p {
-  font-family: verdana;
-  font-size: 20px;
+@media screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
 }
   `;
 
@@ -48,11 +43,11 @@ p {
   ];
 
   return (
-    <div className="px-4 ">
+    <div className="px-4">
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Tutorial</h1>
+          <h1 className="text-4xl">CSS At-rules</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -64,14 +59,31 @@ p {
       </div>
 
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <h1 className="text-2xl">Learn CSS</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>CSS is the language we use to style an HTML document.</li>
-          <li>CSS describes how HTML elements should be displayed.</li>
-          <li>This tutorial will teach you CSS from basic to advanced.</li>
+        <p className="pb-3">
+          CSS at-rules are statements that instruct CSS on how to behave. Each
+          at-rule begins with an <code>@</code> followed by a rule name.
+        </p>
+        <h1 className="text-2xl mb-3">Common CSS At-rules</h1>
+        <ul className="list-disc list-inside space-y-2">
+          <li><code>@charset</code> – Specifies character encoding for the stylesheet.</li>
+          <li><code>@container</code> – Applies styles based on the container’s size or style.</li>
+          <li><code>@counter-style</code> – Define custom counter styles.</li>
+          <li><code>@font-face</code> – Load and use custom fonts.</li>
+          <li><code>@font-palette-values</code> – Customize font-palette defaults.</li>
+          <li><code>@import</code> – Import stylesheets into others.</li>
+          <li><code>@keyframes</code> – Create animations by defining steps.</li>
+          <li><code>@layer</code> – Organize CSS into cascade layers.</li>
+          <li><code>@media</code> – Apply styles based on media queries.</li>
+          <li><code>@namespace</code> – Define XML namespaces for CSS.</li>
+          <li><code>@page</code> – Set print styles for pages.</li>
+          <li><code>@property</code> – Define typed custom properties in CSS.</li>
+          <li><code>@scope</code> – Scope rules to specific DOM subtrees.</li>
+          <li><code>@starting-style</code> – Define starting style before transitions.</li>
+          <li><code>@supports</code> – Apply styles only if feature is supported.</li>
         </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Start Learning CSS Now
+
+        <div className="flex px-5 w-fit cursor-pointer py-2 mt-6 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          Learn More About CSS At-rules
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
       </div>
@@ -80,10 +92,10 @@ p {
 
       {/* Example Section */}
       <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Examples in Each Chapter</h1>
-        <p>This CSS tutorial contains hundreds of CSS examples.</p>
+        <h1 className="text-4xl">Example of @media Rule</h1>
         <p>
-          With our online editor, you can edit the CSS, and click on a button to view the result.
+          This example changes the background color of the page if the screen
+          width is less than 600px.
         </p>
       </div>
 
@@ -108,8 +120,8 @@ p {
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with
-          syntax, examples, browser support, and more.
+          Find all CSS reference topics below. Each link leads to detailed
+          explanations and examples.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -119,18 +131,25 @@ p {
               key={path.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {path.name}
             </Link>
           ))}
         </div>
 
-        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Next
-          <MdOutlineKeyboardArrowRight className="text-3xl" />
+        {/* Navigation Buttons */}
+        <div className="flex justify-between">
+          <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Previous
+          </div>
+          <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            Next
+            <MdOutlineKeyboardArrowRight className="text-3xl" />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Default;
+export default CssAtrule;

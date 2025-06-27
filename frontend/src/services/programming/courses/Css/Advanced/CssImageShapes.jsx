@@ -6,12 +6,14 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const Flexcontainer = () => {
+const CssImageShapes = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
-  const cssCode = `.flex-container {
-  display: flex;
-}`;
+  const cssCode = `
+img {
+  clip-path: circle(50%);
+}
+  `;
 
   const copyText = () => {
     navigator.clipboard.writeText(cssCode).then(() => {
@@ -40,70 +42,54 @@ const Flexcontainer = () => {
 
   return (
     <div className="px-4">
+      {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Flex Container</h1>
+          <h1 className="text-4xl">CSS Image Shapes</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
-      </div>
-
-      <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <p className="pb-3">
-          The <code>flex-container</code> becomes flexible by setting the <code>display</code> property to <code>flex</code>. This enables a flex formatting context for all of its direct children (flex items).
-        </p>
-        <p className="pb-3">
-          Example of enabling flex behavior:
-        </p>
-      </div>
-
-      <hr className="text-gray-400 my-6" />
-
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Flex Container Example</h1>
-        <p>This basic example uses <code>display: flex</code> to make the container flexible and align items in a row by default.</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Example</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
-          {cssCode}
-        </pre>
-
-        <button
-          onClick={copyText}
-          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
-        >
-          {copySuccess ? "Copied!" : "Copy text"}
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
-        </button>
-
-        <div className="pt-6">
-          <h1 className="text-xl font-bold pb-2">Flex Container with 3 Items</h1>
-          <div className="flex-container">
-            <div className="item">1</div>
-            <div className="item">2</div>
-            <div className="item">3</div>
+        <div className="flex justify-between">
+          <div className="flex px-3 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Home
           </div>
-          <style>{`
-            .flex-container {
-              display: flex;
-              background-color: #2196F3;
-              padding: 10px;
-              gap: 10px;
-            }
-            .item {
-              background-color: #f1f1f1;
-              padding: 20px;
-              font-size: 20px;
-              text-align: center;
-              flex: 1;
-            }
-          `}</style>
         </div>
       </div>
 
-      <hr className="text-gray-400 my-6" />
+      {/* Description */}
+      <div className="px-5  mt-5 py-10 rounded-md">
+        <p className="pb-3">
+          With CSS, it is easy to shape (clip) images into <strong>circles</strong>, <strong>ellipses</strong>, and even <strong>polygons</strong> using the <code className="bg-gray-100 px-2 py-1 rounded text-purple-600">clip-path</code> property.
+        </p>
+        <h2 className="text-2xl font-semibold mt-6 mb-3">The CSS <code>clip-path</code> Property</h2>
+        <p className="mb-4 text-lg">
+          The <code className="bg-gray-100 px-2 py-1 rounded text-purple-600">clip-path</code> property lets you clip an element to a basic shape like a circle, ellipse, or polygon.
+        </p>
 
+        <h2 className="text-2xl font-semibold mt-6 mb-3">The <code>circle()</code> Function</h2>
+        <p className="mb-4 text-lg">
+          The <code className="bg-gray-100 px-2 py-1 rounded text-purple-600">circle()</code> function defines a circle using a radius and a position. It is commonly used with <code className="bg-gray-100 px-2 py-1 rounded text-purple-600">clip-path</code> to clip images into circular shapes.
+        </p>
+
+        <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
+          <h1 className="text-2xl">CSS Example</h1>
+          <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
+            {cssCode}
+          </pre>
+
+          <button
+            onClick={copyText}
+            className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
+          >
+            {copySuccess ? "Copied!" : "Copy text"}
+            <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
+          </button>
+        </div>
+
+      
+      </div>
+
+      {/* References Section */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
@@ -122,6 +108,7 @@ const Flexcontainer = () => {
           ))}
         </div>
 
+        {/* Navigation Buttons */}
         <div className="flex justify-between">
           <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
@@ -137,4 +124,4 @@ const Flexcontainer = () => {
   );
 };
 
-export default Flexcontainer;
+export default CssImageShapes;

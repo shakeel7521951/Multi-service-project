@@ -1,34 +1,30 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import {
-  MdKeyboardArrowLeft,
-  MdOutlineKeyboardArrowRight,
-} from "react-icons/md";
+import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 
-const CssTemplates = () => {
+const CssProperty = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
-  const cssCode = `
-/* Simple header-content-footer layout */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  const cssCode = `@property --my-bg-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: lightgray;
 }
 
-header, footer {
-  background-color: #4CAF50;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+@property --my-txt-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: darkblue;
 }
 
-main {
-  flex: 1;
-  padding: 1rem;
-}
-  `;
+div {
+  width: 300px;
+  height: 150px;
+  padding: 15px;
+  background-color: var(--my-bg-color);
+  color: var(--my-txt-color);
+}`;
 
   const copyText = () => {
     navigator.clipboard.writeText(cssCode).then(() => {
@@ -52,15 +48,14 @@ main {
     { id: 12, name: "CSS Colors", link: "/css/cssColors" },
     { id: 13, name: "CSS Animatable", link: "/css/cssAnimatable" },
     { id: 14, name: "CSS Default Values", link: "/css/cssDefaultValues" },
-    { id: 15, name: "CSS Entities", link: "/css/cssEntities" },
+    { id: 15, name: "CSS Entities", link: "/css/cssEntities" }
   ];
 
   return (
     <div className="px-4">
-      {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Templates</h1>
+          <h1 className="text-4xl">CSS @property Rule</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -71,39 +66,35 @@ main {
         </div>
       </div>
 
-      {/* Intro Section */}
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <p className="pb-3">
-          CSS templates are pre-designed layouts that help you structure your website using CSS. These often follow common patterns like header-content-footer, sidebar layouts, grid systems, etc.
+        <h2 className="text-xl font-semibold mb-3">What is @property?</h2>
+        <p className="mb-4">
+          The <code>@property</code> rule allows defining custom CSS properties (variables) directly in your stylesheet with type-checking, default values, and inheritance control.
         </p>
-        <h1 className="text-2xl">Common Template Layouts</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>Header - Content - Footer</li>
-          <li>Sidebar - Content</li>
-          <li>Grid-based Layout</li>
-          <li>Sticky Footer Layout</li>
-          <li>Flexbox Centered Layout</li>
-        </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Try a Template
+        <p className="mb-4">
+          It improves styling reliability and flexibility without the need for JavaScript.
+        </p>
+
+        <h3 className="text-lg font-semibold mt-5 mb-2">Example Syntax</h3>
+        <div className="bg-white border-l-4 border-green-500 pl-4 py-3 text-sm">
+          @property --myColor &#123;<br />
+          &nbsp;&nbsp;syntax: "&lt;color&gt;";<br />
+          &nbsp;&nbsp;inherits: true;<br />
+          &nbsp;&nbsp;initial-value: lightgray;<br />
+          &#125;
+        </div>
+
+        <div className="flex px-5 mt-6 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          Try It Yourself
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
       </div>
 
-      <hr className="text-gray-400 my-6" />
-
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Example Template</h1>
-        <p>Here’s a basic layout template using Flexbox for a header-content-footer page structure:</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Template Code</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
+      <div className="mt-6 px-4 py-5 bg-[#E7E9EB] rounded-md">
+        <h2 className="text-2xl mb-4">CSS Example</h2>
+        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 rounded-md">
           {cssCode}
         </pre>
-
         <button
           onClick={copyText}
           className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
@@ -113,34 +104,41 @@ main {
         </button>
       </div>
 
-      <hr className="text-gray-400 my-6" />
+      <div className="my-10 px-5">
+        <h2 className="text-2xl font-semibold mb-2">Benefits of Using @property</h2>
+        <ul className="list-disc list-inside">
+          <li>Type checking for variables</li>
+          <li>Default value fallback</li>
+          <li>Explicit control over inheritance</li>
+        </ul>
+      </div>
 
-      {/* References Section */}
+      <hr className="text-gray-400 my-8" />
+
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with syntax, examples, browser support, and more.
+          Explore more essential CSS concepts from our reference library:
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {refArray.map((path) => (
+          {refArray.map((ref) => (
             <Link
-              to={path.link}
-              key={path.id}
+              to={ref.link}
+              key={ref.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {ref.name}
             </Link>
           ))}
         </div>
 
-        {/* Buttons */}
         <div className="flex justify-between">
-          <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          <div className="flex mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
             Previous
           </div>
-          <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          <div className="flex mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
             Next
             <MdOutlineKeyboardArrowRight className="text-3xl" />
           </div>
@@ -150,4 +148,4 @@ main {
   );
 };
 
-export default CssTemplates;
+export default CssProperty;

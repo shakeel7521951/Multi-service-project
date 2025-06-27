@@ -6,29 +6,22 @@ import {
   MdOutlineKeyboardArrowRight,
 } from "react-icons/md";
 
-const CssTemplates = () => {
+const CssAnimatable = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-/* Simple header-content-footer layout */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+@keyframes mymove {
+  from { background-color: red; }
+  to { background-color: blue; }
 }
 
-header, footer {
-  background-color: #4CAF50;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+.animated-box {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  animation: mymove 3s infinite alternate;
 }
-
-main {
-  flex: 1;
-  padding: 1rem;
-}
-  `;
+`;
 
   const copyText = () => {
     navigator.clipboard.writeText(cssCode).then(() => {
@@ -60,7 +53,7 @@ main {
       {/* Hero Section */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Templates</h1>
+          <h1 className="text-4xl">CSS Animatable</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -71,70 +64,85 @@ main {
         </div>
       </div>
 
-      {/* Intro Section */}
+      {/* Content Section */}
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
         <p className="pb-3">
-          CSS templates are pre-designed layouts that help you structure your website using CSS. These often follow common patterns like header-content-footer, sidebar layouts, grid systems, etc.
+          Some CSS properties are <strong>animatable</strong>, meaning they can be used in animations and transitions.
         </p>
-        <h1 className="text-2xl">Common Template Layouts</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>Header - Content - Footer</li>
-          <li>Sidebar - Content</li>
-          <li>Grid-based Layout</li>
-          <li>Sticky Footer Layout</li>
-          <li>Flexbox Centered Layout</li>
-        </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Try a Template
+        <p className="pb-3">
+          Animatable properties can change gradually from one value to another—like size, numbers, percentages, and colors.
+        </p>
+
+        <h2 className="text-2xl mb-2 mt-5">Browser Support</h2>
+        <p>
+          CSS animation properties are supported in all modern browsers.
+        </p>
+        <p className="mt-2">
+          <strong>Minimum versions that support CSS animations:</strong>
+        </p>
+        <div className="grid grid-cols-5 mt-2 font-semibold">
+          <span>Chrome</span>
+          <span>Firefox</span>
+          <span>Safari</span>
+          <span>IE</span>
+          <span>Opera</span>
+        </div>
+        <div className="grid grid-cols-5 text-center bg-white p-2 rounded-md mt-1">
+          <span>43</span>
+          <span>10</span>
+          <span>16</span>
+          <span>9</span>
+          <span>30</span>
+        </div>
+
+        <div className="flex px-5 w-fit cursor-pointer py-2 mt-6 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          Learn More About CSS Animations
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
+        </div>
+      </div>
+
+      {/* Example Section */}
+      <div className="mt-10">
+        <h2 className="text-3xl mb-3">Example: Animate background-color from red to blue</h2>
+        <p className="mb-4">Use the <code>@keyframes</code> rule to define the animation sequence:</p>
+
+        <div className="bg-[#E7E9EB] px-4 py-5 rounded-md">
+          <h3 className="text-xl font-semibold mb-2">CSS Example</h3>
+          <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 rounded-md">
+            {cssCode}
+          </pre>
+          <button
+            onClick={copyText}
+            className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
+          >
+            {copySuccess ? "Copied!" : "Copy text"}
+            <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
+          </button>
         </div>
       </div>
 
       <hr className="text-gray-400 my-6" />
 
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Example Template</h1>
-        <p>Here’s a basic layout template using Flexbox for a header-content-footer page structure:</p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Template Code</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
-          {cssCode}
-        </pre>
-
-        <button
-          onClick={copyText}
-          className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
-        >
-          {copySuccess ? "Copied!" : "Copy text"}
-          <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
-        </button>
-      </div>
-
-      <hr className="text-gray-400 my-6" />
-
-      {/* References Section */}
+      {/* Reference Navigation Section */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with syntax, examples, browser support, and more.
+          Browse all the key CSS reference topics below:
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {refArray.map((path) => (
+          {refArray.map((item) => (
             <Link
-              to={path.link}
-              key={path.id}
+              to={item.link}
+              key={item.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {item.name}
             </Link>
           ))}
         </div>
 
-        {/* Buttons */}
+        {/* Navigation Buttons */}
         <div className="flex justify-between">
           <div className="flex float-left mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
             <MdKeyboardArrowLeft className="text-3xl" />
@@ -150,4 +158,4 @@ main {
   );
 };
 
-export default CssTemplates;
+export default CssAnimatable;

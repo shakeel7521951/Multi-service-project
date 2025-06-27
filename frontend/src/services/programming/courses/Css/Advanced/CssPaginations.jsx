@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CiBookmark } from "react-icons/ci";
-import { MdKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 
-const Default = () => {
+const CssPaginations = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const cssCode = `
-body {
-  background-color: lightblue;
+.pagination {
+  display: inline-block;
 }
 
-h1 {
-  color: white;
-  text-align: center;
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
 }
-
-p {
-  font-family: verdana;
-  font-size: 20px;
-}
-  `;
+`;
 
   const copyText = () => {
     navigator.clipboard.writeText(cssCode).then(() => {
@@ -48,11 +48,11 @@ p {
   ];
 
   return (
-    <div className="px-4 ">
-      {/* Hero Section */}
+    <div className="px-4">
+      {/* Header */}
       <div className="mt-10">
         <div className="flex justify-between mb-5">
-          <h1 className="text-4xl">CSS Tutorial</h1>
+          <h1 className="text-4xl">CSS Pagination Examples</h1>
           <CiBookmark className="text-4xl text-green-400" />
         </div>
         <div className="flex justify-between">
@@ -63,36 +63,39 @@ p {
         </div>
       </div>
 
+      {/* Content */}
       <div className="px-5 bg-[#D9EEE1] mt-5 py-10 rounded-md">
-        <h1 className="text-2xl">Learn CSS</h1>
-        <ul className="flex flex-col gap-3 my-5">
-          <li>CSS is the language we use to style an HTML document.</li>
-          <li>CSS describes how HTML elements should be displayed.</li>
-          <li>This tutorial will teach you CSS from basic to advanced.</li>
-        </ul>
-        <div className="flex px-5 w-fit cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Start Learning CSS Now
+        <p className="pb-3">
+          Learn how to create responsive and clean pagination using CSS.
+          Pagination is useful for dividing large sets of content across multiple pages.
+        </p>
+
+        <h2 className="text-xl font-semibold mt-6 mb-2">Simple Pagination</h2>
+        <p className="pb-3">Here’s a basic example of pagination links:</p>
+        <div className="my-4">
+          <div className="pagination space-x-2">
+            <a href="#" className="px-3 py-2 border rounded hover:bg-gray-200">«</a>
+            <a href="#" className="px-3 py-2 border rounded hover:bg-gray-200">1</a>
+            <a href="#" className="px-3 py-2 border rounded hover:bg-gray-200">2</a>
+            <a href="#" className="px-3 py-2 border rounded hover:bg-gray-200">3</a>
+            <a href="#" className="px-3 py-2 border rounded hover:bg-gray-200">4</a>
+            <a href="#" className="px-3 py-2 border rounded hover:bg-gray-200">5</a>
+            <a href="#" className="px-3 py-2 border rounded hover:bg-gray-200">»</a>
+          </div>
+        </div>
+
+        <div className="flex px-5 w-fit mt-6 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+          Try It Yourself
           <MdOutlineKeyboardArrowRight className="text-3xl ml-2" />
         </div>
       </div>
 
-      <hr className="text-gray-400 my-6" />
-
-      {/* Example Section */}
-      <div className="flex flex-col gap-4 mb-6">
-        <h1 className="text-4xl">Examples in Each Chapter</h1>
-        <p>This CSS tutorial contains hundreds of CSS examples.</p>
-        <p>
-          With our online editor, you can edit the CSS, and click on a button to view the result.
-        </p>
-      </div>
-
-      <div className="px-3 py-5 bg-[#E7E9EB] rounded-md">
-        <h1 className="text-2xl">CSS Example</h1>
-        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 mt-3 rounded-md">
+      {/* Code Block */}
+      <div className="mt-6 px-4 py-5 bg-[#E7E9EB] rounded-md">
+        <h2 className="text-2xl mb-4">CSS Example</h2>
+        <pre className="bg-white text-black font-mono text-sm whitespace-pre-wrap px-6 py-5 rounded-md">
           {cssCode}
         </pre>
-
         <button
           onClick={copyText}
           className="flex items-center my-3 px-5 py-2 text-xl font-semibold rounded-lg bg-[#03945F] text-white cursor-pointer transition-colors"
@@ -102,35 +105,41 @@ p {
         </button>
       </div>
 
-      <hr className="text-gray-400 my-6" />
+      <hr className="text-gray-400 my-8" />
 
-      {/* References Section */}
+      {/* References */}
       <div className="px-1 my-10">
         <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with
-          syntax, examples, browser support, and more.
+          Brush up on other essential CSS concepts from the references below.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {refArray.map((path) => (
+          {refArray.map((ref) => (
             <Link
-              to={path.link}
-              key={path.id}
+              to={ref.link}
+              key={ref.id}
               className="bg-[#F3F4F6] hover:bg-[#e5e7eb] transition-colors p-3 rounded-md font-semibold"
             >
-              {path.name.trim()}
+              {ref.name}
             </Link>
           ))}
         </div>
 
-        <div className="flex float-right mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
-          Next
-          <MdOutlineKeyboardArrowRight className="text-3xl" />
+        {/* Navigation */}
+        <div className="flex justify-between">
+          <div className="flex mt-6 px-3 cursor-pointer py-2 text-md font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            <MdKeyboardArrowLeft className="text-3xl" />
+            Previous
+          </div>
+          <div className="flex mt-6 px-5 cursor-pointer py-2 text-xl font-semibold rounded-lg text-white bg-[#03945F] items-center">
+            Next
+            <MdOutlineKeyboardArrowRight className="text-3xl" />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Default;
+export default CssPaginations;
