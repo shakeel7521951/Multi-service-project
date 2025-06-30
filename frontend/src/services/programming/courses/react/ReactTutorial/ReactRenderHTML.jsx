@@ -101,9 +101,9 @@ const refArray = [
       <hr className="text-gray-400 my-6" />
 
       <div className="px-1 my-10">
-        <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
+            <h1 className="text-3xl font-semibold pb-4">React References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties
+          At W3Schools you will find complete React references of all properties
           and selectors with syntax, examples, browser support, and more.
         </p>
 

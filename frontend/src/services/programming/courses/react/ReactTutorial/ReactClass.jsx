@@ -124,11 +124,11 @@ const refArray = [
 
       {/* References Section */}
       <div className="px-1 my-10">
-        <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
+            <h1 className="text-3xl font-semibold pb-4">React References</h1>
         <p className="max-w-3xl pb-5">
-          You can explore these references to better understand CSS concepts used alongside React.
+          At W3Schools you will find complete React references of all properties
+          and selectors with syntax, examples, browser support, and more.
         </p>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {refArray.map((path) => (
             <Link

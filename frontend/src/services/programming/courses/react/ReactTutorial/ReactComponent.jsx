@@ -129,9 +129,10 @@ root.render(<Car />);`}
       <hr className="text-gray-400 my-6" />
 
       <div className="px-1 my-10">
-        <h1 className="text-3xl font-semibold pb-4">CSS References</h1>
+           <h1 className="text-3xl font-semibold pb-4">React References</h1>
         <p className="max-w-3xl pb-5">
-          At W3Schools you will find complete CSS references of all properties and selectors with syntax, examples, browser support, and more.
+          At W3Schools you will find complete React references of all properties
+          and selectors with syntax, examples, browser support, and more.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
