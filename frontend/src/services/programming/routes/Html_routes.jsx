@@ -64,6 +64,30 @@ import Html_Quiz  from "../courses/html/Html_Quiz";
 
 import Html_Website_Hosting from "../courses/html/Html_Website_Hosting.jsx";
 import Html_Syllabus from "../courses/html/Html_Syllabus";
+import Html_Study_Plan from "../courses/html/Html_Study_Plan";
+import Html_Interview_Preparation from "../courses/html/Html_Interview_Preparation";
+import Html_Bootcamp from "../courses/html/Html_Bootcamp";
+import Html_Certificate from "../courses/html/Html_Certificate";
+import Html_Summary from "../courses/html/Html_Summary";
+import Html_Accessibility from "../courses/html/Html_Accessibility";
+import Html_Alphabet from "../courses/html/Html_Alphabet";
+import Html_Category from "../courses/html/Html_Category";
+import Html_Browser_Support from "../courses/html/Html_Browser_Support";
+import Html_Attribute_Reference from "../courses/html/Html_Attribute_Reference";
+import Html_Global_Attributes from "../courses/html/Html_Global_Attributes";
+import Html_Event_Attributes from "../courses/html/Html_Event_Attributes";
+import Html_Color_Names from "../courses/html/Html_Color_Names";
+import Html_Canvas_Reference from "../courses/html/Html_Canvas_Reference";
+import Html_Audio_Video from "../courses/html/Html_Audio_Video";
+import Html_Character_Sets from "../courses/html/Html_Character_Sets";
+import Html_Doctype from "../courses/html/Html_Doctype";
+import Html_Url_Encoding from "../courses/html/Html_Url_Encoding";
+import Html_Language_Code from "../courses/html/Html_Language_Code";
+import Html_Country_Codes from "../courses/html/Html_Country_Codes";
+import Html_Status_Messages from "../courses/html/Html_Status_Messages";
+import Html_Request_Methods from "../courses/html/Html_Request_Methods"; 
+import Html__Ems_Conversion from "../courses/html/Html__Ems_Conversion"; 
+import Html__Keyboard_Shortcuts from "../courses/html/Html__Keyboard_Shortcuts"; 
 // import Html_Study_Plan from "../courses/html/Html_Study_Plan";
 
 
@@ -145,6 +169,30 @@ export const htmlRoutes = {
     { path: "quiz", element: <Html_Quiz /> },
     { path: "websitehosting", element: <Html_Website_Hosting /> },
     { path: "syllabus", element: <Html_Syllabus /> },
+    { path: "studyplan", element: <Html_Study_Plan /> },
+    { path: "interviewpreparation", element: <Html_Interview_Preparation /> },
+    { path: "bootcamp", element: <Html_Bootcamp /> },
+    { path: "certificate", element: <Html_Certificate /> },
+    { path: "summary", element: <Html_Summary /> },
+    { path: "accessibility", element: <Html_Accessibility /> },
+    { path: "alphabet", element: <Html_Alphabet /> },
+    { path: "category", element: <Html_Category /> },
+    { path: "browsersupport", element: <Html_Browser_Support /> },
+    { path: "attributereference", element: <Html_Attribute_Reference /> },
+    { path: "globalattributes", element: <Html_Global_Attributes /> },
+    { path: "eventattributes", element: <Html_Event_Attributes /> },
+    { path: "colornames", element: <Html_Color_Names /> },
+    { path: "canvasreference", element: <Html_Canvas_Reference /> },
+    { path: "audiovideo", element: <Html_Audio_Video /> },
+    { path: "charactersets", element: <Html_Character_Sets /> },
+    { path: "doctype", element: <Html_Doctype /> },
+    { path: "urlencoding", element: <Html_Url_Encoding /> },
+    { path: "languagecode", element: <Html_Language_Code /> },
+    { path: "countrycodes", element: <Html_Country_Codes  /> },
+    { path: "statusmessages", element: <Html_Status_Messages  /> },
+    { path: "requestmethods", element: <Html_Request_Methods /> }, 
+    { path: "emsconversion", element: <Html__Ems_Conversion /> }, 
+    { path: "keyboardshortcuts", element: <Html__Keyboard_Shortcuts /> } 
     // { path: "studyplan", element: <Html_Study_Plan /> }
   ],
 };
