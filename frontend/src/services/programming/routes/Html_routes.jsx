@@ -64,7 +64,7 @@ import Html_Quiz  from "../courses/html/Html_Quiz";
 
 import Html_Website_Hosting from "../courses/html/Html_Website_Hosting.jsx";
 import Html_Syllabus from "../courses/html/Html_Syllabus";
-import Html_Study_Plan from "../courses/html/Html_Study_Plan";
+// import Html_Study_Plan from "../courses/html/Html_Study_Plan";
 
 
 
@@ -145,6 +145,6 @@ export const htmlRoutes = {
     { path: "quiz", element: <Html_Quiz /> },
     { path: "websitehosting", element: <Html_Website_Hosting /> },
     { path: "syllabus", element: <Html_Syllabus /> },
-    { path: "studyplan", element: <Html_Study_Plan /> }
+    // { path: "studyplan", element: <Html_Study_Plan /> }
   ],
 };
