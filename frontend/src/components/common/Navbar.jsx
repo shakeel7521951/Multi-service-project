@@ -97,7 +97,7 @@ const Navbar = () => {
   };
 
   const scrollXright = () => {
-    scrollContainerRef.current?.scrollBy({ left: 200, behavior: "smooth" });
+  scrollContainerRef.current?.scrollBy({left:200,behavior:"smooth"})
   };
 
   const scrollXleft = () => {
@@ -165,7 +165,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center space-x-4 text-sm">
           <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-sm flex items-center space-x-2 cursor-pointer">
             <FaUser />
-            <span>Sign In</span>
+            <Link to="/signIn"><span>Sign In</span></Link>
           </button>
         </div>
 
@@ -225,7 +225,7 @@ const Navbar = () => {
             </div>
             <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-sm flex items-center justify-center space-x-2">
               <FaUser />
-              <span>Sign In</span>
+             <Link to="/signIn"> <span>Sign In</span></Link>
             </button>
           </div>
         </div>
@@ -248,7 +248,7 @@ const Navbar = () => {
           </div>
           <div
             ref={scrollContainerRef}
-            className="flex gap-5 overflow-x-auto no-scrollbar px-10"
+            className="flex gap-5 overflow-scroll overflow-x-hidden no-scrollbar px-10"
           >
             {blaKnavArray.map((item) => (
               <ul key={item.id}>
