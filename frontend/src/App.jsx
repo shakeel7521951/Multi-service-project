@@ -9,6 +9,7 @@ import { cssRoutes } from "./services/programming/routes/css_routes";
 import { JsRoutes } from "./services/programming/routes/Js_Routes";
 import Services from "./pages/main/Services";
 import { reactroutes } from "./services/programming/routes/react_routes";
+import { BootstrapRoutes } from "./services/programming/routes/bootstrap_routes";
 
 const MainLayout = () => (
   <>
@@ -28,7 +29,8 @@ const router = createBrowserRouter([
       htmlRoutes,
       cssRoutes,
       JsRoutes,
-      reactroutes
+      reactroutes,
+      BootstrapRoutes,
     ],
   },
 ]);

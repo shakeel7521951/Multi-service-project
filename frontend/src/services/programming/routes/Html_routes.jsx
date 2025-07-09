@@ -88,6 +88,7 @@ import Html_Status_Messages from "../courses/html/Html_Status_Messages";
 import Html_Request_Methods from "../courses/html/Html_Request_Methods"; 
 import Html__Ems_Conversion from "../courses/html/Html__Ems_Conversion"; 
 import Html__Keyboard_Shortcuts from "../courses/html/Html__Keyboard_Shortcuts"; 
+// import Html_Study_Plan from "../courses/html/Html_Study_Plan";
 
 
 
@@ -192,5 +193,6 @@ export const htmlRoutes = {
     { path: "requestmethods", element: <Html_Request_Methods /> }, 
     { path: "emsconversion", element: <Html__Ems_Conversion /> }, 
     { path: "keyboardshortcuts", element: <Html__Keyboard_Shortcuts /> } 
+    // { path: "studyplan", element: <Html_Study_Plan /> }
   ],
 };

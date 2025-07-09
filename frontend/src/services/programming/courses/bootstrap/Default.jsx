@@ -2,8 +2,8 @@ import React from 'react'
 
 const Default = () => {
   return (
-    <div>default</div>
+    <div>Default</div>
   )
 }
 
-export default Default;
+export default Default
