@@ -19,6 +19,34 @@ import Objects from "../courses/js/Objects";
 import Object_Properties from "../courses/js/Object_Properties";
 import Object_Methods from "../courses/js/Object_Methods";
 import Display_Objects from "../courses/js/Display_Objects";
+import Object_Constructors from "../courses/js/Object_Constructors";
+import Events from "../courses/js/Events";
+import Strings from "../courses/js/Strings";
+import String_Methods from "../courses/js/String_Methods";
+import String_Search from "../courses/js/String_Search";
+import String_Reference from "../courses/js/String_Reference";
+import Template_Strings from "../courses/js/Template_Strings";
+import Numbers from "../courses/js/Numbers";
+import BigInt from "../courses/js/BigInt";
+import Number_Methods from "../courses/js/Number_Methods";
+import Number_Properties from "../courses/js/Number_Properties";
+import Number_Reference from "../courses/js/Number_Reference";
+import Arrays from "../courses/js/Arrays";
+import Array_Methods from "../courses/js/Array_Methods";
+import Array_Search from "../courses/js/Array_Search";
+import Array_Sort from "../courses/js/Array_Sort";
+import Array_Iterations from "../courses/js/Array_Iterations";
+import Array_Reference from "../courses/js/Array_Reference";
+import Array_Const from "../courses/js/Array_Const";
+import Date_Objects from "../courses/js/Date_Objects";
+import Date_Formats from "../courses/js/Date_Formats";
+import Get_Date from "../courses/js/Get_Date";
+import Set_Date from "../courses/js/Set_Date";
+import Math from "../courses/js/Math";
+import Math_Reference from "../courses/js/Math_Reference";
+import Random from "../courses/js/Random";
+import Booleans from "../courses/js/Booleans";
+import Comparison from "../courses/js/Comparison";
 const JsLayout = () => (
   <div className="flex">
     <Js_sidebar />
@@ -53,6 +81,33 @@ export const JsRoutes = {
     { path: "objectproperties", element:<Object_Properties/> },
     { path: "objectmethods", element:<Object_Methods/> },
     { path: "displayobjects", element:<Display_Objects/> },
-    { path: "objectconstructors", element:<Object_Constructors/> }
+    { path: "objectconstructors", element:<Object_Constructors/> },
+    { path: "events", element:<Events/> },
+    { path: "strings", element:<Strings/> },
+    { path: "stringmethods", element:<String_Methods/> },
+    { path: "stringsearch", element:<String_Search/> },
+    { path: "stringreference", element:<String_Reference/> },
+    { path: "templatestrings", element:<Template_Strings/> },
+    { path: "numbers", element:<Numbers/> },
+    { path: "bigInt", element:<BigInt/> },
+    { path: "numbermethods", element:<Number_Methods/> },
+    { path: "numberproperties", element:<Number_Properties/> },
+    { path: "numberreference", element:<Number_Reference/> },
+    { path: "arrays", element:<Arrays/> },
+    { path: "arraymethods", element:<Array_Methods/> },
+    { path: "arraysearch", element:<Array_Search/> },
+    { path: "arraysort", element:<Array_Sort/> },
+    { path: "arrayiterations", element:<Array_Iterations/> },
+    { path: "arrayreference", element:<Array_Reference/> },
+    { path: "arrayconst", element:<Array_Const/> },
+    { path: "dateobjects", element:<Date_Objects/> },
+    { path: "dateformats", element:<Date_Formats/> },
+    { path: "getdate", element:<Get_Date/> },
+    { path: "setdate", element:<Set_Date/> },
+    { path: "math", element:<Math/> },
+    { path: "mathreference", element:<Math_Reference/> },
+    { path: "random", element:<Random/> },
+    { path: "booleans", element:<Booleans/> },
+    { path: "comparison", element:<Comparison/> }
   ],
 };

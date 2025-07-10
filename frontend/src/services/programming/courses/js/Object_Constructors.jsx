@@ -46,14 +46,14 @@ new Function() // A new Function object`;
   const [activeTab, setActiveTab] = useState("constructor");
   const [copied, setCopied] = useState({});
 
-//   const handleCopy = (text, key) => {
-//     navigator.clipboard.writeText(text)
-//       .then(() => {
-//         setCopied(prev => ({ ...prev, [key]: true }));
-//         setTimeout(() => setCopied(prev => ({ ...prev, [key]: false }), 1500)
-//       })
-//       .catch(err => console.error("Failed to copy:", err));
-//   };
+  const handleCopy = (text, key) => {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        setCopied(prev => ({ ...prev, [key]: true }));
+        setTimeout(() => setCopied(prev => ({ ...prev, [key]: false })), 1500);
+      })
+      .catch(err => console.error("Failed to copy:", err));
+  };
 
   return (
     <div className="min-h-screen bg-white px-4 py-10">
