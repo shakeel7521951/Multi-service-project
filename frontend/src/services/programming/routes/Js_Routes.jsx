@@ -47,6 +47,33 @@ import Math_Reference from "../courses/js/Math_Reference";
 import Random from "../courses/js/Random";
 import Booleans from "../courses/js/Booleans";
 import Comparison from "../courses/js/Comparison";
+import If_Else from "../courses/js/If_Else.jsx";
+import Switch from "../courses/js/Switch.jsx";
+import For_Loop from "../courses/js/For_Loop.jsx";
+import For_In from "../courses/js/For_In.jsx";
+import For_Of from "../courses/js/For_Of.jsx";
+import While_Loop from "../courses/js/While_Loop.jsx";
+import Break_Continue from "../courses/js/Break_Continue.jsx";
+import Set from "../courses/js/Set.jsx";
+import Set_Methods from "../courses/js/Set_Methods.jsx";
+import Set_Logic from "../courses/js/Set_Logic.jsx";
+import Set_Reference from "../courses/js/Set_Reference.jsx";
+import Maps from "../courses/js/Maps.jsx";
+import Map_Methods from "../courses/js/Map_Methods.jsx";
+import Map_Reference from "../courses/js/Map_Reference.jsx";
+import Typed_Arrays from "../courses/js/Typed_Arrays.jsx";
+import Typed_Array_Methods from "../courses/js/Typed_Array_Methods.jsx";
+import Typed_Array_Reference from "../courses/js/Typed_Array_Reference.jsx";
+import Iterables from "../courses/js/Iterables.jsx";
+import Iterators from "../courses/js/Iterators.jsx";
+import Type_Of from "../courses/js/Type_Of.jsx";
+import To_String from "../courses/js/To_String.jsx";
+import Type_Conversion from "../courses/js/Type_Conversion.jsx";
+import Destructuring from "../courses/js/Destructuring.jsx";
+import Bitwise_Operations from "../courses/js/Bitwise_Operations.jsx";
+import Regular_Expressions from "../courses/js/Regular_Expressions.jsx";
+import Expression_Methods from "../courses/js/Expression_Methods.jsx";
+
 const JsLayout = () => (
   <div className="flex">
     <Js_sidebar />
@@ -108,6 +135,33 @@ export const JsRoutes = {
     { path: "mathreference", element:<Math_Reference/> },
     { path: "random", element:<Random/> },
     { path: "booleans", element:<Booleans/> },
-    { path: "comparison", element:<Comparison/> }
+    { path: "comparison", element:<Comparison/> },
+    { path: "ifelse", element:<If_Else/> },
+    { path: "switch", element:<Switch/> },
+    { path: "forloop", element:<For_Loop/> },
+    { path: "forin", element:<For_In/> },
+    { path: "forof", element:<For_Of/> },
+    { path: "whileloop", element:<While_Loop/> },
+    { path: "breakcontinue", element:<Break_Continue/> },
+    { path: "set", element:<Set/> },
+    { path: "setmethods", element:<Set_Methods/> },
+    { path: "setlogic", element:<Set_Logic/> },
+    { path: "setreference", element:<Set_Reference/> },
+    { path: "maps", element:<Maps/> },
+    { path: "mapmethods", element:<Map_Methods/> },
+    { path: "mapreference", element:<Map_Reference/> },
+    { path: "typedarrays", element:<Typed_Arrays/> },
+    { path: "typedarraymethods", element:<Typed_Array_Methods/> },
+    { path: "typedarrayreference", element:<Typed_Array_Reference/> },
+    { path: "iterables", element:<Iterables/> },
+    { path: "iterators", element:<Iterators/> },
+    { path: "typeof", element:<Type_Of/> },
+    { path: "tostring", element:<To_String/> },
+    { path: "typeconversion", element:<Type_Conversion/> },
+    { path: "destructuring", element:<Destructuring/> },
+    { path: "bitwiseoperations", element:<Bitwise_Operations/> },
+    { path: "regularexpressions", element:<Regular_Expressions/> },
+    { path: "expressionmethods", element:<Expression_Methods/> }
+    
   ],
 };
