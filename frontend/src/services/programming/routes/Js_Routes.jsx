@@ -73,6 +73,22 @@ import Destructuring from "../courses/js/Destructuring.jsx";
 import Bitwise_Operations from "../courses/js/Bitwise_Operations.jsx";
 import Regular_Expressions from "../courses/js/Regular_Expressions.jsx";
 import Expression_Methods from "../courses/js/Expression_Methods.jsx";
+import Precedence from "../courses/js/Precedence.jsx";
+import Js_Errors from "../courses/js/Js_Errors.jsx";
+import Js_Scope from "../courses/js/Js_Scope.jsx";
+import Js_Hoisting from "../courses/js/Js_Hoisting.jsx";
+import Use_Strict from "../courses/js/Use_Strict.jsx";
+import Js_Keyword from "../courses/js/Js_Keyword.jsx";
+import Arrow_Function from "../courses/js/Arrow_Function.jsx";
+import Js_Classes from "../courses/js/Js_Classes.jsx";
+import Js_Modules from "../courses/js/Js_Modules.jsx";
+import Js_Json from "../courses/js/Js_Json.jsx";
+import Js_Debugging from "../courses/js/Js_Debugging";
+import StyleGuide from "../courses/js/StyleGuide";
+import Best_Practices from "../courses/js/Best_Practices";
+import Common_Mistakes from "../courses/js/Common_Mistakes";
+import Performance from "../courses/js/Performance";
+import Reserved_Words from "../courses/js/Reserved_Words.jsx";
 
 const JsLayout = () => (
   <div className="flex">
@@ -161,7 +177,23 @@ export const JsRoutes = {
     { path: "destructuring", element:<Destructuring/> },
     { path: "bitwiseoperations", element:<Bitwise_Operations/> },
     { path: "regularexpressions", element:<Regular_Expressions/> },
-    { path: "expressionmethods", element:<Expression_Methods/> }
+    { path: "expressionmethods", element:<Expression_Methods/> },
+    { path: "precedence", element:<Precedence/> },
+    { path: "jserrors", element:<Js_Errors/> },
+    { path: "jsscope", element:<Js_Scope/> },
+    { path: "jshoisting", element:<Js_Hoisting/> },
+    { path: "usestrict", element:<Use_Strict/> },
+    { path: "jskeyword", element:<Js_Keyword/> },
+    { path: "arrowfunction", element:<Arrow_Function/> },
+    { path: "jsclasses", element:<Js_Classes/> },
+    { path: "jsodules", element:<Js_Modules/> },
+    { path: "jsjson", element:<Js_Json/> },
+    { path: "jsdebugging", element:<Js_Debugging/> },
+    { path: "styleguide", element:<StyleGuide/> },
+    { path: "bestpractices", element:<Best_Practices/> },
+    { path: "commonmistakes", element:<Common_Mistakes/> },
+    { path: "performance", element:<Performance/> },
+    { path: "reservedwords", element:<Reserved_Words/> }
     
   ],
 };
