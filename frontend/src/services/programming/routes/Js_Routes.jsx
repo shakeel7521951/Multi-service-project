@@ -95,6 +95,21 @@ import Object_Method from "../courses/js/Object_Method.jsx";
 import Object_Propertie from "../courses/js/Object_Propertie.jsx";
 import Object_Get_Set from "../courses/js/Object_Get_Set.jsx";
 import Object_Protection from "../courses/js/Object_Protection.jsx";
+import Function_Definitions from "../courses/js/Function_Definitions.jsx";
+import Function_Parameters from "../courses/js/Function_Parameters.jsx";
+import Function_Invocation from "../courses/js/Function_Invocation.jsx";
+import Function_Call from "../courses/js/Function_Call.jsx";
+import Function_Apply from "../courses/js/Function_Apply.jsx";
+import Function_Bind from "../courses/js/Function_Bind.jsx";
+import Function_Closures from "../courses/js/Function_Closures.jsx";
+import Classes_Inrto from "../courses/js/Classes_Inrto.jsx";
+import Class_Inheritance from "../courses/js/Class_Inheritance.jsx";
+import Class_Static_Methods from "../courses/js/Class_Static_Methods.jsx";
+import Callbacks from "../courses/js/Callbacks.jsx";
+import Asynchronous from "../courses/js/Asynchronous.jsx";
+import Promises from "../courses/js/Promises.jsx";
+import Async_Await from "../courses/js/Async_Await.jsx";
+import Api from "../courses/js/Api.jsx";
 
 const JsLayout = () => (
   <div className="flex">
@@ -205,7 +220,22 @@ export const JsRoutes = {
     { path: "objectmethod", element:<Object_Method/> },
     { path: "objectpropertie", element:<Object_Propertie/> },
     { path: "objectgetset", element:<Object_Get_Set/> },
-    { path: "objectprotection", element:<Object_Protection/> }
+    { path: "objectprotection", element:<Object_Protection/> },
+    { path: "functiondefinitions", element:<Function_Definitions/> },
+    { path: "functionparameters", element:<Function_Parameters/> },
+    { path: "functioninvocation", element:<Function_Invocation/> },
+    { path: "functioncall", element:<Function_Call/> },
+    { path: "functionapply", element:<Function_Apply/> },
+    { path: "functionbind", element:<Function_Bind/> },
+    { path: "functionclosures", element:<Function_Closures/> },
+    { path: "classesinrto", element:<Classes_Inrto/> },
+    { path: "classinheritance", element:<Class_Inheritance/> },
+    { path: "classstaticmethods", element:<Class_Static_Methods/> },
+    { path: "callbacks", element:<Callbacks/> },
+    { path: "asynchronous", element:<Asynchronous/> },
+    { path: "promises", element:<Promises/> },
+    { path: "asyncawait", element:<Async_Await/> },
+    { path: "api", element:<Api/> }
     
   ],
 };

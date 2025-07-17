@@ -113,7 +113,7 @@ const Html_sidebar = () => {
             {TutorialArray.filter((link) => link.category === category).map(
               (link) => (
                 <li className="hover:bg-[#CCCCCC] px-3 w-full" key={link.id}>
-                  <Link to={link.link ? `/css/${link.link}` : "/css"}>
+                  <Link to={link.link ? `/html/${link.link}` : "/html"}>
                     {link.topic}
                   </Link>
                 </li>
