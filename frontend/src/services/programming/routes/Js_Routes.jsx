@@ -89,6 +89,12 @@ import Best_Practices from "../courses/js/Best_Practices";
 import Common_Mistakes from "../courses/js/Common_Mistakes";
 import Performance from "../courses/js/Performance";
 import Reserved_Words from "../courses/js/Reserved_Words.jsx";
+import Object_Definition from "../courses/js/Object_Definition.jsx";
+import Prototypes from "../courses/js/Prototypes.jsx";
+import Object_Method from "../courses/js/Object_Method.jsx";
+import Object_Propertie from "../courses/js/Object_Propertie.jsx";
+import Object_Get_Set from "../courses/js/Object_Get_Set.jsx";
+import Object_Protection from "../courses/js/Object_Protection.jsx";
 
 const JsLayout = () => (
   <div className="flex">
@@ -193,7 +199,13 @@ export const JsRoutes = {
     { path: "bestpractices", element:<Best_Practices/> },
     { path: "commonmistakes", element:<Common_Mistakes/> },
     { path: "performance", element:<Performance/> },
-    { path: "reservedwords", element:<Reserved_Words/> }
+    { path: "reservedwords", element:<Reserved_Words/> },
+    { path: "objectdefinition", element:<Object_Definition/> },
+    { path: "prototypes", element:<Prototypes/> },
+    { path: "objectmethod", element:<Object_Method/> },
+    { path: "objectpropertie", element:<Object_Propertie/> },
+    { path: "objectgetset", element:<Object_Get_Set/> },
+    { path: "objectprotection", element:<Object_Protection/> }
     
   ],
 };
