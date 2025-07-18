@@ -120,6 +120,10 @@ import Js_Window from "../courses/js/Js_Window.jsx";
 import Js_Screen from "../courses/js/Js_Screen.jsx";
 import Window_Location from "../courses/js/Window_Location.jsx";
 import Window_History from "../courses/js/Window_History.jsx";
+import Window_Navigator from "../courses/js/Window_Navigator.jsx";
+import Popup_Boxes from "../courses/js/Popup_Boxes.jsx";
+import Timing_Events from "../courses/js/Timing_Events.jsx";
+import JavaScript_Cookies from "../courses/js/JavaScript_Cookies.jsx";
 
 const JsLayout = () => (
   <div className="flex">
@@ -255,7 +259,11 @@ export const JsRoutes = {
     { path: "jswindow", element:<Js_Window/> },
     { path: "jsscreen", element:<Js_Screen/> },
     { path: "windowlocation", element:<Window_Location/> },
-    { path: "windowhistory", element:<Window_History/>}
+    { path: "windowhistory", element:<Window_History/>},
+    { path: "windownavigator", element:<Window_Navigator/>},
+    { path: "popupboxes", element:<Popup_Boxes/>},
+    { path: "timingevents", element:<Timing_Events/>},
+    { path: "javascriptcookies", element:<JavaScript_Cookies/>}
     
   ],
 };
