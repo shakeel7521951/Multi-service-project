@@ -109,7 +109,17 @@ import Callbacks from "../courses/js/Callbacks.jsx";
 import Asynchronous from "../courses/js/Asynchronous.jsx";
 import Promises from "../courses/js/Promises.jsx";
 import Async_Await from "../courses/js/Async_Await.jsx";
-import Api from "../courses/js/Api.jsx";
+import Api_Intro from "../courses/js/Api_Intro.jsx";
+import Validation_Api from "../courses/js/Validation_Api.jsx";
+import History_Api from "../courses/js/History_Api.jsx";
+import Storage_Api from "../courses/js/Storage_Api.jsx";
+import Workers_Api from "../courses/js/Workers_Api.jsx";
+import Fetch_Api from "../courses/js/Fetch_Api.jsx";
+import Geolocation_Api from "../courses/js/Geolocation_Api.jsx";
+import Js_Window from "../courses/js/Js_Window.jsx";
+import Js_Screen from "../courses/js/Js_Screen.jsx";
+import Window_Location from "../courses/js/Window_Location.jsx";
+import Window_History from "../courses/js/Window_History.jsx";
 
 const JsLayout = () => (
   <div className="flex">
@@ -235,7 +245,17 @@ export const JsRoutes = {
     { path: "asynchronous", element:<Asynchronous/> },
     { path: "promises", element:<Promises/> },
     { path: "asyncawait", element:<Async_Await/> },
-    { path: "api", element:<Api/> }
+    { path: "apiintro", element:<Api_Intro/> },
+    { path: "validationapi", element:<Validation_Api/> },
+    { path: "historyapi", element:<History_Api/> },
+    { path: "storageapi", element:<Storage_Api/> },
+    { path: "workersapi", element:<Workers_Api/> },
+    { path: "fetchapi", element:<Fetch_Api/> },
+    { path: "geolocationapi", element:<Geolocation_Api/> },
+    { path: "jswindow", element:<Js_Window/> },
+    { path: "jsscreen", element:<Js_Screen/> },
+    { path: "windowlocation", element:<Window_Location/> },
+    { path: "windowhistory", element:<Window_History/>}
     
   ],
 };
