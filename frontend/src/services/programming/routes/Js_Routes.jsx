@@ -127,6 +127,12 @@ import Geolocation_Api from "../courses/js/Geolocation_Api.jsx";
 import Js_Versions from "../courses/js/Js_Versions.jsx";
 import Js_Es_Five from "../courses/js/Js_Es_Five.jsx";
 import Js_Es_Six from "../courses/js/Js_Es_Six.jsx";
+import Ecma_Script from "../courses/js/Ecma_Script.jsx";
+import Ecmas_Scripts from "../courses/js/Ecmas_Scriptsjsx";
+import Internet_Explorer from "../courses/js/Internet_Explorer.jsx";
+import JavaScript_History from "../courses/js/JavaScript_History.jsx";
+
+
 
 
 
@@ -271,7 +277,12 @@ export const JsRoutes = {
     { path: "geolocationapi", element: <Geolocation_Api /> },
     { path: "jsversions", element: <Js_Versions /> },
     { path: "jsesfive", element: <Js_Es_Five /> },
-    { path: "jsessix", element: <Js_Es_Six /> }
+    { path: "jsessix", element: <Js_Es_Six /> },
+    { path: "ecmascript", element: <Ecma_Script /> },
+    { path: "ecmascript", element: <Ecmas_Scripts /> },
+    { path: "internetexplorer", element: <Internet_Explorer /> },
+    { path: "javascripthistory", element: <JavaScript_History /> }
+    
 
 
 
