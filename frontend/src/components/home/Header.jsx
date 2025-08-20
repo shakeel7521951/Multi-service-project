@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="bg-[#282A35] text-center py-20 md:py-24 text-white px-4">
-     <h1 className="text-4xl md:text-6xl font-extrabold tracking-wide">
+     <h1 className="text-3xl md:text-6xl font-extrabold tracking-wide">
         Learn to Code
       </h1>
-      <p className="text-[#FFF4A0] text-xl md:text-2xl mt-5 font-medium">
+      <p className="text-[#FFF4A0]  text-2xl mt-5 font-medium">
         With the world's largest web developer site.
       </p>
 
@@ -27,7 +27,7 @@ const Header = () => {
       <div className="mt-6">
         <Link
           to="#"
-          className="underline hover:text-[#FFF4A3] text-lg md:text-xl tracking-wide transition"
+          className="underline hover:text-[#FFF4A3]  md:text-xl tracking-wide transition"
         >
           Not Sure Where To Begin?
         </Link>
