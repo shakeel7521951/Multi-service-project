@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import Default from "../courses/js/Default";
 import Js_sidebar from "../side_bars/Js_sidebar";
 import JsIntro from '../courses/js/JsIntro'
@@ -128,18 +128,12 @@ import Js_Versions from "../courses/js/Js_Versions.jsx";
 import Js_Es_Five from "../courses/js/Js_Es_Five.jsx";
 import Js_Es_Six from "../courses/js/Js_Es_Six.jsx";
 import Ecma_Script from "../courses/js/Ecma_Script.jsx";
-import Ecmas_Scripts from "../courses/js/Ecmas_Scriptsjsx";
+// import Ecmas_Scripts from "../courses/js/Ecmas_Scriptsjsx";
 import Internet_Explorer from "../courses/js/Internet_Explorer.jsx";
-import JavaScript_History from "../courses/js/JavaScript_History.jsx";
-
-
-
-
-
-const JsLayout = () => (
-import JsWhere from "./JsWhere";
-import JsOutput from "../courses/js/JsOutput";
-import JsStatement from "../courses/js/JsStatement";
+// import JavaScript_History from "../courses/js/JavaScript_History.jsx";
+// import JsWhere from "./JsWhere";
+// import JsOutput from "../courses/js/JsOutput";
+// import JsStatement from "../courses/js/JsStatement";
 export const JsLayout = () => (
   <div className="flex">
     <Js_sidebar />
@@ -282,17 +276,17 @@ export const JsRoutes = {
     { path: "jsversions", element: <Js_Versions /> },
     { path: "jsesfive", element: <Js_Es_Five /> },
     { path: "jsessix", element: <Js_Es_Six /> },
-    { path: "ecmascript", element: <Ecma_Script /> },
-    { path: "ecmascript", element: <Ecmas_Scripts /> },
+    // { path: "ecmascript", element: <Ecma_Script /> },
+    // { path: "ecmascript", element: <Ecmas_Scripts /> },
     { path: "internetexplorer", element: <Internet_Explorer /> },
-    { path: "javascripthistory", element: <JavaScript_History /> }
+    // { path: "javascripthistory", element: <JavaScript_History /> },
     
 
 
 
-    { path: "/js/js_intro", element:<JsIntro/> },
-    { path: "/js/js_whereto", element:<JsWhere/> },
-    { path: "/js/js_output", element:<JsOutput/> },
-    { path: "/js/js_statements", element:<JsStatement/> },
+    // { path: "/js/js_intro", element:<JsIntro/> },
+    // { path: "/js/js_whereto", element:<JsWhere/> },
+    // { path: "/js/js_output", element:<JsOutput/> },
+    // { path: "/js/js_statements", element:<JsStatement/> },
   ],
 };
