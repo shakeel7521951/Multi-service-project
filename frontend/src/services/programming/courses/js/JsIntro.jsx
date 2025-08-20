@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { MdKeyboardArrowRight, MdOutlineKeyboardArrowLeft } from 'react-icons/md'
+import { FaChevronRight } from "react-icons/fa";
 
 export default function jsIntro() {
     const data = `<p id="demo">Original Text</p>
@@ -39,7 +40,7 @@ export default function jsIntro() {
 
     `
     return (
-        <div className=''>
+        <div className='max-w-5xl mx-auto'>
             <h1 className='px-4 text-2xl sm:text-4xl'>JavaScript Introduction</h1>
             <div className='flex justify-between items-center p-3 mt-2 text-white'>
                 <button className='py-2 px-2 text-md sm:text-xl flex items-center  cursor-pointer rounded-md bg-[#059862]'>

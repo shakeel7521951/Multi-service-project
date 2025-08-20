@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { FaChevronRight } from "react-icons/fa";
 const Default = () => {
   const [text, setText] = useState("console.log('Hello I'm JavaScript')")
   const [copied, setCopied] = useState(false)
@@ -16,7 +17,7 @@ const Default = () => {
   };
 
   return (
-    <div className='w-full'>
+    <div className='max-w-5xl mx-auto'>
       <h1 className='px-4 text-2xl sm:text-4xl'>JavaScript Tutorial</h1>
       <div className='flex justify-between items-center p-3 mt-2 text-white'>
         <button className='py-2 px-2 text-md sm:text-xl flex items-center  cursor-pointer rounded-md bg-[#059862]'>
@@ -143,7 +144,12 @@ const Default = () => {
         <p>You'll find easy-to-follow examples for properties, methods, and events all regularly updated to match the latest web standards.</p>
         <p>Whether you're a beginner or brushing up your skills, this reference is your go-to guide for learning and lookup!</p>        
       </div>
-
+<div className="flex justify-end mt-10">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white px-5 py-2 rounded-md hover:bg-[#03945f] font-medium transition cursor-pointer">
+            Next
+            <FaChevronRight />
+          </button>
+        </div>
     </div>
   )
 }

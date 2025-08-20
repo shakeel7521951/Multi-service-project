@@ -5,9 +5,14 @@ const Html_Paragraphs = () => {
   const [copiedCode, setCopiedCode] = useState(null);
 
   const handleCopy = (code) => {
-    navigator.clipboard.writeText(code);
-    setCopiedCode(code);
-    setTimeout(() => setCopiedCode(null), 2000);
+    navigator.clipboard.writeText(code)
+      .then(() => {
+        setCopiedCode(code);
+        setTimeout(() => setCopiedCode(null), 2000);
+      })
+      .catch(() => {
+        alert("Failed to copy. Please copy manually.");
+      });
   };
 
   const paragraphExample = `<p>This is a paragraph.</p>
@@ -54,11 +59,19 @@ ignores it.
         <h1 className="text-4xl font-bold mb-8 text-gray-900">HTML Paragraphs & Related Elements</h1>
 
         <div className="flex justify-between mb-10">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white px-5 py-2 rounded-md hover:bg-[#03945f] font-medium transition cursor-pointer">
+          <button
+            type="button"
+            aria-label="Previous"
+            className="flex items-center gap-2 bg-[#04AA6D] text-white px-5 py-2 rounded-md hover:bg-[#03945f] font-medium transition cursor-pointer"
+          >
             <FaChevronLeft />
             Previous
           </button>
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white px-5 py-2 rounded-md hover:bg-[#03945f] font-medium transition cursor-pointer">
+          <button
+            type="button"
+            aria-label="Next"
+            className="flex items-center gap-2 bg-[#04AA6D] text-white px-5 py-2 rounded-md hover:bg-[#03945f] font-medium transition cursor-pointer"
+          >
             Next
             <FaChevronRight />
           </button>
@@ -85,6 +98,7 @@ ignores it.
               <code>{paragraphExample}</code>
             </pre>
             <button
+              type="button"
               onClick={() => handleCopy(paragraphExample)}
               className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold rounded py-2 px-10 mt-3 transition cursor-pointer"
             >
@@ -92,7 +106,7 @@ ignores it.
             </button>
           </div>
 
-          {/* HTML Display */}
+          {/* HTML Display Behavior */}
           <h3 className="text-2xl font-semibold mb-2">HTML Display Behavior</h3>
           <p className="mb-4">
             You cannot be sure how HTML will be displayed across different screen sizes or window resizing.
@@ -108,6 +122,7 @@ ignores it.
               <code>{paragraphDisplayExample}</code>
             </pre>
             <button
+              type="button"
               onClick={() => handleCopy(paragraphDisplayExample)}
               className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold rounded py-2 px-10 mt-3 transition cursor-pointer"
             >
@@ -131,6 +146,7 @@ ignores it.
               <code>{hrExample}</code>
             </pre>
             <button
+              type="button"
               onClick={() => handleCopy(hrExample)}
               className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold rounded py-2 px-10 mt-3 transition cursor-pointer"
             >
@@ -154,6 +170,7 @@ ignores it.
               <code>{preExample}</code>
             </pre>
             <button
+              type="button"
               onClick={() => handleCopy(preExample)}
               className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold rounded py-2 px-10 mt-3 transition cursor-pointer"
             >
@@ -174,15 +191,14 @@ ignores it.
               <code>{brExample}</code>
             </pre>
             <button
+              type="button"
               onClick={() => handleCopy(brExample)}
               className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold rounded py-2 px-10 mt-3 transition cursor-pointer"
             >
               {copiedCode === brExample ? "Copied!" : "Copy Code"}
             </button>
           </div>
-
         </section>
-
         <div className="flex justify-end mt-10">
           <button className="flex items-center gap-2 bg-[#04AA6D] text-white px-5 py-2 rounded-md hover:bg-[#03945f] font-medium transition cursor-pointer">
             Next
