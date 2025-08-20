@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#282A35] text-white text-sm pb-5">
       {/* Top Navigation Bar */}
-     <div className="flex flex-wrap justify-center mt-4 gap-6 sm:gap-10 md:gap-12 py-8 border-b border-gray-700 text-[#FFF48A] font-semibold text-xs md:text-sm px-4">
+     <div className="flex flex-wrap justify-center gap-6 sm:gap-10 md:gap-12 py-8 border-b border-gray-700 text-[#FFF48A] font-semibold text-xs md:text-sm px-4">
         {['PLUS', 'SPACES', 'GET CERTIFIED', 'FOR TEACHERS', 'FOR BUSINESS', 'CONTACT US'].map((item, i) => (
           <span key={i} className="cursor-pointer hover:underline whitespace-nowrap">{item}</span>
         ))}
