@@ -22,7 +22,7 @@ export default function jsIntro() {
         }
     };
 
-const bulb = `
+    const bulb = `
 <img id="bulb" src="bulb-off.jpg" alt="Light Bulb">
 <button onclick="turnOn()">Turn On</button>
 <button onclick="turnOff()">Turn Off</button>
@@ -82,8 +82,8 @@ const bulb = `
                 <div className=' rounded-md bg-[#E7E9EB] p-4'>
                     <div className=' p-2 bg-white mb-2'>
                         <h1 className=' text-2xl font-semibold mb-2'>My Code:</h1>
-                        <div className=' p-2 rounded-md border w-full '>
-                            <span>{data}</span>
+                        <div className=' p-2 rounded-md border w-full break-all '>
+                            <span className=' text-wrap'>{data}</span>
                         </div>
                     </div>
                     <button className=' px-3 flex justify-center items-center p-2 rounded-md bg-[#059862]'>
@@ -104,13 +104,39 @@ const bulb = `
                 <p>JavaScript can be used to dynamically change attribute values of HTML elements.</p>
                 <p>
                     For example, you can change the src (source) attribute of an "img" tag to turn a light bulb on or off.</p>
-                <div className='w-full rounded-md bg-[#E7E9EB] '>
+                <div className='w-full rounded-md p-3 bg-[#ced1d4] '>
                     <div className=' p-2 bg-white mb-2'>
                         <h1 className=' text-2xl font-semibold mb-2'>Hint:</h1>
-                        <div className=' p-2 rounded-md border w-full '>
+                        <div className=' p-2 rounded-md border w-full text-sm sm:text-base break-all '>
                             <span>{bulb}</span>
                         </div>
                     </div>
+                </div>
+            </div>
+
+
+            <div className=' w-full mt-4 px-3'>
+                <h1 className='text-xl mb-3 font-semibold sm:text-2xl'>Modern JavaScript Can Change HTML Styles (Using Classes)</h1>
+                <p>Instead of directly modifying an element’s inline style, it's now recommended to use classList to apply or remove predefined CSS classes. This keeps styling separate from logic, improves maintainability, and follows best practices.</p>
+
+                <div className='w-full rounded-md p-3 bg-[#ced1d4] '>
+                    <div className=' p-2 bg-white mb-2'>
+                        <h1 className=' text-2xl font-semibold mb-2'>Updated Example:</h1>
+                        <div className='p-2 rounded-md border w-full text-sm sm:text-base break-all'>
+                            <span className=' text-wrap'><code className=' text-wrap'>document.querySelector("#demo").classList.toggle("large-font");</code></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className=' mt-4 px-3 p-4 bg-[#FFF4A3] rounded-md'>
+                <h1 className='mb-4 text-xl sm:text-2xl font-semibold'>Did You Know?</h1>
+                <div className=' flex flex-col gap-3'>
+                    <p>Despite the similar names, JavaScript and Java are entirely different languages in both purpose and design.</p>
+                    <p>JavaScript was created by Brendan Eich in 1995 and later standardized as ECMAScript by ECMA International in 1997.</p>
+                    <p>The official specification is called ECMA-262, and ECMAScript is the formal name of the language.</p>
+                    <p>JavaScript powers interactive web pages, while Java is a general-purpose programming language used in many environments, including mobile and enterprise apps.</p>
                 </div>
             </div>
         </div>
