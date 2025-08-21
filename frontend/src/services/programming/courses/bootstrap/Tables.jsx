@@ -82,10 +82,10 @@ const Tables = () => {
         {/* Navigation Top */}
         <div className="flex justify-between">
           <Link
-            to="/bootstrap/colors"
+            to="/bootstrap/colors-backgrounds"
             className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
           >
-            <FaChevronLeft /> Colors
+            <FaChevronLeft/> Colors & Backgrounds
           </Link>
 
           <Link
@@ -185,10 +185,10 @@ const Tables = () => {
         {/* Navigation Bottom */}
         <div className="flex justify-between">
           <Link
-            to="/bootstrap/colors"
+            to="/bootstrap/colors-backgrounds"
             className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
           >
-            <FaChevronLeft /> Colors
+            <FaChevronLeft/> Colors & Backgrounds
           </Link>
 
           <Link

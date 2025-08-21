@@ -59,10 +59,10 @@ const Introduction = () => {
         {/* Navigation Top */}
         <div className="flex justify-between">
           <Link
-            to="/"
+            to="/bootstrap"
             className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
           >
-            <FaChevronLeft /> Home
+            <FaChevronLeft /> Bootstrap
           </Link>
 
           <Link
@@ -188,10 +188,10 @@ const Introduction = () => {
         {/* Bottom Navigation */}
         <div className="flex justify-between">
           <Link
-            to="/"
+            to="/bootstrap"
             className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
           >
-            <FaChevronLeft /> Home
+            <FaChevronLeft /> Bootstrap
           </Link>
 
           <Link
