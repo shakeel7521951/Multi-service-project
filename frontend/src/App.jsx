@@ -11,6 +11,7 @@ import Services from "./pages/main/Services";
 import { reactroutes } from "./services/programming/routes/react_routes";
 import { BootstrapRoutes } from "./services/programming/routes/bootstrap_routes";
 import SignIn from "./components/common/SignIn";
+import { TailwindRoutes } from "./services/programming/routes/Tailwind_routes";
 
 const MainLayout = () => (
   <>
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       JsRoutes,
       reactroutes,
       BootstrapRoutes,
+      TailwindRoutes,
     ],
   },
 ]);
