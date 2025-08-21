@@ -15,7 +15,7 @@ const TutorialArray = [
   { topic: "Transforms & Transitions", path: "transforms-transitions" },
   { topic: "Customization", path: "customization" },
   { topic: "Components", path: "components" },
-  { topic: "Forms", path: "/forms" },
+  { topic: "Forms", path: "forms" },
   { topic: "Navigation", path: "navigation" },
   { topic: "Cards & Grids", path: "cards-grids" },
   { topic: "Hero Sections", path: "hero-sections" },
