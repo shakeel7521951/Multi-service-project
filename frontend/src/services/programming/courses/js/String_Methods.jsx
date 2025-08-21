@@ -246,14 +246,14 @@ text.split("|")    // Split on pipe`,
   };
 
   const [activeMethod, setActiveMethod] = useState("length");
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState({});
 
-  const handleCopy = (code) => {
+  const handleCopy = (text, key) => {
     navigator.clipboard
-      .writeText(code)
+      .writeText(text)
       .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
+        setCopied(prev => ({ ...prev, [key]: true }));
+        setTimeout(() => setCopied(prev => ({ ...prev, [key]: false })), 1500);
       })
       .catch((err) => {
         console.error("Failed to copy: ", err);
@@ -266,57 +266,62 @@ text.split("|")    // Split on pipe`,
 
     return (
       <>
-        <h3 className="text-2xl font-semibold mb-4">{methods.find(m => m.toLowerCase().includes(activeMethod))}</h3>
+        <h3 className="text-2xl font-semibold mb-4 text-gray-800">{methods.find(m => m.toLowerCase().includes(activeMethod))}</h3>
         
-        <p className="mb-4">{methodData.description}</p>
+        <p className="mb-4 text-gray-700">{methodData.description}</p>
         
-        <pre className="bg-gray-100 p-4 rounded-md mb-4 relative">
+        <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto relative shadow-sm">
           <code>{methodData.code}</code>
           <button
-            onClick={() => handleCopy(methodData.code)}
-            className="absolute top-2 right-2 p-1 rounded bg-gray-200 hover:bg-gray-300"
+            onClick={() => handleCopy(methodData.code, activeMethod)}
+            className="absolute top-3 right-3 p-2 text-gray-500 hover:text-gray-700 bg-gray-100 rounded-md transition"
             title="Copy code"
           >
-            <FaCopy className="text-gray-700" />
+            <FaCopy />
           </button>
+          {copied[activeMethod] && (
+            <span className="absolute top-3 right-14 bg-gray-800 text-white text-xs px-2 py-1 rounded-md">
+              Copied!
+            </span>
+          )}
         </pre>
 
         {methodData.note && (
-          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
-            <p className="font-semibold">Note:</p>
-            <pre className="whitespace-pre-wrap">{methodData.note}</pre>
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4 rounded-lg">
+            <p className="font-semibold text-yellow-800">Note:</p>
+            <pre className="whitespace-pre-wrap text-yellow-700 mt-1">{methodData.note}</pre>
           </div>
         )}
 
         {methodData.warning && (
-          <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-4">
-            <p className="font-semibold">Warning:</p>
-            <p>{methodData.warning}</p>
+          <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-4 rounded-lg">
+            <p className="font-semibold text-red-800">Warning:</p>
+            <p className="text-red-700 mt-1">{methodData.warning}</p>
           </div>
         )}
 
         {methodData.syntax && (
           <div className="mb-4">
-            <h4 className="font-semibold mb-2">Syntax</h4>
-            <pre className="bg-gray-100 p-2 rounded">{methodData.syntax}</pre>
+            <h4 className="font-semibold mb-2 text-gray-800">Syntax</h4>
+            <pre className="bg-gray-100 p-3 rounded-lg text-sm font-mono">{methodData.syntax}</pre>
           </div>
         )}
 
         {methodData.parameters && (
           <div className="mb-4">
-            <h4 className="font-semibold mb-2">Parameters</h4>
-            <table className="min-w-full border">
+            <h4 className="font-semibold mb-2 text-gray-800">Parameters</h4>
+            <table className="min-w-full border border-gray-300 rounded-lg overflow-hidden">
               <thead>
                 <tr className="bg-gray-100">
-                  <th className="border p-2">Parameter</th>
-                  <th className="border p-2">Description</th>
+                  <th className="border border-gray-300 p-2 text-left">Parameter</th>
+                  <th className="border border-gray-300 p-2 text-left">Description</th>
                 </tr>
               </thead>
               <tbody>
                 {methodData.parameters.map((param, idx) => (
-                  <tr key={idx}>
-                    <td className="border p-2 font-mono">{param.name}</td>
-                    <td className="border p-2">{param.description}</td>
+                  <tr key={idx} className="even:bg-gray-50">
+                    <td className="border border-gray-300 p-2 font-mono">{param.name}</td>
+                    <td className="border border-gray-300 p-2">{param.description}</td>
                   </tr>
                 ))}
               </tbody>
@@ -326,18 +331,18 @@ text.split("|")    // Split on pipe`,
 
         {methodData.returnValue && (
           <div className="mb-4">
-            <h4 className="font-semibold mb-2">Return Value</h4>
-            <table className="min-w-full border">
+            <h4 className="font-semibold mb-2 text-gray-800">Return Value</h4>
+            <table className="min-w-full border border-gray-300 rounded-lg overflow-hidden">
               <thead>
                 <tr className="bg-gray-100">
-                  <th className="border p-2">Type</th>
-                  <th className="border p-2">Description</th>
+                  <th className="border border-gray-300 p-2 text-left">Type</th>
+                  <th className="border border-gray-300 p-2 text-left">Description</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="border p-2 font-mono">{methodData.returnValue.type}</td>
-                  <td className="border p-2">{methodData.returnValue.description}</td>
+                <tr className="even:bg-gray-50">
+                  <td className="border border-gray-300 p-2 font-mono">{methodData.returnValue.type}</td>
+                  <td className="border border-gray-300 p-2">{methodData.returnValue.description}</td>
                 </tr>
               </tbody>
             </table>
@@ -345,21 +350,21 @@ text.split("|")    // Split on pipe`,
         )}
 
         {methodData.browserSupport && (
-          <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4">
-            <h4 className="font-semibold mb-2">{methodData.browserSupport.title}</h4>
-            <p className="mb-2">{methodData.browserSupport.content}</p>
-            <table className="min-w-full border">
+          <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-4 rounded-lg">
+            <h4 className="font-semibold mb-2 text-blue-800">{methodData.browserSupport.title}</h4>
+            <p className="mb-2 text-blue-700">{methodData.browserSupport.content}</p>
+            <table className="min-w-full border border-gray-300 rounded-lg overflow-hidden">
               <thead>
                 <tr className="bg-gray-100">
-                  <th className="border p-2">Browser</th>
-                  <th className="border p-2">Version</th>
+                  <th className="border border-gray-300 p-2 text-left">Browser</th>
+                  <th className="border border-gray-300 p-2 text-left">Version</th>
                 </tr>
               </thead>
               <tbody>
                 {methodData.browserSupport.browsers.map((browser, idx) => (
-                  <tr key={idx}>
-                    <td className="border p-2">{browser.name}</td>
-                    <td className="border p-2">{browser.date}</td>
+                  <tr key={idx} className="even:bg-gray-50">
+                    <td className="border border-gray-300 p-2">{browser.name}</td>
+                    <td className="border border-gray-300 p-2">{browser.date}</td>
                   </tr>
                 ))}
               </tbody>
@@ -374,11 +379,11 @@ text.split("|")    // Split on pipe`,
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-10">
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">JavaScript String Methods</h1>
+          <h1 className="text-4xl font-extrabold mb-2 text-gray-800">JavaScript String Methods</h1>
           <p className="text-gray-600 text-lg">
             Master JavaScript string manipulation with these essential methods.
           </p>
@@ -386,16 +391,16 @@ text.split("|")    // Split on pipe`,
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#03945f] transition shadow-md hover:shadow-lg">
             <FaChevronLeft />
             Home
           </button>
         </div>
 
         {/* Introduction Section */}
-        <section className="bg-[#E7E9EB] p-6 rounded-lg shadow">
-          <h2 className="text-2xl font-bold mb-4">Basic String Methods</h2>
-          <p className="text-gray-800 mb-4">
+        <section className="bg-gradient-to-r from-[#E7E9EB] to-[#dadde0] p-6 rounded-xl shadow-md border border-gray-200">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">Basic String Methods</h2>
+          <p className="text-gray-700 mb-4">
             JavaScript strings are primitive and immutable: All string methods produce a new string without altering the original string.
           </p>
         </section>
@@ -404,8 +409,8 @@ text.split("|")    // Split on pipe`,
         <div className="flex flex-col md:flex-row gap-6">
           {/* Methods List */}
           <div className="w-full md:w-1/3">
-            <div className="bg-gray-100 p-4 rounded-lg shadow">
-              <h3 className="text-xl font-semibold mb-4">String Methods</h3>
+            <div className="bg-white p-4 rounded-xl shadow-md border border-gray-200">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">String Methods</h3>
               <div className="space-y-2 max-h-[600px] overflow-y-auto">
                 {methods.map((method, idx) => {
                   const methodKey = method.split(' ')[1].replace(/[()]/g, '').toLowerCase();
@@ -413,10 +418,10 @@ text.split("|")    // Split on pipe`,
                     <button
                       key={idx}
                       onClick={() => setActiveMethod(methodKey)}
-                      className={`w-full text-left p-2 rounded transition ${
+                      className={`w-full text-left p-3 rounded-lg transition-all ${
                         activeMethod === methodKey
-                          ? 'bg-[#04AA6D] text-white'
-                          : 'bg-white hover:bg-gray-200'
+                          ? 'bg-[#04AA6D] text-white shadow-md'
+                          : 'bg-gray-100 hover:bg-gray-200 text-gray-800'
                       }`}
                     >
                       {method}
@@ -427,14 +432,14 @@ text.split("|")    // Split on pipe`,
             </div>
 
             {/* Related Links */}
-            <div className="bg-gray-100 p-4 rounded-lg shadow mt-6">
-              <h3 className="text-xl font-semibold mb-4">See Also:</h3>
+            <div className="bg-white p-4 rounded-xl shadow-md border border-gray-200 mt-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">See Also:</h3>
               <div className="space-y-2">
                 {relatedLinks.map((link, idx) => (
                   <a
                     key={idx}
                     href="#"
-                    className="block w-full text-left p-2 rounded bg-white hover:bg-gray-200 text-blue-600 hover:text-blue-800 transition"
+                    className="block w-full text-left p-3 rounded-lg bg-gray-100 hover:bg-gray-200 text-blue-600 hover:text-blue-800 transition-all"
                   >
                     {link}
                   </a>
@@ -445,7 +450,7 @@ text.split("|")    // Split on pipe`,
 
           {/* Method Details */}
           <div className="w-full md:w-2/3">
-            <div className="bg-white p-6 rounded-lg shadow">
+            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
               {renderMethodContent()}
             </div>
           </div>
@@ -453,7 +458,7 @@ text.split("|")    // Split on pipe`,
 
         {/* Next Button */}
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#03945f] transition shadow-md hover:shadow-lg">
             Next
             <FaChevronRight />
           </button>

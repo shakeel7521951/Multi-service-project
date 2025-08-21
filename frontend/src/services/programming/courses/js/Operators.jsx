@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaCopy, FaCheck } from "react-icons/fa";
 
 const Operators = () => {
   const references = [
@@ -55,66 +55,68 @@ let isValid = x > 0 && y > 0;`;
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-screen bg-white px-4 py-10 font-sans">
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header */}
         <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">JavaScript Operators</h1>
-          <p className="text-gray-600 text-lg">
+          <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-[#04AA6D] to-[#028a58] bg-clip-text text-transparent">
+            JavaScript Operators
+          </h1>
+          <p className="text-gray-600 text-lg max-w-3xl">
             JavaScript operators are used to perform different types of mathematical and logical computations.
           </p>
         </div>
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#03945f] transition-all duration-200 shadow-md hover:shadow-lg">
             <FaChevronLeft />
             Home
           </button>
         </div>
 
         {/* Introduction Section */}
-        <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
-          <h2 className="text-3xl font-bold mb-4">Understanding JavaScript Operators</h2>
-          <p className="text-gray-800 mb-3">
+        <section className="bg-gradient-to-r from-[#D9EEE1] to-[#c5e8d3] p-8 rounded-2xl shadow-lg border border-[#b8e0c8]">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">Understanding JavaScript Operators</h2>
+          <p className="text-gray-700 mb-3 text-lg">
             Operators are the building blocks of JavaScript expressions. They allow you to manipulate values, compare data, and control program flow.
           </p>
-          <p className="text-gray-800 mb-6">
+          <p className="text-gray-700 mb-6 text-lg">
             Mastering operators is essential for writing efficient and effective JavaScript code.
           </p>
-          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded">
+          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg">
             Explore Operators »
           </button>
         </section>
 
         {/* Examples Section */}
         <section>
-          <h2 className="text-2xl font-semibold mb-2">Operator Examples</h2>
-          <div className="space-y-6">
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <h3 className="font-bold mb-2">The Assignment Operator <code>=</code> assigns values</h3>
-              <pre className="bg-white p-3 rounded overflow-x-auto">
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-l-4 border-[#04AA6D] pl-3">Operator Examples</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+              <h3 className="font-bold mb-2 text-gray-700">The Assignment Operator <code className="bg-gray-200 px-2 py-1 rounded">=</code> assigns values</h3>
+              <pre className="bg-white p-3 rounded-lg overflow-x-auto border border-gray-300">
                 <code>let x = 10;</code>
               </pre>
             </div>
             
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <h3 className="font-bold mb-2">The Addition Operator <code>+</code> adds values</h3>
-              <pre className="bg-white p-3 rounded overflow-x-auto">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+              <h3 className="font-bold mb-2 text-gray-700">The Addition Operator <code className="bg-gray-200 px-2 py-1 rounded">+</code> adds values</h3>
+              <pre className="bg-white p-3 rounded-lg overflow-x-auto border border-gray-300">
                 <code>let z = x + y;</code>
               </pre>
             </div>
             
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <h3 className="font-bold mb-2">The Multiplication Operator <code>*</code> multiplies values</h3>
-              <pre className="bg-white p-3 rounded overflow-x-auto">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+              <h3 className="font-bold mb-2 text-gray-700">The Multiplication Operator <code className="bg-gray-200 px-2 py-1 rounded">*</code> multiplies values</h3>
+              <pre className="bg-white p-3 rounded-lg overflow-x-auto border border-gray-300">
                 <code>let z = x * y;</code>
               </pre>
             </div>
             
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <h3 className="font-bold mb-2">The Comparison Operator <code>&gt;</code> compares values</h3>
-              <pre className="bg-white p-3 rounded overflow-x-auto">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+              <h3 className="font-bold mb-2 text-gray-700">The Comparison Operator <code className="bg-gray-200 px-2 py-1 rounded">&gt;</code> compares values</h3>
+              <pre className="bg-white p-3 rounded-lg overflow-x-auto border border-gray-300">
                 <code>let isGreater = x &gt; y;</code>
               </pre>
             </div>
@@ -123,174 +125,160 @@ let isValid = x > 0 && y > 0;`;
 
         {/* Code Editor Section */}
         <section>
-          <h2 className="text-2xl font-semibold mb-2">
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-l-4 border-[#04AA6D] pl-3">
             Practice with JavaScript Operators
           </h2>
           <p className="text-gray-700 mb-4">
             Try out these JavaScript operator examples in your browser.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl">
-            <h3 className="font-bold mb-3">Example:</h3>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
+          <div className="bg-gradient-to-b from-[#E7E9EB] to-[#d9dcdd] p-6 rounded-2xl shadow-md border border-gray-300">
+            <h3 className="font-bold mb-3 text-gray-700">Example:</h3>
+            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow-inner">
               <code>{jsExample}</code>
             </pre>
             <button
               onClick={handleCopy}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
+              className="flex items-center gap-2 bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-5 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
             >
-              {copied ? "Copied!" : "Copy Code"}
+              {copied ? (
+                <>
+                  <FaCheck className="text-sm" /> Copied!
+                </>
+              ) : (
+                <>
+                  <FaCopy className="text-sm" /> Copy Code
+                </>
+              )}
             </button>
           </div>
         </section>
 
         {/* Types of Operators */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Types of JavaScript Operators</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-gray-800 border-l-4 border-[#04AA6D] pl-3">Types of JavaScript Operators</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Arithmetic Operators */}
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h3 className="text-xl font-bold mb-3">Arithmetic Operators</h3>
-              <p className="mb-3">Used to perform arithmetic on numbers:</p>
-              <pre className="bg-white p-3 rounded mb-3">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-xl shadow-md border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-gray-800">Arithmetic Operators</h3>
+              <p className="mb-3 text-gray-700">Used to perform arithmetic on numbers:</p>
+              <pre className="bg-white p-3 rounded-lg mb-4 border border-gray-300">
                 <code>let x = (100 + 50) * a;</code>
               </pre>
-              <div className="overflow-x-auto">
-                <table className="min-w-full bg-white">
+              <div className="overflow-x-auto rounded-lg shadow-sm">
+                <table className="min-w-full bg-white rounded-lg overflow-hidden">
                   <thead>
-                    <tr className="bg-gray-100">
-                      <th className="p-2 text-left">Operator</th>
-                      <th className="p-2 text-left">Description</th>
+                    <tr className="bg-gradient-to-r from-[#D9EEE1] to-[#c5e8d3]">
+                      <th className="p-3 text-left font-bold text-gray-800">Operator</th>
+                      <th className="p-3 text-left font-bold text-gray-800">Description</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td className="p-2 border">+</td>
-                      <td className="p-2 border">Addition</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">-</td>
-                      <td className="p-2 border">Subtraction</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">*</td>
-                      <td className="p-2 border">Multiplication</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">**</td>
-                      <td className="p-2 border">Exponentiation</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">/</td>
-                      <td className="p-2 border">Division</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">%</td>
-                      <td className="p-2 border">Modulus</td>
-                    </tr>
+                    {[
+                      ["+", "Addition"],
+                      ["-", "Subtraction"],
+                      ["*", "Multiplication"],
+                      ["**", "Exponentiation"],
+                      ["/", "Division"],
+                      ["%", "Modulus"]
+                    ].map(([operator, description], index) => (
+                      <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                        <td className="p-3 border-b border-gray-200 font-mono">{operator}</td>
+                        <td className="p-3 border-b border-gray-200">{description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
             </div>
 
             {/* Assignment Operators */}
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h3 className="text-xl font-bold mb-3">Assignment Operators</h3>
-              <pre className="bg-white p-3 rounded mb-3">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-xl shadow-md border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-gray-800">Assignment Operators</h3>
+              <pre className="bg-white p-3 rounded-lg mb-4 border border-gray-300">
                 <code>x += 5; // x = x + 5</code>
               </pre>
-              <div className="overflow-x-auto">
-                <table className="min-w-full bg-white">
+              <div className="overflow-x-auto rounded-lg shadow-sm">
+                <table className="min-w-full bg-white rounded-lg overflow-hidden">
                   <thead>
-                    <tr className="bg-gray-100">
-                      <th className="p-2 text-left">Operator</th>
-                      <th className="p-2 text-left">Example</th>
-                      <th className="p-2 text-left">Same As</th>
+                    <tr className="bg-gradient-to-r from-[#D9EEE1] to-[#c5e8d3]">
+                      <th className="p-3 text-left font-bold text-gray-800">Operator</th>
+                      <th className="p-3 text-left font-bold text-gray-800">Example</th>
+                      <th className="p-3 text-left font-bold text-gray-800">Same As</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td className="p-2 border">=</td>
-                      <td className="p-2 border">x = y</td>
-                      <td className="p-2 border">x = y</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">+=</td>
-                      <td className="p-2 border">x += y</td>
-                      <td className="p-2 border">x = x + y</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">*=</td>
-                      <td className="p-2 border">x *= y</td>
-                      <td className="p-2 border">x = x * y</td>
-                    </tr>
+                    {[
+                      ["=", "x = y", "x = y"],
+                      ["+=", "x += y", "x = x + y"],
+                      ["*=", "x *= y", "x = x * y"]
+                    ].map(([operator, example, sameAs], index) => (
+                      <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                        <td className="p-3 border-b border-gray-200 font-mono">{operator}</td>
+                        <td className="p-3 border-b border-gray-200 font-mono">{example}</td>
+                        <td className="p-3 border-b border-gray-200 font-mono">{sameAs}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
             </div>
 
             {/* Comparison Operators */}
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h3 className="text-xl font-bold mb-3">Comparison Operators</h3>
-              <pre className="bg-white p-3 rounded mb-3">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-xl shadow-md border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-gray-800">Comparison Operators</h3>
+              <pre className="bg-white p-3 rounded-lg mb-4 border border-gray-300">
                 <code>let result = x == y;</code>
               </pre>
-              <div className="overflow-x-auto">
-                <table className="min-w-full bg-white">
+              <div className="overflow-x-auto rounded-lg shadow-sm">
+                <table className="min-w-full bg-white rounded-lg overflow-hidden">
                   <thead>
-                    <tr className="bg-gray-100">
-                      <th className="p-2 text-left">Operator</th>
-                      <th className="p-2 text-left">Description</th>
+                    <tr className="bg-gradient-to-r from-[#D9EEE1] to-[#c5e8d3]">
+                      <th className="p-3 text-left font-bold text-gray-800">Operator</th>
+                      <th className="p-3 text-left font-bold text-gray-800">Description</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td className="p-2 border">==</td>
-                      <td className="p-2 border">equal to</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">===</td>
-                      <td className="p-2 border">equal value and type</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">!=</td>
-                      <td className="p-2 border">not equal</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">&gt;</td>
-                      <td className="p-2 border">greater than</td>
-                    </tr>
+                    {[
+                      ["==", "equal to"],
+                      ["===", "equal value and type"],
+                      ["!=", "not equal"],
+                      [">", "greater than"]
+                    ].map(([operator, description], index) => (
+                      <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                        <td className="p-3 border-b border-gray-200 font-mono">{operator}</td>
+                        <td className="p-3 border-b border-gray-200">{description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
             </div>
 
             {/* Logical Operators */}
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h3 className="text-xl font-bold mb-3">Logical Operators</h3>
-              <pre className="bg-white p-3 rounded mb-3">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-xl shadow-md border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-gray-800">Logical Operators</h3>
+              <pre className="bg-white p-3 rounded-lg mb-4 border border-gray-300">
                 <code>let isValid = x &gt; 0 && y &gt; 0;</code>
               </pre>
-              <div className="overflow-x-auto">
-                <table className="min-w-full bg-white">
+              <div className="overflow-x-auto rounded-lg shadow-sm">
+                <table className="min-w-full bg-white rounded-lg overflow-hidden">
                   <thead>
-                    <tr className="bg-gray-100">
-                      <th className="p-2 text-left">Operator</th>
-                      <th className="p-2 text-left">Description</th>
+                    <tr className="bg-gradient-to-r from-[#D9EEE1] to-[#c5e8d3]">
+                      <th className="p-3 text-left font-bold text-gray-800">Operator</th>
+                      <th className="p-3 text-left font-bold text-gray-800">Description</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td className="p-2 border">&&</td>
-                      <td className="p-2 border">logical and</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">||</td>
-                      <td className="p-2 border">logical or</td>
-                    </tr>
-                    <tr>
-                      <td className="p-2 border">!</td>
-                      <td className="p-2 border">logical not</td>
-                    </tr>
+                    {[
+                      ["&&", "logical and"],
+                      ["||", "logical or"],
+                      ["!", "logical not"]
+                    ].map(([operator, description], index) => (
+                      <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                        <td className="p-3 border-b border-gray-200 font-mono">{operator}</td>
+                        <td className="p-3 border-b border-gray-200">{description}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
@@ -300,18 +288,18 @@ let isValid = x > 0 && y > 0;`;
 
         {/* String Operations Section */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">String Operations</h2>
-          <div className="space-y-6">
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <h3 className="font-bold mb-2">String Concatenation</h3>
-              <pre className="bg-white p-3 rounded overflow-x-auto">
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-l-4 border-[#04AA6D] pl-3">String Operations</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+              <h3 className="font-bold mb-2 text-gray-700">String Concatenation</h3>
+              <pre className="bg-white p-3 rounded-lg overflow-x-auto border border-gray-300">
                 <code>let text3 = text1 + " " + text2;</code>
               </pre>
             </div>
             
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <h3 className="font-bold mb-2">String Comparison</h3>
-              <pre className="bg-white p-3 rounded overflow-x-auto">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-xl shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+              <h3 className="font-bold mb-2 text-gray-700">String Comparison</h3>
+              <pre className="bg-white p-3 rounded-lg overflow-x-auto border border-gray-300">
                 <code>let result = text1 &lt; text2; // Compares alphabetically</code>
               </pre>
             </div>
@@ -320,7 +308,7 @@ let isValid = x > 0 && y > 0;`;
 
         {/* JavaScript References */}
         <section>
-          <h2 className="text-3xl font-bold mb-4">JavaScript References</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-800 border-l-4 border-[#04AA6D] pl-3">JavaScript References</h2>
           <p className="text-gray-700 mb-6 max-w-3xl">
             Explore our comprehensive JavaScript references for detailed information about operators and other language features.
           </p>
@@ -328,7 +316,7 @@ let isValid = x > 0 && y > 0;`;
             {references.map((ref, idx) => (
               <button
                 key={idx}
-                className="cursor-pointer bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded transition"
+                className="cursor-pointer bg-gradient-to-b from-gray-50 to-gray-100 hover:from-[#04AA6D] hover:to-[#03945f] hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md border border-gray-200 hover:border-[#03945f]"
               >
                 {ref}
               </button>
@@ -338,7 +326,7 @@ let isValid = x > 0 && y > 0;`;
 
         {/* Next Button */}
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#03945f] transition-all duration-200 shadow-md hover:shadow-lg">
             Next
             <FaChevronRight />
           </button>

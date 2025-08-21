@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaCopy, FaCheck } from "react-icons/fa";
 
 const String_Search = () => {
   const references = [
@@ -91,11 +91,11 @@ let position = text.search("locate");`;
   const methodContent = renderMethodContent();
 
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-screen bg-white px-4 py-10 font-sans">
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header */}
         <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">JavaScript String Search</h1>
+          <h1 className="text-4xl font-bold mb-3 text-gray-800">JavaScript String Search</h1>
           <p className="text-gray-600 text-lg">
             Explore different methods to search within strings in JavaScript with detailed examples.
           </p>
@@ -103,19 +103,19 @@ let position = text.search("locate");`;
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#03945f] transition-all shadow-md hover:shadow-lg">
             <FaChevronLeft />
             Home
           </button>
         </div>
 
         {/* Introduction Section */}
-        <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
-          <h2 className="text-3xl font-bold mb-4">String Search Methods</h2>
-          <p className="text-gray-800 mb-3">
+        <section className="bg-[#D9EEE1] p-8 rounded-2xl shadow-md">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">String Search Methods</h2>
+          <p className="text-gray-800 mb-3 text-lg">
             JavaScript provides several methods to search within strings, each with its own use cases and advantages.
           </p>
-          <p className="text-gray-800 mb-6">
+          <p className="text-gray-800 mb-6 text-lg">
             Below you'll find all the string search methods available in JavaScript. Click on any method to learn more about it.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
@@ -123,10 +123,10 @@ let position = text.search("locate");`;
               <button
                 key={idx}
                 onClick={() => setActiveMethod(method.split(" ")[1].replace("()", "").toLowerCase())}
-                className={`cursor-pointer text-center font-medium py-3 px-4 rounded transition ${
+                className={`cursor-pointer text-center font-medium py-3 px-4 rounded-lg transition-all ${
                   activeMethod === method.split(" ")[1].replace("()", "").toLowerCase()
-                    ? "bg-black text-white"
-                    : "bg-gray-100 hover:bg-gray-200 text-gray-800"
+                    ? "bg-[#04AA6D] text-white shadow-md"
+                    : "bg-white hover:bg-gray-100 text-gray-800 shadow-sm hover:shadow-md"
                 }`}
               >
                 {method}
@@ -136,31 +136,41 @@ let position = text.search("locate");`;
         </section>
 
         {/* Method Details Section */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">{methodContent.title}</h2>
-          <p className="text-gray-700 mb-4">{methodContent.description}</p>
+        <section className="bg-white p-6 rounded-2xl shadow-md border border-gray-100">
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800">{methodContent.title}</h2>
+          <p className="text-gray-700 mb-6 text-lg leading-relaxed">{methodContent.description}</p>
           
           {methodContent.example && (
-            <div className="bg-[#E7E9EB] p-6 rounded-xl mb-4">
-              <h3 className="font-bold mb-3">Example:</h3>
-              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
-                <code>{methodContent.example}</code>
+            <div className="bg-gray-50 p-6 rounded-xl mb-6 border border-gray-200">
+              <div className="flex justify-between items-center mb-3">
+                <h3 className="font-bold text-gray-800">Example:</h3>
+                <button
+                  onClick={() => handleCopy(methodContent.example, activeMethod)}
+                  className="flex items-center gap-2 bg-[#04AA6D] hover:bg-[#03945f] text-white font-medium px-4 py-2 rounded-lg transition-all"
+                >
+                  {copied === activeMethod ? (
+                    <>
+                      <FaCheck /> Copied!
+                    </>
+                  ) : (
+                    <>
+                      <FaCopy /> Copy Code
+                    </>
+                  )}
+                </button>
+              </div>
+              <pre className="bg-white p-5 border-l-4 border-[#04AA6D] font-mono text-sm rounded-r-lg overflow-x-auto shadow-inner">
+                <code className="text-gray-800">{methodContent.example}</code>
               </pre>
-              <button
-                onClick={() => handleCopy(methodContent.example, activeMethod)}
-                className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
-              >
-                {copied === activeMethod ? "Copied!" : "Copy Code"}
-              </button>
             </div>
           )}
 
           {methodContent.notes.length > 0 && (
-            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-              <h3 className="font-bold mb-2">Notes:</h3>
-              <ul className="list-disc pl-5 space-y-1">
+            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-5 mb-6 rounded-r-lg">
+              <h3 className="font-bold mb-3 text-gray-800">Notes:</h3>
+              <ul className="list-disc pl-6 space-y-2 text-gray-700">
                 {methodContent.notes.map((note, idx) => (
-                  <li key={idx}>{note}</li>
+                  <li key={idx} className="leading-relaxed">{note}</li>
                 ))}
               </ul>
             </div>
@@ -168,16 +178,16 @@ let position = text.search("locate");`;
         </section>
 
         {/* References Section */}
-        <section>
-          <h2 className="text-3xl font-bold mb-4">See Also</h2>
-          <p className="text-gray-700 mb-6 max-w-3xl">
+        <section className="bg-gray-50 p-6 rounded-2xl shadow-md">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">See Also</h2>
+          <p className="text-gray-700 mb-6 max-w-3xl text-lg">
             Explore these related string references for more information:
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {references.map((ref, idx) => (
               <button
                 key={idx}
-                className="cursor-pointer bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded transition"
+                className="cursor-pointer bg-white hover:bg-[#04AA6D] hover:text-white text-gray-800 text-center font-medium py-4 px-4 rounded-lg transition-all shadow-sm hover:shadow-md"
               >
                 {ref}
               </button>
@@ -187,7 +197,7 @@ let position = text.search("locate");`;
 
         {/* Next Button */}
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#03945f] transition-all shadow-md hover:shadow-lg">
             Next
             <FaChevronRight />
           </button>

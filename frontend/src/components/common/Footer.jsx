@@ -4,12 +4,13 @@ import {
   FaLinkedin,
   FaDiscord,
   FaFacebook,
-  FaInstagram,
 } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa"; // 👈 Arrow Icon import
+
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1f2544] text-white text-sm pt-10 pb-6 relative overflow-hidden">
+    <footer className="bg-[#1f2544] text-white text-sm pt-5 pb-6 relative overflow-hidden ">
       {/* Animated Background Glow */}
       <div className="absolute inset-0 opacity-10 bg-gradient-to-r from-indigo-900 via-gray-800 to-purple-800 animate-pulse"></div>
 
@@ -33,7 +34,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Sections */}
-      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 py-8 px-6 mb-8 relative z-10">
+      <div className="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-10 py-8 px-6 mb-8 relative z-10">
         {[
           {
             title: "Top Tutorials",
@@ -104,16 +105,17 @@ export default function Footer() {
             ],
           },
         ].map((section, idx) => (
-          <div key={idx} className="">
-            <h3 className="text-xl font-semibold mb-4 text-center md:text-left text-[springgreen]">
+          <div key={idx}>
+            <h3 className="text-xl font-semibold mb-4  md:text-left text-[springgreen]">
               {section.title}
             </h3>
             <ul className="space-y-2 text-[13px] text-center md:text-left">
               {section.items.map((item, i) => (
                 <li
                   key={i}
-                  className="hover:text-[#FFF48A] transition-all hover:scale-105 cursor-pointer duration-200"
+                  className="flex items-center gap-2 hover:text-[#FFF48A] transition-all hover:scale-105 cursor-pointer duration-200"
                 >
+                  <FaChevronRight className="text-[10px]" /> {/* 👈 Arrow Icon */}
                   {item}
                 </li>
               ))}
@@ -123,11 +125,11 @@ export default function Footer() {
       </div>
 
       {/* Social Icons + Links */}
-      <div className="mt-10 text-center text-xs text-gray-300 space-y-5 px-6 relative z-10">
+      <div className="mt-10 text-center text-xs text-gray-300 space-y-5 px-6 pt-4 relative z-10 border-t border-gray-700">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
           {/* Social Icons */}
           <div className="flex justify-center space-x-6 text-2xl">
-            {[FaYoutube, FaLinkedin, FaDiscord, FaFacebook, FaInstagram].map(
+            {[FaYoutube, FaLinkedin, FaDiscord, FaFacebook].map(
               (Icon, i) => (
                 <Icon
                   key={i}

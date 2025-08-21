@@ -34,88 +34,84 @@ const Internet_Explorer = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-screen px-4 py-10">
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header */}
-        <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">Internet Explorer Retirement</h1>
-          <p className="text-gray-600 text-lg">
+        <header className="text-center md:text-left">
+          <h1 className="text-4xl font-extrabold text-gray-900 mb-3">Internet Explorer Retirement</h1>
+          <p className="text-gray-600 text-lg max-w-2xl">
             Microsoft ended all support for Internet Explorer on June 15, 2022.
           </p>
-        </div>
+        </header>
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded-lg hover:bg-[#03945f] transition shadow-md">
             <FaChevronLeft />
             Home
           </button>
         </div>
 
         {/* Tabs */}
-        <div className="flex border-b border-gray-200">
-          <button
-            className={`px-4 py-2 font-medium ${activeTab === "retirement" ? "text-[#04AA6D] border-b-2 border-[#04AA6D]" : "text-gray-500"}`}
-            onClick={() => setActiveTab("retirement")}
-          >
-            Retirement Timeline
-          </button>
-          <button
-            className={`px-4 py-2 font-medium ${activeTab === "edge" ? "text-[#04AA6D] border-b-2 border-[#04AA6D]" : "text-gray-500"}`}
-            onClick={() => setActiveTab("edge")}
-          >
-            Microsoft Edge
-          </button>
-          <button
-            className={`px-4 py-2 font-medium ${activeTab === "google" ? "text-[#04AA6D] border-b-2 border-[#04AA6D]" : "text-gray-500"}`}
-            onClick={() => setActiveTab("google")}
-          >
-            Google Services
-          </button>
-          <button
-            className={`px-4 py-2 font-medium ${activeTab === "legacy" ? "text-[#04AA6D] border-b-2 border-[#04AA6D]" : "text-gray-500"}`}
-            onClick={() => setActiveTab("legacy")}
-          >
-            Legacy Systems
-          </button>
+        <div className="flex flex-wrap border-b border-gray-200">
+          {[
+            { key: "retirement", label: "Retirement Timeline" },
+            { key: "edge", label: "Microsoft Edge" },
+            { key: "google", label: "Google Services" },
+            { key: "legacy", label: "Legacy Systems" },
+          ].map(({ key, label }) => (
+            <button
+              key={key}
+              className={`px-4 py-2 font-medium transition ${
+                activeTab === key
+                  ? "text-[#04AA6D] border-b-2 border-[#04AA6D]"
+                  : "text-gray-500 hover:text-gray-700"
+              }`}
+              onClick={() => setActiveTab(key)}
+            >
+              {label}
+            </button>
+          ))}
         </div>
 
         {/* Retirement Timeline */}
         {activeTab === "retirement" && (
           <section className="space-y-6">
             <h2 className="text-2xl font-semibold mb-4">Internet Explorer Retirement Dates</h2>
-            <div className="bg-[#E7E9EB] p-6 rounded-xl">
+            <div className="bg-white p-6 rounded-xl shadow-md">
               <div className="space-y-4">
                 {retirementDates.map((item, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="font-semibold min-w-[100px]">{item.date}</div>
-                    <div>{item.event}</div>
+                  <div key={index} className="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+                    <div className="font-semibold text-gray-900 w-32">{item.date}</div>
+                    <div className="text-gray-700">{item.event}</div>
                   </div>
                 ))}
               </div>
               <p className="mt-4 text-gray-700">Source: <a href="#" className="text-[#04AA6D] hover:underline">Microsoft Official Announcement</a></p>
             </div>
 
-            <div className="bg-[#D9EEE1] p-6 rounded-lg shadow">
-              <h3 className="text-xl font-bold mb-3">Earlier Announcements</h3>
-              
-              <div className="mb-4">
-                <h4 className="font-semibold">Windows 11 Removes Internet Explorer</h4>
-                <p className="text-gray-700">Reported 24-06-2021: Internet Explorer is disabled in Windows 11</p>
-                <p className="text-sm text-gray-600">Source: <a href="#" className="text-[#04AA6D] hover:underline">Windows 11 specifications</a></p>
-              </div>
-              
-              <div className="mb-4">
-                <h4 className="font-semibold">Windows 10 Replaces Internet Explorer</h4>
-                <p className="text-gray-700">Reported 15-06-2020: Internet Explorer is "replaced" by Edge in Windows 10</p>
-                <p className="text-sm text-gray-600">Source: <a href="#" className="text-[#04AA6D] hover:underline">Microsoft Blog</a></p>
-              </div>
-              
-              <div>
-                <h4 className="font-semibold">Internet Explorer Retires</h4>
-                <p className="text-gray-700">Reported 15-06-2020: IE 11 goes out of support on June 15 2022</p>
-                <p className="text-sm text-gray-600">Source: <a href="#" className="text-[#04AA6D] hover:underline">Microsoft Support</a></p>
-              </div>
+            <div className="bg-[#D9EEE1] p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-4">Earlier Announcements</h3>
+
+              {[{
+                title: "Windows 11 Removes Internet Explorer",
+                desc: "Reported 24-06-2021: Internet Explorer is disabled in Windows 11",
+                src: "Windows 11 specifications"
+              },{
+                title: "Windows 10 Replaces Internet Explorer",
+                desc: "Reported 15-06-2020: Internet Explorer is \"replaced\" by Edge in Windows 10",
+                src: "Microsoft Blog"
+              },{
+                title: "Internet Explorer Retires",
+                desc: "Reported 15-06-2020: IE 11 goes out of support on June 15 2022",
+                src: "Microsoft Support"
+              }].map((item, idx) => (
+                <div key={idx} className="mb-5 last:mb-0">
+                  <h4 className="font-semibold text-gray-900">{item.title}</h4>
+                  <p className="text-gray-700">{item.desc}</p>
+                  <p className="text-sm text-gray-600">Source: <a href="#" className="text-[#04AA6D] hover:underline">{item.src}</a></p>
+                </div>
+              ))}
             </div>
           </section>
         )}
@@ -124,34 +120,32 @@ const Internet_Explorer = () => {
         {activeTab === "edge" && (
           <section className="space-y-6">
             <h2 className="text-2xl font-semibold mb-4">Microsoft Edge Transition</h2>
-            
-            <div className="bg-[#D9EEE1] p-6 rounded-lg shadow">
+
+            <div className="bg-[#D9EEE1] p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-3">Microsoft Edge Legacy</h3>
               <p className="text-gray-700 mb-4">
-                Edge was the default browser for Windows 10. It was built with Microsoft's browser engine EdgeHTML and their Chakra JavaScript engine.
-                The first versions of Edge (12-18), are now referred to as "Edge Legacy". The Microsoft support for Edge Legacy ended on March 9, 2021.
+                Edge was the default browser for Windows 10. It was built with Microsoft's browser engine EdgeHTML and Chakra JavaScript engine. The first versions of Edge (12-18) are now referred to as "Edge Legacy". Support ended on March 9, 2021.
               </p>
-              
-              <h4 className="font-semibold mb-2">Retirement dates published August 17, 2020:</h4>
-              <div className="bg-[#E7E9EB] p-4 rounded-lg">
+
+              <h4 className="font-semibold mb-3">Retirement dates published August 17, 2020:</h4>
+              <div className="bg-white p-4 rounded-lg shadow-sm">
                 {edgeLegacyDates.map((item, index) => (
-                  <div key={index} className="flex items-start gap-4 mb-2 last:mb-0">
-                    <div className="font-semibold min-w-[100px]">{item.date}</div>
-                    <div>{item.event}</div>
+                  <div key={index} className="flex flex-col md:flex-row md:items-start gap-2 md:gap-6 mb-2 last:mb-0">
+                    <div className="font-semibold text-gray-900 w-32">{item.date}</div>
+                    <div className="text-gray-700">{item.event}</div>
                   </div>
                 ))}
               </div>
-              <p className="mt-2 text-sm text-gray-600">Source: <a href="#" className="text-[#04AA6D] hover:underline">Microsoft Documentation</a></p>
+              <p className="mt-3 text-sm text-gray-600">Source: <a href="#" className="text-[#04AA6D] hover:underline">Microsoft Documentation</a></p>
             </div>
-            
-            <div className="bg-[#E7E9EB] p-6 rounded-xl">
+
+            <div className="bg-white p-6 rounded-xl shadow-md">
               <h3 className="text-xl font-bold mb-3">The New Edge</h3>
               <p className="text-gray-700 mb-4">
-                The new Microsoft Edge is Chromium based with Blink and V8 engines. It was released in January 2020, and is available for Windows 7, 8, and 10.
-                It can also be downloaded for macOS, iOS, and Android.
+                The new Microsoft Edge is Chromium based with Blink and V8 engines. It was released in January 2020, available for Windows 7, 8, and 10, macOS, iOS, and Android.
               </p>
               <p className="text-gray-700">
-                The new Edge follows the Modern Lifecycle Policy (updates on an approx. six-week cycle) and includes Internet Explorer Mode for backward compatibility.
+                It follows the Modern Lifecycle Policy (approx. six-week update cycle) and includes Internet Explorer Mode for backward compatibility.
               </p>
             </div>
           </section>
@@ -161,31 +155,27 @@ const Internet_Explorer = () => {
         {activeTab === "google" && (
           <section className="space-y-6">
             <h2 className="text-2xl font-semibold mb-4">Google Services Support</h2>
-            
-            <div className="bg-[#E7E9EB] p-6 rounded-xl space-y-4">
-              <div>
-                <h3 className="font-semibold">Google Ad Manager</h3>
-                <p className="text-gray-700">
-                  As of March 28, 2022, Google Ad Manager no longer supports ad serving for Internet Explorer versions 11 and below.
-                </p>
-                <p className="text-sm text-gray-600">Source: <a href="#" className="text-[#04AA6D] hover:underline">Google Ad Manager Help</a></p>
-              </div>
-              
-              <div>
-                <h3 className="font-semibold">Google Search</h3>
-                <p className="text-gray-700">
-                  As of October 1, 2021, Google Search no longer supports Internet Explorer 11.
-                </p>
-                <p className="text-sm text-gray-600">Source: <a href="#" className="text-[#04AA6D] hover:underline">Google Search Central Blog</a></p>
-              </div>
-              
-              <div>
-                <h3 className="font-semibold">Google Workspace</h3>
-                <p className="text-gray-700">
-                  As of March 15, 2021, Google Workspace no longer supports Internet Explorer 11.
-                </p>
-                <p className="text-sm text-gray-600">Source: <a href="#" className="text-[#04AA6D] hover:underline">Google Workspace Updates</a></p>
-              </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-md space-y-6">
+              {[{
+                title: "Google Ad Manager",
+                desc: "As of March 28, 2022, Google Ad Manager no longer supports ad serving for Internet Explorer versions 11 and below.",
+                src: "Google Ad Manager Help"
+              },{
+                title: "Google Search",
+                desc: "As of October 1, 2021, Google Search no longer supports Internet Explorer 11.",
+                src: "Google Search Central Blog"
+              },{
+                title: "Google Workspace",
+                desc: "As of March 15, 2021, Google Workspace no longer supports Internet Explorer 11.",
+                src: "Google Workspace Updates"
+              }].map((item, idx) => (
+                <div key={idx}>
+                  <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                  <p className="text-gray-700">{item.desc}</p>
+                  <p className="text-sm text-gray-600">Source: <a href="#" className="text-[#04AA6D] hover:underline">{item.src}</a></p>
+                </div>
+              ))}
             </div>
           </section>
         )}
@@ -194,16 +184,16 @@ const Internet_Explorer = () => {
         {activeTab === "legacy" && (
           <section className="space-y-6">
             <h2 className="text-2xl font-semibold mb-4">Legacy Systems and Applications</h2>
-            
-            <div className="bg-[#D9EEE1] p-6 rounded-lg shadow">
+
+            <div className="bg-[#D9EEE1] p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-3">Old Operating Systems</h3>
               <p className="text-gray-700 mb-4">
                 Internet Explorer 11 is still a component in some old Windows operating systems and follows the Lifecycle Policy for these products:
               </p>
-              
+
               <div className="overflow-x-auto">
-                <table className="min-w-full bg-white">
-                  <thead>
+                <table className="min-w-full bg-white border rounded-md overflow-hidden">
+                  <thead className="bg-gray-100">
                     <tr className="border-b">
                       <th className="text-left py-2 px-4">System</th>
                       <th className="text-left py-2 px-4">Default Browser</th>
@@ -211,17 +201,17 @@ const Internet_Explorer = () => {
                   </thead>
                   <tbody>
                     {oldOperatingSystems.map((item, index) => (
-                      <tr key={index} className="border-b">
-                        <td className="py-2 px-4">{item.system}</td>
-                        <td className="py-2 px-4">{item.browser}</td>
+                      <tr key={index} className="border-b last:border-none">
+                        <td className="py-2 px-4 text-gray-800">{item.system}</td>
+                        <td className="py-2 px-4 text-gray-800">{item.browser}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
             </div>
-            
-            <div className="bg-[#E7E9EB] p-6 rounded-xl">
+
+            <div className="bg-white p-6 rounded-xl shadow-md">
               <h3 className="text-xl font-bold mb-3">Old Applications</h3>
               <ul className="list-disc pl-5 space-y-2 text-gray-700">
                 <li>Some old PCs (like in public libraries) are still using Internet Explorer.</li>
@@ -230,7 +220,7 @@ const Internet_Explorer = () => {
                 <li>Some AJAX based applications are using Microsoft ActiveX components.</li>
               </ul>
               <p className="mt-4 text-gray-700">
-                In order to ease the migration from Internet Explorer, Microsoft Edge offers Internet Explorer Mode, providing backward compatibility and enabling customers to continue to run legacy web applications.
+                To ease migration, Microsoft Edge offers Internet Explorer Mode for backward compatibility, enabling customers to continue running legacy applications.
               </p>
             </div>
           </section>
@@ -238,7 +228,7 @@ const Internet_Explorer = () => {
 
         {/* Next Button */}
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded-lg hover:bg-[#03945f] transition shadow-md">
             Next
             <FaChevronRight />
           </button>
@@ -247,6 +237,5 @@ const Internet_Explorer = () => {
     </div>
   );
 };
-
 
 export default Internet_Explorer;

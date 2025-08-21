@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaCopy, FaCheck } from "react-icons/fa";
 
 const Data_Types = () => {
   const references = [
@@ -56,56 +56,58 @@ const date = new Date("2022-03-25");`;
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-screen bg-white px-4 py-10 font-sans">
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header */}
         <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">JavaScript Data Types</h1>
-          <p className="text-gray-600 text-lg">
+          <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-[#04AA6D] to-[#028a58] bg-clip-text text-transparent">
+            JavaScript Data Types
+          </h1>
+          <p className="text-gray-600 text-lg max-w-2xl">
             Understand the building blocks of JavaScript with our comprehensive data types guide.
           </p>
         </div>
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
-            <FaChevronLeft />
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#03945f] transition-all duration-200 shadow-md hover:shadow-lg">
+            <FaChevronLeft className="text-sm" />
             Home
           </button>
         </div>
 
         {/* Introduction Section */}
-        <section className="bg-[#FFF4A3] p-8 rounded-lg shadow">
-          <h2 className="text-3xl font-bold mb-4">JavaScript Has 8 Data Types</h2>
+        <section className="bg-[#FFF4A3] p-8 rounded-xl shadow-lg border-l-4 border-[#ffd966]">
+          <h2 className="text-3xl font-bold mb-5 text-gray-800">JavaScript Has 8 Data Types</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
             {["String", "Number", "Bigint", "Boolean", "Undefined", "Null", "Symbol", "Object"].map((type, idx) => (
-              <div key={idx} className="bg-white p-3 rounded shadow text-center font-medium">
+              <div key={idx} className="bg-white p-4 rounded-lg shadow text-center font-medium transition-transform hover:scale-105 cursor-default">
                 {type}
               </div>
             ))}
           </div>
-          <p className="text-gray-800 mb-3">
+          <p className="text-gray-800 mb-3 leading-relaxed">
             JavaScript variables can hold different data types: numbers, strings, objects and more.
           </p>
-          <p className="text-gray-800 mb-3">
+          <p className="text-gray-800 mb-3 leading-relaxed">
             JavaScript has dynamic types. This means that the same variable can be used to hold different data types.
           </p>
-          <p className="text-gray-800 mb-6">
+          <p className="text-gray-800 mb-6 leading-relaxed">
             Understanding data types is crucial for proper variable manipulation and operations.
           </p>
-          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded">
+          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow hover:shadow-md">
             Learn More »
           </button>
         </section>
 
         {/* The Object Datatype Section */}
-        <section className="bg-[#D9EEE1] p-6 rounded-lg">
-          <h2 className="text-2xl font-bold mb-3">The Object Datatype</h2>
-          <p className="text-gray-800 mb-4">
+        <section className="bg-[#D9EEE1] p-7 rounded-xl shadow-md border-l-4 border-[#04AA6D]">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">The Object Datatype</h2>
+          <p className="text-gray-800 mb-5 leading-relaxed">
             The object data type can contain both built-in objects, and user defined objects:
           </p>
-          <div className="bg-white p-4 rounded-lg">
-            <h3 className="font-bold mb-2">Built-in object types can be:</h3>
+          <div className="bg-white p-5 rounded-xl shadow-sm">
+            <h3 className="font-bold mb-3 text-gray-800">Built-in object types can be:</h3>
             <p className="text-gray-700">
               objects, arrays, dates, maps, sets, intarrays, floatarrays, promises, and more.
             </p>
@@ -113,21 +115,30 @@ const date = new Date("2022-03-25");`;
         </section>
 
         {/* Code Editor Section */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">
+        <section className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+          <h2 className="text-2xl font-semibold mb-3 text-gray-800">
             JavaScript Data Type Examples
           </h2>
-          <p className="text-gray-700 mb-4">
+          <p className="text-gray-700 mb-5 leading-relaxed">
             See how different data types are declared and used in JavaScript.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl">
-            <h3 className="font-bold mb-3">Example:</h3>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
-              <code>{jsExample}</code>
-            </pre>
+          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner">
+            <h3 className="font-bold mb-3 text-gray-800">Example:</h3>
+            <div className="relative">
+              <pre className="bg-gray-900 text-gray-100 border-l-4 border-[#04AA6D] p-5 font-mono text-sm rounded-lg overflow-x-auto">
+                <code>{jsExample}</code>
+              </pre>
+              <button
+                onClick={handleCopy}
+                className="absolute top-4 right-4 bg-gray-700 hover:bg-gray-800 text-white p-2 rounded-md transition-colors duration-200"
+                aria-label="Copy code"
+              >
+                {copied ? <FaCheck className="text-green-400" /> : <FaCopy />}
+              </button>
+            </div>
             <button
               onClick={handleCopy}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
+              className="flex items-center justify-center gap-2 bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-3 rounded-lg transition-all duration-200 w-full md:w-auto"
             >
               {copied ? "Copied!" : "Copy Text"}
             </button>
@@ -135,55 +146,61 @@ const date = new Date("2022-03-25");`;
         </section>
 
         {/* Dynamic Types Section */}
-        <section className="bg-[#F3ECEA] p-6 rounded-lg">
-          <h2 className="text-2xl font-bold mb-3">JavaScript Types are Dynamic</h2>
-          <p className="text-gray-800 mb-4">
+        <section className="bg-[#F3ECEA] p-7 rounded-xl shadow-md border-l-4 border-[#c4a88a]">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">JavaScript Types are Dynamic</h2>
+          <p className="text-gray-800 mb-5 leading-relaxed">
             JavaScript has dynamic types. This means that the same variable can be used to hold different data types:
           </p>
-          <div className="bg-white p-4 rounded-lg font-mono text-sm">
-            <p>let x;       // Now x is undefined</p>
-            <p>x = 5;       // Now x is a Number</p>
+          <div className="bg-white p-5 rounded-xl font-mono text-sm shadow-sm">
+            <p className="mb-2">let x;       // Now x is undefined</p>
+            <p className="mb-2">x = 5;       // Now x is a Number</p>
             <p>x = "John";  // Now x is a String</p>
           </div>
         </section>
 
         {/* Type Conversion Section */}
-        <section>
-          <h2 className="text-2xl font-bold mb-3">The Concept of Data Types</h2>
-          <p className="text-gray-800 mb-4">
+        <section className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">The Concept of Data Types</h2>
+          <p className="text-gray-800 mb-5 leading-relaxed">
             When adding a number and a string, JavaScript will treat the number as a string.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-[#E7E9EB] p-4 rounded-lg">
-              <h3 className="font-bold mb-2">JavaScript:</h3>
-              <pre className="bg-white p-3 rounded font-mono text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="bg-[#E7E9EB] p-5 rounded-xl shadow-sm">
+              <h3 className="font-bold mb-3 text-gray-800">JavaScript:</h3>
+              <pre className="bg-white p-4 rounded-lg font-mono text-sm shadow-inner">
                 let x = 16 + "Volvo";
               </pre>
-              <h3 className="font-bold mt-3 mb-2">Result:</h3>
-              <p>"16Volvo"</p>
+              <h3 className="font-bold mt-4 mb-2 text-gray-800">Result:</h3>
+              <div className="bg-white p-3 rounded-lg font-medium shadow-inner">
+                "16Volvo"
+              </div>
             </div>
-            <div className="bg-[#E7E9EB] p-4 rounded-lg">
-              <h3 className="font-bold mb-2">JavaScript:</h3>
-              <pre className="bg-white p-3 rounded font-mono text-sm">
+            <div className="bg-[#E7E9EB] p-5 rounded-xl shadow-sm">
+              <h3 className="font-bold mb-3 text-gray-800">JavaScript:</h3>
+              <pre className="bg-white p-4 rounded-lg font-mono text-sm shadow-inner">
                 let x = "Volvo" + 16 + 4;
               </pre>
-              <h3 className="font-bold mt-3 mb-2">Result:</h3>
-              <p>"Volvo164"</p>
+              <h3 className="font-bold mt-4 mb-2 text-gray-800">Result:</h3>
+              <div className="bg-white p-3 rounded-lg font-medium shadow-inner">
+                "Volvo164"
+              </div>
             </div>
           </div>
         </section>
 
         {/* JavaScript References */}
-        <section>
-          <h2 className="text-3xl font-bold mb-4">JavaScript References</h2>
-          <p className="text-gray-700 mb-6 max-w-3xl">
+        <section className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+          <h2 className="text-3xl font-bold mb-5 bg-gradient-to-r from-[#04AA6D] to-[#028a58] bg-clip-text text-transparent">
+            JavaScript References
+          </h2>
+          <p className="text-gray-700 mb-6 max-w-3xl leading-relaxed">
             Explore our complete JavaScript references for methods, objects, and advanced concepts.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {references.map((ref, idx) => (
               <button
                 key={idx}
-                className="cursor-pointer bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded transition"
+                className="cursor-pointer bg-gray-100 hover:bg-[#04AA6D] hover:text-white text-gray-800 text-center font-medium py-4 px-5 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 {ref}
               </button>
@@ -193,9 +210,9 @@ const date = new Date("2022-03-25");`;
 
         {/* Next Button */}
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#03945f] transition-all duration-200 shadow-md hover:shadow-lg">
             Next
-            <FaChevronRight />
+            <FaChevronRight className="text-sm" />
           </button>
         </div>
       </div>

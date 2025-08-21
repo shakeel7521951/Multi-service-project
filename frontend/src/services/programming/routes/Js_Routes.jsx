@@ -157,7 +157,6 @@ export const JsRoutes = {
     { path: "const", element: <Const /> },
     { path: "operators", element: <Operators /> },
     { path: "arithmetic", element: <Arithmetic /> },
-    { path: "arithmetic", element: <Arithmetic /> },
     { path: "assignment", element: <Assignment /> },
     { path: "datatypes", element: <Data_Types /> },
     { path: "functions", element: <Functions /> },

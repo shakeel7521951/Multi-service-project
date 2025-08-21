@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaCopy, FaCheck } from "react-icons/fa";
 
 const Strings = () => {
   const references = [
@@ -63,64 +63,64 @@ const Strings = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-screen bg-white px-4 py-10 font-sans">
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header */}
         <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">JavaScript Strings</h1>
-          <p className="text-gray-600 text-lg">
+          <h1 className="text-4xl font-extrabold mb-4 text-gray-800">JavaScript Strings</h1>
+          <p className="text-gray-600 text-lg leading-relaxed">
             Learn how to work with text in JavaScript using strings and template literals.
           </p>
         </div>
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
-            <FaChevronLeft />
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-md hover:bg-[#03945f] transition-all shadow-md hover:shadow-lg">
+            <FaChevronLeft className="text-sm" />
             Home
           </button>
         </div>
 
         {/* Introduction Section */}
-        <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
-          <h2 className="text-3xl font-bold mb-4">JavaScript Strings</h2>
-          <p className="text-gray-800 mb-3">
+        <section className="bg-[#D9EEE1] p-8 rounded-xl shadow-sm border border-[#c5e5d4]">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">JavaScript Strings</h2>
+          <p className="text-gray-800 mb-3 leading-relaxed">
             Strings are used for storing and manipulating text in JavaScript.
           </p>
-          <p className="text-gray-800 mb-3">
+          <p className="text-gray-800 mb-3 leading-relaxed">
             A JavaScript string is zero or more characters written inside quotes. 
             You can use single or double quotes, and template literals (backticks) 
             for advanced string operations.
           </p>
-          <p className="text-gray-800 mb-6">
+          <p className="text-gray-800 mb-6 leading-relaxed">
             Strings are primitive values but can also be created as objects using 
-            the <code className="bg-gray-200 px-1 rounded">new String()</code> 
+            the <code className="bg-gray-200 px-1 py-0.5 rounded text-sm">new String()</code> 
             constructor (though this is not recommended).
           </p>
-          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded">
+          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2.5 rounded-md transition-all shadow hover:shadow-md">
             Try String Examples »
           </button>
         </section>
 
         {/* Code Examples Section */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">
+        <section className="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b pb-2">
             String Examples
           </h2>
-          <p className="text-gray-700 mb-4">
+          <p className="text-gray-700 mb-6 leading-relaxed">
             Explore different ways to create and manipulate strings in JavaScript.
           </p>
           
           {/* Example Tabs */}
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-2 mb-5">
             {codeExamples.map((example, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveTab(idx)}
-                className={`px-4 py-2 rounded-t-lg font-medium ${
+                className={`px-4 py-2.5 rounded-lg font-medium transition-all ${
                   activeTab === idx
-                    ? "bg-[#E7E9EB] text-[#04AA6D] border-b-2 border-[#04AA6D]"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                    ? "bg-[#E7E9EB] text-[#04AA6D] border-b-2 border-[#04AA6D] shadow-inner"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200 shadow-sm"
                 }`}
               >
                 {example.title}
@@ -129,14 +129,17 @@ const Strings = () => {
           </div>
           
           {/* Active Example */}
-          <div className="bg-[#E7E9EB] p-6 rounded-b-xl rounded-tr-xl">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
-              <code>{codeExamples[activeTab].code}</code>
-            </pre>
+          <div className="bg-[#E7E9EB] p-5 rounded-xl border border-gray-300">
+            <div className="relative">
+              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
+                <code>{codeExamples[activeTab].code}</code>
+              </pre>
+            </div>
             <button
               onClick={() => handleCopy(codeExamples[activeTab].code)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
+              className="flex items-center gap-2 bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-4 py-2 rounded transition"
             >
+              {copied ? <FaCheck /> : <FaCopy />}
               {copied ? "Copied!" : "Copy Code"}
             </button>
           </div>
@@ -144,79 +147,83 @@ const Strings = () => {
 
         {/* Key Concepts Section */}
         <section className="space-y-6">
-          <h2 className="text-3xl font-bold mb-4">Key Concepts</h2>
+          <h2 className="text-3xl font-bold mb-4 text-gray-800 border-b pb-2">Key Concepts</h2>
           
-          <div className="bg-gray-100 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">Quotes Inside Strings</h3>
-            <p className="text-gray-800 mb-3">
+          <div className="bg-gray-100 p-6 rounded-xl border border-gray-300">
+            <h3 className="text-xl font-semibold mb-3 text-gray-800">Quotes Inside Strings</h3>
+            <p className="text-gray-800 mb-4 leading-relaxed">
               You can use quotes inside a string, as long as they don't match 
               the quotes surrounding the string:
             </p>
-            <pre className="bg-white p-3 rounded text-sm mb-3">
-              <code>{`let answer1 = "It's alright";\nlet answer2 = "He is called 'Johnny'";\nlet answer3 = 'He is called "Johnny"';`}</code>
-            </pre>
+            <div className="bg-white p-4 rounded-lg border-l-4 border-[#04AA6D]">
+              <pre className="font-mono text-sm overflow-x-auto">
+                <code>{`let answer1 = "It's alright";\nlet answer2 = "He is called 'Johnny'";\nlet answer3 = 'He is called "Johnny"';`}</code>
+              </pre>
+            </div>
           </div>
           
-          <div className="bg-gray-100 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">Escape Characters</h3>
-            <p className="text-gray-800 mb-3">
+          <div className="bg-gray-100 p-6 rounded-xl border border-gray-300">
+            <h3 className="text-xl font-semibold mb-3 text-gray-800">Escape Characters</h3>
+            <p className="text-gray-800 mb-4 leading-relaxed">
               The backslash escape character (\) turns special characters into string characters:
             </p>
-            <div className="bg-white p-3 rounded text-sm mb-3 overflow-x-auto">
+            <div className="bg-white p-4 rounded-lg overflow-x-auto">
               <table className="min-w-full">
                 <thead>
-                  <tr className="border-b">
-                    <th className="text-left py-2 px-4">Code</th>
-                    <th className="text-left py-2 px-4">Result</th>
-                    <th className="text-left py-2 px-4">Description</th>
+                  <tr className="border-b-2 border-gray-300">
+                    <th className="text-left py-3 px-4 font-semibold text-gray-700">Code</th>
+                    <th className="text-left py-3 px-4 font-semibold text-gray-700">Result</th>
+                    <th className="text-left py-3 px-4 font-semibold text-gray-700">Description</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b">
-                    <td className="py-2 px-4 font-mono">\'</td>
-                    <td className="py-2 px-4">'</td>
-                    <td className="py-2 px-4">Single quote</td>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="py-3 px-4 font-mono text-sm">\'</td>
+                    <td className="py-3 px-4">'</td>
+                    <td className="py-3 px-4">Single quote</td>
                   </tr>
-                  <tr className="border-b">
-                    <td className="py-2 px-4 font-mono">\"</td>
-                    <td className="py-2 px-4">"</td>
-                    <td className="py-2 px-4">Double quote</td>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="py-3 px-4 font-mono text-sm">\"</td>
+                    <td className="py-3 px-4">"</td>
+                    <td className="py-3 px-4">Double quote</td>
                   </tr>
-                  <tr>
-                    <td className="py-2 px-4 font-mono">\\</td>
-                    <td className="py-2 px-4">\</td>
-                    <td className="py-2 px-4">Backslash</td>
+                  <tr className="hover:bg-gray-50">
+                    <td className="py-3 px-4 font-mono text-sm">\\</td>
+                    <td className="py-3 px-4">\</td>
+                    <td className="py-3 px-4">Backslash</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           
-          <div className="bg-gray-100 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold mb-3">String Objects</h3>
-            <p className="text-gray-800 mb-3">
+          <div className="bg-gray-100 p-6 rounded-xl border border-gray-300">
+            <h3 className="text-xl font-semibold mb-3 text-gray-800">String Objects</h3>
+            <p className="text-gray-800 mb-4 leading-relaxed">
               Strings can be created as objects, but this is not recommended:
             </p>
-            <pre className="bg-white p-3 rounded text-sm mb-3">
-              <code>{`let x = "John"; // primitive\nlet y = new String("John"); // object\n\n// Comparison:\nconsole.log(x == y); // true\nconsole.log(x === y); // false`}</code>
-            </pre>
-            <p className="text-gray-800">
+            <div className="bg-white p-4 rounded-lg border-l-4 border-[#04AA6D]">
+              <pre className="font-mono text-sm overflow-x-auto">
+                <code>{`let x = "John"; // primitive\nlet y = new String("John"); // object\n\n// Comparison:\nconsole.log(x == y); // true\nconsole.log(x === y); // false`}</code>
+              </pre>
+            </div>
+            <p className="text-gray-800 mt-4 leading-relaxed">
               Comparing two String objects always returns false because they are different objects.
             </p>
           </div>
         </section>
 
         {/* String References */}
-        <section>
-          <h2 className="text-3xl font-bold mb-4">String References</h2>
-          <p className="text-gray-700 mb-6 max-w-3xl">
+        <section className="bg-white p-5 rounded-xl shadow-sm border border-gray-200">
+          <h2 className="text-3xl font-bold mb-6 text-gray-800 border-b pb-2">String References</h2>
+          <p className="text-gray-700 mb-6 max-w-3xl leading-relaxed">
             Explore all string methods and properties available in JavaScript.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {references.map((ref, idx) => (
               <button
                 key={idx}
-                className="cursor-pointer bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded transition"
+                className="cursor-pointer bg-gray-100 hover:bg-[#04AA6D] hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded-lg transition-all shadow-sm hover:shadow-md"
               >
                 {ref}
               </button>
@@ -226,9 +233,9 @@ const Strings = () => {
 
         {/* Next Button */}
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-md hover:bg-[#03945f] transition-all shadow-md hover:shadow-lg">
             Next
-            <FaChevronRight />
+            <FaChevronRight className="text-sm" />
           </button>
         </div>
       </div>

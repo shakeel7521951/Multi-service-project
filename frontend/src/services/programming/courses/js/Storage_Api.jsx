@@ -55,31 +55,31 @@ const name = sessionStorage.getItem("name");`;
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-screen  px-4 py-10">
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header */}
         <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">Web Storage API</h1>
-          <p className="text-gray-600 text-lg">
+          <h1 className="text-4xl font-bold mb-3 text-gray-900">Web Storage API</h1>
+          <p className="text-gray-600 text-lg max-w-2xl">
             Store and retrieve data in the browser with the simple Web Storage API syntax.
           </p>
         </div>
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded-xl hover:scale-105 hover:shadow-md transition">
             <FaChevronLeft />
             Home
           </button>
         </div>
 
         {/* Introduction Section */}
-        <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
-          <h2 className="text-3xl font-bold mb-4">Web Storage API</h2>
-          <p className="text-gray-800 mb-3">
+        <section className="bg-white border border-gray-200 p-8 rounded-2xl shadow-md">
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">Introduction</h2>
+          <p className="text-gray-700 mb-3">
             The Web Storage API is a simple syntax for storing and retrieving data in the browser. It is very easy to use:
           </p>
-          <div className="bg-white p-4 rounded-md my-4">
+          <div className="bg-gray-900 text-gray-100 p-4 rounded-md my-4 overflow-x-auto">
             <pre className="font-mono text-sm">
               <code>localStorage.setItem("name", "John Doe");</code><br />
               <code>localStorage.getItem("name");</code>
@@ -90,22 +90,19 @@ const name = sessionStorage.getItem("name");`;
         {/* Browser Support Section */}
         <section>
           <h2 className="text-2xl font-semibold mb-4">Browser Support</h2>
-          <p className="text-gray-700 mb-4">
-            The Web Storage API is supported in all browsers:
-          </p>
-          <div className="bg-gray-100 p-4 rounded-lg">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left py-2">Browser</th>
-                  <th className="text-left py-2">Supported</th>
+          <div className="overflow-x-auto">
+            <table className="w-full border border-gray-200 rounded-lg overflow-hidden">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="text-left py-3 px-4">Browser</th>
+                  <th className="text-left py-3 px-4">Supported</th>
                 </tr>
               </thead>
               <tbody>
                 {browserSupport.map((browser, index) => (
-                  <tr key={index} className="border-b">
-                    <td className="py-2">{browser.browser}</td>
-                    <td className="py-2">{browser.supported}</td>
+                  <tr key={index} className="border-t hover:bg-gray-50">
+                    <td className="py-2 px-4">{browser.browser}</td>
+                    <td className="py-2 px-4">{browser.supported}</td>
                   </tr>
                 ))}
               </tbody>
@@ -114,25 +111,24 @@ const name = sessionStorage.getItem("name");`;
         </section>
 
         {/* localStorage Section */}
-        <section>
+        <section className="bg-white p-6 rounded-2xl shadow-md">
           <h2 className="text-2xl font-semibold mb-2">The localStorage Object</h2>
           <p className="text-gray-700 mb-4">
-            The localStorage object provides access to a local storage for a particular Web Site. It allows you to store, read, add, modify, and delete data items for that domain.
+            The localStorage object provides access to a local storage for a particular Web Site.
           </p>
           <ul className="list-disc pl-5 mb-4 text-gray-700 space-y-1">
             <li>The data is stored with no expiration date</li>
             <li>Will not be deleted when the browser is closed</li>
             <li>The data will be available for days, weeks, and years</li>
           </ul>
-          
-          <div className="bg-[#E7E9EB] p-6 rounded-xl mt-4">
+          <div className="bg-gray-50 p-6 rounded-xl border mt-4">
             <h3 className="font-bold mb-3">Example:</h3>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
+            <pre className="bg-gray-900 text-gray-100 border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
               <code>{localStorageExample}</code>
             </pre>
             <button
               onClick={() => handleCopy('localStorage')}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
+              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded-xl transition"
             >
               {copied.localStorage ? "Copied!" : "Copy Text"}
             </button>
@@ -140,23 +136,20 @@ const name = sessionStorage.getItem("name");`;
         </section>
 
         {/* sessionStorage Section */}
-        <section>
+        <section className="bg-white p-6 rounded-2xl shadow-md">
           <h2 className="text-2xl font-semibold mb-2">The sessionStorage Object</h2>
           <p className="text-gray-700 mb-4">
-            The sessionStorage object is identical to the localStorage object. The difference is that the sessionStorage object stores data for one session.
+            The sessionStorage object is identical to the localStorage object, except that it stores data only for one session.
           </p>
-          <p className="text-gray-700 mb-4">
-            The data is deleted when the browser is closed.
-          </p>
-          
-          <div className="bg-[#E7E9EB] p-6 rounded-xl mt-4">
+          <p className="text-gray-700 mb-4">The data is deleted when the browser is closed.</p>
+          <div className="bg-gray-50 p-6 rounded-xl border mt-4">
             <h3 className="font-bold mb-3">Example:</h3>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
+            <pre className="bg-gray-900 text-gray-100 border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
               <code>{sessionStorageExample}</code>
             </pre>
             <button
               onClick={() => handleCopy('sessionStorage')}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
+              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded-xl transition"
             >
               {copied.sessionStorage ? "Copied!" : "Copy Text"}
             </button>
@@ -166,19 +159,19 @@ const name = sessionStorage.getItem("name");`;
         {/* Methods Section */}
         <section>
           <h2 className="text-2xl font-semibold mb-4">Storage Object Properties and Methods</h2>
-          <div className="bg-gray-100 p-4 rounded-lg">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left py-2">Property/Method</th>
-                  <th className="text-left py-2">Description</th>
+          <div className="overflow-x-auto">
+            <table className="w-full border border-gray-200 rounded-lg overflow-hidden">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="text-left py-3 px-4">Property/Method</th>
+                  <th className="text-left py-3 px-4">Description</th>
                 </tr>
               </thead>
               <tbody>
                 {methods.map((method, index) => (
-                  <tr key={index} className="border-b">
-                    <td className="py-2 font-mono">{method.name}</td>
-                    <td className="py-2">{method.description}</td>
+                  <tr key={index} className="border-t hover:bg-gray-50">
+                    <td className="py-2 px-4 font-mono">{method.name}</td>
+                    <td className="py-2 px-4">{method.description}</td>
                   </tr>
                 ))}
               </tbody>
@@ -189,19 +182,19 @@ const name = sessionStorage.getItem("name");`;
         {/* Related Pages Section */}
         <section>
           <h2 className="text-2xl font-semibold mb-4">Related Pages for Web Storage API</h2>
-          <div className="bg-gray-100 p-4 rounded-lg">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left py-2">Property</th>
-                  <th className="text-left py-2">Description</th>
+          <div className="overflow-x-auto">
+            <table className="w-full border border-gray-200 rounded-lg overflow-hidden">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="text-left py-3 px-4">Property</th>
+                  <th className="text-left py-3 px-4">Description</th>
                 </tr>
               </thead>
               <tbody>
                 {relatedPages.map((page, index) => (
-                  <tr key={index} className="border-b">
-                    <td className="py-2 font-mono">{page.property}</td>
-                    <td className="py-2">{page.description}</td>
+                  <tr key={index} className="border-t hover:bg-gray-50">
+                    <td className="py-2 px-4 font-mono">{page.property}</td>
+                    <td className="py-2 px-4">{page.description}</td>
                   </tr>
                 ))}
               </tbody>
@@ -211,7 +204,7 @@ const name = sessionStorage.getItem("name");`;
 
         {/* Next Button */}
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded-xl hover:scale-105 hover:shadow-md transition">
             Next
             <FaChevronRight />
           </button>
