@@ -52,7 +52,7 @@ const Introduction = () => {
             Bootstrap is the world’s most popular front-end framework for
             building responsive and mobile-first websites. It provides
             ready-to-use HTML, CSS, and JavaScript components that help you
-            design professional websites faster and easier.
+            design professional websites fast and easier.
           </p>
         </div>
 
