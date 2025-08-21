@@ -45,14 +45,14 @@ const Installation = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="max-w-6xl mx-auto space-y-8 sm:space-y-10 lg:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Installation & Setup
           </h1>
-          <p className="text-gray-700 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-700 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Before you can start using Bootstrap, you need to include it in your
             project. Bootstrap can be added in two common ways: using a CDN link
             or by downloading it locally. Below, you will learn both methods in
@@ -61,48 +61,48 @@ const Installation = () => {
         </div>
 
         {/* Navigation Top */}
-        <div className="flex justify-between">
+        <div className="flex flex-col sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/introduction"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
-            <FaChevronLeft /> Introduction
+            <FaChevronLeft className="text-xs sm:text-sm" /> Introduction
           </Link>
 
           <Link
             to="/bootstrap/containers"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
-            Containers <FaChevronRight />
+            Containers <FaChevronRight className="text-xs sm:text-sm" />
           </Link>
         </div>
 
         {/* CDN Section */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+        <section className="bg-[#D9EEE1] p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5 text-[#04AA6D]">
             Method 1: Use Bootstrap via CDN
           </h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
+          <p className="text-gray-800 mb-4 leading-relaxed text-sm sm:text-base">
             The simplest way to include Bootstrap in your project is to use a
-            CDN (Content Delivery Network). By using this method, you don’t need
+            CDN (Content Delivery Network). By using this method, you don't need
             to download anything; you just add the Bootstrap CSS and JavaScript
             links into your HTML file.
           </p>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <h3 className="font-bold mb-3">Copy and paste this into the head of your HTML:</h3>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
+          <div className="bg-[#E7E9EB] p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-inner border border-gray-300">
+            <h3 className="font-bold mb-3 text-sm sm:text-base">Copy and paste this into the head of your HTML:</h3>
+            <pre className="bg-white border-l-4 border-[#04AA6D] p-3 sm:p-4 font-mono text-xs sm:text-sm rounded-lg overflow-x-auto shadow">
               <code>{bootstrapCDN}</code>
             </pre>
             <button
               onClick={() => handleCopy(bootstrapCDN, setCopied)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
+              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 sm:mt-5 px-4 sm:px-6 py-2 rounded-lg shadow transition transform hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
             >
               {copied ? "Copied!" : "Copy Code"}
             </button>
           </div>
 
-          <p className="text-gray-800 mt-6 leading-relaxed">
+          <p className="text-gray-800 mt-4 sm:mt-6 leading-relaxed text-sm sm:text-base">
             The CSS link should go inside the <code>&lt;head&gt;</code> section,
             while the JavaScript bundle should be placed before the closing{" "}
             <code>&lt;/body&gt;</code> tag.
@@ -110,23 +110,23 @@ const Installation = () => {
         </section>
 
         {/* Starter Template */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+        <section className="bg-white p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5 text-[#04AA6D]">
             Bootstrap Starter Template
           </h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
+          <p className="text-gray-800 mb-4 leading-relaxed text-sm sm:text-base">
             Here is a complete starter HTML page that includes Bootstrap. You
             can save this file as <code>index.html</code> and open it in your
             browser to confirm Bootstrap is working.
           </p>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
+          <div className="bg-[#E7E9EB] p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-inner border border-gray-300">
+            <pre className="bg-white border-l-4 border-[#04AA6D] p-3 sm:p-4 font-mono text-xs sm:text-sm rounded-lg overflow-x-auto shadow max-h-96 overflow-y-auto">
               <code>{bootstrapStarter}</code>
             </pre>
             <button
               onClick={() => handleCopy(bootstrapStarter, setCopiedStarter)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
+              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 sm:mt-5 px-4 sm:px-6 py-2 rounded-lg shadow transition transform hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
             >
               {copiedStarter ? "Copied!" : "Copy Code"}
             </button>
@@ -134,23 +134,23 @@ const Installation = () => {
         </section>
 
         {/* Download Section */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+        <section className="bg-[#D9EEE1] p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5 text-[#04AA6D]">
             Method 2: Download Bootstrap Locally
           </h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
+          <p className="text-gray-800 mb-4 leading-relaxed text-sm sm:text-base">
             If you prefer to host Bootstrap yourself, you can download the files
             and include them locally in your project. This method is helpful if
             you need to work offline or want full control over your dependencies.
           </p>
-          <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
+          <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4 text-sm sm:text-base">
             <li>
               Go to the official website:{" "}
               <a
                 href="https://getbootstrap.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-blue-600 hover:underline break-words"
               >
                 getbootstrap.com
               </a>
@@ -158,43 +158,43 @@ const Installation = () => {
             <li>Download the latest version of Bootstrap.</li>
             <li>
               Extract the files and link{" "}
-              <code>bootstrap.min.css</code> and{" "}
-              <code>bootstrap.bundle.min.js</code> into your HTML file.
+              <code className="break-words">bootstrap.min.css</code> and{" "}
+              <code className="break-words">bootstrap.bundle.min.js</code> into your HTML file.
             </li>
           </ul>
         </section>
 
         {/* Package Managers */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+        <section className="bg-white p-6 sm:p-8 lg:p-10 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5 text-[#04AA6D]">
             Method 3: Install Bootstrap with Package Managers
           </h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
+          <p className="text-gray-800 mb-4 leading-relaxed text-sm sm:text-base">
             Bootstrap can also be installed via popular package managers like{" "}
             <strong>npm</strong> or <strong>yarn</strong>. This method is
             commonly used in React, Angular, and Vue projects.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300 space-y-3">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
+          <div className="bg-[#E7E9EB] p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-inner border border-gray-300 space-y-3">
+            <pre className="bg-white border-l-4 border-[#04AA6D] p-3 sm:p-4 font-mono text-xs sm:text-sm rounded-lg overflow-x-auto shadow">
               <code>npm install bootstrap</code>
             </pre>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
+            <pre className="bg-white border-l-4 border-[#04AA6D] p-3 sm:p-4 font-mono text-xs sm:text-sm rounded-lg overflow-x-auto shadow">
               <code>yarn add bootstrap</code>
             </pre>
           </div>
-          <p className="text-gray-800 mt-4 leading-relaxed">
+          <p className="text-gray-800 mt-4 leading-relaxed text-sm sm:text-base">
             After installation, import Bootstrap in your project entry file,
             usually <code>index.js</code> or <code>App.js</code>:
           </p>
-          <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
+          <pre className="bg-white border-l-4 border-[#04AA6D] p-3 sm:p-4 font-mono text-xs sm:text-sm rounded-lg overflow-x-auto shadow mt-3">
             <code>import 'bootstrap/dist/css/bootstrap.min.css';</code>
           </pre>
         </section>
 
         {/* Next Steps */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
+          <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#04AA6D]">Next Step</h2>
+          <p className="text-gray-700 text-sm sm:text-base">
             Once Bootstrap is included, the next step is to learn how to use{" "}
             <Link
               to="/bootstrap/containers"
@@ -207,19 +207,19 @@ const Installation = () => {
         </section>
 
         {/* Bottom Navigation */}
-        <div className="flex justify-between">
+        <div className="flex flex-col sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/introduction"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
-            <FaChevronLeft /> Introduction
+            <FaChevronLeft className="text-xs sm:text-sm" /> Introduction
           </Link>
 
           <Link
             to="/bootstrap/containers"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
-            Containers <FaChevronRight />
+            Containers <FaChevronRight className="text-xs sm:text-sm" />
           </Link>
         </div>
       </div>
