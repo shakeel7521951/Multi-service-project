@@ -207,9 +207,10 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             Bootstrap Containers
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-            Containers are the fundamental building block for layout in Bootstrap. They provide a centered, responsive
-            wrapper that sets horizontal padding and optional maximum widths. All grid layouts should be placed inside a
-            container.
+            Containers are the fundamental building block for layout in
+            Bootstrap. They provide a centered, responsive wrapper that sets
+            horizontal padding and optional maximum widths. All grid layouts
+            should be placed inside a container.
           </p>
         </div>
 
@@ -231,28 +232,42 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
 
         {/* Types of Containers */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-6 text-[#04AA6D]">Container Types</h2>
+          <h2 className="text-3xl font-bold mb-6 text-[#04AA6D]">
+            Container Types
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-800">
             <div className="bg-white border rounded-xl p-6 shadow-sm">
               <h3 className="font-bold mb-2">.container</h3>
-              <p>Sets responsive max-widths at each breakpoint. Centers content and adds side padding.</p>
+              <p>
+                Sets responsive max-widths at each breakpoint. Centers content
+                and adds side padding.
+              </p>
             </div>
             <div className="bg-white border rounded-xl p-6 shadow-sm">
               <h3 className="font-bold mb-2">.container-fluid</h3>
-              <p>Always 100% width across all breakpoints. Still includes horizontal side padding.</p>
+              <p>
+                Always 100% width across all breakpoints. Still includes
+                horizontal side padding.
+              </p>
             </div>
             <div className="bg-white border rounded-xl p-6 shadow-sm">
               <h3 className="font-bold mb-2">.container-{`{breakpoint}`}</h3>
-              <p>Fluid below the specified breakpoint, fixed max-width at and above it. Available for sm, md, lg, xl, xxl.</p>
+              <p>
+                Fluid below the specified breakpoint, fixed max-width at and
+                above it. Available for sm, md, lg, xl, xxl.
+              </p>
             </div>
           </div>
         </section>
 
         {/* Breakpoints & Max-widths */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-6 text-[#04AA6D]">Breakpoints and Max-widths</h2>
+          <h2 className="text-3xl font-bold mb-6 text-[#04AA6D]">
+            Breakpoints and Max-widths
+          </h2>
           <p className="text-gray-800 mb-4">
-            By default, Bootstrap’s containers align to these breakpoints and maximum widths (approximate defaults):
+            By default, Bootstrap’s containers align to these breakpoints and
+            maximum widths (approximate defaults):
           </p>
           <div className="overflow-x-auto rounded-xl border">
             <table className="min-w-full text-left text-sm">
@@ -261,18 +276,55 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
                   <th className="px-4 py-3 font-semibold">Class</th>
                   <th className="px-4 py-3 font-semibold">Applies at ≥</th>
                   <th className="px-4 py-3 font-semibold">Max-width</th>
-                  <th className="px-4 py-3 font-semibold">Behavior below breakpoint</th>
+                  <th className="px-4 py-3 font-semibold">
+                    Behavior below breakpoint
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { cls: ".container", at: "xs (0px)", mw: "varies by breakpoint", beh: "Fixed at each breakpoint; responsive overall" },
-                  { cls: ".container-sm", at: "576px (sm)", mw: "540px", beh: "Fluid below 576px" },
-                  { cls: ".container-md", at: "768px (md)", mw: "720px", beh: "Fluid below 768px" },
-                  { cls: ".container-lg", at: "992px (lg)", mw: "960px", beh: "Fluid below 992px" },
-                  { cls: ".container-xl", at: "1200px (xl)", mw: "1140px", beh: "Fluid below 1200px" },
-                  { cls: ".container-xxl", at: "1400px (xxl)", mw: "1320px", beh: "Fluid below 1400px" },
-                  { cls: ".container-fluid", at: "always", mw: "100% width", beh: "Always fluid" },
+                  {
+                    cls: ".container",
+                    at: "xs (0px)",
+                    mw: "varies by breakpoint",
+                    beh: "Fixed at each breakpoint; responsive overall",
+                  },
+                  {
+                    cls: ".container-sm",
+                    at: "576px (sm)",
+                    mw: "540px",
+                    beh: "Fluid below 576px",
+                  },
+                  {
+                    cls: ".container-md",
+                    at: "768px (md)",
+                    mw: "720px",
+                    beh: "Fluid below 768px",
+                  },
+                  {
+                    cls: ".container-lg",
+                    at: "992px (lg)",
+                    mw: "960px",
+                    beh: "Fluid below 992px",
+                  },
+                  {
+                    cls: ".container-xl",
+                    at: "1200px (xl)",
+                    mw: "1140px",
+                    beh: "Fluid below 1200px",
+                  },
+                  {
+                    cls: ".container-xxl",
+                    at: "1400px (xxl)",
+                    mw: "1320px",
+                    beh: "Fluid below 1400px",
+                  },
+                  {
+                    cls: ".container-fluid",
+                    at: "always",
+                    mw: "100% width",
+                    beh: "Always fluid",
+                  },
                 ].map((r, i) => (
                   <tr key={i} className="odd:bg-white even:bg-gray-50">
                     <td className="px-4 py-3 font-mono">{r.cls}</td>
@@ -285,14 +337,20 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             </table>
           </div>
           <p className="text-gray-700 mt-4">
-            These values come from Bootstrap’s Sass maps and can be customized during a Sass build.
+            These values come from Bootstrap’s Sass maps and can be customized
+            during a Sass build.
           </p>
         </section>
 
         {/* Basic .container */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Basic .container</h2>
-          <p className="text-gray-700 mb-4">A centered wrapper with responsive max-widths and horizontal padding.</p>
+          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
+            Basic .container
+          </h2>
+          <p className="text-gray-700 mb-4">
+            A centered wrapper with responsive max-widths and horizontal
+            padding.
+          </p>
           <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
               <code>{basicContainer}</code>
@@ -308,8 +366,13 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
 
         {/* .container-fluid */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">.container-fluid</h2>
-          <p className="text-gray-700 mb-4">Spans the entire viewport width at all breakpoints; still provides side padding.</p>
+          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
+            .container-fluid
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Spans the entire viewport width at all breakpoints; still provides
+            side padding.
+          </p>
           <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
               <code>{fluidContainer}</code>
@@ -325,9 +388,14 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
 
         {/* .container-{breakpoint} */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">.container-{`{breakpoint}`}</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
+            .container-{`{breakpoint}`}
+          </h2>
           <p className="text-gray-700 mb-4">
-            Use <code>.container-sm</code>, <code>.container-md</code>, <code>.container-lg</code>, <code>.container-xl</code>, or <code>.container-xxl</code> to be fluid below a breakpoint and fixed above it.
+            Use <code>.container-sm</code>, <code>.container-md</code>,{" "}
+            <code>.container-lg</code>, <code>.container-xl</code>, or{" "}
+            <code>.container-xxl</code> to be fluid below a breakpoint and fixed
+            above it.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
@@ -344,10 +412,13 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
 
         {/* Grid inside container */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Using the Grid Inside Containers</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
+            Using the Grid Inside Containers
+          </h2>
           <p className="text-gray-800 mb-4">
-            Rows and columns should live inside a container. The container sets side padding and centers the content;
-            the grid’s gutters are calculated from a CSS variable that the container also defines.
+            Rows and columns should live inside a container. The container sets
+            side padding and centers the content; the grid’s gutters are
+            calculated from a CSS variable that the container also defines.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
@@ -364,9 +435,13 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
 
         {/* Full-bleed pattern */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Full-Bleed Background, Centered Content</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
+            Full-Bleed Background, Centered Content
+          </h2>
           <p className="text-gray-700 mb-4">
-            Wrap a full-width section in a background color or image, then place an inner <code>.container</code> to keep content aligned with the rest of the page.
+            Wrap a full-width section in a background color or image, then place
+            an inner <code>.container</code> to keep content aligned with the
+            rest of the page.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
@@ -383,9 +458,13 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
 
         {/* Navbar patterns */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Containers in Navbars</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
+            Containers in Navbars
+          </h2>
           <p className="text-gray-700 mb-4">
-            Use <code>.container</code> to align navbar content with the page width, or <code>.container-fluid</code> to span the viewport edge to edge.
+            Use <code>.container</code> to align navbar content with the page
+            width, or <code>.container-fluid</code> to span the viewport edge to
+            edge.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
@@ -402,12 +481,26 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
 
         {/* Padding and gutters */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Padding, Gutters, and Alignment</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Padding, Gutters, and Alignment
+          </h2>
           <ul className="list-disc list-inside text-gray-800 space-y-2 mb-4">
-            <li>Containers include horizontal padding so content doesn’t touch the viewport edges.</li>
-            <li>The grid uses <code>--bs-gutter-x</code> to compute horizontal gutters; containers set this variable.</li>
-            <li>Adjust side padding with spacing utilities like <code>px-*</code>, or override the gutter variable locally.</li>
-            <li>For sections with no side padding, use <code>.g-0</code> on rows or utilities like <code>px-0</code> on the container.</li>
+            <li>
+              Containers include horizontal padding so content doesn’t touch the
+              viewport edges.
+            </li>
+            <li>
+              The grid uses <code>--bs-gutter-x</code> to compute horizontal
+              gutters; containers set this variable.
+            </li>
+            <li>
+              Adjust side padding with spacing utilities like <code>px-*</code>,
+              or override the gutter variable locally.
+            </li>
+            <li>
+              For sections with no side padding, use <code>.g-0</code> on rows
+              or utilities like <code>px-0</code> on the container.
+            </li>
           </ul>
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
@@ -424,11 +517,22 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
 
         {/* Nesting guidance */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Nesting and Best Practices</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
+            Nesting and Best Practices
+          </h2>
           <ul className="list-disc list-inside text-gray-800 space-y-2 mb-4">
-            <li>Place rows and columns inside a container. Do not place rows directly in the body without a container.</li>
-            <li>Avoid nesting a <code>.container</code> inside grid columns unless you intentionally need a new centered layout context.</li>
-            <li>Prefer one container per major section. Use utilities and wrappers for inner spacing instead of extra containers.</li>
+            <li>
+              Place rows and columns inside a container. Do not place rows
+              directly in the body without a container.
+            </li>
+            <li>
+              Avoid nesting a <code>.container</code> inside grid columns unless
+              you intentionally need a new centered layout context.
+            </li>
+            <li>
+              Prefer one container per major section. Use utilities and wrappers
+              for inner spacing instead of extra containers.
+            </li>
           </ul>
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
@@ -445,8 +549,13 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
 
         {/* Mixed layout pattern */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Combining Fixed and Fluid Sections</h2>
-          <p className="text-gray-700 mb-4">Mix container types to achieve balanced layouts with full-bleed sections and centered content.</p>
+          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
+            Combining Fixed and Fluid Sections
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Mix container types to achieve balanced layouts with full-bleed
+            sections and centered content.
+          </p>
           <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
               <code>{mixedLayouts}</code>
@@ -462,9 +571,13 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
 
         {/* Custom container CSS */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Creating a Custom Container</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Creating a Custom Container
+          </h2>
           <p className="text-gray-800 mb-4">
-            If none of the built-in sizes fit your design, create a custom container class with your own <code>max-width</code> while keeping Bootstrap’s padding behavior.
+            If none of the built-in sizes fit your design, create a custom
+            container class with your own <code>max-width</code> while keeping
+            Bootstrap’s padding behavior.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
@@ -479,12 +592,81 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
           </div>
         </section>
 
+        {/* Visual Representation of Containers */}
+        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30 mt-10">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Visual: Bootstrap Containers
+          </h2>
+          <p className="text-gray-800 mb-6 leading-relaxed">
+            Below are all the Bootstrap container types. Resize your browser
+            window to see how each one behaves at different breakpoints.
+          </p>
+
+          <div className="space-y-6">
+            {/* Container */}
+            <div className="border-2 border-[#04AA6D] bg-white p-6 rounded-lg shadow text-center">
+              <div className="container bg-[#E7E9EB] border border-gray-400 p-4 rounded">
+                <p className="font-semibold text-gray-700">
+                  .container (Responsive fixed-width)
+                </p>
+              </div>
+            </div>
+
+            {/* Container Fluid */}
+            <div className="border-2 border-[#04AA6D] bg-white p-6 rounded-lg shadow text-center">
+              <div className="container-fluid bg-[#E7E9EB] border border-gray-400 p-4 rounded">
+                <p className="font-semibold text-gray-700">
+                  .container-fluid (Always 100% width)
+                </p>
+              </div>
+            </div>
+
+            {/* Breakpoint Specific */}
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="border-2 border-[#04AA6D] bg-white p-6 rounded-lg shadow text-center">
+                <div className="container-sm bg-[#E7E9EB] border border-gray-400 p-4 rounded">
+                  <p className="font-semibold text-gray-700">.container-sm</p>
+                </div>
+              </div>
+
+              <div className="border-2 border-[#04AA6D] bg-white p-6 rounded-lg shadow text-center">
+                <div className="container-md bg-[#E7E9EB] border border-gray-400 p-4 rounded">
+                  <p className="font-semibold text-gray-700">.container-md</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="border-2 border-[#04AA6D] bg-white p-6 rounded-lg shadow text-center">
+                <div className="container-lg bg-[#E7E9EB] border border-gray-400 p-4 rounded">
+                  <p className="font-semibold text-gray-700">.container-lg</p>
+                </div>
+              </div>
+
+              <div className="border-2 border-[#04AA6D] bg-white p-6 rounded-lg shadow text-center">
+                <div className="container-xl bg-[#E7E9EB] border border-gray-400 p-4 rounded">
+                  <p className="font-semibold text-gray-700">.container-xl</p>
+                </div>
+              </div>
+
+              <div className="border-2 border-[#04AA6D] bg-white p-6 rounded-lg shadow text-center">
+                <div className="container-xxl bg-[#E7E9EB] border border-gray-400 p-4 rounded">
+                  <p className="font-semibold text-gray-700">.container-xxl</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Sass customization */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Advanced: Sass Customization</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Advanced: Sass Customization
+          </h2>
           <p className="text-gray-800 mb-4">
-            When building Bootstrap from source, adjust the Sass maps to change breakpoints and container widths globally.
-            Import your overrides before compiling Bootstrap.
+            When building Bootstrap from source, adjust the Sass maps to change
+            breakpoints and container widths globally. Import your overrides
+            before compiling Bootstrap.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
@@ -498,22 +680,48 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             </button>
           </div>
           <ul className="list-disc list-inside text-gray-800 mt-4 space-y-1">
-            <li><code>$grid-breakpoints</code> controls the breakpoint map.</li>
-            <li><code>$container-max-widths</code> sets the fixed widths for <code>.container</code> at each breakpoint.</li>
-            <li><code>$container-padding-x</code> can be used to adjust default horizontal padding.</li>
+            <li>
+              <code>$grid-breakpoints</code> controls the breakpoint map.
+            </li>
+            <li>
+              <code>$container-max-widths</code> sets the fixed widths for{" "}
+              <code>.container</code> at each breakpoint.
+            </li>
+            <li>
+              <code>$container-padding-x</code> can be used to adjust default
+              horizontal padding.
+            </li>
           </ul>
         </section>
 
         {/* Quick reference list */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Quick Reference</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
+            Quick Reference
+          </h2>
           <ul className="list-disc list-inside text-gray-800 space-y-1">
-            <li><code>.container</code> — responsive fixed widths at breakpoints.</li>
-            <li><code>.container-fluid</code> — always full width.</li>
-            <li><code>.container-sm|md|lg|xl|xxl</code> — fluid below, fixed at and above the breakpoint.</li>
-            <li>Place grids inside containers; containers set gutter variables and side padding.</li>
-            <li>Use spacing utilities or CSS variables to tune inner padding and gutters.</li>
-            <li>Use full-bleed sections plus inner containers for edge-to-edge visuals with aligned content.</li>
+            <li>
+              <code>.container</code> — responsive fixed widths at breakpoints.
+            </li>
+            <li>
+              <code>.container-fluid</code> — always full width.
+            </li>
+            <li>
+              <code>.container-sm|md|lg|xl|xxl</code> — fluid below, fixed at
+              and above the breakpoint.
+            </li>
+            <li>
+              Place grids inside containers; containers set gutter variables and
+              side padding.
+            </li>
+            <li>
+              Use spacing utilities or CSS variables to tune inner padding and
+              gutters.
+            </li>
+            <li>
+              Use full-bleed sections plus inner containers for edge-to-edge
+              visuals with aligned content.
+            </li>
           </ul>
         </section>
 
