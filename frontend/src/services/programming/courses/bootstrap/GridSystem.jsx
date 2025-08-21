@@ -47,10 +47,10 @@ const GridSystem = () => {
             Bootstrap Grid System
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-            The Bootstrap grid system is the foundation for building responsive layouts. 
-            It uses a series of containers, rows, and columns to align and distribute 
-            content across devices of all sizes. Bootstrap’s grid system is built with 
-            Flexbox, making it powerful and flexible.
+            The Bootstrap grid system is the foundation for building responsive
+            layouts. It uses a series of containers, rows, and columns to align
+            and distribute content across devices of all sizes. Bootstrap’s grid
+            system is built with Flexbox, making it powerful and flexible.
           </p>
         </div>
 
@@ -77,19 +77,32 @@ const GridSystem = () => {
             How the Grid Works
           </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            The grid system in Bootstrap uses a 12-column layout. Each row can be divided into up to 12 columns. 
-            You can combine columns to create different layouts. The grid is fully responsive and adapts across breakpoints.
+            The grid system in Bootstrap uses a 12-column layout. Each row can
+            be divided into up to 12 columns. You can combine columns to create
+            different layouts. The grid is fully responsive and adapts across
+            breakpoints.
           </p>
           <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li>Use <code>.container</code> for a fixed-width container or <code>.container-fluid</code> for full width.</li>
-            <li>Inside containers, use <code>.row</code> to create horizontal groups of columns.</li>
-            <li>Inside rows, use <code>.col-*</code> classes to create responsive columns.</li>
+            <li>
+              Use <code>.container</code> for a fixed-width container or{" "}
+              <code>.container-fluid</code> for full width.
+            </li>
+            <li>
+              Inside containers, use <code>.row</code> to create horizontal
+              groups of columns.
+            </li>
+            <li>
+              Inside rows, use <code>.col-*</code> classes to create responsive
+              columns.
+            </li>
           </ul>
         </section>
 
         {/* Example */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Basic Example</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Basic Example
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Below is a simple grid example with 3 equal-width columns:
           </p>
@@ -109,9 +122,12 @@ const GridSystem = () => {
 
         {/* Breakpoints */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Grid Breakpoints</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Grid Breakpoints
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Bootstrap provides responsive breakpoints to define how columns should behave on different screen sizes:
+            Bootstrap provides responsive breakpoints to define how columns
+            should behave on different screen sizes:
           </p>
           <table className="table-auto w-full border border-gray-300 text-left text-gray-700 bg-white shadow rounded-lg overflow-hidden">
             <thead className="bg-[#04AA6D] text-white">
@@ -122,67 +138,242 @@ const GridSystem = () => {
               </tr>
             </thead>
             <tbody>
-              <tr><td className="px-4 py-2">Extra small</td><td className="px-4 py-2"><code>.col-</code></td><td className="px-4 py-2">&lt;576px</td></tr>
-              <tr><td className="px-4 py-2">Small</td><td className="px-4 py-2"><code>.col-sm-</code></td><td className="px-4 py-2">≥576px</td></tr>
-              <tr><td className="px-4 py-2">Medium</td><td className="px-4 py-2"><code>.col-md-</code></td><td className="px-4 py-2">≥768px</td></tr>
-              <tr><td className="px-4 py-2">Large</td><td className="px-4 py-2"><code>.col-lg-</code></td><td className="px-4 py-2">≥992px</td></tr>
-              <tr><td className="px-4 py-2">Extra large</td><td className="px-4 py-2"><code>.col-xl-</code></td><td className="px-4 py-2">≥1200px</td></tr>
-              <tr><td className="px-4 py-2">XXL</td><td className="px-4 py-2"><code>.col-xxl-</code></td><td className="px-4 py-2">≥1400px</td></tr>
+              <tr>
+                <td className="px-4 py-2">Extra small</td>
+                <td className="px-4 py-2">
+                  <code>.col-</code>
+                </td>
+                <td className="px-4 py-2">&lt;576px</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2">Small</td>
+                <td className="px-4 py-2">
+                  <code>.col-sm-</code>
+                </td>
+                <td className="px-4 py-2">≥576px</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2">Medium</td>
+                <td className="px-4 py-2">
+                  <code>.col-md-</code>
+                </td>
+                <td className="px-4 py-2">≥768px</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2">Large</td>
+                <td className="px-4 py-2">
+                  <code>.col-lg-</code>
+                </td>
+                <td className="px-4 py-2">≥992px</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2">Extra large</td>
+                <td className="px-4 py-2">
+                  <code>.col-xl-</code>
+                </td>
+                <td className="px-4 py-2">≥1200px</td>
+              </tr>
+              <tr>
+                <td className="px-4 py-2">XXL</td>
+                <td className="px-4 py-2">
+                  <code>.col-xxl-</code>
+                </td>
+                <td className="px-4 py-2">≥1400px</td>
+              </tr>
             </tbody>
           </table>
         </section>
 
+        {/* Breakpoints with Visual Representation */}
+        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Grid Breakpoints Visuals
+          </h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Bootstrap provides responsive breakpoints to define how columns
+            should behave on different screen sizes:
+          </p>
+
+          {/* Visual Representation */}
+          <div className="space-y-6">
+            {/* Extra Small */}
+            <div>
+              <p className="text-sm font-semibold text-[#04AA6D] mb-2">
+                Extra Small (&lt;576px)
+              </p>
+              <div className="flex flex-col gap-2 bg-[#E7E9EB] p-4 rounded-lg">
+                <div className="bg-[#04AA6D] text-white text-center py-2 rounded">
+                  col
+                </div>
+                <div className="bg-[#04AA6D] text-white text-center py-2 rounded">
+                  col
+                </div>
+              </div>
+            </div>
+
+            {/* Small */}
+            <div>
+              <p className="text-sm font-semibold text-[#04AA6D] mb-2">
+                Small (≥576px)
+              </p>
+              <div className="grid grid-cols-2 gap-2 bg-[#E7E9EB] p-4 rounded-lg">
+                <div className="bg-[#04AA6D] text-white text-center py-2 rounded">
+                  col-sm-6
+                </div>
+                <div className="bg-[#04AA6D] text-white text-center py-2 rounded">
+                  col-sm-6
+                </div>
+              </div>
+            </div>
+
+            {/* Medium */}
+            <div>
+              <p className="text-sm font-semibold text-[#04AA6D] mb-2">
+                Medium (≥768px)
+              </p>
+              <div className="grid grid-cols-3 gap-2 bg-[#E7E9EB] p-4 rounded-lg">
+                <div className="bg-[#04AA6D] text-white text-center py-2 rounded">
+                  col-md-4
+                </div>
+                <div className="bg-[#04AA6D] text-white text-center py-2 rounded">
+                  col-md-4
+                </div>
+                <div className="bg-[#04AA6D] text-white text-center py-2 rounded">
+                  col-md-4
+                </div>
+              </div>
+            </div>
+
+            {/* Large */}
+            <div>
+              <p className="text-sm font-semibold text-[#04AA6D] mb-2">
+                Large (≥992px)
+              </p>
+              <div className="grid grid-cols-4 gap-2 bg-[#E7E9EB] p-4 rounded-lg">
+                <div className="bg-[#04AA6D] text-white text-center py-2 rounded">
+                  col-lg-3
+                </div>
+                <div className="bg-[#04AA6D] text-white text-center py-2 rounded">
+                  col-lg-3
+                </div>
+                <div className="bg-[#04AA6D] text-white text-center py-2 rounded">
+                  col-lg-3
+                </div>
+                <div className="bg-[#04AA6D] text-white text-center py-2 rounded">
+                  col-lg-3
+                </div>
+              </div>
+            </div>
+
+            {/* Extra Large */}
+            <div>
+              <p className="text-sm font-semibold text-[#04AA6D] mb-2">
+                Extra Large (≥1200px)
+              </p>
+              <div className="grid grid-cols-6 gap-2 bg-[#E7E9EB] p-4 rounded-lg">
+                {[...Array(6)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="bg-[#04AA6D] text-white text-center py-2 rounded"
+                  >
+                    col-xl-2
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* XXL */}
+            <div>
+              <p className="text-sm font-semibold text-[#04AA6D] mb-2">
+                XXL (≥1400px)
+              </p>
+              <div className="grid grid-cols-12 gap-2 bg-[#E7E9EB] p-4 rounded-lg">
+                {[...Array(12)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="bg-[#04AA6D] text-white text-center py-1 rounded text-xs"
+                  >
+                    col-1
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Advanced Features */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200 space-y-6">
-          <h2 className="text-3xl font-bold text-[#04AA6D]">Advanced Grid Features</h2>
+          <h2 className="text-3xl font-bold text-[#04AA6D]">
+            Advanced Grid Features
+          </h2>
 
           <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">Auto-layout Columns</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Auto-layout Columns
+            </h3>
             <p className="text-gray-700 leading-relaxed">
-              Use <code>.col</code> without a number to create equal-width flexible columns.
+              Use <code>.col</code> without a number to create equal-width
+              flexible columns.
             </p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">Column Wrapping</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Column Wrapping
+            </h3>
             <p className="text-gray-700">
-              If more than 12 columns are placed in one row, the extra columns will wrap onto a new line.
+              If more than 12 columns are placed in one row, the extra columns
+              will wrap onto a new line.
             </p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">Responsive Classes</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Responsive Classes
+            </h3>
             <p className="text-gray-700">
-              You can combine multiple breakpoints. Example: <code>.col-12 .col-md-6 .col-lg-4</code>.
+              You can combine multiple breakpoints. Example:{" "}
+              <code>.col-12 .col-md-6 .col-lg-4</code>.
             </p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">Column Ordering</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Column Ordering
+            </h3>
             <p className="text-gray-700">
-              Use <code>.order-*</code> classes to change the visual order of columns.
+              Use <code>.order-*</code> classes to change the visual order of
+              columns.
             </p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">Column Offsetting</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Column Offsetting
+            </h3>
             <p className="text-gray-700">
               Use <code>.offset-*</code> classes to leave space before a column.
             </p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">Alignment & Justification</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Alignment & Justification
+            </h3>
             <p className="text-gray-700">
-              With Flexbox utilities, align columns vertically with <code>.align-items-*</code> 
+              With Flexbox utilities, align columns vertically with{" "}
+              <code>.align-items-*</code>
               and horizontally with <code>.justify-content-*</code>.
             </p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">Nesting</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Nesting
+            </h3>
             <p className="text-gray-700">
-              Place a <code>.row</code> inside a <code>.col</code> to create nested grids.
+              Place a <code>.row</code> inside a <code>.col</code> to create
+              nested grids.
             </p>
           </div>
         </section>

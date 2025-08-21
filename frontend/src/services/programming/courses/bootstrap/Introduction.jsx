@@ -41,41 +41,41 @@ const Introduction = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-8 sm:py-12 overflow-x-hidden">
+      <div className="w-full max-w-full mx-auto space-y-10 sm:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Introduction
           </h1>
-          <p className="text-gray-700 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-700 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Bootstrap is the world’s most popular front-end framework for
-            building responsive and mobile-first websites. It provides ready-to-use
-            HTML, CSS, and JavaScript components that help you design professional
-            websites faster and easier.
+            building responsive and mobile-first websites. It provides
+            ready-to-use HTML, CSS, and JavaScript components that help you
+            design professional websites faster and easier.
           </p>
         </div>
 
         {/* Navigation Top */}
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-2">
           <Link
             to="/bootstrap"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-3 sm:px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             <FaChevronLeft /> Bootstrap
           </Link>
 
           <Link
             to="/bootstrap/installation-setup"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-3 sm:px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             Installation & Setup <FaChevronRight />
           </Link>
         </div>
 
         {/* What is Bootstrap */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+        <section className="bg-[#D9EEE1] p-6 sm:p-8 lg:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-5 text-[#04AA6D]">
             What is Bootstrap?
           </h2>
           <p className="text-gray-800 mb-3 leading-relaxed">
@@ -86,22 +86,24 @@ const Introduction = () => {
           </p>
           <ul className="list-disc list-inside text-gray-800 space-y-2 mb-4">
             <li>Responsive grid system for layouts</li>
-            <li>Pre-designed components like buttons, navbars, modals, and cards</li>
+            <li>
+              Pre-designed components like buttons, navbars, modals, and cards
+            </li>
             <li>Mobile-first approach for modern devices</li>
             <li>Customizable with your own CSS or Sass</li>
           </ul>
         </section>
 
         {/* Why use Bootstrap */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+        <section className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-lg border border-gray-200">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-5 text-[#04AA6D]">
             Why Use Bootstrap?
           </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Bootstrap has become the most widely used framework because it saves
-            time and ensures consistency in design. Whether you are a beginner or
-            a professional developer, Bootstrap provides you with tools to create
-            beautiful websites with minimal effort.
+            time and ensures consistency in design. Whether you are a beginner
+            or a professional developer, Bootstrap provides you with tools to
+            create beautiful websites with minimal effort.
           </p>
           <ul className="list-disc list-inside text-gray-800 space-y-2">
             <li>Easy to learn and implement</li>
@@ -114,20 +116,21 @@ const Introduction = () => {
 
         {/* Example Section */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-[#04AA6D]">
             Example: A Simple Bootstrap Page
           </h2>
-          <p className="text-gray-700 mb-4">
+          <p className="text-gray-700 mb-4 text-sm sm:text-base">
             Below is a simple Bootstrap starter page. Save this as{" "}
             <code>index.html</code> and open it in your browser.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
+          <div className="bg-[#E7E9EB] p-4 sm:p-6 rounded-2xl shadow-inner border border-gray-300">
+            <pre className="bg-white border-l-4 border-[#04AA6D] p-3 sm:p-4 font-mono text-xs sm:text-sm rounded-lg shadow overflow-x-auto max-w-full">
+              {" "}
               <code>{bootstrapExample}</code>
             </pre>
             <button
               onClick={handleCopy}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
+              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 sm:mt-5 px-4 sm:px-6 py-2 rounded-lg shadow transition transform hover:scale-105 text-sm sm:text-base"
             >
               {copied ? "Copied!" : "Copy Code"}
             </button>
@@ -135,8 +138,8 @@ const Introduction = () => {
         </section>
 
         {/* Key Features */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+        <section className="bg-[#D9EEE1] p-6 sm:p-8 lg:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-5 text-[#04AA6D]">
             Key Features of Bootstrap
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800">
@@ -156,7 +159,8 @@ const Introduction = () => {
             <div>
               <h3 className="font-bold mb-2">Components</h3>
               <p className="mb-4">
-                Buttons, navbars, modals, forms, alerts, carousels, and many more.
+                Buttons, navbars, modals, forms, alerts, carousels, and many
+                more.
               </p>
             </div>
             <div>
@@ -171,8 +175,10 @@ const Introduction = () => {
 
         {/* Next Step */}
         <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 text-[#04AA6D]">
+            Next Step
+          </h2>
+          <p className="text-gray-700 text-sm sm:text-base">
             Now that you know what Bootstrap is and why it is useful, the next
             step is to learn how to{" "}
             <Link
@@ -186,17 +192,17 @@ const Introduction = () => {
         </section>
 
         {/* Bottom Navigation */}
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-2">
           <Link
             to="/bootstrap"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-3 sm:px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             <FaChevronLeft /> Bootstrap
           </Link>
 
           <Link
             to="/bootstrap/installation-setup"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-3 sm:px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             Installation & Setup <FaChevronRight />
           </Link>
