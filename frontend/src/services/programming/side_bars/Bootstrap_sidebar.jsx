@@ -31,7 +31,7 @@ const Bootstrap_sidebar = () => {
 
   return (
     <div className="relative">
-      {/* Toggle button (mobile only) */}
+      {/* Toggle button for the  (mobile only) */}
       <button
         onClick={() => setOpen(!open)}
         className="md:hidden fixed top-4 left-4 z-50 bg-blue-500 text-white p-2 rounded-md shadow"
