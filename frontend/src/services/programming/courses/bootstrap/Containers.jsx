@@ -199,11 +199,11 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="w-full max-w-6xl mx-auto space-y-5 sm:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Containers
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -215,7 +215,7 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
         </div>
 
         {/* Navigation Top */}
-        <div className="flex justify-between">
+        <div className="flex flex-row justify-between gap-3 sm:gap-2">
           <Link
             to="/bootstrap/installation-setup"
             className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
@@ -726,7 +726,7 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
         </section>
 
         {/* Bottom Navigation */}
-        <div className="flex justify-between">
+        <div className="flex flex-row justify-between gap-3 sm:gap-2">
           <Link
             to="/bootstrap/installation-setup"
             className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
