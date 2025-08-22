@@ -1,8 +1,7 @@
 // src/pages/bootstrap/Installation.jsx
-import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import CodeBlock from "./CodeBlock";
 const Installation = () => {
   const bootstrapCDN = `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>`;
@@ -29,27 +28,12 @@ const Installation = () => {
 </body>
 </html>`;
 
-  const [copied, setCopied] = useState(false);
-  const [copiedStarter, setCopiedStarter] = useState(false);
-
-  const handleCopy = (text, setter) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        setter(true);
-        setTimeout(() => setter(false), 1500);
-      })
-      .catch((err) => {
-        console.error("Failed to copy: ", err);
-      });
-  };
-
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-6 lg:px-8 py-10 sm:py-10">
       <div className="max-w-6xl mx-auto space-y-5 sm:space-y-10 lg:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Installation & Setup
           </h1>
           <p className="text-gray-700 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -89,18 +73,10 @@ const Installation = () => {
             links into your HTML file.
           </p>
 
-          <div className="bg-[#E7E9EB] p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-inner border border-gray-300">
-            <h3 className="font-bold mb-3 text-sm sm:text-base">Copy and paste this into the head of your HTML:</h3>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-3 sm:p-4 font-mono text-xs sm:text-sm rounded-lg overflow-x-auto shadow">
-              <code>{bootstrapCDN}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(bootstrapCDN, setCopied)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 w-fit sm:mt-5 px-4 sm:px-6 py-2 rounded-lg shadow transition transform hover:scale-105 text-sm sm:text-base sm:w-auto"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <h3 className="font-bold mb-3 text-sm sm:text-base">
+            Copy and paste this into the head of your HTML:
+          </h3>
+          <CodeBlock code={bootstrapCDN} />
 
           <p className="text-gray-800 mt-4 sm:mt-6 leading-relaxed text-sm sm:text-base">
             The CSS link should go inside the <code>&lt;head&gt;</code> section,
@@ -120,17 +96,7 @@ const Installation = () => {
             browser to confirm Bootstrap is working.
           </p>
 
-          <div className="bg-[#E7E9EB] p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-3 sm:p-4 font-mono text-xs sm:text-sm rounded-lg overflow-x-auto shadow max-h-96 overflow-y-auto">
-              <code>{bootstrapStarter}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(bootstrapStarter, setCopiedStarter)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 sm:mt-5 px-4 sm:px-6 py-2 rounded-lg shadow transition transform hover:scale-105 text-sm sm:text-base w-fit sm:w-auto"
-            >
-              {copiedStarter ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={bootstrapStarter} />
         </section>
 
         {/* Download Section */}
@@ -141,7 +107,8 @@ const Installation = () => {
           <p className="text-gray-800 mb-4 leading-relaxed text-sm sm:text-base">
             If you prefer to host Bootstrap yourself, you can download the files
             and include them locally in your project. This method is helpful if
-            you need to work offline or want full control over your dependencies.
+            you need to work offline or want full control over your
+            dependencies.
           </p>
           <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4 text-sm sm:text-base">
             <li>
@@ -159,7 +126,8 @@ const Installation = () => {
             <li>
               Extract the files and link{" "}
               <code className="break-words">bootstrap.min.css</code> and{" "}
-              <code className="break-words">bootstrap.bundle.min.js</code> into your HTML file.
+              <code className="break-words">bootstrap.bundle.min.js</code> into
+              your HTML file.
             </li>
           </ul>
         </section>
@@ -193,7 +161,9 @@ const Installation = () => {
 
         {/* Next Steps */}
         <section>
-          <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#04AA6D]">Next Step</h2>
+          <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#04AA6D]">
+            Next Step
+          </h2>
           <p className="text-gray-700 text-sm sm:text-base">
             Once Bootstrap is included, the next step is to learn how to use{" "}
             <Link

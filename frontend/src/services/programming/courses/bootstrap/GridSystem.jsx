@@ -1,11 +1,9 @@
 // src/pages/bootstrap/GridSystem.jsx
-import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import CodeBlock from "./CodeBlock";
 
 const GridSystem = () => {
-  const [copied, setCopied] = useState(false);
-
   const sampleGrid = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,22 +26,12 @@ const GridSystem = () => {
 </body>
 </html>`;
 
-  const handleCopy = (text) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-      })
-      .catch((err) => console.error("Failed to copy:", err));
-  };
-
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="w-full max-w-6xl mx-auto space-y-5 sm:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Grid System
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -72,7 +60,7 @@ const GridSystem = () => {
         </div>
 
         {/* How it works */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1]  p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             How the Grid Works
           </h2>
@@ -99,7 +87,7 @@ const GridSystem = () => {
         </section>
 
         {/* Example */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Basic Example
           </h2>
@@ -107,85 +95,88 @@ const GridSystem = () => {
             Below is a simple grid example with 3 equal-width columns:
           </p>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{sampleGrid}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(sampleGrid)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={sampleGrid} />
         </section>
 
         {/* Breakpoints */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+        <section className="bg-[#D9EEE1] p-4 sm:p-6 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          {/* Heading */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 text-[#04AA6D] text-center md:text-left">
             Grid Breakpoints
           </h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
+
+          {/* Paragraph */}
+          <p className="text-gray-800 mb-4 leading-relaxed text-sm sm:text-base md:text-lg text-center md:text-left">
             Bootstrap provides responsive breakpoints to define how columns
             should behave on different screen sizes:
           </p>
-          <table className="table-auto w-full border border-gray-300 text-left text-gray-700 bg-white shadow rounded-lg overflow-hidden">
-            <thead className="bg-[#04AA6D] text-white">
-              <tr>
-                <th className="px-4 py-2">Breakpoint</th>
-                <th className="px-4 py-2">Class Prefix</th>
-                <th className="px-4 py-2">Screen Size</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="px-4 py-2">Extra small</td>
-                <td className="px-4 py-2">
-                  <code>.col-</code>
-                </td>
-                <td className="px-4 py-2">&lt;576px</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">Small</td>
-                <td className="px-4 py-2">
-                  <code>.col-sm-</code>
-                </td>
-                <td className="px-4 py-2">≥576px</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">Medium</td>
-                <td className="px-4 py-2">
-                  <code>.col-md-</code>
-                </td>
-                <td className="px-4 py-2">≥768px</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">Large</td>
-                <td className="px-4 py-2">
-                  <code>.col-lg-</code>
-                </td>
-                <td className="px-4 py-2">≥992px</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">Extra large</td>
-                <td className="px-4 py-2">
-                  <code>.col-xl-</code>
-                </td>
-                <td className="px-4 py-2">≥1200px</td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2">XXL</td>
-                <td className="px-4 py-2">
-                  <code>.col-xxl-</code>
-                </td>
-                <td className="px-4 py-2">≥1400px</td>
-              </tr>
-            </tbody>
-          </table>
+
+          {/* Responsive table wrapper */}
+          <div className="overflow-x-auto rounded-lg">
+            <table className="table-auto min-w-full border border-gray-300 text-left text-gray-700 bg-white shadow rounded-lg">
+              <thead className="bg-[#04AA6D] text-white text-sm sm:text-base">
+                <tr>
+                  <th className="px-3 sm:px-4 py-2 whitespace-nowrap">
+                    Breakpoint
+                  </th>
+                  <th className="px-3 sm:px-4 py-2 whitespace-nowrap">
+                    Class Prefix
+                  </th>
+                  <th className="px-3 sm:px-4 py-2 whitespace-nowrap">
+                    Screen Size
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-sm sm:text-base">
+                <tr>
+                  <td className="px-3 sm:px-4 py-2">Extra small</td>
+                  <td className="px-3 sm:px-4 py-2">
+                    <code>.col-</code>
+                  </td>
+                  <td className="px-3 sm:px-4 py-2">&lt;576px</td>
+                </tr>
+                <tr>
+                  <td className="px-3 sm:px-4 py-2">Small</td>
+                  <td className="px-3 sm:px-4 py-2">
+                    <code>.col-sm-</code>
+                  </td>
+                  <td className="px-3 sm:px-4 py-2">≥576px</td>
+                </tr>
+                <tr>
+                  <td className="px-3 sm:px-4 py-2">Medium</td>
+                  <td className="px-3 sm:px-4 py-2">
+                    <code>.col-md-</code>
+                  </td>
+                  <td className="px-3 sm:px-4 py-2">≥768px</td>
+                </tr>
+                <tr>
+                  <td className="px-3 sm:px-4 py-2">Large</td>
+                  <td className="px-3 sm:px-4 py-2">
+                    <code>.col-lg-</code>
+                  </td>
+                  <td className="px-3 sm:px-4 py-2">≥992px</td>
+                </tr>
+                <tr>
+                  <td className="px-3 sm:px-4 py-2">Extra large</td>
+                  <td className="px-3 sm:px-4 py-2">
+                    <code>.col-xl-</code>
+                  </td>
+                  <td className="px-3 sm:px-4 py-2">≥1200px</td>
+                </tr>
+                <tr>
+                  <td className="px-3 sm:px-4 py-2">XXL</td>
+                  <td className="px-3 sm:px-4 py-2">
+                    <code>.col-xxl-</code>
+                  </td>
+                  <td className="px-3 sm:px-4 py-2">≥1400px</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
         {/* Breakpoints with Visual Representation */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Grid Breakpoints Visuals
           </h2>
@@ -195,7 +186,7 @@ const GridSystem = () => {
           </p>
 
           {/* Visual Representation */}
-          <div className="space-y-6">
+          <div className="space-y-3">
             {/* Extra Small */}
             <div>
               <p className="text-sm font-semibold text-[#04AA6D] mb-2">
@@ -270,30 +261,13 @@ const GridSystem = () => {
               <p className="text-sm font-semibold text-[#04AA6D] mb-2">
                 Extra Large (≥1200px)
               </p>
-              <div className="grid grid-cols-6 gap-2 bg-[#E7E9EB] p-4 rounded-lg">
-                {[...Array(6)].map((_, i) => (
+              <div className="grid grid-cols-5 gap-2 bg-[#E7E9EB] p-4 rounded-lg">
+                {[...Array(5)].map((_, i) => (
                   <div
                     key={i}
-                    className="bg-[#04AA6D] text-white text-center py-2 rounded"
+                    className="bg-[#04AA6D] text-white text-center py-2 p-2 rounded text-nowrap"
                   >
                     col-xl-2
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* XXL */}
-            <div>
-              <p className="text-sm font-semibold text-[#04AA6D] mb-2">
-                XXL (≥1400px)
-              </p>
-              <div className="grid grid-cols-12 gap-2 bg-[#E7E9EB] p-4 rounded-lg">
-                {[...Array(12)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="bg-[#04AA6D] text-white text-center py-1 rounded text-xs"
-                  >
-                    col-1
                   </div>
                 ))}
               </div>
@@ -302,7 +276,7 @@ const GridSystem = () => {
         </section>
 
         {/* Advanced Features */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200 space-y-6">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200 space-y-6">
           <h2 className="text-3xl font-bold text-[#04AA6D]">
             Advanced Grid Features
           </h2>

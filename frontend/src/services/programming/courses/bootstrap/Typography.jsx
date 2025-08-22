@@ -1,21 +1,8 @@
-// src/pages/bootstrap/Typography.jsx
-import { useState } from "react";
+import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Typography = () => {
-  // Reusable copy-to-clipboard (shows "Copied!" per-section)
-  const [copiedId, setCopiedId] = useState(null);
-  const handleCopy = (text, id) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        setCopiedId(id);
-        setTimeout(() => setCopiedId(null), 1500);
-      })
-      .catch((err) => console.error("Failed to copy:", err));
-  };
-
   // Code samples
   const htmlHeadings = `<!-- Headings h1–h6 -->
 <h1>h1. Bootstrap heading <small class="text-muted">subheading</small></h1>
@@ -215,11 +202,11 @@ const Typography = () => {
 <p class="text-white bg-dark d-inline-block px-2">.text-white on dark</p>`;
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="w-full max-w-6xl mx-auto space-y-5 sm:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Typography
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -249,7 +236,7 @@ const Typography = () => {
         </div>
 
         {/* Headings */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Headings</h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Bootstrap styles the six HTML headings and also provides utility
@@ -263,7 +250,7 @@ const Typography = () => {
             </code>{" "}
             for secondary text.
           </p>
-          <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm mb-6 space-y-1">
+          <div className="bg-white p-4 md:p-8 rounded-xl border border-gray-200 shadow-sm mb-6 space-y-1">
             <h1>
               h1. Bootstrap heading{" "}
               <small className="text-gray-500">subheading</small>
@@ -292,22 +279,12 @@ const Typography = () => {
             <p className="h2">.h2 styled paragraph</p>
           </div>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{htmlHeadings}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(htmlHeadings, "headings")}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "headings" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={htmlHeadings} />
         </section>
 
         {/* Display Headings */}
         {/* Display Headings */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Display Headings
           </h2>
@@ -318,7 +295,7 @@ const Typography = () => {
           </p>
 
           {/* Visual Representation */}
-          <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm mb-6 space-y-2">
+          <div className="bg-white p-3 md:p-6 rounded-xl border border-gray-200 shadow-sm mb-6 space-y-2">
             <h1 className="text-6xl font-light">Display 1</h1>
             <h1 className="text-5xl font-light">Display 2</h1>
             <h1 className="text-4xl font-light">Display 3</h1>
@@ -328,21 +305,11 @@ const Typography = () => {
           </div>
 
           {/* Code Block */}
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{displayHeadings}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(displayHeadings, "display")}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "display" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={displayHeadings} />
         </section>
 
         {/* Lead Paragraph */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Lead Paragraph
           </h2>
@@ -362,21 +329,11 @@ const Typography = () => {
             </p>
           </div>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{leadParagraph}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(leadParagraph, "lead")}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "lead" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={leadParagraph} />
         </section>
 
         {/* Inline Text & Code Semantics */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Inline Text Elements & Code
           </h2>
@@ -401,27 +358,14 @@ const Typography = () => {
               Sample output: <samp>Done in 1.23s.</samp>
             </p>
           </div>
-
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300 space-y-3">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{inlineText}</code>
-            </pre>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{preCode}</code>
-            </pre>
-            <button
-              onClick={() =>
-                handleCopy(inlineText + "\n\n" + preCode, "inline")
-              }
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "inline" ? "Copied!" : "Copy Code"}
-            </button>
+          <div className="space-y-4">
+            <CodeBlock code={inlineText} />
+            <CodeBlock code={preCode} />
           </div>
         </section>
 
         {/* Blockquotes */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Blockquotes
           </h2>
@@ -449,21 +393,11 @@ const Typography = () => {
             </figure>
           </div>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{blockquotes}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(blockquotes, "blockquote")}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "blockquote" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={blockquotes} />
         </section>
 
         {/* Lists & Description Lists */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Lists</h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Use default ordered/unordered lists, remove bullets with{" "}
@@ -472,7 +406,7 @@ const Typography = () => {
           </p>
 
           <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm mb-6">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <h3 className="font-semibold text-gray-800 mb-2">Unordered</h3>
                 <ul className="list-disc ml-6">
@@ -489,31 +423,20 @@ const Typography = () => {
                   <li>Third</li>
                 </ol>
               </div>
-            </div>
-
-            <div className="mt-6">
-              <h3 className="font-semibold text-gray-800 mb-2">Inline</h3>
-              <ul className="list-inline">
-                <li className="list-inline-item">Item 1</li>
-                <li className="list-inline-item">Item 2</li>
-                <li className="list-inline-item">Item 3</li>
-              </ul>
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-2">Inline</h3>
+                <ol className="list-inline">
+                  <li className="list-inline-item">Item 1</li>
+                  <li className="list-inline-item">Item 2</li>
+                  <li className="list-inline-item">Item 3</li>
+                </ol>
+              </div>
             </div>
           </div>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300 mb-6">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{lists}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(lists, "lists")}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "lists" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={lists} />
 
-          <h3 className="text-2xl font-semibold mb-3 text-[#04AA6D]">
+          <h3 className="text-2xl font-semibold mb-3 text-[#04AA6D] mt-4">
             Description Lists
           </h3>
           <p className="text-gray-800 mb-4">
@@ -533,21 +456,11 @@ const Typography = () => {
             </dl>
           </div>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{descriptionLists}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(descriptionLists, "dl")}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "dl" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={descriptionLists} />
         </section>
 
         {/* Alignment & Transform */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Alignment & Transform
           </h2>
@@ -571,21 +484,11 @@ const Typography = () => {
             <p className="text-capitalize">capitalized text example</p>
           </div>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{alignmentTransform}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(alignmentTransform, "align")}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "align" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={alignmentTransform} />
         </section>
 
         {/* Font Size, Weight, Style */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Font Size, Weight, Style
           </h2>
@@ -623,21 +526,11 @@ const Typography = () => {
           </div>
 
           {/* Code Box */}
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{fontSizeWeightStyle}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(fontSizeWeightStyle, "fsfw")}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "fsfw" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={fontSizeWeightStyle} />
         </section>
 
         {/* Line-height & Font Family */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Line-height & Font Family
           </h2>
@@ -670,21 +563,11 @@ const Typography = () => {
             </p>
           </div>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{lineHeightFamily}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(lineHeightFamily, "lhfam")}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "lhfam" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={lineHeightFamily} />
         </section>
 
         {/* Wrapping, Breaking, Truncation */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Wrapping, Breaking, Truncation
           </h2>
@@ -694,49 +577,11 @@ const Typography = () => {
             block or inline-block display.
           </p>
 
-          <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm mb-6 space-y-3">
-            <p className="text-wrap" style={{ width: "12rem" }}>
-              Long content will wrap inside this fixed width.
-            </p>
-            <p
-              className="text-nowrap"
-              style={{ width: "12rem", border: "1px solid #dee2e6" }}
-            >
-              This text will not wrap and may overflow its container.
-            </p>
-            <p
-              className="text-break"
-              style={{ width: "12rem", border: "1px solid #dee2e6" }}
-            >
-              SuperLongUnbreakableWordSuperLongUnbreakableWord
-            </p>
-            <div className="text-truncate" style={{ maxWidth: "220px" }}>
-              This is a long line that will be truncated with an ellipsis when
-              it overflows.
-            </div>
-            <div
-              className="d-inline-block text-truncate"
-              style={{ maxWidth: "180px" }}
-            >
-              Inline-block truncation works as well.
-            </div>
-          </div>
-
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{wrapBreakTruncate}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(wrapBreakTruncate, "wrap")}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "wrap" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={wrapBreakTruncate} />
         </section>
 
         {/* Decoration, Reset & Link Helpers; Abbreviations */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Decoration, Reset, Links & Abbreviations
           </h2>
@@ -757,29 +602,6 @@ const Typography = () => {
                 Reset link color to parent
               </a>
             </p>
-            <div className="space-x-3">
-              <a href="#" className="link-primary">
-                Primary
-              </a>
-              <a href="#" className="link-secondary">
-                Secondary
-              </a>
-              <a href="#" className="link-success">
-                Success
-              </a>
-              <a href="#" className="link-danger">
-                Danger
-              </a>
-              <a href="#" className="link-warning">
-                Warning
-              </a>
-              <a href="#" className="link-info">
-                Info
-              </a>
-              <a href="#" className="link-dark">
-                Dark
-              </a>
-            </div>
             <p className="mt-3">
               Abbrev: <abbr title="HyperText Markup Language">HTML</abbr>,{" "}
               <abbr title="Internationalization" className="initialism">
@@ -787,30 +609,14 @@ const Typography = () => {
               </abbr>
             </p>
           </div>
-
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300 space-y-3">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{decorationResetLinks}</code>
-            </pre>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{abbreviations}</code>
-            </pre>
-            <button
-              onClick={() =>
-                handleCopy(
-                  decorationResetLinks + "\n\n" + abbreviations,
-                  "linksabbr"
-                )
-              }
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "linksabbr" ? "Copied!" : "Copy Code"}
-            </button>
+          <div className="space-y-4">
+            <CodeBlock code={decorationResetLinks} />
+            <CodeBlock code={abbreviations} />
           </div>
         </section>
 
         {/* Quick Color Utilities Reference (link to full page) */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Text Color Utilities (Quick Reference)
           </h2>
@@ -836,17 +642,7 @@ const Typography = () => {
             </p>
           </div>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{colorsNote}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(colorsNote, "colors")}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "colors" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={colorsNote} />
         </section>
 
         {/* Next Steps */}

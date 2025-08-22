@@ -1,7 +1,7 @@
 // src/pages/bootstrap/Introduction.jsx
-import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import CodeBlock from "./CodeBlock";
 
 const Introduction = () => {
   const bootstrapExample = `<!DOCTYPE html>
@@ -26,26 +26,12 @@ const Introduction = () => {
 </body>
 </html>`;
 
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard
-      .writeText(bootstrapExample)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-      })
-      .catch((err) => {
-        console.error("Failed to copy: ", err);
-      });
-  };
-
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
       <div className="w-full max-w-6xl mx-auto space-y-5 sm:space-y-14">
         {/* Header */}
         <div className="text-center px-2">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Introduction
           </h1>
           <p className="text-gray-700 text-sm sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -123,17 +109,7 @@ const Introduction = () => {
             Below is a simple Bootstrap starter page. Save this as{" "}
             <code>index.html</code> and open it in your browser.
           </p>
-          <div className="bg-[#E7E9EB] p-4 sm:p-6 rounded-2xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-3 sm:p-4 font-mono text-xs sm:text-sm md:text-base rounded-lg shadow overflow-x-auto max-w-full">
-              <code>{bootstrapExample}</code>
-            </pre>
-            <button
-              onClick={handleCopy}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-4 py-2 rounded-lg shadow transition transform hover:scale-105 text-sm sm:text-base"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={bootstrapExample} />
         </section>
 
         {/* Key Features */}
