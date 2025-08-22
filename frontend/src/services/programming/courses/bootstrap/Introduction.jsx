@@ -41,11 +41,11 @@ const Introduction = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-3 sm:px-4 lg:px-6 py-6 sm:py-10 lg:py-14">
-      <div className="w-full max-w-6xl mx-auto space-y-10 sm:space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="w-full max-w-6xl mx-auto space-y-5 sm:space-y-14">
         {/* Header */}
         <div className="text-center px-2">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Introduction
           </h1>
           <p className="text-gray-700 text-sm sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
@@ -57,17 +57,17 @@ const Introduction = () => {
         </div>
 
         {/* Navigation Top */}
-        <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-2">
+        <div className="flex flex-row justify-between gap-3 sm:gap-2">
           <Link
             to="/bootstrap"
-            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base w-fit"
           >
             <FaChevronLeft /> Bootstrap
           </Link>
 
           <Link
             to="/bootstrap/installation-setup"
-            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base w-fit"
           >
             Installation & Setup <FaChevronRight />
           </Link>
@@ -191,17 +191,17 @@ const Introduction = () => {
         </section>
 
         {/* Bottom Navigation */}
-        <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-2">
+        <div className="flex flex-row justify-between gap-3 sm:gap-2">
           <Link
             to="/bootstrap"
-            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base w-fit"
           >
             <FaChevronLeft /> Bootstrap
           </Link>
 
           <Link
             to="/bootstrap/installation-setup"
-            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base w-fit"
           >
             Installation & Setup <FaChevronRight />
           </Link>

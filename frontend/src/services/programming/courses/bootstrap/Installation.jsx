@@ -45,8 +45,8 @@ const Installation = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      <div className="max-w-6xl mx-auto space-y-8 sm:space-y-10 lg:space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-6 lg:px-8 py-10 sm:py-10">
+      <div className="max-w-6xl mx-auto space-y-5 sm:space-y-10 lg:space-y-14">
         {/* Header */}
         <div className="text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold sm:font-extrabold mb-4 text-[#04AA6D] drop-shadow">
@@ -61,7 +61,7 @@ const Installation = () => {
         </div>
 
         {/* Navigation Top */}
-        <div className="flex flex-col sm:flex-row justify-between gap-4 sm:gap-0">
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/introduction"
             className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
@@ -96,7 +96,7 @@ const Installation = () => {
             </pre>
             <button
               onClick={() => handleCopy(bootstrapCDN, setCopied)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 sm:mt-5 px-4 sm:px-6 py-2 rounded-lg shadow transition transform hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
+              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 w-fit sm:mt-5 px-4 sm:px-6 py-2 rounded-lg shadow transition transform hover:scale-105 text-sm sm:text-base sm:w-auto"
             >
               {copied ? "Copied!" : "Copy Code"}
             </button>
@@ -126,7 +126,7 @@ const Installation = () => {
             </pre>
             <button
               onClick={() => handleCopy(bootstrapStarter, setCopiedStarter)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 sm:mt-5 px-4 sm:px-6 py-2 rounded-lg shadow transition transform hover:scale-105 text-sm sm:text-base w-full sm:w-auto"
+              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 sm:mt-5 px-4 sm:px-6 py-2 rounded-lg shadow transition transform hover:scale-105 text-sm sm:text-base w-fit sm:w-auto"
             >
               {copiedStarter ? "Copied!" : "Copy Code"}
             </button>
@@ -207,7 +207,7 @@ const Installation = () => {
         </section>
 
         {/* Bottom Navigation */}
-        <div className="flex flex-col sm:flex-row justify-between gap-4 sm:gap-0">
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/introduction"
             className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"

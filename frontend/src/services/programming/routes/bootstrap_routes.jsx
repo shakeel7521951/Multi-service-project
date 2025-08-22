@@ -31,7 +31,7 @@ const BootstrapLayout = () => {
 
       {/* Main Content */}
       <div className="flex-1 min-h-screen p-3 sm:p-4 md:p-6 overflow-x-hidden">
-        <Outlet />
+        <Outlet />  
       </div>
     </div>
   );
