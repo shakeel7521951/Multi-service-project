@@ -1,20 +1,8 @@
-// src/pages/bootstrap/Colors.jsx
-import { useState } from "react";
+import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Colors = () => {
-  const [copiedId, setCopiedId] = useState(null);
-  const handleCopy = (id, text) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        setCopiedId(id);
-        setTimeout(() => setCopiedId(null), 1500);
-      })
-      .catch((err) => console.error("Failed to copy:", err));
-  };
-
   const paletteExample = `<!-- Palette examples -->
 <p class="text-primary">.text-primary</p>
 <p class="text-secondary">.text-secondary</p>
@@ -110,11 +98,11 @@ const Colors = () => {
 <p class="text-muted bg-light p-2 border">Muted on light (use for less emphasis)</p>`;
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="max-w-6xl mx-auto space-y-5 sm:space-y-10 lg:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Colors & Backgrounds
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -142,14 +130,14 @@ const Colors = () => {
         </div>
 
         {/* Palette Overview */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Bootstrap Color Palette
           </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Bootstrap ships with a contextual palette you’ll use across
             components and utilities. These keys map to CSS variables such as{" "}
-            <code>--bs-primary</code>, <code>--bs-success</code>, etc.
+            <code>--bs-primary</code>, <code>--bs-success</code>,etc.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -180,22 +168,12 @@ const Colors = () => {
             ))}
           </div>
 
-          <div className="bg-[#E7E9EB] p-6 mt-6 rounded-xl shadow-inner border border-gray-300">
-            <h3 className="font-bold mb-3">Quick text palette</h3>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{paletteExample}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("palette", paletteExample)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "palette" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <h3 className="font-bold mb-3 mt-3">Quick text palette</h3>
+          <CodeBlock code={paletteExample} />
         </section>
 
         {/* Text Colors & Links */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200 space-y-6">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200 space-y-6">
           <h2 className="text-3xl font-bold text-[#04AA6D]">
             Text Colors and Link Utilities
           </h2>
@@ -205,22 +183,12 @@ const Colors = () => {
             to de-emphasize content.
           </p>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <h3 className="font-bold mb-3">Link color helpers</h3>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{linkUtilities}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("links", linkUtilities)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "links" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <h3 className="font-bold mb-3">Link color helpers</h3>
+          <CodeBlock code={linkUtilities} />
         </section>
 
         {/* Readable Text Background Helpers */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Readable Text Backgrounds
           </h2>
@@ -229,22 +197,11 @@ const Colors = () => {
             automatically adjusted readable text color. This is ideal for
             badges, labels, and chips.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{textBgHelpers}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("textbg", textBgHelpers)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "textbg" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={textBgHelpers} />
         </section>
 
         {/* Background Colors */}
-        {/* Background Colors */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Background Colors
           </h2>
@@ -279,21 +236,11 @@ const Colors = () => {
           </div>
 
           {/* Code Example */}
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{backgroundExample}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("bg", backgroundExample)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "bg" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={backgroundExample} />
         </section>
 
         {/* Background Opacity */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Background Opacity
           </h2>
@@ -303,21 +250,11 @@ const Colors = () => {
             <code>100</code>. This is applied via CSS variables and keeps your
             text color unaffected.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{bgOpacityExample}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("bgop", bgOpacityExample)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "bgop" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={bgOpacityExample} />
         </section>
 
         {/* Gradients */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Background Gradients
           </h2>
@@ -325,21 +262,11 @@ const Colors = () => {
             Add a subtle top-to-bottom gradient with <code>.bg-gradient</code>{" "}
             on any colored background.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{gradientExample}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("grad", gradientExample)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "grad" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={gradientExample} />
         </section>
 
         {/* Borders */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Border Colors
           </h2>
@@ -347,21 +274,11 @@ const Colors = () => {
             Color borders with <code>.border-*</code>. Combine with{" "}
             <code>.border</code>, rounding utilities, and spacing.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{borderExample}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("border", borderExample)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "border" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={borderExample} />
         </section>
 
         {/* Generic Opacity Utilities */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Generic Opacity Utilities
           </h2>
@@ -370,21 +287,11 @@ const Colors = () => {
             <code>.opacity-0</code>, <code>25</code>, <code>50</code>,{" "}
             <code>75</code>, or <code>100</code>.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{opacityUtilities}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("op", opacityUtilities)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "op" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={opacityUtilities} />
         </section>
 
         {/* CSS Variables and Theming */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Customizing Colors
           </h2>
@@ -404,21 +311,11 @@ const Colors = () => {
             <li>Generate custom utilities with the Utility API in SCSS.</li>
           </ul>
 
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{variablesExample}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("vars", variablesExample)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "vars" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={variablesExample} />
         </section>
 
         {/* Accessibility Notes */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Accessibility and Contrast
           </h2>
@@ -427,17 +324,7 @@ const Colors = () => {
             and UI controls. Prefer combinations that meet WCAG 2.1 AA
             guidelines.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{contrastTips}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("a11y", contrastTips)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copiedId === "a11y" ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={contrastTips} />
         </section>
 
         {/* Next Steps */}
@@ -456,7 +343,7 @@ const Colors = () => {
         </section>
 
         {/* Bottom Navigation */}
-        <div className="flex justify-between">
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/typography"
             className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
