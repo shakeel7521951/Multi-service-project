@@ -176,7 +176,7 @@ const Installation = () => {
           </p>
         </section>
 
-        {/* Bottom Navigation */}
+        {/* Bottom Navigation button */}
         <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/introduction"
