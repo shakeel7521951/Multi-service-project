@@ -1,36 +1,44 @@
-import React from 'react'
-import { NavLink } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
+const TutorialArray = [
+  { topic: "Home", path: "home" },
+  { topic: "Installation & Setup", path: "installation-setup" },
+  { topic: "Core Concepts", path: "core-concepts" },
+  { topic: "Typography", path: "typography" },
+  { topic: "Colors & Backgrounds", path: "colors-backgrounds" },
+  { topic: "Layout & Box Model", path: "layout-box-model" },
+  { topic: "Flexbox", path: "flexbox" },
+  { topic: "CSS Grid", path: "css-grid" },
+  { topic: "Responsive Design", path: "responsive-design" },
+  { topic: "Borders & Effects", path: "borders-effects" },
+  { topic: "Transforms & Transitions", path: "transforms-transitions" },
+  { topic: "Customization", path: "customization" },
+  { topic: "Components", path: "components" },
+  { topic: "Forms", path: "forms" },
+  { topic: "Navigation", path: "navigation" },
+  { topic: "Cards & Grids", path: "cards-grids" },
+  { topic: "Hero Sections", path: "hero-sections" },
+  { topic: "Dark Mode", path: "dark-mode" },
+  { topic: "Performance", path: "performance" },
+  { topic: "Advanced Techniques", path: "advanced-techniques" },
+  { topic: "Project Implementation", path: "project-implementation" },
+];
 
-
-const Tailwindcss_sidebar = () => {
-  const topics = [
-    "Home",
-  
-  ];
+const TailwindcssSidebar = () => {
   return (
-    <div className="w-64 min-h-screen bg-gray-100 border-r border-gray-300 p-4">
-      <h2 className="text-xl font-bold mb-4 text-gray-800">TailwaindCss Tutorial</h2>
-      <ul className="space-y-2">
-        {topics.map((topic, index) => (
-          <li key={index}>
-            {/* <NavLink
-              to={path}
-              className={({ isActive }) =>
-                `block px-3 py-2 rounded-md transition ${isActive
-                  ? "bg-blue-500 text-white"
-                  : "text-gray-700 hover:bg-gray-200"
-                }`
-              }
-            >
-              {topic}
-            </NavLink> */}
+    <div className="w-[20vw] hidden lg:block sticky top-0 p-3 overflow-y-auto h-screen bg-[#E7E9EB]">
+      <ul className="flex flex-col gap-2">
+        {TutorialArray.map((link, index) => (
+          <li key={index} className="hover:bg-[#CCCCCC] px-3 w-full rounded">
+            <Link to={link.path} className="w-full block py-1">
+              {link.topic}
+            </Link>
           </li>
         ))}
       </ul>
-    </div >
+    </div>
   );
+};
 
-}
-
-export default Tailwindcss_sidebar
+export default TailwindcssSidebar;

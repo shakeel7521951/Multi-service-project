@@ -1,7 +1,7 @@
 // src/pages/bootstrap/Containers.jsx
-import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import CodeBlock from "./CodeBlock";
 
 const Containers = () => {
   // Code samples
@@ -109,10 +109,6 @@ const Containers = () => {
   padding-left: calc(var(--bs-gutter-x, 1.5rem) * .5);
   max-width: 80rem; /* 1280px example */
 }
-
-/* Optional: alter at breakpoints */
-@media (min-width: 1400px) {
-  .custom-container { max-width: 90rem; } /* 1440px */
 }`;
 
   const sassCustomization = `// _custom.scss (loaded after Bootstrap’s source)
@@ -172,38 +168,12 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
     <p class="lead mb-0">Primary content area in a fixed-width container.</p>
   </div>
 </main>`;
-
-  // Copy state
-  const [copied, setCopied] = useState({
-    basic: false,
-    fluid: false,
-    responsive: false,
-    grid: false,
-    fullBleed: false,
-    navbar: false,
-    padding: false,
-    customCss: false,
-    sass: false,
-    inCol: false,
-    mixed: false,
-  });
-
-  const handleCopy = (key, text) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        setCopied((s) => ({ ...s, [key]: true }));
-        setTimeout(() => setCopied((s) => ({ ...s, [key]: false })), 1500);
-      })
-      .catch((err) => console.error("Failed to copy: ", err));
-  };
-
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="w-full max-w-6xl mx-auto space-y-5 sm:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Containers
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -215,7 +185,7 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
         </div>
 
         {/* Navigation Top */}
-        <div className="flex justify-between">
+        <div className="flex flex-row justify-between gap-3 sm:gap-2">
           <Link
             to="/bootstrap/installation-setup"
             className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
@@ -231,7 +201,7 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
         </div>
 
         {/* Types of Containers */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-6 text-[#04AA6D]">
             Container Types
           </h2>
@@ -261,7 +231,7 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
         </section>
 
         {/* Breakpoints & Max-widths */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-6 text-[#04AA6D]">
             Breakpoints and Max-widths
           </h2>
@@ -269,13 +239,13 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             By default, Bootstrap’s containers align to these breakpoints and
             maximum widths (approximate defaults):
           </p>
-          <div className="overflow-x-auto rounded-xl border">
-            <table className="min-w-full text-left text-sm">
+          <div className="overflow-x-auto rounded-xl border-1">
+            <table className="min-w-full text-left text-sm text-nowrap">
               <thead className="bg-[#E7E9EB]">
                 <tr>
-                  <th className="px-4 py-3 font-semibold">Class</th>
-                  <th className="px-4 py-3 font-semibold">Applies at ≥</th>
-                  <th className="px-4 py-3 font-semibold">Max-width</th>
+                  <th className="px-4 py-3 font-semibold ">Class</th>
+                  <th className="px-4 py-3 font-semibold ">Applies at ≥</th>
+                  <th className="px-4 py-3 font-semibold ">Max-width</th>
                   <th className="px-4 py-3 font-semibold">
                     Behavior below breakpoint
                   </th>
@@ -343,7 +313,7 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
         </section>
 
         {/* Basic .container */}
-        <section>
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
             Basic .container
           </h2>
@@ -351,21 +321,11 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             A centered wrapper with responsive max-widths and horizontal
             padding.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
-              <code>{basicContainer}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("basic", basicContainer)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition"
-            >
-              {copied.basic ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={basicContainer} />
         </section>
 
         {/* .container-fluid */}
-        <section>
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
             .container-fluid
           </h2>
@@ -373,21 +333,11 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             Spans the entire viewport width at all breakpoints; still provides
             side padding.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
-              <code>{fluidContainer}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("fluid", fluidContainer)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition"
-            >
-              {copied.fluid ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={fluidContainer} />
         </section>
 
         {/* .container-{breakpoint} */}
-        <section>
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
             .container-{`{breakpoint}`}
           </h2>
@@ -397,21 +347,11 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             <code>.container-xxl</code> to be fluid below a breakpoint and fixed
             above it.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
-              <code>{responsiveContainer}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("responsive", responsiveContainer)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition"
-            >
-              {copied.responsive ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={responsiveContainer} />
         </section>
 
         {/* Grid inside container */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
             Using the Grid Inside Containers
           </h2>
@@ -420,21 +360,11 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             side padding and centers the content; the grid’s gutters are
             calculated from a CSS variable that the container also defines.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
-              <code>{gridInsideContainer}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("grid", gridInsideContainer)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition"
-            >
-              {copied.grid ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={gridInsideContainer} />
         </section>
 
         {/* Full-bleed pattern */}
-        <section>
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
             Full-Bleed Background, Centered Content
           </h2>
@@ -443,21 +373,11 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             an inner <code>.container</code> to keep content aligned with the
             rest of the page.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
-              <code>{fullBleedPattern}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("fullBleed", fullBleedPattern)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition"
-            >
-              {copied.fullBleed ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={fullBleedPattern} />
         </section>
 
         {/* Navbar patterns */}
-        <section>
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
             Containers in Navbars
           </h2>
@@ -466,21 +386,11 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             width, or <code>.container-fluid</code> to span the viewport edge to
             edge.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
-              <code>{navbarPatterns}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("navbar", navbarPatterns)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition"
-            >
-              {copied.navbar ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={navbarPatterns} />
         </section>
 
         {/* Padding and gutters */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Padding, Gutters, and Alignment
           </h2>
@@ -502,21 +412,11 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
               or utilities like <code>px-0</code> on the container.
             </li>
           </ul>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
-              <code>{paddingControl}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("padding", paddingControl)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition"
-            >
-              {copied.padding ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={paddingControl} />
         </section>
 
         {/* Nesting guidance */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
             Nesting and Best Practices
           </h2>
@@ -534,21 +434,11 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
               for inner spacing instead of extra containers.
             </li>
           </ul>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
-              <code>{containerInGridColumn}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("inCol", containerInGridColumn)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition"
-            >
-              {copied.inCol ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={containerInGridColumn} />
         </section>
 
         {/* Mixed layout pattern */}
-        <section>
+        <section className="bg-white  p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
             Combining Fixed and Fluid Sections
           </h2>
@@ -556,21 +446,11 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             Mix container types to achieve balanced layouts with full-bleed
             sections and centered content.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-2xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
-              <code>{mixedLayouts}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("mixed", mixedLayouts)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition"
-            >
-              {copied.mixed ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={mixedLayouts} />
         </section>
 
         {/* Custom container CSS */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Creating a Custom Container
           </h2>
@@ -579,21 +459,11 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             container class with your own <code>max-width</code> while keeping
             Bootstrap’s padding behavior.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
-              <code>{customContainerCSS}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("customCss", customContainerCSS)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition"
-            >
-              {copied.customCss ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={customContainerCSS} />
         </section>
 
         {/* Visual Representation of Containers */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30 mt-10">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30 mt-10">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Visual: Bootstrap Containers
           </h2>
@@ -659,7 +529,7 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
         </section>
 
         {/* Sass customization */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Advanced: Sass Customization
           </h2>
@@ -668,17 +538,7 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             breakpoints and container widths globally. Import your overrides
             before compiling Bootstrap.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-[13px] rounded-lg overflow-x-auto shadow">
-              <code>{sassCustomization}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy("sass", sassCustomization)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition"
-            >
-              {copied.sass ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={sassCustomization} />
           <ul className="list-disc list-inside text-gray-800 mt-4 space-y-1">
             <li>
               <code>$grid-breakpoints</code> controls the breakpoint map.
@@ -695,38 +555,37 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
         </section>
 
         {/* Quick reference list */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">
-            Quick Reference
-          </h2>
-          <ul className="list-disc list-inside text-gray-800 space-y-1">
-            <li>
-              <code>.container</code> — responsive fixed widths at breakpoints.
-            </li>
-            <li>
-              <code>.container-fluid</code> — always full width.
-            </li>
-            <li>
-              <code>.container-sm|md|lg|xl|xxl</code> — fluid below, fixed at
-              and above the breakpoint.
-            </li>
-            <li>
-              Place grids inside containers; containers set gutter variables and
-              side padding.
-            </li>
-            <li>
-              Use spacing utilities or CSS variables to tune inner padding and
-              gutters.
-            </li>
-            <li>
-              Use full-bleed sections plus inner containers for edge-to-edge
-              visuals with aligned content.
-            </li>
-          </ul>
-        </section>
+        {/* Quick reference list */}
+<section className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-0">
+  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-[#04AA6D] text-center md:text-left">
+    Quick Reference
+  </h2>
+
+  <ul className="list-disc list-inside text-gray-800 space-y-2 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
+    <li>
+      <code>.container</code> — responsive fixed widths at breakpoints.
+    </li>
+    <li>
+      <code>.container-fluid</code> — always full width.
+    </li>
+    <li>
+      <code>.container-sm|md|lg|xl|xxl</code> — fluid below, fixed at and above the breakpoint.
+    </li>
+    <li>
+      Place grids inside containers; containers set gutter variables and side padding.
+    </li>
+    <li>
+      Use spacing utilities or CSS variables to tune inner padding and gutters.
+    </li>
+    <li>
+      Use full-bleed sections plus inner containers for edge-to-edge visuals with aligned content.
+    </li>
+  </ul>
+</section>
+
 
         {/* Bottom Navigation */}
-        <div className="flex justify-between">
+        <div className="flex flex-row justify-between gap-3 sm:gap-2">
           <Link
             to="/bootstrap/installation-setup"
             className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
