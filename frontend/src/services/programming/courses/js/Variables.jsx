@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaCopy, FaCheck } from "react-icons/fa";
 
 const Variables = () => {
   const references = [
@@ -63,87 +63,92 @@ const Variables = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-screen px-4 py-10">
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header */}
-        <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">JavaScript Variables</h1>
-          <p className="text-gray-600 text-lg">
-            Learn how to store and manipulate data using JavaScript variables.
+        <div className="">
+          <h1 className="text-4xl font-bold mb-5 text-gray-800">JavaScript Variables</h1>
+          <p className="text-gray-600 text-lg ">
+            Learn how to store and manipulate data using JavaScript variables with comprehensive examples and best practices.
           </p>
         </div>
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#03945f] transition shadow-md hover:shadow-lg">
             <FaChevronLeft />
             Home
           </button>
         </div>
 
         {/* Introduction Section */}
-        <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
-          <h2 className="text-3xl font-bold mb-4">Variables are Containers for Storing Data</h2>
-          <p className="text-gray-800 mb-3">
+        <section className="bg-[#D9EEE1] p-8 rounded-xl shadow-md">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">Variables are Containers for Storing Data</h2>
+          <p className="text-gray-700 mb-3 text-lg">
             JavaScript Variables can be declared in 4 ways: Automatically, using var, using let, or using const.
           </p>
-          <p className="text-gray-800 mb-6">
+          <p className="text-gray-700 mb-6">
             Understanding variables is fundamental to programming in JavaScript. They allow you to store, retrieve, and manipulate data throughout your application.
           </p>
-          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded">
-            Start Learning Now »
+          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-3 rounded-lg transition shadow-md hover:shadow-lg">
+            Start Learning JavaScript »
           </button>
         </section>
 
         {/* Code Examples Section */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-800 border-l-4 border-[#04AA6D] pl-3">
             Variable Declaration Examples
           </h2>
           
           <div className="space-y-6">
             {examples.map((example, index) => (
-              <div key={index} className="bg-[#E7E9EB] p-6 rounded-xl">
-                <h3 className="font-bold mb-3">{example.title}</h3>
-                <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
-                  <code>{example.code}</code>
-                </pre>
+              <div key={index} className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                <h3 className="font-bold text-xl mb-4 text-[#04AA6D]">{example.title}</h3>
+                <div className="relative">
+                  <pre className="bg-gray-100 border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto">
+                    <code>{example.code}</code>
+                  </pre>
+                  <button
+                    onClick={() => handleCopy(index)}
+                    className="absolute top-3 right-3 bg-gray-200 hover:bg-gray-300 p-2 rounded-md transition"
+                    title="Copy code"
+                  >
+                    {copiedIndex === index ? <FaCheck className="text-green-600" /> : <FaCopy className="text-gray-600" />}
+                  </button>
+                </div>
                 {example.note && (
-                  <div className="bg-yellow-100 border-l-4 border-yellow-500 p-3 mt-3">
+                  <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4 rounded-r">
                     <p className="text-yellow-800">{example.note}</p>
                   </div>
                 )}
-                <button
-                  onClick={() => handleCopy(index)}
-                  className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
-                >
-                  {copiedIndex === index ? "Copied!" : "Copy Code"}
-                </button>
               </div>
             ))}
           </div>
         </section>
 
         {/* Best Practices Section */}
-        <section className="bg-[#FFF4A3] p-6 rounded-lg">
-          <h2 className="text-2xl font-bold mb-3">When to Use var, let, or const?</h2>
-          <ol className="list-decimal pl-5 space-y-2">
-            <li>Always declare variables</li>
-            <li>Always use const if the value should not be changed</li>
-            <li>Always use const if the type should not be changed (Arrays and Objects)</li>
-            <li>Only use let if you can't use const</li>
-            <li>Only use var if you MUST support old browsers.</li>
+        <section className="bg-[#FFF4A3] p-8 rounded-xl shadow-md">
+          <h2 className="text-2xl font-bold mb-5 text-gray-800">When to Use var, let, or const?</h2>
+          <ol className="list-decimal pl-6 space-y-3 text-gray-800">
+            <li className="pb-2 border-b border-yellow-300"><span className="font-semibold">Always declare variables</span> - Avoid using undeclared variables</li>
+            <li className="pb-2 border-b border-yellow-300"><span className="font-semibold">Always use const</span> if the value should not be changed</li>
+            <li className="pb-2 border-b border-yellow-300"><span className="font-semibold">Always use const</span> if the type should not be changed (Arrays and Objects)</li>
+            <li className="pb-2 border-b border-yellow-300"><span className="font-semibold">Only use let</span> if you can't use const</li>
+            <li><span className="font-semibold">Only use var</span> if you MUST support old browsers.</li>
           </ol>
         </section>
 
         {/* Concepts Section */}
         <section>
-          <h2 className="text-2xl font-semibold mb-3">Key Concepts</h2>
-          <div className="space-y-4">
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <h3 className="font-bold text-lg mb-2">JavaScript Identifiers</h3>
-              <p>All JavaScript variables must be identified with unique names. Rules for identifiers:</p>
-              <ul className="list-disc pl-5 mt-2 space-y-1">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-800 border-l-4 border-[#04AA6D] pl-3">
+            Key Concepts
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-5 rounded-xl shadow-md border border-gray-200">
+              <h3 className="font-bold text-lg mb-3 text-[#04AA6D]">JavaScript Identifiers</h3>
+              <p className="text-gray-700 mb-3">All JavaScript variables must be identified with unique names. Rules for identifiers:</p>
+              <ul className="list-disc pl-5 space-y-2 text-gray-700">
                 <li>Can contain letters, digits, underscores, and dollar signs</li>
                 <li>Must begin with a letter</li>
                 <li>Can also begin with $ and _</li>
@@ -152,47 +157,51 @@ const Variables = () => {
               </ul>
             </div>
 
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <h3 className="font-bold text-lg mb-2">The Assignment Operator</h3>
-              <p>In JavaScript, = is an "assignment" operator (not "equal to"). For example:</p>
-              <p className="font-mono bg-white p-2 mt-2 rounded">x = x + 5 // Valid in JavaScript (assigns new value to x)</p>
+            <div className="bg-white p-5 rounded-xl shadow-md border border-gray-200">
+              <h3 className="font-bold text-lg mb-3 text-[#04AA6D]">The Assignment Operator</h3>
+              <p className="text-gray-700 mb-3">In JavaScript, = is an "assignment" operator (not "equal to"). For example:</p>
+              <div className="bg-gray-100 p-3 rounded-lg font-mono text-sm">
+                x = x + 5 // Valid in JavaScript (assigns new value to x)
+              </div>
             </div>
 
-            <div className="bg-gray-100 p-4 rounded-lg">
-              <h3 className="font-bold text-lg mb-2">Data Types</h3>
-              <p>JavaScript variables can hold different data types:</p>
-              <ul className="list-disc pl-5 mt-2 space-y-1">
+            <div className="bg-white p-5 rounded-xl shadow-md border border-gray-200 md:col-span-2">
+              <h3 className="font-bold text-lg mb-3 text-[#04AA6D]">Data Types</h3>
+              <p className="text-gray-700 mb-3">JavaScript variables can hold different data types:</p>
+              <ul className="list-disc pl-5 columns-2 space-y-2 text-gray-700">
                 <li>Numbers (let age = 25)</li>
                 <li>Strings (let name = "John")</li>
                 <li>Booleans (let active = true)</li>
                 <li>Objects (let person = {"{firstName: 'John', lastName: 'Doe'}"})</li>
                 <li>Arrays (let colors = ["red", "green", "blue"])</li>
+                <li>Null (let data = null)</li>
+                <li>Undefined (let value; // value is undefined)</li>
               </ul>
             </div>
           </div>
         </section>
 
         {/* JavaScript References */}
-        <section>
-          <h2 className="text-3xl font-bold mb-4">JavaScript References</h2>
-          <p className="text-gray-700 mb-6 max-w-3xl">
+        <section className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+          <h2 className="text-2xl font-bold mb-5 text-gray-800">JavaScript References</h2>
+          <p className="text-gray-700 mb-6">
             Explore our JavaScript references to deepen your understanding of variables and other concepts.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
             {references.map((ref, idx) => (
-              <button
+              <div
                 key={idx}
-                className="cursor-pointer bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded transition"
+                className="cursor-pointer bg-gray-100 hover:bg-[#04AA6D] hover:text-white text-gray-800 text-center font-medium py-3 px-2 rounded-lg transition text-sm"
               >
                 {ref}
-              </button>
+              </div>
             ))}
           </div>
         </section>
 
         {/* Next Button */}
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#03945f] transition shadow-md hover:shadow-lg">
             Next
             <FaChevronRight />
           </button>

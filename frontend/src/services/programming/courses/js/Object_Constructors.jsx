@@ -56,11 +56,11 @@ new Function() // A new Function object`;
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-screen  px-4 py-10">
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header */}
         <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">JavaScript Object Constructors</h1>
+          <h1 className="text-4xl font-extrabold mb-2 text-gray-800">JavaScript Object Constructors</h1>
           <p className="text-gray-600 text-lg">
             Learn how to create and manage objects using constructor functions and prototypes.
           </p>
@@ -68,46 +68,46 @@ new Function() // A new Function object`;
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#03945f] transition shadow-md hover:shadow-lg">
             <FaChevronLeft />
             Home
           </button>
         </div>
 
         {/* Introduction Section */}
-        <section className="bg-[#E7F5FE] p-8 rounded-lg shadow">
-          <h2 className="text-3xl font-bold mb-4">Understanding Constructors</h2>
-          <p className="text-gray-800 mb-3">
+        <section className="bg-gradient-to-r from-[#E7F5FE] to-[#cfe9fc] p-8 rounded-xl shadow-md border border-gray-200">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">Understanding Constructors</h2>
+          <p className="text-gray-700 mb-3">
             Constructor functions are used to create multiple objects of the same type. They serve as blueprints for object creation.
           </p>
-          <p className="text-gray-800 mb-3">
+          <p className="text-gray-700 mb-3">
             It's considered good practice to name constructor functions with an upper-case first letter (PascalCase).
           </p>
-          <p className="text-gray-800 mb-6">
-            The <code className="bg-gray-100 px-1 rounded">this</code> keyword in the constructor refers to the new object being created.
+          <p className="text-gray-700 mb-6">
+            The <code className="bg-gray-100 px-1.5 py-0.5 rounded-md font-mono">this</code> keyword in the constructor refers to the new object being created.
           </p>
-          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded">
+          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2.5 rounded-lg shadow-md transition">
             Try Examples »
           </button>
         </section>
 
         {/* Code Examples Section */}
-        <section>
+        <section className="bg-white p-6 rounded-xl shadow-md">
           <div className="flex border-b mb-4">
             <button
-              className={`px-4 py-2 font-medium ${activeTab === "constructor" ? "border-b-2 border-[#04AA6D] text-[#04AA6D]" : "text-gray-600"}`}
+              className={`px-4 py-3 font-medium transition-all ${activeTab === "constructor" ? "border-b-2 border-[#04AA6D] text-[#04AA6D]" : "text-gray-600 hover:text-gray-800"}`}
               onClick={() => setActiveTab("constructor")}
             >
               Constructor Example
             </button>
             <button
-              className={`px-4 py-2 font-medium ${activeTab === "prototype" ? "border-b-2 border-[#04AA6D] text-[#04AA6D]" : "text-gray-600"}`}
+              className={`px-4 py-3 font-medium transition-all ${activeTab === "prototype" ? "border-b-2 border-[#04AA6D] text-[#04AA6D]" : "text-gray-600 hover:text-gray-800"}`}
               onClick={() => setActiveTab("prototype")}
             >
               Prototype Methods
             </button>
             <button
-              className={`px-4 py-2 font-medium ${activeTab === "builtin" ? "border-b-2 border-[#04AA6D] text-[#04AA6D]" : "text-gray-600"}`}
+              className={`px-4 py-3 font-medium transition-all ${activeTab === "builtin" ? "border-b-2 border-[#04AA6D] text-[#04AA6D]" : "text-gray-600 hover:text-gray-800"}`}
               onClick={() => setActiveTab("builtin")}
             >
               Built-in Constructors
@@ -115,44 +115,44 @@ new Function() // A new Function object`;
           </div>
 
           {activeTab === "constructor" && (
-            <div className="bg-[#E7E9EB] p-6 rounded-xl">
-              <h3 className="font-bold mb-3">Basic Constructor Function:</h3>
-              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto relative">
+            <div className="bg-[#f8f9fa] p-6 rounded-xl">
+              <h3 className="font-bold mb-3 text-lg text-gray-800">Basic Constructor Function:</h3>
+              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto relative shadow-sm">
                 <code>{constructorExample}</code>
                 <button
                   onClick={() => handleCopy(constructorExample, "constructor")}
-                  className="absolute top-2 right-2 p-2 text-gray-500 hover:text-gray-700"
+                  className="absolute top-3 right-3 p-2 text-gray-500 hover:text-gray-700 bg-gray-100 rounded-md transition"
                   title="Copy code"
                 >
                   <FaCopy />
                 </button>
                 {copied.constructor && (
-                  <span className="absolute top-2 right-10 bg-gray-800 text-white text-xs px-2 py-1 rounded">
+                  <span className="absolute top-3 right-14 bg-gray-800 text-white text-xs px-2 py-1 rounded-md">
                     Copied!
                   </span>
                 )}
               </pre>
               <p className="mt-4 text-gray-700">
-                <strong>Note:</strong> In the constructor function, <code className="bg-gray-100 px-1 rounded">this</code> has no value initially. 
-                It becomes the new object when instantiated with <code className="bg-gray-100 px-1 rounded">new</code>.
+                <strong>Note:</strong> In the constructor function, <code className="bg-gray-100 px-1.5 py-0.5 rounded-md font-mono">this</code> has no value initially. 
+                It becomes the new object when instantiated with <code className="bg-gray-100 px-1.5 py-0.5 rounded-md font-mono">new</code>.
               </p>
             </div>
           )}
 
           {activeTab === "prototype" && (
-            <div className="bg-[#E7E9EB] p-6 rounded-xl">
-              <h3 className="font-bold mb-3">Adding Methods via Prototype:</h3>
-              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto relative">
+            <div className="bg-[#f8f9fa] p-6 rounded-xl">
+              <h3 className="font-bold mb-3 text-lg text-gray-800">Adding Methods via Prototype:</h3>
+              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto relative shadow-sm">
                 <code>{prototypeExample}</code>
                 <button
                   onClick={() => handleCopy(prototypeExample, "prototype")}
-                  className="absolute top-2 right-2 p-2 text-gray-500 hover:text-gray-700"
+                  className="absolute top-3 right-3 p-2 text-gray-500 hover:text-gray-700 bg-gray-100 rounded-md transition"
                   title="Copy code"
                 >
                   <FaCopy />
                 </button>
                 {copied.prototype && (
-                  <span className="absolute top-2 right-10 bg-gray-800 text-white text-xs px-2 py-1 rounded">
+                  <span className="absolute top-3 right-14 bg-gray-800 text-white text-xs px-2 py-1 rounded-md">
                     Copied!
                   </span>
                 )}
@@ -165,29 +165,29 @@ new Function() // A new Function object`;
           )}
 
           {activeTab === "builtin" && (
-            <div className="bg-[#E7E9EB] p-6 rounded-xl">
-              <h3 className="font-bold mb-3">JavaScript Built-in Constructors:</h3>
-              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto relative">
+            <div className="bg-[#f8f9fa] p-6 rounded-xl">
+              <h3 className="font-bold mb-3 text-lg text-gray-800">JavaScript Built-in Constructors:</h3>
+              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto relative shadow-sm">
                 <code>{builtInConstructors}</code>
                 <button
                   onClick={() => handleCopy(builtInConstructors, "builtin")}
-                  className="absolute top-2 right-2 p-2 text-gray-500 hover:text-gray-700"
+                  className="absolute top-3 right-3 p-2 text-gray-500 hover:text-gray-700 bg-gray-100 rounded-md transition"
                   title="Copy code"
                 >
                   <FaCopy />
                 </button>
                 {copied.builtin && (
-                  <span className="absolute top-2 right-10 bg-gray-800 text-white text-xs px-2 py-1 rounded">
+                  <span className="absolute top-3 right-14 bg-gray-800 text-white text-xs px-2 py-1 rounded-md">
                     Copied!
                   </span>
                 )}
               </pre>
-              <div className="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400">
+              <div className="mt-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
                 <h4 className="font-bold text-yellow-800 mb-2">Best Practice:</h4>
                 <p className="text-yellow-700">
-                  Use object literals <code className="bg-yellow-100 px-1 rounded">{}</code> instead of <code className="bg-yellow-100 px-1 rounded">new Object()</code>, 
-                  array literals <code className="bg-yellow-100 px-1 rounded">[]</code> instead of <code className="bg-yellow-100 px-1 rounded">new Array()</code>, 
-                  and function expressions instead of <code className="bg-yellow-100 px-1 rounded">new Function()</code> for better performance and readability.
+                  Use object literals <code className="bg-yellow-100 px-1.5 py-0.5 rounded-md font-mono">{}</code> instead of <code className="bg-yellow-100 px-1.5 py-0.5 rounded-md font-mono">new Object()</code>, 
+                  array literals <code className="bg-yellow-100 px-1.5 py-0.5 rounded-md font-mono">[]</code> instead of <code className="bg-yellow-100 px-1.5 py-0.5 rounded-md font-mono">new Array()</code>, 
+                  and function expressions instead of <code className="bg-yellow-100 px-1.5 py-0.5 rounded-md font-mono">new Function()</code> for better performance and readability.
                 </p>
               </div>
             </div>
@@ -195,31 +195,31 @@ new Function() // A new Function object`;
         </section>
 
         {/* Key Concepts Section */}
-        <section className="bg-[#FFF4E3] p-6 rounded-lg">
-          <h2 className="text-2xl font-bold mb-4">Key Concepts</h2>
+        <section className="bg-gradient-to-r from-[#FFF4E3] to-[#ffedd5] p-6 rounded-xl shadow-md border border-gray-200">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">Key Concepts</h2>
           <div className="grid gap-4">
-            <div className="p-4 bg-white rounded shadow">
-              <h3 className="font-bold text-lg mb-2">Property Default Values</h3>
+            <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+              <h3 className="font-bold text-lg mb-2 text-gray-800">Property Default Values</h3>
               <p className="text-gray-700 mb-2">
                 You can set default values for all objects created by the constructor:
               </p>
-              <pre className="bg-gray-100 p-3 rounded text-sm overflow-x-auto">
+              <pre className="bg-gray-100 p-3 rounded-lg text-sm overflow-x-auto font-mono">
                 <code>function Person() {"{"}\n  this.nationality = "English";\n{"}"}</code>
               </pre>
             </div>
             
-            <div className="p-4 bg-white rounded shadow">
-              <h3 className="font-bold text-lg mb-2">Adding Properties</h3>
+            <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+              <h3 className="font-bold text-lg mb-2 text-gray-800">Adding Properties</h3>
               <p className="text-gray-700 mb-2">
                 Properties added to an instance don't affect other objects:
               </p>
-              <pre className="bg-gray-100 p-3 rounded text-sm overflow-x-auto">
+              <pre className="bg-gray-100 p-3 rounded-lg text-sm overflow-x-auto font-mono">
                 <code>myFather.nationality = "English"; // Only affects myFather</code>
               </pre>
             </div>
             
-            <div className="p-4 bg-white rounded shadow">
-              <h3 className="font-bold text-lg mb-2">Constructor vs Prototype</h3>
+            <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+              <h3 className="font-bold text-lg mb-2 text-gray-800">Constructor vs Prototype</h3>
               <p className="text-gray-700">
                 Methods added to the constructor function prototype are available to all instances,
                 while methods added in the constructor create new copies for each instance.
@@ -229,16 +229,16 @@ new Function() // A new Function object`;
         </section>
 
         {/* References Section */}
-        <section>
-          <h2 className="text-3xl font-bold mb-4">JavaScript Object References</h2>
+        <section className="bg-white p-6 rounded-xl shadow-md">
+          <h2 className="text-3xl font-bold mb-4 text-gray-800">JavaScript Object References</h2>
           <p className="text-gray-700 mb-6 max-w-3xl">
             Explore our comprehensive references for object-oriented programming in JavaScript:
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {references.map((ref, idx) => (
               <button
                 key={idx}
-                className="cursor-pointer bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded transition"
+                className="cursor-pointer bg-gray-100 hover:bg-[#04AA6D] hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded-lg transition-all shadow-sm hover:shadow-md"
               >
                 {ref}
               </button>
@@ -248,7 +248,7 @@ new Function() // A new Function object`;
 
         {/* Next Button */}
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#03945f] transition shadow-md hover:shadow-lg">
             Next
             <FaChevronRight />
           </button>

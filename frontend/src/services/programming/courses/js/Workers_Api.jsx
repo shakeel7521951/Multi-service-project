@@ -21,7 +21,7 @@ let i = 0;
 function timedCount() {
   i++;
   postMessage(i);
-  setTimeout("timedCount()", 500);
+  setTimeout(timedCount, 500);
 }
 
 timedCount();`;
@@ -77,29 +77,29 @@ function stopWorker() {
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-screen  px-4 py-10">
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header */}
-        <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">Web Workers API</h1>
-          <p className="text-gray-600 text-lg">
-            Run JavaScript in background threads to keep your UI responsive.
+        <div className="text-center sm:text-left">
+          <h1 className="text-4xl font-extrabold mb-3 text-gray-900">Web Workers API</h1>
+          <p className="text-gray-600 text-lg max-w-2xl">
+            Run JavaScript in background threads to keep your UI responsive and fluid.
           </p>
         </div>
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded-lg hover:scale-105 transition">
             <FaChevronLeft />
             Home
           </button>
         </div>
 
         {/* Introduction Section */}
-        <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
+        <section className="bg-[#D9EEE1] p-8 rounded-2xl shadow-md hover:shadow-lg transition">
           <h2 className="text-3xl font-bold mb-4">What is a Web Worker?</h2>
           <p className="text-gray-800 mb-3">
-            A web worker is a JavaScript running in the background, without affecting the performance of the page.
+            A web worker is JavaScript running in the background, without affecting the performance of the page.
           </p>
           <p className="text-gray-800 mb-3">
             When executing scripts in an HTML page, the page becomes unresponsive until the script is finished.
@@ -107,7 +107,7 @@ function stopWorker() {
           <p className="text-gray-800 mb-6">
             With web workers, you can continue to interact with the page while the worker runs in the background.
           </p>
-          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded">
+          <button className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded-lg transition">
             Try Examples »
           </button>
         </section>
@@ -118,9 +118,9 @@ function stopWorker() {
           <p className="text-gray-700 mb-4">
             The numbers in the table specify the first browser versions that fully support Web Workers:
           </p>
-          <div className="overflow-x-auto">
-            <table className="min-w-full bg-white border border-gray-200">
-              <thead className="bg-gray-100">
+          <div className="overflow-x-auto rounded-xl border border-gray-200">
+            <table className="min-w-full bg-white text-sm">
+              <thead className="bg-gray-100 text-gray-800">
                 <tr>
                   <th className="py-2 px-4 border-b">Chrome 4</th>
                   <th className="py-2 px-4 border-b">IE 10</th>
@@ -130,12 +130,12 @@ function stopWorker() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="py-2 px-4 border-b text-center">Jan 2010</td>
-                  <td className="py-2 px-4 border-b text-center">Sep 2012</td>
-                  <td className="py-2 px-4 border-b text-center">Jun 2009</td>
-                  <td className="py-2 px-4 border-b text-center">Jun 2009</td>
-                  <td className="py-2 px-4 border-b text-center">Jun 2011</td>
+                <tr className="text-center">
+                  <td className="py-2 px-4 border-b">Jan 2010</td>
+                  <td className="py-2 px-4 border-b">Sep 2012</td>
+                  <td className="py-2 px-4 border-b">Jun 2009</td>
+                  <td className="py-2 px-4 border-b">Jun 2009</td>
+                  <td className="py-2 px-4 border-b">Jun 2011</td>
                 </tr>
               </tbody>
             </table>
@@ -148,13 +148,13 @@ function stopWorker() {
           <p className="text-gray-700 mb-4">
             Before creating a web worker, check whether the user's browser supports it:
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
+          <div className="bg-[#E7E9EB] p-6 rounded-2xl">
+            <pre className="bg-gray-900 text-green-300 border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
               <code>{supportCheckCode}</code>
             </pre>
             <button
               onClick={() => handleCopy(supportCheckCode, 0)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
+              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded-lg transition"
             >
               {copiedIndex === 0 ? "Copied!" : "Copy Text"}
             </button>
@@ -167,14 +167,14 @@ function stopWorker() {
           <p className="text-gray-700 mb-4">
             Here's how to create a simple web worker that counts numbers in the background:
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl">
+          <div className="bg-[#E7E9EB] p-6 rounded-2xl">
             <h3 className="font-bold mb-3">demo_workers.js:</h3>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
+            <pre className="bg-gray-900 text-green-300 border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
               <code>{workerExample}</code>
             </pre>
             <button
               onClick={() => handleCopy(workerExample, 1)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
+              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded-lg transition"
             >
               {copiedIndex === 1 ? "Copied!" : "Copy Text"}
             </button>
@@ -187,14 +187,14 @@ function stopWorker() {
           <p className="text-gray-700 mb-4">
             Here's how to implement the web worker in an HTML page:
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl">
+          <div className="bg-[#E7E9EB] p-6 rounded-2xl">
             <h3 className="font-bold mb-3">Example HTML:</h3>
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
+            <pre className="bg-gray-900 text-green-300 border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
               <code>{htmlExample}</code>
             </pre>
             <button
               onClick={() => handleCopy(htmlExample, 2)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
+              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded-lg transition"
             >
               {copiedIndex === 2 ? "Copied!" : "Copy Text"}
             </button>
@@ -203,32 +203,32 @@ function stopWorker() {
 
         {/* Key Concepts Section */}
         <section className="space-y-6">
-          <div className="bg-[#FFF4A3] p-6 rounded-lg">
+          <div className="bg-[#FFF4A3] p-6 rounded-2xl shadow-md">
             <h3 className="text-xl font-bold mb-3">Terminate a Web Worker</h3>
             <p className="mb-3">
               When a web worker object is created, it will continue to listen for messages until terminated.
             </p>
-            <pre className="bg-white p-3 rounded font-mono text-sm">
+            <pre className="bg-gray-900 text-yellow-300 p-3 rounded font-mono text-sm">
               <code>w.terminate();</code>
             </pre>
           </div>
 
-          <div className="bg-[#FFD3D3] p-6 rounded-lg">
+          <div className="bg-[#FFD3D3] p-6 rounded-2xl shadow-md">
             <h3 className="text-xl font-bold mb-3">Reuse the Web Worker</h3>
             <p className="mb-3">
               Set the worker variable to undefined after termination to reuse the code:
             </p>
-            <pre className="bg-white p-3 rounded font-mono text-sm">
+            <pre className="bg-gray-900 text-red-300 p-3 rounded font-mono text-sm">
               <code>w = undefined;</code>
             </pre>
           </div>
 
-          <div className="bg-[#D9EEE1] p-6 rounded-lg">
+          <div className="bg-[#D9EEE1] p-6 rounded-2xl shadow-md">
             <h3 className="text-xl font-bold mb-3">Web Workers and the DOM</h3>
             <p className="mb-3">
               Since web workers are in external files, they do not have access to:
             </p>
-            <ul className="list-disc pl-5">
+            <ul className="list-disc pl-5 space-y-1">
               <li>The window object</li>
               <li>The document object</li>
               <li>The parent object</li>
@@ -246,7 +246,7 @@ function stopWorker() {
             {references.map((ref, idx) => (
               <button
                 key={idx}
-                className="cursor-pointer bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded transition"
+                className="cursor-pointer bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded-lg shadow transition"
               >
                 {ref}
               </button>
@@ -256,7 +256,7 @@ function stopWorker() {
 
         {/* Next Button */}
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded-lg hover:scale-105 transition">
             Next
             <FaChevronRight />
           </button>

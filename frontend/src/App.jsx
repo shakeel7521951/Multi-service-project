@@ -12,6 +12,7 @@ import { reactroutes } from "./services/programming/routes/react_routes";
 import { BootstrapRoutes } from "./services/programming/routes/bootstrap_routes";
 import SignIn from "./components/common/SignIn";
 import { TailwindRoutes } from "./services/programming/routes/Tailwind_routes";
+import { SQLRoutes } from "./services/programming/routes/Sql_Routes";
 
 const MainLayout = () => (
   <>
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
       reactroutes,
       BootstrapRoutes,
       TailwindRoutes,
+      SQLRoutes,
     ],
   },
 ]);

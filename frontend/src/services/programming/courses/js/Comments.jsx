@@ -66,141 +66,113 @@ document.getElementById("myP").innerHTML = "My first paragraph.";
       });
   };
 
+  const CodeBlock = ({ code, copyKey }) => (
+    <div className="relative bg-[#F9FAFB] p-4 rounded-xl border border-gray-200 shadow-sm">
+      <pre className="overflow-x-auto text-sm font-mono leading-6">
+        <code>{code}</code>
+      </pre>
+      <button
+        onClick={() => handleCopy(code, copyKey)}
+        className="absolute top-3 right-3 flex items-center gap-1 bg-[#04AA6D] hover:bg-[#03945f] text-white text-xs font-medium px-3 py-1 rounded-md transition"
+      >
+        <FaCopy /> {copied[copyKey] ? "Copied!" : "Copy"}
+      </button>
+    </div>
+  );
+
   return (
-    <div className="min-h-screen bg-white px-4 py-10">
+    <div className="min-h-screen  px-4 py-10">
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header */}
         <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">JavaScript Comments</h1>
-          <p className="text-gray-600 text-lg">
+          <h1 className="text-4xl font-extrabold mb-3 text-gray-900">
+            JavaScript Comments
+          </h1>
+          <p className="text-gray-600 text-lg max-w-3xl">
             Learn how to use comments to explain your code and prevent execution during testing.
           </p>
         </div>
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
-            <FaChevronLeft />
-            Home
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded-lg hover:scale-105 shadow-md hover:bg-[#03945f] transition">
+            <FaChevronLeft /> Home
           </button>
         </div>
 
-        {/* Introduction Section */}
-        <section className="bg-[#E7F3FE] p-8 rounded-lg shadow">
-          <h2 className="text-3xl font-bold mb-4">JavaScript Comments</h2>
-          <p className="text-gray-800 mb-3">
+        {/* Intro Section */}
+        <section className="bg-[#E7F3FE] p-8 rounded-2xl shadow-md">
+          <h2 className="text-2xl font-bold mb-4 text-gray-900">
+            JavaScript Comments
+          </h2>
+          <p className="text-gray-700 mb-3">
             JavaScript comments can be used to explain JavaScript code, and to make it more readable.
           </p>
-          <p className="text-gray-800 mb-6">
+          <p className="text-gray-700">
             JavaScript comments can also be used to prevent execution, when testing alternative code.
           </p>
         </section>
 
-        {/* Single Line Comments Section */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Single Line Comments</h2>
-          <p className="text-gray-700 mb-4">
-            Single line comments start with <code className="bg-gray-200 px-1 rounded">//</code>.
-            Any text between <code className="bg-gray-200 px-1 rounded">//</code> and the end of the line will be ignored by JavaScript.
+        {/* Single Line Comments */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-semibold text-gray-900">
+            Single Line Comments
+          </h2>
+          <p className="text-gray-700">
+            Single line comments start with <code className="bg-gray-200 px-1 rounded">//</code>. Any text between them and the end of the line will be ignored by JavaScript.
           </p>
 
-          <div className="mb-8">
-            <h3 className="font-bold mb-3">Example:</h3>
-            <div className="bg-[#E7E9EB] p-6 rounded-xl">
-              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
-                <code>{singleLineExample1}</code>
-              </pre>
-              <button
-                onClick={() => handleCopy(singleLineExample1, "single1")}
-                className="flex items-center gap-2 bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
-              >
-                <FaCopy /> {copied.single1 ? "Copied!" : "Copy Code"}
-              </button>
-            </div>
+          <div>
+            <h3 className="font-bold mb-2">Example:</h3>
+            <CodeBlock code={singleLineExample1} copyKey="single1" />
           </div>
 
-          <div className="mb-8">
-            <h3 className="font-bold mb-3">Example:</h3>
-            <div className="bg-[#E7E9EB] p-6 rounded-xl">
-              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
-                <code>{singleLineExample2}</code>
-              </pre>
-              <button
-                onClick={() => handleCopy(singleLineExample2, "single2")}
-                className="flex items-center gap-2 bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
-              >
-                <FaCopy /> {copied.single2 ? "Copied!" : "Copy Code"}
-              </button>
-            </div>
+          <div>
+            <h3 className="font-bold mb-2">Example:</h3>
+            <CodeBlock code={singleLineExample2} copyKey="single2" />
           </div>
         </section>
 
-        {/* Multi-line Comments Section */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Multi-line Comments</h2>
-          <p className="text-gray-700 mb-4">
-            Multi-line comments start with <code className="bg-gray-200 px-1 rounded">/*</code> and end with <code className="bg-gray-200 px-1 rounded">*/</code>.
-            Any text between them will be ignored by JavaScript.
+        {/* Multi-line Comments */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-semibold text-gray-900">
+            Multi-line Comments
+          </h2>
+          <p className="text-gray-700">
+            Multi-line comments start with <code className="bg-gray-200 px-1 rounded">/*</code> and end with <code className="bg-gray-200 px-1 rounded">*/</code>. Any text between them will be ignored by JavaScript.
           </p>
 
-          <div className="mb-8">
-            <h3 className="font-bold mb-3">Example:</h3>
-            <div className="bg-[#E7E9EB] p-6 rounded-xl">
-              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
-                <code>{multiLineExample}</code>
-              </pre>
-              <button
-                onClick={() => handleCopy(multiLineExample, "multi")}
-                className="flex items-center gap-2 bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
-              >
-                <FaCopy /> {copied.multi ? "Copied!" : "Copy Code"}
-              </button>
-            </div>
+          <div>
+            <h3 className="font-bold mb-2">Example:</h3>
+            <CodeBlock code={multiLineExample} copyKey="multi" />
           </div>
         </section>
 
-        {/* Prevent Execution Section */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">Using Comments to Prevent Execution</h2>
-          <p className="text-gray-700 mb-4">
-            Using comments to prevent execution of code is suitable for code testing.
-            Adding <code className="bg-gray-200 px-1 rounded">//</code> in front of a code line changes it from executable to a comment.
+        {/* Prevent Execution */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-semibold text-gray-900">
+            Using Comments to Prevent Execution
+          </h2>
+          <p className="text-gray-700">
+            Comments are useful for testing. Adding <code className="bg-gray-200 px-1 rounded">//</code> in front of a code line changes it from executable to a comment.
           </p>
 
-          <div className="mb-8">
-            <h3 className="font-bold mb-3">Example:</h3>
-            <div className="bg-[#E7E9EB] p-6 rounded-xl">
-              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
-                <code>{preventExecutionExample1}</code>
-              </pre>
-              <button
-                onClick={() => handleCopy(preventExecutionExample1, "prevent1")}
-                className="flex items-center gap-2 bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
-              >
-                <FaCopy /> {copied.prevent1 ? "Copied!" : "Copy Code"}
-              </button>
-            </div>
+          <div>
+            <h3 className="font-bold mb-2">Example:</h3>
+            <CodeBlock code={preventExecutionExample1} copyKey="prevent1" />
           </div>
 
-          <div className="mb-8">
-            <h3 className="font-bold mb-3">Example:</h3>
-            <div className="bg-[#E7E9EB] p-6 rounded-xl">
-              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto">
-                <code>{preventExecutionExample2}</code>
-              </pre>
-              <button
-                onClick={() => handleCopy(preventExecutionExample2, "prevent2")}
-                className="flex items-center gap-2 bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-4 px-6 py-2 rounded transition"
-              >
-                <FaCopy /> {copied.prevent2 ? "Copied!" : "Copy Code"}
-              </button>
-            </div>
+          <div>
+            <h3 className="font-bold mb-2">Example:</h3>
+            <CodeBlock code={preventExecutionExample2} copyKey="prevent2" />
           </div>
         </section>
 
-        {/* JavaScript References */}
+        {/* References */}
         <section>
-          <h2 className="text-3xl font-bold mb-4">JavaScript References</h2>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">
+            JavaScript References
+          </h2>
           <p className="text-gray-700 mb-6 max-w-3xl">
             Explore our comprehensive JavaScript references for detailed information about all JavaScript concepts.
           </p>
@@ -208,7 +180,7 @@ document.getElementById("myP").innerHTML = "My first paragraph.";
             {references.map((ref, idx) => (
               <button
                 key={idx}
-                className="cursor-pointer bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded transition"
+                className="cursor-pointer bg-white border border-gray-200 hover:bg-[#04AA6D] hover:text-white hover:shadow-md text-gray-800 text-center font-medium py-3 px-4 rounded-lg transition"
               >
                 {ref}
               </button>
@@ -218,9 +190,8 @@ document.getElementById("myP").innerHTML = "My first paragraph.";
 
         {/* Next Button */}
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
-            Next
-            <FaChevronRight />
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded-lg hover:scale-105 shadow-md hover:bg-[#03945f] transition">
+            Next <FaChevronRight />
           </button>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaChevronLeft, FaChevronRight, FaCopy } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaCopy, FaCheck } from "react-icons/fa";
 
 const Object_Methods = () => {
   const examples = [
@@ -75,31 +75,35 @@ name = person.fullName;`,
     <div className="min-h-screen bg-white px-4 py-10">
       <div className="max-w-5xl mx-auto space-y-12">
         {/* Header */}
-        <div className="text-start">
-          <h1 className="text-3xl font-extrabold mb-2">JavaScript Object Methods</h1>
-          <p className="text-gray-600 text-lg">
+        <div className="text-start relative">
+          <div className="absolute -left-6 top-3 w-14 h-14 bg-[#04AA6D] opacity-10 rounded-full"></div>
+          <h1 className="text-4xl font-extrabold mb-2 relative">JavaScript Object Methods</h1>
+          <p className="text-gray-600 text-lg max-w-3xl">
             Learn how to work with object methods in JavaScript - the actions that can be performed on objects.
           </p>
         </div>
 
         {/* Navigation Top */}
         <div className="flex justify-between">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-3 rounded-lg hover:bg-[#03945f] transition shadow-md hover:shadow-lg">
             <FaChevronLeft />
             Home
           </button>
         </div>
 
         {/* Introduction Section */}
-        <section className="bg-[#E7F3FE] p-8 rounded-lg shadow">
-          <h2 className="text-3xl font-bold mb-4">Understanding Object Methods</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="md:col-span-2">
-              <p className="text-gray-800 mb-4">
+        <section className="bg-[#E7F3FE] p-8 rounded-xl shadow-lg relative overflow-hidden">
+          <div className="absolute -right-4 -top-4 w-24 h-24 bg-[#04AA6D] opacity-10 rounded-full"></div>
+          <div className="absolute -left-4 -bottom-4 w-16 h-16 bg-[#04AA6D] opacity-10 rounded-full"></div>
+          
+          <h2 className="text-3xl font-bold mb-6">Understanding Object Methods</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="md:col-span-2 space-y-4">
+              <p className="text-gray-800">
                 Object methods are functions stored as object properties that perform actions on the object.
               </p>
-              <p className="text-gray-800 mb-4">
-                Inside these methods, the <code className="bg-gray-100 px-1 rounded">this</code> keyword refers to the 
+              <p className="text-gray-800">
+                Inside these methods, the <code className="bg-gray-100 px-1.5 py-0.5 rounded-md">this</code> keyword refers to the 
                 "owner" of the function - the object that "owns" the method.
               </p>
               <p className="text-gray-800">
@@ -107,13 +111,13 @@ name = person.fullName;`,
                 and combine them with built-in JavaScript methods.
               </p>
             </div>
-            <div className="bg-white p-4 rounded-lg shadow">
-              <h3 className="font-bold mb-2">Object Property Example:</h3>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="font-bold mb-4 text-lg">Object Property Example:</h3>
               <table className="w-full border-collapse">
                 <thead className="bg-gray-100">
                   <tr>
-                    <th className="border p-2 text-left">Property</th>
-                    <th className="border p-2 text-left">Value</th>
+                    <th className="border p-2 text-left font-semibold">Property</th>
+                    <th className="border p-2 text-left font-semibold">Value</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -133,8 +137,8 @@ name = person.fullName;`,
                     <td className="border p-2">eyeColor</td>
                     <td className="border p-2">blue</td>
                   </tr>
-                  <tr>
-                    <td className="border p-2">fullName</td>
+                  <tr className="bg-[#FFF4A3]">
+                    <td className="border p-2 font-medium">fullName</td>
                     <td className="border p-2">function() {"{return this.firstName + \" \" + this.lastName;}"}</td>
                   </tr>
                 </tbody>
@@ -145,25 +149,29 @@ name = person.fullName;`,
 
         {/* Examples Section */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Practical Examples</h2>
+          <h2 className="text-2xl font-semibold mb-6">Practical Examples</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {examples.map((example, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                <h3 className="font-bold mb-3 text-lg">{example.title}</h3>
-                <p className="text-gray-700 mb-4">{example.description}</p>
+              <div key={index} className="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-start mb-4">
+                  <div className="bg-[#04AA6D] text-white rounded-full w-7 h-7 flex items-center justify-center mr-3 flex-shrink-0 mt-1">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">{example.title}</h3>
+                    <p className="text-gray-700 mt-2">{example.description}</p>
+                  </div>
+                </div>
                 <div className="relative">
-                  <pre className="bg-[#1E1E1E] text-gray-200 p-4 rounded overflow-x-auto text-sm">
+                  <pre className="bg-[#1E1E1E] text-gray-200 p-4 rounded-lg overflow-x-auto text-sm">
                     <code>{example.code}</code>
                   </pre>
                   <button
                     onClick={() => handleCopy(example.code, index)}
-                    className="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded transition"
+                    className="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded transition"
+                    title="Copy code"
                   >
-                    {copiedIndex === index ? (
-                      <span className="text-green-400">Copied!</span>
-                    ) : (
-                      <FaCopy />
-                    )}
+                    {copiedIndex === index ? <FaCheck className="text-green-400" /> : <FaCopy />}
                   </button>
                 </div>
               </div>
@@ -173,25 +181,25 @@ name = person.fullName;`,
 
         {/* References Section */}
         <section>
-          <h2 className="text-3xl font-bold mb-4">Object References</h2>
-          <p className="text-gray-700 mb-6 max-w-3xl">
+          <h2 className="text-3xl font-bold mb-6">Object References</h2>
+          <p className="text-gray-700 mb-8 max-w-3xl text-lg">
             Explore our complete JavaScript object references for detailed information about all object properties and methods.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {referenceItems.map((ref, idx) => (
-              <button
+              <div
                 key={idx}
-                className="cursor-pointer bg-gray-100 hover:bg-black hover:text-white text-gray-800 text-center font-medium py-3 px-4 rounded transition"
+                className="bg-gray-100 hover:bg-[#04AA6D] hover:text-white text-gray-800 text-center font-medium py-4 px-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer shadow-sm hover:shadow-md"
               >
                 {ref}
-              </button>
+              </div>
             ))}
           </div>
         </section>
 
         {/* Next Button */}
-        <div className="flex justify-end">
-          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-5 py-2 rounded hover:bg-[#03945f] transition">
+        <div className="flex justify-end pt-4">
+          <button className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#03945f] transition shadow-md hover:shadow-lg">
             Next
             <FaChevronRight />
           </button>
