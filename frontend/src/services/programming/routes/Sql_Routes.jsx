@@ -15,6 +15,8 @@ import Sql_Update from "../courses/sql/Sql_Update";
 import Sql_Delete from "../courses/sql/Sql_Delete";
 import Sql_Top_Limit from "../courses/sql/Sql_Top_Limit";
 import Sql_Min_Max from "../courses/sql/Sql_Min_Max";
+import Sql_Count from "../courses/sql/Sql_Count";
+import Sql_Sum from "../courses/sql/Sql_Sum";
 
 
 export const SqlLayout = () => (
@@ -45,7 +47,9 @@ export const SQLRoutes = {
     { path: "sqlupdate", element: <Sql_Update /> },
     { path: "sqldelete", element: <Sql_Delete /> },
     { path: "sqltoplimit", element: <Sql_Top_Limit /> },
-    { path: "sqlminmax", element: <Sql_Min_Max /> }
+    { path: "sqlminmax", element: <Sql_Min_Max /> },
+    { path: "sqlcount", element: <Sql_Count /> },
+    { path: "sqlsum", element: <Sql_Sum /> }
 
  ],
 };
