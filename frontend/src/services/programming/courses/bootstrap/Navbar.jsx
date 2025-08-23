@@ -1,10 +1,9 @@
 // src/pages/bootstrap/Navbar.jsx
-import { useState } from "react";
+import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [copied, setCopied] = useState(false);
 
   // Sample codes for different navbar sections
   const basicNavbar = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -99,177 +98,118 @@ const Navbar = () => {
     <a class="navbar-brand" href="#">Sticky Top Navbar</a>
   </div>
 </nav>`;
+ return (
+  <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+    <div className="max-w-6xl mx-auto space-y-5 sm:space-y-10 lg:space-y-14">
 
-  const handleCopy = (text) => {
-    navigator.clipboard.writeText(text)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-      })
-      .catch((err) => console.error("Failed to copy:", err));
-  };
-
-  return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
-
-        {/* Header */}
-        <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
-            Bootstrap Navbar
-          </h1>
-          <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-            Bootstrap navbars are responsive navigation headers that include branding, navigation, and other elements like forms, buttons, and dropdowns.
-          </p>
-        </div>
-
-        {/* Navigation Top */}
-        <div className="flex justify-between">
-          <Link
-            to="/bootstrap/input-groups"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
-          >
-            <FaChevronLeft /> Input Groups
-          </Link>
-
-          <Link
-            to="/bootstrap/dropdowns"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
-          >
-            Dropdowns <FaChevronRight />
-          </Link>
-        </div>
-
-        {/* Basic Navbar */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Basic Navbar</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Basic navbar with brand and links, responsive collapse included.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{basicNavbar}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(basicNavbar)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
-
-        {/* Navbar with Dropdown */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Navbar with Dropdown</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Navbar items can have dropdown menus for additional links.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{navbarWithDropdown}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(navbarWithDropdown)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
-
-        {/* Navbar with Form */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Navbar with Form</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Forms, like search fields and buttons, can be included inside a navbar.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{navbarWithForm}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(navbarWithForm)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
-
-        {/* Navbar Colors */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Navbar Colors</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Use built-in color classes like <code>.bg-primary</code>, <code>.bg-success</code>, <code>.bg-warning</code>, etc.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{navbarColors}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(navbarColors)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
-
-        {/* Navbar Positioning */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Navbar Positioning</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Position navbars with <code>.fixed-top</code>, <code>.fixed-bottom</code>, or <code>.sticky-top</code>.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{navbarPositioning}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(navbarPositioning)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
-
-        {/* Next Step */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
-            Now that you understand navbars, the next topic is{" "}
-            <Link
-              to="/bootstrap/buttons"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Buttons
-            </Link>{" "}
-            where you will learn all types of Bootstrap buttons.
-          </p>
-        </section>
-
-        {/* Bottom Navigation */}
-        <div className="flex justify-between">
-          <Link
-            to="/bootstrap/input-groups"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
-          >
-            <FaChevronLeft /> Input Groups
-          </Link>
-
-          <Link
-            to="/bootstrap/dropdowns"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
-          >
-            Dropdowns <FaChevronRight />
-          </Link>
-        </div>
-
+      {/* Header */}
+      <div className="text-center">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          Bootstrap Navbar
+        </h1>
+        <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          Bootstrap navbars are responsive navigation headers that include branding, navigation, and other elements like forms, buttons, and dropdowns.
+        </p>
       </div>
+
+      {/* Navigation Top */}
+      <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
+        <Link
+          to="/bootstrap/input-groups"
+          className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
+        >
+          <FaChevronLeft /> Input Groups
+        </Link>
+
+        <Link
+          to="/bootstrap/dropdowns"
+          className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
+        >
+          Dropdowns <FaChevronRight />
+        </Link>
+      </div>
+
+      {/* Basic Navbar */}
+      <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <h2 className="text-xl md:text-2xl font-bold mb-5 text-[#04AA6D]">Basic Navbar</h2>
+        <p className="text-gray-800 mb-4 leading-relaxed">
+          Basic navbar with brand and links, responsive collapse included.
+        </p>
+        <CodeBlock code={basicNavbar} />
+      </section>
+
+      {/* Navbar with Dropdown */}
+      <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
+        <h2 className="text-xl md:text-2xl font-bold mb-5 text-[#04AA6D]">Navbar with Dropdown</h2>
+        <p className="text-gray-800 mb-4 leading-relaxed">
+          Navbar items can have dropdown menus for additional links.
+        </p>
+        <CodeBlock code={navbarWithDropdown} />
+      </section>
+
+      {/* Navbar with Form */}
+      <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <h2 className="text-xl md:text-2xl font-bold mb-5 text-[#04AA6D]">Navbar with Form</h2>
+        <p className="text-gray-800 mb-4 leading-relaxed">
+          Forms, like search fields and buttons, can be included inside a navbar.
+        </p>
+        <CodeBlock code={navbarWithForm} />
+      </section>
+
+      {/* Navbar Colors */}
+      <section className="bg-white p-5 md:p-10 rounded-2xl shadow-lg border border-gray-200">
+        <h2 className="text-xl md:text-2xl font-bold mb-5 text-[#04AA6D]">Navbar Colors</h2>
+        <p className="text-gray-800 mb-4 leading-relaxed">
+          Use built-in color classes like <code>.bg-primary</code>, <code>.bg-success</code>, <code>.bg-warning</code>, etc.
+        </p>
+        <CodeBlock code={navbarColors} />
+      </section>
+
+      {/* Navbar Positioning */}
+      <section className="bg-[#D9EEE1] p-5 md:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <h2 className="text-xl md:text-2xl font-bold mb-5 text-[#04AA6D]">Navbar Positioning</h2>
+        <p className="text-gray-800 mb-4 leading-relaxed">
+          Position navbars with <code>.fixed-top</code>, <code>.fixed-bottom</code>, or <code>.sticky-top</code>.
+        </p>
+        <CodeBlock code={navbarPositioning} />
+      </section>
+
+      {/* Next Step */}
+      <section>
+        <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
+        <p className="text-gray-700">
+          Now that you understand navbars, the next topic is{" "}
+          <Link
+            to="/bootstrap/buttons"
+            className="text-[#04AA6D] font-semibold hover:underline"
+          >
+            Buttons
+          </Link>{" "}
+          where you will learn all types of Bootstrap buttons.
+        </p>
+      </section>
+
+      {/* Bottom Navigation */}
+      <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
+        <Link
+          to="/bootstrap/input-groups"
+          className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
+        >
+          <FaChevronLeft /> Input Groups
+        </Link>
+
+        <Link
+          to="/bootstrap/dropdowns"
+          className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
+        >
+          Dropdowns <FaChevronRight />
+        </Link>
+      </div>
+
     </div>
-  );
+  </div>
+);
+
 };
 
 export default Navbar

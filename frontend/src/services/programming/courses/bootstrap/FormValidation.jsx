@@ -1,11 +1,9 @@
 // src/pages/bootstrap/FormValidation.jsx
-import { useState } from "react";
+import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const FormValidation = () => {
-  const [copied, setCopied] = useState(false);
-
   // Sample codes for different validation sections
   const basicValidation = `<form class="needs-validation" novalidate>
   <div class="mb-3">
@@ -91,196 +89,125 @@ const FormValidation = () => {
   </div>
   <button class="btn btn-primary" type="submit">Submit</button>
 </form>`;
-
-  const handleCopy = (text) => {
-    navigator.clipboard.writeText(text)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-      })
-      .catch((err) => console.error("Failed to copy:", err));
-  };
-
-  return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
-
+return (
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="max-w-6xl mx-auto space-y-5 sm:space-y-10 lg:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
-            Bootstrap Form Validation
-          </h1>
-          <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-            Bootstrap form validation allows you to easily validate user input with built-in HTML5 validation, custom validation, checkboxes, radios, selects, file inputs, floating labels, and validation feedback messages.
-          </p>
-        </div>
-
-        {/* Navigation Top */}
-        <div className="flex justify-between">
-          <Link
-            to="/bootstrap/forms"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
-          >
-            <FaChevronLeft /> Forms
-          </Link>
-
-          <Link
-            to="/bootstrap/input-groups"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
-          >
-            Input Groups <FaChevronRight />
-          </Link>
-        </div>
-
-        {/* Basic Validation */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Basic Validation</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Basic validation using <code>.needs-validation</code> and <code>novalidate</code>. Shows valid and invalid feedback messages.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{basicValidation}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(basicValidation)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
-
-        {/* Custom Validation Script */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Custom Validation Script</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Add custom validation to prevent form submission if invalid.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{customValidationScript}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(customValidationScript)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
-
-        {/* Checkbox & Radio Validation */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Checkbox & Radio Validation</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Validate checkboxes and radio buttons using <code>required</code>.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{checkboxesRadiosValidation}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(checkboxesRadiosValidation)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
-
-        {/* Select Validation */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Select Validation</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Ensure users select an option from dropdowns.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{selectValidation}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(selectValidation)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
-
-        {/* File Input Validation */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">File Input Validation</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Validate file inputs using <code>required</code>.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{fileInputValidation}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(fileInputValidation)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
-
-        {/* Floating Labels Validation */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Floating Labels Validation</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Validation with floating labels works the same way.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{floatingLabelsValidation}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(floatingLabelsValidation)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
-
-        {/* Next Step */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
-            Now that you understand form validation, the next topic is{" "}
-            <Link
-              to="/bootstrap/buttons"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Buttons
-            </Link>{" "}
-            where you will learn about all types of Bootstrap buttons.
-          </p>
-        </section>
-
-        {/* Bottom Navigation */}
-        <div className="flex justify-between">
-          <Link
-            to="/bootstrap/forms"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
-          >
-            <FaChevronLeft /> Forms
-          </Link>
-
-          <Link
-            to="/bootstrap/input-groups"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
-          >
-            Input Groups <FaChevronRight />
-          </Link>
-        </div>
-
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          Bootstrap Form Validation
+        </h1>
+        <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
+          Bootstrap form validation allows you to easily validate user input with built-in HTML5 validation, custom validation, checkboxes, radios, selects, file inputs, floating labels, and validation feedback messages.
+        </p>
       </div>
+
+      {/* Navigation Top */}
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
+        <Link
+          to="/bootstrap/forms"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
+        >
+          <FaChevronLeft /> Forms
+        </Link>
+
+        <Link
+          to="/bootstrap/input-groups"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
+        >
+          Input Groups <FaChevronRight />
+        </Link>
+      </div>
+
+      {/* Basic Validation */}
+      <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Basic Validation</h2>
+        <p className="text-gray-800 mb-4 leading-relaxed">
+          Basic validation using <code>.needs-validation</code> and <code>novalidate</code>. Shows valid and invalid feedback messages.
+        </p>
+        <CodeBlock code={basicValidation} />
+      </section>
+
+      {/* Custom Validation Script */}
+      <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
+        <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Custom Validation Script</h2>
+        <p className="text-gray-800 mb-4 leading-relaxed">
+          Add custom validation to prevent form submission if invalid.
+        </p>
+        <CodeBlock code={customValidationScript} />
+      </section>
+
+      {/* Checkbox & Radio Validation */}
+      <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Checkbox & Radio Validation</h2>
+        <p className="text-gray-800 mb-4 leading-relaxed">
+          Validate checkboxes and radio buttons using <code>required</code>.
+        </p>
+        <CodeBlock code={checkboxesRadiosValidation} />
+      </section>
+
+      {/* Select Validation */}
+      <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
+        <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Select Validation</h2>
+        <p className="text-gray-800 mb-4 leading-relaxed">
+          Ensure users select an option from dropdowns.
+        </p>
+        <CodeBlock code={selectValidation} />
+      </section>
+
+      {/* File Input Validation */}
+      <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">File Input Validation</h2>
+        <p className="text-gray-800 mb-4 leading-relaxed">
+          Validate file inputs using <code>required</code>.
+        </p>
+        <CodeBlock code={fileInputValidation} />
+      </section>
+
+      {/* Floating Labels Validation */}
+      <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
+        <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Floating Labels Validation</h2>
+        <p className="text-gray-800 mb-4 leading-relaxed">
+          Validation with floating labels works the same way.
+        </p>
+        <CodeBlock code={floatingLabelsValidation} />
+      </section>
+
+      {/* Next Step */}
+      <section>
+        <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
+        <p className="text-gray-700">
+          Now that you understand form validation, the next topic is{" "}
+          <Link
+            to="/bootstrap/buttons"
+            className="text-[#04AA6D] font-semibold hover:underline"
+          >
+            Buttons
+          </Link>{" "}
+          where you will learn about all types of Bootstrap buttons.
+        </p>
+      </section>
+
+      {/* Bottom Navigation */}
+      <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
+        <Link
+          to="/bootstrap/forms"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
+        >
+          <FaChevronLeft /> Forms
+        </Link>
+
+        <Link
+          to="/bootstrap/input-groups"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
+        >
+          Input Groups <FaChevronRight />
+        </Link>
+      </div>
+
     </div>
-  );
-};
+  </div>
+);
+}
 
 export default FormValidation;
