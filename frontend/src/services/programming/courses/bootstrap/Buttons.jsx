@@ -1,11 +1,9 @@
 // src/pages/bootstrap/Buttons.jsx
-import { useState } from "react";
+import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Buttons = () => {
-  const [copied, setCopied] = useState(false);
-
   const basicButtons = `<button type="button" class="btn btn-primary">Primary</button>
 <button type="button" class="btn btn-secondary">Secondary</button>
 <button type="button" class="btn btn-success">Success</button>
@@ -39,23 +37,12 @@ const Buttons = () => {
   <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
   <label class="btn btn-primary" htmlFor="btncheck2">Checkbox 2</label>
 </div>`;
-
-  const handleCopy = (text) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-      })
-      .catch((err) => console.error("Failed to copy:", err));
-  };
-
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="max-w-6xl mx-auto space-y-5 sm:space-y-10 lg:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Buttons
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -66,24 +53,24 @@ const Buttons = () => {
         </div>
 
         {/* Navigation Top */}
-        <div className="flex justify-between">
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/alerts"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             <FaChevronLeft /> Alerts
           </Link>
 
           <Link
             to="/bootstrap/badges"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             Badges <FaChevronRight />
           </Link>
         </div>
 
         {/* Basic Buttons */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Basic Buttons
           </h2>
@@ -93,7 +80,7 @@ const Buttons = () => {
           </p>
 
           {/* Visual Representation */}
-          <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200 mb-6">
+          <div className="bg-white p-4 sm:p-6 rounded-xl shadow-md border border-gray-200 mb-6">
             <h3 className="text-xl font-semibold text-gray-700 mb-4">
               Visual Example
             </h3>
@@ -129,21 +116,11 @@ const Buttons = () => {
           </div>
 
           {/* Code Example */}
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{basicButtons}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(basicButtons)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={basicButtons} />
         </section>
 
         {/* Outline Buttons */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Outline Buttons
           </h2>
@@ -151,21 +128,11 @@ const Buttons = () => {
             Add <code>.btn-outline-*</code> classes to create outline style
             buttons.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{outlineButtons}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(outlineButtons)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={outlineButtons} />
         </section>
 
         {/* Button Sizes */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Button Sizes
           </h2>
@@ -173,42 +140,22 @@ const Buttons = () => {
             Use <code>.btn-lg</code> and <code>.btn-sm</code> for large and
             small buttons.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{buttonSizes}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(buttonSizes)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={buttonSizes} />
         </section>
 
         {/* Disabled Buttons */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Disabled Buttons
           </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Add <code>disabled</code> attribute to disable buttons.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{disabledButtons}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(disabledButtons)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={disabledButtons} />
         </section>
 
         {/* Block Buttons */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 sm:p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Block Buttons
           </h2>
@@ -216,42 +163,22 @@ const Buttons = () => {
             Use <code>w-full</code> (or <code>.btn-block</code> in older
             Bootstrap) to create full-width buttons.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{buttonBlock}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(buttonBlock)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={buttonBlock} />
         </section>
 
         {/* Button Groups */}
-        <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
+        <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Button Groups
           </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Use <code>.btn-group</code> to group multiple buttons together.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{buttonGroup}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(buttonGroup)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <CodeBlock code={buttonGroup} />
         </section>
 
         {/* Toggle Buttons */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
             Toggle Buttons
           </h2>
@@ -259,17 +186,7 @@ const Buttons = () => {
             Use <code>.btn-check</code> and <code>label.btn</code> to create
             toggleable buttons.
           </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{toggleButtons}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(toggleButtons)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
+          <code>{toggleButtons}</code>
         </section>
 
         {/* Next Steps */}
@@ -288,17 +205,17 @@ const Buttons = () => {
         </section>
 
         {/* Bottom Navigation */}
-        <div className="flex justify-between">
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/alerts"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             <FaChevronLeft /> Alerts
           </Link>
 
           <Link
             to="/bootstrap/badges"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             Badges <FaChevronRight />
           </Link>
