@@ -27,10 +27,10 @@ const Default = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 py-8 lg:py-10 md:py-10">
-      <div className="max-w-6xl mx-auto space-y-5 md:space-y-10">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="w-full max-w-6xl mx-auto space-y-5 sm:space-y-14">
         {/* Header */}
-        <div className="text-center">
+        <div className="text-center px-2">
           <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Tutorial
           </h1>

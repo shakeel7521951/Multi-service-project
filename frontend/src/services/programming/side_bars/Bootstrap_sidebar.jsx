@@ -34,9 +34,9 @@ const Bootstrap_sidebar = () => {
       {/* Mobile/Tablet Toggle Button (hidden on lg and above) */}
       <button
         onClick={() => setOpen(true)}
-        className="lg:hidden fixed top-30 left-4 z-30 bg-[#04AA6D] text-white p-2 rounded-md shadow-lg"
+        className="lg:hidden fixed top-29 md:top-32 left-1 sm:left-3 z-30 bg-[#04AA6D] text-white p-2 rounded-md shadow-lg"
       >
-        <FaBars size={20} className="" />
+        <FaBars size={18} className="" />
       </button>
 
       {/* Sidebar */}
