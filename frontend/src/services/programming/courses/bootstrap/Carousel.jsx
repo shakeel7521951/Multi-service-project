@@ -1,21 +1,9 @@
 // src/pages/bootstrap/Carousel.jsx
-import { useState } from "react";
+import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Carousel = () => {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = (text) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-      })
-      .catch((err) => console.error("Failed to copy:", err));
-  };
-
   // Snippets
   const basicCarousel = `<div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
@@ -133,31 +121,12 @@ const Carousel = () => {
   </div>
 </div>`;
 
-  // ---- Utility renderer ----
-  const renderExample = (title, desc, code) => (
-    <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-      <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">{title}</h2>
-      <p className="text-gray-800 mb-4 leading-relaxed">{desc}</p>
-      <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-        <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-          <code>{code}</code>
-        </pre>
-        <button
-          onClick={() => handleCopy(code)}
-          className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-        >
-          {copied ? "Copied!" : "Copy Code"}
-        </button>
-      </div>
-    </section>
-  );
-
-  return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
+return (
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="max-w-6xl mx-auto space-y-5 sm:space-y-10 lg:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Carousel
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -169,33 +138,121 @@ const Carousel = () => {
         </div>
 
         {/* Navigation Top */}
-        <div className="flex justify-between">
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/modals"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             <FaChevronLeft /> Modals
           </Link>
           <Link
             to="/bootstrap/utilities"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             Utilities <FaChevronRight />
           </Link>
         </div>
 
         {/* Sections */}
-        {renderExample("Basic Example", "A simple carousel without controls or indicators.", basicCarousel)}
-        {renderExample("With Controls", "Navigation controls let users go forward and backward.", withControls)}
-        {renderExample("With Indicators", "Indicators represent each slide at the bottom.", withIndicators)}
-        {renderExample("With Captions", "Captions overlay text or buttons on slides.", withCaptions)}
-        {renderExample("Fade Transition", "Add .carousel-fade for smooth crossfading.", fadeCarousel)}
-        {renderExample("Autoplay & Interval", "Customize slide intervals with data-bs-interval.", autoplayCarousel)}
-        {renderExample("Dark Variant", "Use .carousel-dark for dark captions and controls.", darkCarousel)}
-        {renderExample("Custom Content", "Carousels can hold any content, not just images.", customContent)}
+        <section>
+          <h2 className="text-3xl font-bold mb-3 text-[#04AA6D]">
+            Basic Example
+          </h2>
+          <p className="text-gray-700 mb-4">
+            A simple carousel without controls or indicators.
+          </p>
+          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+            <CodeBlock code={basicCarousel}/>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-3 text-[#04AA6D]">
+            With Controls
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Navigation controls let users go forward and backward.
+          </p>
+          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+            <CodeBlock code={withControls}/>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-3 text-[#04AA6D]">
+            With Indicators
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Indicators represent each slide at the bottom.
+          </p>
+          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+            <CodeBlock code={withIndicators}/>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-3 text-[#04AA6D]">
+            With Captions
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Captions overlay text or buttons on slides.
+          </p>
+          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+            <CodeBlock code={withCaptions}/>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-3 text-[#04AA6D]">
+            Fade Transition
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Add <code>.carousel-fade</code> for smooth crossfading.
+          </p>
+          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+            <CodeBlock code={fadeCarousel}/>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-3 text-[#04AA6D]">
+            Autoplay & Interval
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Customize slide intervals with{" "}
+            <code>data-bs-interval</code>.
+          </p>
+          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+            <CodeBlock code={autoplayCarousel}/>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-3 text-[#04AA6D]">
+            Dark Variant
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Use <code>.carousel-dark</code> for dark captions and controls.
+          </p>
+          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+            <CodeBlock code={darkCarousel}/>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-3 text-[#04AA6D]">
+            Custom Content
+          </h2>
+          <p className="text-gray-700 mb-4">
+            Carousels can hold any content, not just images.
+          </p>
+          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+            <CodeBlock code={customContent}/>
+          </div>
+        </section>
 
         {/* Features Summary */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+        <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Features</h2>
           <ul className="list-disc list-inside text-gray-700 space-y-2">
             <li><b>Controls</b>: Previous & Next buttons.</li>
@@ -226,16 +283,16 @@ const Carousel = () => {
         </section>
 
         {/* Bottom Navigation */}
-        <div className="flex justify-between">
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/modals"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             <FaChevronLeft /> Modals
           </Link>
           <Link
             to="/bootstrap/utilities"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             Utilities <FaChevronRight />
           </Link>
