@@ -30,8 +30,8 @@ const BootstrapLayout = () => {
       <Bootstrap_sidebar />
 
       {/* Main Content */}
-      <div className="flex-1 min-h-screen p-3 sm:p-4 md:p-6 overflow-x-hidden">
-        <Outlet />  
+      <div className="flex-1 min-h-screen p-3 sm:p-4 md:p-6 overflow-x-hidden mt-20">
+        <Outlet />
       </div>
     </div>
   );

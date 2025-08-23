@@ -105,7 +105,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative mb-11 bg-white text-black px-4 py-4 w-full shadow">
+    <nav className="fixed mb-11 bg-white text-black px-4 py-4 w-full shadow z-100">
       <div className="flex flex-wrap items-center justify-between gap-4">
         {/* LEFT */}
         <div className="flex items-center space-x-4">

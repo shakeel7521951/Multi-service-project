@@ -34,15 +34,15 @@ const Bootstrap_sidebar = () => {
       {/* Mobile/Tablet Toggle Button (hidden on lg and above) */}
       <button
         onClick={() => setOpen(true)}
-        className="lg:hidden fixed top-4 left-4 z-50 bg-[#04AA6D] text-white p-2 rounded-md shadow-lg"
+        className="lg:hidden fixed top-30 left-4 z-30 bg-[#04AA6D] text-white p-2 rounded-md shadow-lg"
       >
-        <FaBars size={20} />
+        <FaBars size={20} className="" />
       </button>
 
       {/* Sidebar */}
       <div
-        className={`fixed lg:static top-0 left-0 h-full lg:h-screen w-64 bg-gray-100 border-r border-gray-300 p-4 overflow-y-auto transition-transform duration-300 ease-in-out z-40
-        ${open ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
+        className={`fixed lg:sticky top-27 left-0 h-[87vh] sm:h-[90vh] lg:h-[85vh] w-54 bg-gray-100 border-r border-gray-300 p-4 overflow-y-scroll transition-transform duration-300 ease-in-out z-40
+  ${open ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-4 lg:mb-6">
