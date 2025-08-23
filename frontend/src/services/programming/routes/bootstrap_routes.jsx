@@ -23,18 +23,22 @@ import Containers from "./../courses/bootstrap/Containers";
 import Installation from "./../courses/bootstrap/Installation";
 import Introduction from "./../courses/bootstrap/Introduction";
 
-const BootsrapLayout = () => (
-  <div className="flex">
-    <Bootstrap_sidebar />
-    <div className="flex-1 p-4">
-      <Outlet />
-    </div>
-  </div>
-);
+const BootstrapLayout = () => {
+  return (
+    <div className="flex md:flex-row">
+      {/* Sidebar */}
+      <Bootstrap_sidebar />
 
+      {/* Main Content */}
+      <div className="flex-1 min-h-screen p-3 sm:p-4 md:p-6 overflow-x-hidden">
+        <Outlet />
+      </div>
+    </div>
+  );
+};
 export const BootstrapRoutes = {
   path: "bootstrap",
-  element: <BootsrapLayout />,
+  element: <BootstrapLayout />,
   children: [
     { index: true, element: <Default /> },
     { path: "default", element: <Default /> },

@@ -71,24 +71,58 @@ const Alerts = () => {
           </Link>
         </div>
 
-        {/* Basic Alerts */}
-        <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Basic Alerts</h2>
-          <p className="text-gray-800 mb-4 leading-relaxed">
-            Use <code>.alert</code> with contextual classes to display simple alerts.
-          </p>
-          <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
-            <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-              <code>{basicAlerts}</code>
-            </pre>
-            <button
-              onClick={() => handleCopy(basicAlerts)}
-              className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-            >
-              {copied ? "Copied!" : "Copy Code"}
-            </button>
-          </div>
-        </section>
+       {/* Basic Alerts */}
+<section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+  <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Basic Alerts</h2>
+  <p className="text-gray-800 mb-4 leading-relaxed">
+    Use <code>.alert</code> with contextual classes to display simple alerts.
+  </p>
+
+  {/* Visual Representation */}
+  <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200 mb-6">
+    <h3 className="text-xl font-semibold text-gray-700 mb-4">Visual Example</h3>
+    <div className="space-y-3 text-sm font-medium">
+      <div className="p-3 rounded-lg bg-[#cfe2ff] text-[#084298] border border-[#b6d4fe]">
+        A simple <b>primary</b> alert—check it out!
+      </div>
+      <div className="p-3 rounded-lg bg-[#e2e3e5] text-[#41464b] border border-[#d3d6d8]">
+        A simple <b>secondary</b> alert—check it out!
+      </div>
+      <div className="p-3 rounded-lg bg-[#d1e7dd] text-[#0f5132] border border-[#badbcc]">
+        A simple <b>success</b> alert—check it out!
+      </div>
+      <div className="p-3 rounded-lg bg-[#f8d7da] text-[#842029] border border-[#f5c2c7]">
+        A simple <b>danger</b> alert—check it out!
+      </div>
+      <div className="p-3 rounded-lg bg-[#fff3cd] text-[#664d03] border border-[#ffecb5]">
+        A simple <b>warning</b> alert—check it out!
+      </div>
+      <div className="p-3 rounded-lg bg-[#cff4fc] text-[#055160] border border-[#b6effb]">
+        A simple <b>info</b> alert—check it out!
+      </div>
+      <div className="p-3 rounded-lg bg-[#fefefe] text-[#636464] border border-[#fdfdfe]">
+        A simple <b>light</b> alert—check it out!
+      </div>
+      <div className="p-3 rounded-lg bg-[#d3d3d4] text-[#141619] border border-[#bcbebf]">
+        A simple <b>dark</b> alert—check it out!
+      </div>
+    </div>
+  </div>
+
+  {/* Code Example */}
+  <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
+    <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
+      <code>{basicAlerts}</code>
+    </pre>
+    <button
+      onClick={() => handleCopy(basicAlerts)}
+      className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
+    >
+      {copied ? "Copied!" : "Copy Code"}
+    </button>
+  </div>
+</section>
+
 
         {/* Dismissible Alerts */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">

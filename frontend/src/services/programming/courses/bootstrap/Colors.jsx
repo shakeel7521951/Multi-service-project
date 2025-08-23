@@ -118,8 +118,9 @@ const Colors = () => {
             Bootstrap Colors & Backgrounds
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-            Master Bootstrap’s color utilities for text, links, backgrounds, borders, gradients, and opacity.
-            This page follows the same layout and color scheme as the rest of the tutorial.
+            Master Bootstrap’s color utilities for text, links, backgrounds,
+            borders, gradients, and opacity. This page follows the same layout
+            and color scheme as the rest of the tutorial.
           </p>
         </div>
 
@@ -142,10 +143,13 @@ const Colors = () => {
 
         {/* Palette Overview */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Bootstrap Color Palette</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Bootstrap Color Palette
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Bootstrap ships with a contextual palette you’ll use across components and utilities. These keys map to CSS variables
-            such as <code>--bs-primary</code>, <code>--bs-success</code>, etc.
+            Bootstrap ships with a contextual palette you’ll use across
+            components and utilities. These keys map to CSS variables such as{" "}
+            <code>--bs-primary</code>, <code>--bs-success</code>, etc.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -192,10 +196,13 @@ const Colors = () => {
 
         {/* Text Colors & Links */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200 space-y-6">
-          <h2 className="text-3xl font-bold text-[#04AA6D]">Text Colors and Link Utilities</h2>
+          <h2 className="text-3xl font-bold text-[#04AA6D]">
+            Text Colors and Link Utilities
+          </h2>
           <p className="text-gray-800 leading-relaxed">
-            Apply text colors with <code>.text-*</code> and color your anchors consistently with <code>.link-*</code>.
-            Use <code>.text-muted</code> to de-emphasize content.
+            Apply text colors with <code>.text-*</code> and color your anchors
+            consistently with <code>.link-*</code>. Use <code>.text-muted</code>{" "}
+            to de-emphasize content.
           </p>
 
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
@@ -214,10 +221,13 @@ const Colors = () => {
 
         {/* Readable Text Background Helpers */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Readable Text Backgrounds</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Readable Text Backgrounds
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Use <code>.text-bg-*</code> to apply a background color with automatically adjusted readable text color.
-            This is ideal for badges, labels, and chips.
+            Use <code>.text-bg-*</code> to apply a background color with
+            automatically adjusted readable text color. This is ideal for
+            badges, labels, and chips.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
@@ -233,12 +243,42 @@ const Colors = () => {
         </section>
 
         {/* Background Colors */}
+        {/* Background Colors */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Background Colors</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Background Colors
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Use <code>.bg-*</code> to color backgrounds. Pair them with appropriate text colors for contrast.
+            Use <code>.bg-*</code> to color backgrounds. Pair them with
+            appropriate text colors for contrast.
           </p>
 
+          {/* Visual Examples */}
+          <div className="space-y-2 mb-6">
+            <div className="p-2 rounded bg-blue-600 text-white">
+              .bg-primary
+            </div>
+            <div className="p-2 rounded bg-gray-600 text-white">
+              .bg-secondary
+            </div>
+            <div className="p-2 rounded bg-green-600 text-white">
+              .bg-success
+            </div>
+            <div className="p-2 rounded bg-red-600 text-white">.bg-danger</div>
+            <div className="p-2 rounded bg-yellow-400 text-black">
+              .bg-warning
+            </div>
+            <div className="p-2 rounded bg-cyan-400 text-black">.bg-info</div>
+            <div className="p-2 rounded bg-gray-100 text-black border">
+              .bg-light
+            </div>
+            <div className="p-2 rounded bg-gray-900 text-white">.bg-dark</div>
+            <div className="p-2 rounded bg-white text-black border">
+              .bg-white
+            </div>
+          </div>
+
+          {/* Code Example */}
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
               <code>{backgroundExample}</code>
@@ -254,10 +294,14 @@ const Colors = () => {
 
         {/* Background Opacity */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Background Opacity</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Background Opacity
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Add opacity to background colors with <code>.bg-opacity-10</code>, <code>25</code>, <code>50</code>, <code>75</code>, or <code>100</code>.
-            This is applied via CSS variables and keeps your text color unaffected.
+            Add opacity to background colors with <code>.bg-opacity-10</code>,{" "}
+            <code>25</code>, <code>50</code>, <code>75</code>, or{" "}
+            <code>100</code>. This is applied via CSS variables and keeps your
+            text color unaffected.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
@@ -274,9 +318,12 @@ const Colors = () => {
 
         {/* Gradients */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Background Gradients</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Background Gradients
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Add a subtle top-to-bottom gradient with <code>.bg-gradient</code> on any colored background.
+            Add a subtle top-to-bottom gradient with <code>.bg-gradient</code>{" "}
+            on any colored background.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
@@ -293,9 +340,12 @@ const Colors = () => {
 
         {/* Borders */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Border Colors</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Border Colors
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Color borders with <code>.border-*</code>. Combine with <code>.border</code>, rounding utilities, and spacing.
+            Color borders with <code>.border-*</code>. Combine with{" "}
+            <code>.border</code>, rounding utilities, and spacing.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
@@ -312,9 +362,13 @@ const Colors = () => {
 
         {/* Generic Opacity Utilities */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Generic Opacity Utilities</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Generic Opacity Utilities
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Control the transparency of any element using <code>.opacity-0</code>, <code>25</code>, <code>50</code>, <code>75</code>, or <code>100</code>.
+            Control the transparency of any element using{" "}
+            <code>.opacity-0</code>, <code>25</code>, <code>50</code>,{" "}
+            <code>75</code>, or <code>100</code>.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
@@ -331,14 +385,22 @@ const Colors = () => {
 
         {/* CSS Variables and Theming */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Customizing Colors</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Customizing Colors
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            In Bootstrap 5.3+, colors are powered by CSS variables. You can override them at the root,
-            per component, or even per section with <code>data-bs-theme</code>.
+            In Bootstrap 5.3+, colors are powered by CSS variables. You can
+            override them at the root, per component, or even per section with{" "}
+            <code>data-bs-theme</code>.
           </p>
           <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
-            <li>Override core colors via <code>:root</code> variables.</li>
-            <li>Use <code>data-bs-theme="dark"</code> on containers to switch local colors for dark mode.</li>
+            <li>
+              Override core colors via <code>:root</code> variables.
+            </li>
+            <li>
+              Use <code>data-bs-theme="dark"</code> on containers to switch
+              local colors for dark mode.
+            </li>
             <li>Generate custom utilities with the Utility API in SCSS.</li>
           </ul>
 
@@ -357,9 +419,13 @@ const Colors = () => {
 
         {/* Accessibility Notes */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Accessibility and Contrast</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Accessibility and Contrast
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Always ensure sufficient color contrast, especially for body text and UI controls. Prefer combinations that meet WCAG 2.1 AA guidelines.
+            Always ensure sufficient color contrast, especially for body text
+            and UI controls. Prefer combinations that meet WCAG 2.1 AA
+            guidelines.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">

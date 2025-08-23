@@ -41,7 +41,8 @@ const Buttons = () => {
 </div>`;
 
   const handleCopy = (text) => {
-    navigator.clipboard.writeText(text)
+    navigator.clipboard
+      .writeText(text)
       .then(() => {
         setCopied(true);
         setTimeout(() => setCopied(false), 1500);
@@ -58,8 +59,9 @@ const Buttons = () => {
             Bootstrap Buttons
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-            Bootstrap buttons are powerful, customizable, and come with many styles and sizes. 
-            You can create buttons for actions, navigation, toggles, and groups.
+            Bootstrap buttons are powerful, customizable, and come with many
+            styles and sizes. You can create buttons for actions, navigation,
+            toggles, and groups.
           </p>
         </div>
 
@@ -82,10 +84,51 @@ const Buttons = () => {
 
         {/* Basic Buttons */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Basic Buttons</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Basic Buttons
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Use built-in button classes to quickly create buttons with different styles.
+            Use built-in button classes to quickly create buttons with different
+            styles.
           </p>
+
+          {/* Visual Representation */}
+          <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200 mb-6">
+            <h3 className="text-xl font-semibold text-gray-700 mb-4">
+              Visual Example
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              <button className="px-4 py-2 rounded bg-[#0d6efd] text-white">
+                Primary
+              </button>
+              <button className="px-4 py-2 rounded bg-[#6c757d] text-white">
+                Secondary
+              </button>
+              <button className="px-4 py-2 rounded bg-[#198754] text-white">
+                Success
+              </button>
+              <button className="px-4 py-2 rounded bg-[#dc3545] text-white">
+                Danger
+              </button>
+              <button className="px-4 py-2 rounded bg-[#ffc107] text-black">
+                Warning
+              </button>
+              <button className="px-4 py-2 rounded bg-[#0dcaf0] text-black">
+                Info
+              </button>
+              <button className="px-4 py-2 rounded bg-[#f8f9fa] text-black border">
+                Light
+              </button>
+              <button className="px-4 py-2 rounded bg-[#212529] text-white">
+                Dark
+              </button>
+              <button className="px-4 py-2 rounded bg-transparent text-[#0d6efd] border border-[#0d6efd]">
+                Outline Primary
+              </button>
+            </div>
+          </div>
+
+          {/* Code Example */}
           <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
               <code>{basicButtons}</code>
@@ -101,9 +144,12 @@ const Buttons = () => {
 
         {/* Outline Buttons */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Outline Buttons</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Outline Buttons
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Add <code>.btn-outline-*</code> classes to create outline style buttons.
+            Add <code>.btn-outline-*</code> classes to create outline style
+            buttons.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
@@ -120,9 +166,12 @@ const Buttons = () => {
 
         {/* Button Sizes */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Button Sizes</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Button Sizes
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Use <code>.btn-lg</code> and <code>.btn-sm</code> for large and small buttons.
+            Use <code>.btn-lg</code> and <code>.btn-sm</code> for large and
+            small buttons.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
@@ -139,7 +188,9 @@ const Buttons = () => {
 
         {/* Disabled Buttons */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Disabled Buttons</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Disabled Buttons
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Add <code>disabled</code> attribute to disable buttons.
           </p>
@@ -158,9 +209,12 @@ const Buttons = () => {
 
         {/* Block Buttons */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Block Buttons</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Block Buttons
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Use <code>w-full</code> (or <code>.btn-block</code> in older Bootstrap) to create full-width buttons.
+            Use <code>w-full</code> (or <code>.btn-block</code> in older
+            Bootstrap) to create full-width buttons.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
@@ -177,7 +231,9 @@ const Buttons = () => {
 
         {/* Button Groups */}
         <section className="bg-white p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Button Groups</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Button Groups
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Use <code>.btn-group</code> to group multiple buttons together.
           </p>
@@ -196,9 +252,12 @@ const Buttons = () => {
 
         {/* Toggle Buttons */}
         <section className="bg-[#D9EEE1] p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Toggle Buttons</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Toggle Buttons
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Use <code>.btn-check</code> and <code>label.btn</code> to create toggleable buttons.
+            Use <code>.btn-check</code> and <code>label.btn</code> to create
+            toggleable buttons.
           </p>
           <div className="bg-[#E7E9EB] p-6 rounded-xl border border-gray-300">
             <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
