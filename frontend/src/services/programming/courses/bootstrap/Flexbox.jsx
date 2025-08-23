@@ -1,21 +1,9 @@
 // src/pages/bootstrap/Flexbox.jsx
-import { useState } from "react";
+import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Flexbox = () => {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = (text) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-      })
-      .catch((err) => console.error("Failed to copy:", err));
-  };
-
   // Code Snippets
   const dFlexExample = `<div class="d-flex p-3 bg-light border">
   <div class="p-2 bg-primary text-white">Flex Item 1</div>
@@ -84,80 +72,135 @@ const Flexbox = () => {
 </div>`;
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-4 py-12">
-      <div className="max-w-6xl mx-auto space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="max-w-6xl mx-auto space-y-5 sm:space-y-10 lg:space-y-14">
         {/* Header */}
         <div className="text-center">
-          <h1 className="text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
             Bootstrap Flexbox
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-            Bootstrap includes a powerful flexbox grid system and utility classes to control layout,
-            alignment, and spacing without writing custom CSS. Below are all the flexbox utilities
-            with examples and code.
+            Bootstrap includes a powerful flexbox grid system and utility
+            classes to control layout, alignment, and spacing without writing
+            custom CSS. Below are all the flexbox utilities with examples and
+            code.
           </p>
         </div>
 
         {/* Navigation Top */}
-        <div className="flex justify-between">
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/utilities"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             <FaChevronLeft /> Utilities
           </Link>
 
           <Link
             to="/bootstrap"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             Bootstrap <FaChevronRight />
           </Link>
         </div>
+        <section className="bg-[#D9EEE1] border border-[#04AA6D]/30 p-5 sm:p-10 rounded-2xl shadow-lg">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Enable Flex
+          </h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Use <code>.d-flex</code> to create a flex container.
+          </p>
+          <CodeBlock code={dFlexExample} />
+        </section>
 
-        {/* Sections */}
-        {[
-          { title: "Enable Flex", desc: "Use .d-flex to create a flex container.", code: dFlexExample, bg: "green" },
-          { title: "Direction", desc: "Control the direction of flex items.", code: directionExample, bg: "white" },
-          { title: "Justify Content", desc: "Align items along the main axis.", code: justifyExample, bg: "green" },
-          { title: "Align Items", desc: "Align items along the cross axis.", code: alignExample, bg: "white" },
-          { title: "Align Self", desc: "Override alignment for individual items.", code: alignSelfExample, bg: "green" },
-          { title: "Flex Fill", desc: "Make items expand equally to fill available space.", code: fillExample, bg: "white" },
-          { title: "Grow & Shrink", desc: "Control how items grow or shrink.", code: growShrinkExample, bg: "green" },
-          { title: "Flex Wrap", desc: "Allow items to wrap onto multiple lines.", code: wrapExample, bg: "white" },
-          { title: "Order", desc: "Reorder flex items with order utilities.", code: orderExample, bg: "green" },
-          { title: "Align Content", desc: "Align flex lines within a flex container.", code: alignContentExample, bg: "white" },
-        ].map((section, idx) => (
-          <section
-            key={idx}
-            className={`${
-              section.bg === "green"
-                ? "bg-[#D9EEE1] border border-[#04AA6D]/30"
-                : "bg-white border border-gray-200"
-            } p-10 rounded-2xl shadow-lg`}
-          >
-            <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">{section.title}</h2>
-            <p className="text-gray-800 mb-4 leading-relaxed">{section.desc}</p>
-            <div className="bg-[#E7E9EB] p-6 rounded-xl shadow-inner border">
-              <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded-lg overflow-x-auto shadow">
-                <code>{section.code}</code>
-              </pre>
-              <button
-                onClick={() => handleCopy(section.code)}
-                className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold mt-5 px-6 py-2 rounded-lg shadow transition transform hover:scale-105"
-              >
-                {copied ? "Copied!" : "Copy Code"}
-              </button>
-            </div>
-          </section>
-        ))}
+        <section className="bg-white border border-gray-200 p-5 sm:p-10 rounded-2xl shadow-lg">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Direction</h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Control the direction of flex items.
+          </p>
+          <CodeBlock code={directionExample} />
+        </section>
 
+        <section className="bg-[#D9EEE1] border border-[#04AA6D]/30 p-5 sm:p-10 rounded-2xl shadow-lg">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Justify Content
+          </h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Align items along the main axis.
+          </p>
+          <CodeBlock code={justifyExample} />
+        </section>
+
+        <section className="bg-white border border-gray-200 p-5 sm:p-10 rounded-2xl shadow-lg">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Align Items
+          </h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Align items along the cross axis.
+          </p>
+          <CodeBlock code={alignExample} />
+        </section>
+
+        <section className="bg-[#D9EEE1] border border-[#04AA6D]/30 p-5 sm:p-10 rounded-2xl shadow-lg">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Align Self</h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Override alignment for individual items.
+          </p>
+          <CodeBlock code={alignSelfExample} />
+        </section>
+
+        <section className="bg-white border border-gray-200 p-5 sm:p-10 rounded-2xl shadow-lg">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Flex Fill</h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Make items expand equally to fill available space.
+          </p>
+          <CodeBlock code={fillExample} />
+        </section>
+
+        <section className="bg-[#D9EEE1] border border-[#04AA6D]/30 p-5 sm:p-10 rounded-2xl shadow-lg">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Grow & Shrink
+          </h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Control how items grow or shrink.
+          </p>
+          <CodeBlock code={growShrinkExample} />
+        </section>
+
+        <section className="bg-white border border-gray-200 p-5 sm:p-10 rounded-2xl shadow-lg">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Flex Wrap</h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Allow items to wrap onto multiple lines.
+          </p>
+          <CodeBlock code={wrapExample} />
+        </section>
+
+        <section className="bg-[#D9EEE1] border border-[#04AA6D]/30 p-5 sm:p-10 rounded-2xl shadow-lg">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Order</h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Reorder flex items with order utilities.
+          </p>
+          <CodeBlock code={orderExample} />
+        </section>
+
+        <section className="bg-white border border-gray-200 p-5 sm:p-10 rounded-2xl shadow-lg">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Align Content
+          </h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Align flex lines within a flex container.
+          </p>
+          <CodeBlock code={alignContentExample} />
+        </section>
         {/* Next Steps */}
         <section>
           <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
           <p className="text-gray-700">
             Now that you know all about Flexbox utilities, move on to{" "}
-            <Link to="/bootstrap/grid" className="text-[#04AA6D] font-semibold hover:underline">
+            <Link
+              to="/bootstrap/grid"
+              className="text-[#04AA6D] font-semibold hover:underline"
+            >
               Grid
             </Link>{" "}
             to learn how Bootstrap’s grid system works with flexbox.
@@ -165,17 +208,17 @@ const Flexbox = () => {
         </section>
 
         {/* Bottom Navigation */}
-        <div className="flex justify-between">
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/utilities"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             <FaChevronLeft /> Utilities
           </Link>
 
           <Link
             to="/bootstrap"
-            className="flex items-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
             Bootstrap <FaChevronRight />
           </Link>
