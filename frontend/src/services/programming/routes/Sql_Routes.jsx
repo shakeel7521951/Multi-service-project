@@ -17,6 +17,18 @@ import Sql_Top_Limit from "../courses/sql/Sql_Top_Limit";
 import Sql_Min_Max from "../courses/sql/Sql_Min_Max";
 import Sql_Count from "../courses/sql/Sql_Count";
 import Sql_Sum from "../courses/sql/Sql_Sum";
+import Sql_Avg from "../courses/sql/Sql_Avg";
+import Sql_Like from "../courses/sql/Sql_Like";
+import Sql_Wildcard from "../courses/sql/Sql_Wildcard";
+import Sql_In from "../courses/sql/Sql_In";
+import Sql_Between from "../courses/sql/Sql_Between";
+import Sql_Aliases from "../courses/sql/Sql_Aliases";
+import Sql_Joins from "../courses/sql/Sql_Joins";
+import Sql_InnerJoin from "../courses/sql/Sql_InnerJoin";
+import Sql_LeftJoin from "../courses/sql/Sql_LeftJoin";
+import Sql_RightJoin from "../courses/sql/Sql_RightJoin";
+import Sql_FullOuterJoin from "../courses/sql/Sql_FullOuterJoin";
+import Sql_SelfJoin from "../courses/sql/Sql_SelfJoin";
 
 
 export const SqlLayout = () => (
@@ -49,7 +61,18 @@ export const SQLRoutes = {
     { path: "sqltoplimit", element: <Sql_Top_Limit /> },
     { path: "sqlminmax", element: <Sql_Min_Max /> },
     { path: "sqlcount", element: <Sql_Count /> },
-    { path: "sqlsum", element: <Sql_Sum /> }
-
+    { path: "sqlsum", element: <Sql_Sum /> },
+    { path: "sqlavg", element: <Sql_Avg /> },
+    { path: "sqllike", element: <Sql_Like /> },
+    { path: "sqlwildcard", element: <Sql_Wildcard /> },
+    { path: "sqlin", element: <Sql_In /> },
+    { path: "sqlbetween", element: <Sql_Between /> },
+    { path: "sqlaliases", element: <Sql_Aliases /> },
+    { path: "sqljoins", element: <Sql_Joins /> },
+    { path: "sqlinnerjoin", element: <Sql_InnerJoin /> },
+    { path: "sqlleftjoin", element: <Sql_LeftJoin /> },
+    { path: "sqlrightjoin", element: <Sql_RightJoin /> },
+    { path: "sqlfullouterjoin", element: <Sql_FullOuterJoin /> },
+    { path: "sqlselfjoin", element: <Sql_SelfJoin /> }
  ],
 };
