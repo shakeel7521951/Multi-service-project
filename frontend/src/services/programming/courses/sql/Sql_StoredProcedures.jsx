@@ -1,12 +1,29 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const Sql_Null = () => {
+const Sql_StoredProcedures = () => {
   const [copied, setCopied] = useState("");
 
-  const sqlEx1 = `SELECT CustomerName, ContactName, Address\nFROM Customers\nWHERE Address IS NULL;`;
+  const sqlEx1 = `CREATE PROCEDURE SelectAllCustomers
+AS
+SELECT * FROM Customers
+GO;`;
 
-  const sqlEx2 = `SELECT CustomerName, ContactName, Address\nFROM Customers\nWHERE Address IS NOT NULL;`;
+  const sqlEx2 = `EXEC SelectAllCustomers;`;
+
+  const sqlEx3 = `CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
+AS
+SELECT * FROM Customers WHERE City = @City
+GO;`;
+
+  const sqlEx4 = `EXEC SelectAllCustomers @City = 'London';`;
+
+  const sqlEx5 = `CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
+AS
+SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
+GO;`;
+
+  const sqlEx6 = `EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';`;
 
   const handleCopy = (text, key) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -20,9 +37,13 @@ const Sql_Null = () => {
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header */}
         <header>
-          <h1 className="text-3xl font-bold mb-2">SQL NULL Values</h1>
+          <h1 className="text-3xl font-bold mb-2">
+            SQL Stored Procedures (SQL Server)
+          </h1>
           <p className="text-gray-600 text-lg">
-            A field with a <strong>NULL</strong> value is a field with no value.
+            A <strong>stored procedure</strong> is a prepared SQL code that you
+            can save and reuse. You can also pass parameters to stored
+            procedures to make them more flexible.
           </p>
         </header>
 
@@ -34,28 +55,25 @@ const Sql_Null = () => {
           </button>
         </div>
 
-        {/* Explanation */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4">What is a NULL Value?</h2>
-          <p className="text-gray-700 mb-2">
-            If a field in a table is optional, it is possible to insert or update a record without adding a value to this field. Then, the field will be saved with a <strong>NULL</strong> value.
-          </p>
-          <p className="text-gray-700">
-            <strong>Note:</strong> A NULL value is different from a zero value or a field that contains spaces. A field with a NULL value is one that has been left blank during record creation!
-          </p>
-        </section>
-
         {/* Syntax */}
         <section>
-          <h2 className="text-2xl font-bold mb-4">Syntax</h2>
+          <h2 className="text-2xl font-bold mb-4">Stored Procedure Syntax</h2>
           <pre className="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
-            <code>{`-- IS NULL Syntax\nSELECT column_names\nFROM table_name\nWHERE column_name IS NULL;\n\n-- IS NOT NULL Syntax\nSELECT column_names\nFROM table_name\nWHERE column_name IS NOT NULL;`}</code>
+            <code>{`CREATE PROCEDURE procedure_name
+AS
+sql_statement
+GO;
+
+-- Execute a Stored Procedure
+EXEC procedure_name;`}</code>
           </pre>
         </section>
 
         {/* Demo Database */}
         <section>
-          <h2 className="text-2xl font-bold mb-4">Demo Database (Customers)</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            Demo Database (Customers)
+          </h2>
           <div className="overflow-x-auto">
             <table className="w-full border border-gray-300 text-sm text-left">
               <thead className="bg-gray-100">
@@ -74,16 +92,20 @@ const Sql_Null = () => {
                   <td className="border px-3 py-2">1</td>
                   <td className="border px-3 py-2">Alfreds Futterkiste</td>
                   <td className="border px-3 py-2">Maria Anders</td>
-                  <td className="border px-3 py-2"></td>
+                  <td className="border px-3 py-2">Obere Str. 57</td>
                   <td className="border px-3 py-2">Berlin</td>
                   <td className="border px-3 py-2">12209</td>
                   <td className="border px-3 py-2">Germany</td>
                 </tr>
                 <tr>
                   <td className="border px-3 py-2">2</td>
-                  <td className="border px-3 py-2">Ana Trujillo Emparedados y helados</td>
+                  <td className="border px-3 py-2">
+                    Ana Trujillo Emparedados y helados
+                  </td>
                   <td className="border px-3 py-2">Ana Trujillo</td>
-                  <td className="border px-3 py-2">Avda. de la Constitución 2222</td>
+                  <td className="border px-3 py-2">
+                    Avda. de la Constitución 2222
+                  </td>
                   <td className="border px-3 py-2">México D.F.</td>
                   <td className="border px-3 py-2">05021</td>
                   <td className="border px-3 py-2">Mexico</td>
@@ -92,7 +114,7 @@ const Sql_Null = () => {
                   <td className="border px-3 py-2">4</td>
                   <td className="border px-3 py-2">Around the Horn</td>
                   <td className="border px-3 py-2">Thomas Hardy</td>
-                  <td className="border px-3 py-2"></td>
+                  <td className="border px-3 py-2">120 Hanover Sq.</td>
                   <td className="border px-3 py-2">London</td>
                   <td className="border px-3 py-2">WA1 1DP</td>
                   <td className="border px-3 py-2">UK</td>
@@ -102,9 +124,9 @@ const Sql_Null = () => {
           </div>
         </section>
 
-        {/* Example 1: IS NULL */}
+        {/* Example 1 */}
         <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
-          <h2 className="text-2xl font-bold mb-4">Example: IS NULL</h2>
+          <h2 className="text-2xl font-bold mb-4">Example: Basic Procedure</h2>
           <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto mb-4">
             <code>{sqlEx1}</code>
           </pre>
@@ -116,9 +138,9 @@ const Sql_Null = () => {
           </button>
         </section>
 
-        {/* Example 2: IS NOT NULL */}
+        {/* Example 2 */}
         <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
-          <h2 className="text-2xl font-bold mb-4">Example: IS NOT NULL</h2>
+          <h2 className="text-2xl font-bold mb-4">Example: Execute Procedure</h2>
           <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto mb-4">
             <code>{sqlEx2}</code>
           </pre>
@@ -130,15 +152,69 @@ const Sql_Null = () => {
           </button>
         </section>
 
+        {/* Example 3: With One Parameter */}
+        <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
+          <h2 className="text-2xl font-bold mb-4">
+            Example: Stored Procedure With One Parameter
+          </h2>
+          <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto mb-4">
+            <code>{sqlEx3}</code>
+          </pre>
+          <button
+            onClick={() => handleCopy(sqlEx3, "ex3")}
+            className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded transition"
+          >
+            {copied === "ex3" ? "Copied!" : "Copy SQL"}
+          </button>
+
+          <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto mt-6 mb-4">
+            <code>{sqlEx4}</code>
+          </pre>
+          <button
+            onClick={() => handleCopy(sqlEx4, "ex4")}
+            className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded transition"
+          >
+            {copied === "ex4" ? "Copied!" : "Copy SQL"}
+          </button>
+        </section>
+
+        {/* Example 4: With Multiple Parameters */}
+        <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
+          <h2 className="text-2xl font-bold mb-4">
+            Example: Stored Procedure With Multiple Parameters
+          </h2>
+          <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto mb-4">
+            <code>{sqlEx5}</code>
+          </pre>
+          <button
+            onClick={() => handleCopy(sqlEx5, "ex5")}
+            className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded transition"
+          >
+            {copied === "ex5" ? "Copied!" : "Copy SQL"}
+          </button>
+
+          <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto mt-6 mb-4">
+            <code>{sqlEx6}</code>
+          </pre>
+          <button
+            onClick={() => handleCopy(sqlEx6, "ex6")}
+            className="bg-[#04AA6D] hover:bg-[#03945f] text-white font-semibold px-6 py-2 rounded transition"
+          >
+            {copied === "ex6" ? "Copied!" : "Copy SQL"}
+          </button>
+        </section>
+
         {/* Exercise */}
         <section className="bg-[#E7E9EB] p-6 rounded-lg shadow">
           <h2 className="text-2xl font-bold mb-4">Exercise</h2>
-          <p className="mb-4 text-gray-700">What is a NULL value in SQL?</p>
+          <p className="mb-4 text-gray-700">
+            Which SQL command is used to execute a stored procedure?
+          </p>
           <ul className="space-y-2 text-gray-800">
-            <li className="font-bold">A field with no value ✅</li>
-            <li>A field with a zero value</li>
-            <li>A field containing spaces</li>
-            <li>A field that has been deleted</li>
+            <li>CALL</li>
+            <li className="font-bold">EXEC ✅</li>
+            <li>RUN</li>
+            <li>PERFORM</li>
           </ul>
         </section>
 
@@ -154,4 +230,4 @@ const Sql_Null = () => {
   );
 };
 
-export default Sql_Null;
+export default Sql_StoredProcedures;

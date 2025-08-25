@@ -1,12 +1,24 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const Sql_Null = () => {
+const Sql_Case = () => {
   const [copied, setCopied] = useState("");
 
-  const sqlEx1 = `SELECT CustomerName, ContactName, Address\nFROM Customers\nWHERE Address IS NULL;`;
+  const sqlEx1 = `SELECT OrderID, Quantity,
+CASE
+    WHEN Quantity > 30 THEN 'The quantity is greater than 30'
+    WHEN Quantity = 30 THEN 'The quantity is 30'
+    ELSE 'The quantity is under 30'
+END AS QuantityText
+FROM OrderDetails;`;
 
-  const sqlEx2 = `SELECT CustomerName, ContactName, Address\nFROM Customers\nWHERE Address IS NOT NULL;`;
+  const sqlEx2 = `SELECT CustomerName, City, Country
+FROM Customers
+ORDER BY
+(CASE
+    WHEN City IS NULL THEN Country
+    ELSE City
+END);`;
 
   const handleCopy = (text, key) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -20,9 +32,11 @@ const Sql_Null = () => {
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header */}
         <header>
-          <h1 className="text-3xl font-bold mb-2">SQL NULL Values</h1>
+          <h1 className="text-3xl font-bold mb-2">SQL CASE Expression</h1>
           <p className="text-gray-600 text-lg">
-            A field with a <strong>NULL</strong> value is a field with no value.
+            The <strong>CASE</strong> expression goes through conditions and
+            returns a value when the first condition is met (like an
+            if-then-else statement).
           </p>
         </header>
 
@@ -36,75 +50,83 @@ const Sql_Null = () => {
 
         {/* Explanation */}
         <section>
-          <h2 className="text-2xl font-bold mb-4">What is a NULL Value?</h2>
+          <h2 className="text-2xl font-bold mb-4">About CASE Expression</h2>
           <p className="text-gray-700 mb-2">
-            If a field in a table is optional, it is possible to insert or update a record without adding a value to this field. Then, the field will be saved with a <strong>NULL</strong> value.
+            Once a condition is true, <strong>CASE</strong> stops reading and
+            returns the result. If no conditions are true, it returns the value
+            in the <code>ELSE</code> clause.
           </p>
           <p className="text-gray-700">
-            <strong>Note:</strong> A NULL value is different from a zero value or a field that contains spaces. A field with a NULL value is one that has been left blank during record creation!
+            If there is no <code>ELSE</code> part and no conditions are true, it
+            returns <strong>NULL</strong>.
           </p>
         </section>
 
         {/* Syntax */}
         <section>
-          <h2 className="text-2xl font-bold mb-4">Syntax</h2>
+          <h2 className="text-2xl font-bold mb-4">CASE Syntax</h2>
           <pre className="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
-            <code>{`-- IS NULL Syntax\nSELECT column_names\nFROM table_name\nWHERE column_name IS NULL;\n\n-- IS NOT NULL Syntax\nSELECT column_names\nFROM table_name\nWHERE column_name IS NOT NULL;`}</code>
+            <code>{`CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    WHEN conditionN THEN resultN
+    ELSE result
+END;`}</code>
           </pre>
         </section>
 
         {/* Demo Database */}
         <section>
-          <h2 className="text-2xl font-bold mb-4">Demo Database (Customers)</h2>
+          <h2 className="text-2xl font-bold mb-4">Demo Database (OrderDetails)</h2>
           <div className="overflow-x-auto">
             <table className="w-full border border-gray-300 text-sm text-left">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="border px-3 py-2">CustomerID</th>
-                  <th className="border px-3 py-2">CustomerName</th>
-                  <th className="border px-3 py-2">ContactName</th>
-                  <th className="border px-3 py-2">Address</th>
-                  <th className="border px-3 py-2">City</th>
-                  <th className="border px-3 py-2">PostalCode</th>
-                  <th className="border px-3 py-2">Country</th>
+                  <th className="border px-3 py-2">OrderDetailID</th>
+                  <th className="border px-3 py-2">OrderID</th>
+                  <th className="border px-3 py-2">ProductID</th>
+                  <th className="border px-3 py-2">Quantity</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="border px-3 py-2">1</td>
-                  <td className="border px-3 py-2">Alfreds Futterkiste</td>
-                  <td className="border px-3 py-2">Maria Anders</td>
-                  <td className="border px-3 py-2"></td>
-                  <td className="border px-3 py-2">Berlin</td>
-                  <td className="border px-3 py-2">12209</td>
-                  <td className="border px-3 py-2">Germany</td>
+                  <td className="border px-3 py-2">10248</td>
+                  <td className="border px-3 py-2">11</td>
+                  <td className="border px-3 py-2">12</td>
                 </tr>
                 <tr>
                   <td className="border px-3 py-2">2</td>
-                  <td className="border px-3 py-2">Ana Trujillo Emparedados y helados</td>
-                  <td className="border px-3 py-2">Ana Trujillo</td>
-                  <td className="border px-3 py-2">Avda. de la Constitución 2222</td>
-                  <td className="border px-3 py-2">México D.F.</td>
-                  <td className="border px-3 py-2">05021</td>
-                  <td className="border px-3 py-2">Mexico</td>
+                  <td className="border px-3 py-2">10248</td>
+                  <td className="border px-3 py-2">42</td>
+                  <td className="border px-3 py-2">10</td>
+                </tr>
+                <tr>
+                  <td className="border px-3 py-2">3</td>
+                  <td className="border px-3 py-2">10248</td>
+                  <td className="border px-3 py-2">72</td>
+                  <td className="border px-3 py-2">5</td>
                 </tr>
                 <tr>
                   <td className="border px-3 py-2">4</td>
-                  <td className="border px-3 py-2">Around the Horn</td>
-                  <td className="border px-3 py-2">Thomas Hardy</td>
-                  <td className="border px-3 py-2"></td>
-                  <td className="border px-3 py-2">London</td>
-                  <td className="border px-3 py-2">WA1 1DP</td>
-                  <td className="border px-3 py-2">UK</td>
+                  <td className="border px-3 py-2">10249</td>
+                  <td className="border px-3 py-2">14</td>
+                  <td className="border px-3 py-2">9</td>
+                </tr>
+                <tr>
+                  <td className="border px-3 py-2">5</td>
+                  <td className="border px-3 py-2">10249</td>
+                  <td className="border px-3 py-2">51</td>
+                  <td className="border px-3 py-2">40</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </section>
 
-        {/* Example 1: IS NULL */}
+        {/* Example 1 */}
         <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
-          <h2 className="text-2xl font-bold mb-4">Example: IS NULL</h2>
+          <h2 className="text-2xl font-bold mb-4">Example 1</h2>
           <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto mb-4">
             <code>{sqlEx1}</code>
           </pre>
@@ -116,9 +138,9 @@ const Sql_Null = () => {
           </button>
         </section>
 
-        {/* Example 2: IS NOT NULL */}
+        {/* Example 2 */}
         <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
-          <h2 className="text-2xl font-bold mb-4">Example: IS NOT NULL</h2>
+          <h2 className="text-2xl font-bold mb-4">Example 2</h2>
           <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto mb-4">
             <code>{sqlEx2}</code>
           </pre>
@@ -133,12 +155,15 @@ const Sql_Null = () => {
         {/* Exercise */}
         <section className="bg-[#E7E9EB] p-6 rounded-lg shadow">
           <h2 className="text-2xl font-bold mb-4">Exercise</h2>
-          <p className="mb-4 text-gray-700">What is a NULL value in SQL?</p>
+          <p className="mb-4 text-gray-700">
+            What does the SQL <code>CASE</code> expression return if no
+            conditions are true and there is no ELSE part?
+          </p>
           <ul className="space-y-2 text-gray-800">
-            <li className="font-bold">A field with no value ✅</li>
-            <li>A field with a zero value</li>
-            <li>A field containing spaces</li>
-            <li>A field that has been deleted</li>
+            <li className="font-bold">NULL ✅</li>
+            <li>0</li>
+            <li>An error</li>
+            <li>An empty string</li>
           </ul>
         </section>
 
@@ -154,4 +179,4 @@ const Sql_Null = () => {
   );
 };
 
-export default Sql_Null;
+export default Sql_Case;

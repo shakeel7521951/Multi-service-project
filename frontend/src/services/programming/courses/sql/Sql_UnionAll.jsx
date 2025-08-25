@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const Sql_Null = () => {
+const Sql_UnionAll = () => {
   const [copied, setCopied] = useState("");
 
-  const sqlEx1 = `SELECT CustomerName, ContactName, Address\nFROM Customers\nWHERE Address IS NULL;`;
+  const sqlEx1 = `SELECT City FROM Customers\nUNION ALL\nSELECT City FROM Suppliers\nORDER BY City;`;
 
-  const sqlEx2 = `SELECT CustomerName, ContactName, Address\nFROM Customers\nWHERE Address IS NOT NULL;`;
+  const sqlEx2 = `SELECT City, Country FROM Customers\nWHERE Country='Germany'\nUNION ALL\nSELECT City, Country FROM Suppliers\nWHERE Country='Germany'\nORDER BY City;`;
 
   const handleCopy = (text, key) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -20,9 +20,9 @@ const Sql_Null = () => {
       <div className="max-w-5xl mx-auto space-y-8">
         {/* Header */}
         <header>
-          <h1 className="text-3xl font-bold mb-2">SQL NULL Values</h1>
+          <h1 className="text-3xl font-bold mb-2">SQL UNION ALL Operator</h1>
           <p className="text-gray-600 text-lg">
-            A field with a <strong>NULL</strong> value is a field with no value.
+            The <strong>UNION ALL</strong> operator is used to combine the result-set of two or more <code>SELECT</code> statements. Unlike <strong>UNION</strong>, it includes <strong>all rows</strong>, including duplicates.
           </p>
         </header>
 
@@ -36,27 +36,30 @@ const Sql_Null = () => {
 
         {/* Explanation */}
         <section>
-          <h2 className="text-2xl font-bold mb-4">What is a NULL Value?</h2>
-          <p className="text-gray-700 mb-2">
-            If a field in a table is optional, it is possible to insert or update a record without adding a value to this field. Then, the field will be saved with a <strong>NULL</strong> value.
-          </p>
-          <p className="text-gray-700">
-            <strong>Note:</strong> A NULL value is different from a zero value or a field that contains spaces. A field with a NULL value is one that has been left blank during record creation!
-          </p>
+          <h2 className="text-2xl font-bold mb-4">Requirements for UNION ALL</h2>
+          <ul className="list-disc ml-6 text-gray-700 space-y-2">
+            <li>Each SELECT must have the same number of columns</li>
+            <li>Columns must have similar data types</li>
+            <li>Columns must be in the same order</li>
+          </ul>
         </section>
 
         {/* Syntax */}
         <section>
-          <h2 className="text-2xl font-bold mb-4">Syntax</h2>
+          <h2 className="text-2xl font-bold mb-4">UNION ALL Syntax</h2>
           <pre className="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
-            <code>{`-- IS NULL Syntax\nSELECT column_names\nFROM table_name\nWHERE column_name IS NULL;\n\n-- IS NOT NULL Syntax\nSELECT column_names\nFROM table_name\nWHERE column_name IS NOT NULL;`}</code>
+            <code>{`SELECT column_name(s) FROM table1\nUNION ALL\nSELECT column_name(s) FROM table2;`}</code>
           </pre>
+          <p className="text-gray-700 mt-2">
+            <strong>Note:</strong> Column names in the result-set usually match those from the first SELECT statement.
+          </p>
         </section>
 
         {/* Demo Database */}
         <section>
-          <h2 className="text-2xl font-bold mb-4">Demo Database (Customers)</h2>
-          <div className="overflow-x-auto">
+          <h2 className="text-2xl font-bold mb-4">Demo Database</h2>
+          <p className="mb-4 text-gray-700">Selection from <strong>Customers</strong>:</p>
+          <div className="overflow-x-auto mb-6">
             <table className="w-full border border-gray-300 text-sm text-left">
               <thead className="bg-gray-100">
                 <tr>
@@ -74,7 +77,7 @@ const Sql_Null = () => {
                   <td className="border px-3 py-2">1</td>
                   <td className="border px-3 py-2">Alfreds Futterkiste</td>
                   <td className="border px-3 py-2">Maria Anders</td>
-                  <td className="border px-3 py-2"></td>
+                  <td className="border px-3 py-2">Obere Str. 57</td>
                   <td className="border px-3 py-2">Berlin</td>
                   <td className="border px-3 py-2">12209</td>
                   <td className="border px-3 py-2">Germany</td>
@@ -88,23 +91,54 @@ const Sql_Null = () => {
                   <td className="border px-3 py-2">05021</td>
                   <td className="border px-3 py-2">Mexico</td>
                 </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mb-4 text-gray-700">Selection from <strong>Suppliers</strong>:</p>
+          <div className="overflow-x-auto">
+            <table className="w-full border border-gray-300 text-sm text-left">
+              <thead className="bg-gray-100">
                 <tr>
-                  <td className="border px-3 py-2">4</td>
-                  <td className="border px-3 py-2">Around the Horn</td>
-                  <td className="border px-3 py-2">Thomas Hardy</td>
-                  <td className="border px-3 py-2"></td>
+                  <th className="border px-3 py-2">SupplierID</th>
+                  <th className="border px-3 py-2">SupplierName</th>
+                  <th className="border px-3 py-2">ContactName</th>
+                  <th className="border px-3 py-2">Address</th>
+                  <th className="border px-3 py-2">City</th>
+                  <th className="border px-3 py-2">PostalCode</th>
+                  <th className="border px-3 py-2">Country</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border px-3 py-2">1</td>
+                  <td className="border px-3 py-2">Exotic Liquid</td>
+                  <td className="border px-3 py-2">Charlotte Cooper</td>
+                  <td className="border px-3 py-2">49 Gilbert St.</td>
                   <td className="border px-3 py-2">London</td>
-                  <td className="border px-3 py-2">WA1 1DP</td>
+                  <td className="border px-3 py-2">EC1 4SD</td>
                   <td className="border px-3 py-2">UK</td>
+                </tr>
+                <tr>
+                  <td className="border px-3 py-2">2</td>
+                  <td className="border px-3 py-2">New Orleans Cajun Delights</td>
+                  <td className="border px-3 py-2">Shelley Burke</td>
+                  <td className="border px-3 py-2">P.O. Box 78934</td>
+                  <td className="border px-3 py-2">New Orleans</td>
+                  <td className="border px-3 py-2">70117</td>
+                  <td className="border px-3 py-2">USA</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </section>
 
-        {/* Example 1: IS NULL */}
+        {/* Example 1 */}
         <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
-          <h2 className="text-2xl font-bold mb-4">Example: IS NULL</h2>
+          <h2 className="text-2xl font-bold mb-4">Example: UNION ALL</h2>
+          <p className="text-gray-700 mb-4">
+            Get all cities (including duplicates) from both Customers and Suppliers:
+          </p>
           <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto mb-4">
             <code>{sqlEx1}</code>
           </pre>
@@ -116,9 +150,12 @@ const Sql_Null = () => {
           </button>
         </section>
 
-        {/* Example 2: IS NOT NULL */}
+        {/* Example 2 */}
         <section className="bg-[#D9EEE1] p-8 rounded-lg shadow">
-          <h2 className="text-2xl font-bold mb-4">Example: IS NOT NULL</h2>
+          <h2 className="text-2xl font-bold mb-4">Example: UNION ALL With WHERE</h2>
+          <p className="text-gray-700 mb-4">
+            Get German cities (including duplicates) from both Customers and Suppliers:
+          </p>
           <pre className="bg-white border-l-4 border-[#04AA6D] p-4 font-mono text-sm rounded overflow-x-auto mb-4">
             <code>{sqlEx2}</code>
           </pre>
@@ -133,12 +170,14 @@ const Sql_Null = () => {
         {/* Exercise */}
         <section className="bg-[#E7E9EB] p-6 rounded-lg shadow">
           <h2 className="text-2xl font-bold mb-4">Exercise</h2>
-          <p className="mb-4 text-gray-700">What is a NULL value in SQL?</p>
+          <p className="mb-4 text-gray-700">
+            Which operator includes duplicate rows in the result set?
+          </p>
           <ul className="space-y-2 text-gray-800">
-            <li className="font-bold">A field with no value ✅</li>
-            <li>A field with a zero value</li>
-            <li>A field containing spaces</li>
-            <li>A field that has been deleted</li>
+            <li>UNION</li>
+            <li className="font-bold">UNION ALL ✅</li>
+            <li>INTERSECT</li>
+            <li>JOIN</li>
           </ul>
         </section>
 
@@ -154,4 +193,4 @@ const Sql_Null = () => {
   );
 };
 
-export default Sql_Null;
+export default Sql_UnionAll;

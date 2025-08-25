@@ -29,6 +29,18 @@ import Sql_LeftJoin from "../courses/sql/Sql_LeftJoin";
 import Sql_RightJoin from "../courses/sql/Sql_RightJoin";
 import Sql_FullOuterJoin from "../courses/sql/Sql_FullOuterJoin";
 import Sql_SelfJoin from "../courses/sql/Sql_SelfJoin";
+import Sql_Union from "../courses/sql/Sql_Union";
+import Sql_UnionAll from "../courses/sql/Sql_UnionAll";
+import Sql_GroupBy from "../courses/sql/Sql_GroupBy";
+import Sql_Having from "../courses/sql/Sql_Having";
+import Sql_Exists from "../courses/sql/Sql_Exists";
+import Sql_Any_All from "../courses/sql/Sql_Any_All";
+import Sql_SelectInto from "../courses/sql/Sql_SelectInto";
+import Sql_Case from "../courses/sql/Sql_Case";
+import Sql_Null_Functions from "../courses/sql/Sql_Null_Functions";
+import Sql_StoredProcedures from "../courses/sql/Sql_StoredProcedures";
+import Sql_Comments from "../courses/sql/Sql_Comments";
+import Sql_Operators from "../courses/sql/Sql_Operators";
 
 
 export const SqlLayout = () => (
@@ -73,6 +85,23 @@ export const SQLRoutes = {
     { path: "sqlleftjoin", element: <Sql_LeftJoin /> },
     { path: "sqlrightjoin", element: <Sql_RightJoin /> },
     { path: "sqlfullouterjoin", element: <Sql_FullOuterJoin /> },
-    { path: "sqlselfjoin", element: <Sql_SelfJoin /> }
+    { path: "sqlselfjoin", element: <Sql_SelfJoin /> },
+    { path: "sqlunion", element: <Sql_Union /> },
+    { path: "sqlunionall", element: <Sql_UnionAll /> },
+    { path: "sqlgroupby", element: <Sql_GroupBy /> },
+    { path: "sqlhaving", element: <Sql_Having /> },
+    { path: "sqlexists", element: <Sql_Exists /> },
+    { path: "sqlanyall", element: <Sql_Any_All /> },
+    { path: "sqlselectinto", element: <Sql_SelectInto /> },
+    { path: "sqlcase", element: <Sql_Case /> },
+    { path: "sqlnullfunctions", element: <Sql_Null_Functions /> },
+    { path: "sqlstoredprocedures", element: <Sql_StoredProcedures /> },
+    { path: "sqlcomments", element: <Sql_Comments /> },
+    { path: "sqloperators", element: <Sql_Operators /> }
  ],
 };
+
+
+
+
+// jasa nichay wala data design ha wasa hi ais ko desgin kar do aur all text aya uper wala data ka aur nichy wala sa best desgin kar dana ais ko ...SQL IN Operator .. :
