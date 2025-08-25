@@ -41,6 +41,18 @@ import Sql_Null_Functions from "../courses/sql/Sql_Null_Functions";
 import Sql_StoredProcedures from "../courses/sql/Sql_StoredProcedures";
 import Sql_Comments from "../courses/sql/Sql_Comments";
 import Sql_Operators from "../courses/sql/Sql_Operators";
+import Sql_CreateDatabase from "../courses/sql/Sql_CreateDatabase";
+import Sql_DropDatabase from "../courses/sql/Sql_DropDatabase";
+import Sql_BackupDatabase from "../courses/sql/Sql_BackupDatabase";
+import Sql_CreateTable from "../courses/sql/Sql_CreateTable";
+import Sql_DropTable from "../courses/sql/Sql_DropTable";
+import Sql_AlterTable from "../courses/sql/Sql_AlterTable";
+import Sql_Constraints from "../courses/sql/Sql_Constraints";
+import Sql_NotNull from "../courses/sql/Sql_NotNull";
+import Sql_Unique from "../courses/sql/Sql_Unique";
+import Sql_PrimaryKey from "../courses/sql/Sql_PrimaryKey";
+import Sql_ForeignKey from "../courses/sql/Sql_ForeignKey";
+import Sql_Check from "../courses/sql/Sql_Check";
 
 
 export const SqlLayout = () => (
@@ -97,7 +109,19 @@ export const SQLRoutes = {
     { path: "sqlnullfunctions", element: <Sql_Null_Functions /> },
     { path: "sqlstoredprocedures", element: <Sql_StoredProcedures /> },
     { path: "sqlcomments", element: <Sql_Comments /> },
-    { path: "sqloperators", element: <Sql_Operators /> }
+    { path: "sqloperators", element: <Sql_Operators /> },
+    { path: "sqlcreatedatabase", element: <Sql_CreateDatabase /> },
+    { path: "sqldropdatabase", element: <Sql_DropDatabase /> },
+    { path: "sqlbackupdatabase", element: <Sql_BackupDatabase /> },
+    { path: "sqlcreatetable", element: <Sql_CreateTable /> },
+    { path: "sqldroptable", element: <Sql_DropTable /> },
+    { path: "sqlaltertable", element: <Sql_AlterTable /> },
+    { path: "sqlconstraints", element: <Sql_Constraints /> },
+    { path: "sqlnotnull", element: <Sql_NotNull /> },
+    { path: "sqlunique", element: <Sql_Unique /> },
+    { path: "sqlprimarykey", element: <Sql_PrimaryKey /> },
+    { path: "sqlforeignkey", element: <Sql_ForeignKey /> },
+    { path: "sqlcheck", element: <Sql_Check /> }
  ],
 };
 
