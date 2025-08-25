@@ -173,7 +173,7 @@ return (
           <p className="text-gray-700 mb-4">
             Navigation controls let users go forward and backward.
           </p>
-          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          <div className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
             <CodeBlock code={withControls}/>
           </div>
         </section>
@@ -197,7 +197,7 @@ return (
           <p className="text-gray-700 mb-4">
             Captions overlay text or buttons on slides.
           </p>
-          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          <div className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
             <CodeBlock code={withCaptions}/>
           </div>
         </section>
@@ -234,7 +234,7 @@ return (
           <p className="text-gray-700 mb-4">
             Use <code>.carousel-dark</code> for dark captions and controls.
           </p>
-          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          <div className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
             <CodeBlock code={darkCarousel}/>
           </div>
         </section>
@@ -246,7 +246,7 @@ return (
           <p className="text-gray-700 mb-4">
             Carousels can hold any content, not just images.
           </p>
-          <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          <div className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
             <CodeBlock code={customContent}/>
           </div>
         </section>
