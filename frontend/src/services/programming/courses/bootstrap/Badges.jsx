@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Badges.jsx
 import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -71,8 +70,7 @@ const Badges = () => {
             Use <code>.badge</code> with contextual classes to display simple
             badges.
           </p>
-          <CodeBlock code={basicBadges}/>
-          
+          <CodeBlock code={basicBadges} />
         </section>
 
         {/* Pill Badges */}
@@ -84,8 +82,7 @@ const Badges = () => {
             Add <code>rounded-pill</code> class to make badges more rounded and
             pill-shaped.
           </p>
-              <CodeBlock code={pillBadges}/>
-          
+          <CodeBlock code={pillBadges} />
         </section>
 
         {/* Badges in Buttons */}
@@ -96,8 +93,7 @@ const Badges = () => {
           <p className="text-gray-800 mb-4 leading-relaxed">
             You can place badges inside buttons to show counts or notifications.
           </p>
-              <CodeBlock code={badgeInButton}/>
-         
+          <CodeBlock code={badgeInButton} />
         </section>
 
         {/* Badge Links */}
@@ -109,8 +105,7 @@ const Badges = () => {
             Badges can also be links by using <code>&lt;a&gt;</code> elements
             with badge classes.
           </p>
-              <CodeBlock code={badgeLinks}/>
-        
+          <CodeBlock code={badgeLinks} />
         </section>
 
         {/* Badge Positioning */}
@@ -122,23 +117,7 @@ const Badges = () => {
             Use positioning utilities to place badges anywhere, commonly
             top-right of buttons.
           </p>
-              <CodeBlock code={badgePosition}/>
-          
-        </section>
-
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
-            After badges, the next topic is{" "}
-            <Link
-              to="/bootstrap/alerts"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Alerts
-            </Link>{" "}
-            where you will learn about Bootstrap alert components.
-          </p>
+          <CodeBlock code={badgePosition} />
         </section>
 
         {/* Navigation Top */}

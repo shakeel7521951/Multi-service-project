@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Cards.jsx
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CodeBlock from "./CodeBlock";
@@ -141,21 +140,6 @@ const Cards = () => {
             Group multiple cards together using <code>.card-group</code> for consistent height and spacing.
           </p>
           <CodeBlock code={cardGroup} />
-        </section>
-
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700 text-sm sm:text-base">
-            After cards, the next topic is{" "}
-            <Link
-              to="/bootstrap/buttons"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Buttons
-            </Link>{" "}
-            where you will learn how to use Bootstrap buttons effectively.
-          </p>
         </section>
 
         {/* Bottom Navigation */}

@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Flexbox.jsx
 import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -191,20 +190,6 @@ const Flexbox = () => {
             Align flex lines within a flex container.
           </p>
           <CodeBlock code={alignContentExample} />
-        </section>
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
-            Now that you know all about Flexbox utilities, move on to{" "}
-            <Link
-              to="/bootstrap/grid"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Grid
-            </Link>{" "}
-            to learn how Bootstrap’s grid system works with flexbox.
-          </p>
         </section>
 
         {/* Bottom Navigation */}

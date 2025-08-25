@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Containers.jsx
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CodeBlock from "./CodeBlock";
@@ -553,36 +552,37 @@ $container-padding-x: 1rem; // default is based on gutter; override if needed
             </li>
           </ul>
         </section>
-
         {/* Quick reference list */}
-        {/* Quick reference list */}
-<section className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-0">
-  <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-[#04AA6D] text-center md:text-left">
-    Quick Reference
-  </h2>
+        <section className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-0">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-[#04AA6D] text-center md:text-left">
+            Quick Reference
+          </h2>
 
-  <ul className="list-disc list-inside text-gray-800 space-y-2 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
-    <li>
-      <code>.container</code> — responsive fixed widths at breakpoints.
-    </li>
-    <li>
-      <code>.container-fluid</code> — always full width.
-    </li>
-    <li>
-      <code>.container-sm|md|lg|xl|xxl</code> — fluid below, fixed at and above the breakpoint.
-    </li>
-    <li>
-      Place grids inside containers; containers set gutter variables and side padding.
-    </li>
-    <li>
-      Use spacing utilities or CSS variables to tune inner padding and gutters.
-    </li>
-    <li>
-      Use full-bleed sections plus inner containers for edge-to-edge visuals with aligned content.
-    </li>
-  </ul>
-</section>
-
+          <ul className="list-disc list-inside text-gray-800 space-y-2 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
+            <li>
+              <code>.container</code> — responsive fixed widths at breakpoints.
+            </li>
+            <li>
+              <code>.container-fluid</code> — always full width.
+            </li>
+            <li>
+              <code>.container-sm|md|lg|xl|xxl</code> — fluid below, fixed at
+              and above the breakpoint.
+            </li>
+            <li>
+              Place grids inside containers; containers set gutter variables and
+              side padding.
+            </li>
+            <li>
+              Use spacing utilities or CSS variables to tune inner padding and
+              gutters.
+            </li>
+            <li>
+              Use full-bleed sections plus inner containers for edge-to-edge
+              visuals with aligned content.
+            </li>
+          </ul>
+        </section>
 
         {/* Bottom Navigation */}
         <div className="flex flex-row justify-between gap-3 sm:gap-2">

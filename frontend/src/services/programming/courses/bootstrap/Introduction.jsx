@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Introduction.jsx
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CodeBlock from "./CodeBlock";
@@ -147,25 +146,6 @@ const Introduction = () => {
             </div>
           </div>
         </section>
-
-        {/* Next Step */}
-        <section>
-          <h2 className="text-lg sm:text-2xl font-bold mb-3 text-[#04AA6D]">
-            Next Step
-          </h2>
-          <p className="text-gray-700 text-xs sm:text-sm md:text-base">
-            Now that you know what Bootstrap is and why it is useful, the next
-            step is to learn how to{" "}
-            <Link
-              to="/bootstrap/installation-setup"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Install and Set Up Bootstrap
-            </Link>{" "}
-            in your project.
-          </p>
-        </section>
-
         {/* Bottom Navigation */}
         <div className="flex flex-row justify-between gap-3 sm:gap-2">
           <Link

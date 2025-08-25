@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Carousel.jsx
 import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -121,7 +120,7 @@ const Carousel = () => {
   </div>
 </div>`;
 
-return (
+  return (
     <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
       <div className="max-w-6xl mx-auto space-y-5 sm:space-y-10 lg:space-y-14">
         {/* Header */}
@@ -162,7 +161,7 @@ return (
             A simple carousel without controls or indicators.
           </p>
           <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-            <CodeBlock code={basicCarousel}/>
+            <CodeBlock code={basicCarousel} />
           </div>
         </section>
 
@@ -174,7 +173,7 @@ return (
             Navigation controls let users go forward and backward.
           </p>
           <div className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-            <CodeBlock code={withControls}/>
+            <CodeBlock code={withControls} />
           </div>
         </section>
 
@@ -186,7 +185,7 @@ return (
             Indicators represent each slide at the bottom.
           </p>
           <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-            <CodeBlock code={withIndicators}/>
+            <CodeBlock code={withIndicators} />
           </div>
         </section>
 
@@ -198,7 +197,7 @@ return (
             Captions overlay text or buttons on slides.
           </p>
           <div className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-            <CodeBlock code={withCaptions}/>
+            <CodeBlock code={withCaptions} />
           </div>
         </section>
 
@@ -210,7 +209,7 @@ return (
             Add <code>.carousel-fade</code> for smooth crossfading.
           </p>
           <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-            <CodeBlock code={fadeCarousel}/>
+            <CodeBlock code={fadeCarousel} />
           </div>
         </section>
 
@@ -219,11 +218,10 @@ return (
             Autoplay & Interval
           </h2>
           <p className="text-gray-700 mb-4">
-            Customize slide intervals with{" "}
-            <code>data-bs-interval</code>.
+            Customize slide intervals with <code>data-bs-interval</code>.
           </p>
           <div className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-            <CodeBlock code={autoplayCarousel}/>
+            <CodeBlock code={autoplayCarousel} />
           </div>
         </section>
 
@@ -235,7 +233,7 @@ return (
             Use <code>.carousel-dark</code> for dark captions and controls.
           </p>
           <div className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-            <CodeBlock code={darkCarousel}/>
+            <CodeBlock code={darkCarousel} />
           </div>
         </section>
 
@@ -247,7 +245,7 @@ return (
             Carousels can hold any content, not just images.
           </p>
           <div className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-            <CodeBlock code={customContent}/>
+            <CodeBlock code={customContent} />
           </div>
         </section>
 
@@ -255,33 +253,35 @@ return (
         <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Features</h2>
           <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li><b>Controls</b>: Previous & Next buttons.</li>
-            <li><b>Indicators</b>: Small dots for navigation.</li>
-            <li><b>Captions</b>: Overlay text and buttons.</li>
-            <li><b>Fade</b>: Smooth crossfade transitions.</li>
-            <li><b>Autoplay</b>: Automatic cycling with intervals.</li>
-            <li><b>Dark variant</b>: Dark controls & captions.</li>
-            <li><b>Custom content</b>: Text, buttons, or cards inside slides.</li>
-            <li><b>Responsive</b>: Works on all screen sizes with touch support.</li>
-            <li><b>Keyboard support</b>: Use ← → arrows to navigate.</li>
+            <li>
+              <b>Controls</b>: Previous & Next buttons.
+            </li>
+            <li>
+              <b>Indicators</b>: Small dots for navigation.
+            </li>
+            <li>
+              <b>Captions</b>: Overlay text and buttons.
+            </li>
+            <li>
+              <b>Fade</b>: Smooth crossfade transitions.
+            </li>
+            <li>
+              <b>Autoplay</b>: Automatic cycling with intervals.
+            </li>
+            <li>
+              <b>Dark variant</b>: Dark controls & captions.
+            </li>
+            <li>
+              <b>Custom content</b>: Text, buttons, or cards inside slides.
+            </li>
+            <li>
+              <b>Responsive</b>: Works on all screen sizes with touch support.
+            </li>
+            <li>
+              <b>Keyboard support</b>: Use ← → arrows to navigate.
+            </li>
           </ul>
         </section>
-
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
-            Next, explore{" "}
-            <Link
-              to="/bootstrap/buttons"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Buttons
-            </Link>{" "}
-            to learn how to style interactive elements in Bootstrap.
-          </p>
-        </section>
-
         {/* Bottom Navigation */}
         <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link

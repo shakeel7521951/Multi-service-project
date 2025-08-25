@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Utilities.jsx
 import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -9,7 +8,7 @@ const Utilities = () => {
 <p class="text-success">Success text</p>
 <p class="text-danger">Danger text</p>
 <p class="bg-warning text-dark">Warning background</p>`;
-  
+
   const spacingExample = `<div class="m-3 p-3 bg-light border">Margin 3, Padding 3</div>
 <div class="mt-5 mb-2 ps-4 pe-4 bg-light border">Custom spacing</div>`;
 
@@ -60,9 +59,10 @@ const Utilities = () => {
             Bootstrap Utilities
           </h1>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-            Bootstrap utilities are helper classes that make styling elements fast and efficient.
-            These classes let you adjust colors, spacing, text, display, sizing, borders, shadows,
-            positioning, and much more—without writing custom CSS.
+            Bootstrap utilities are helper classes that make styling elements
+            fast and efficient. These classes let you adjust colors, spacing,
+            text, display, sizing, borders, shadows, positioning, and much
+            more—without writing custom CSS.
           </p>
         </div>
 
@@ -84,53 +84,65 @@ const Utilities = () => {
         </div>
 
         {/* Sections */}
-         {/* Sections */}
+        {/* Sections */}
         <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Colors & Backgrounds</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Colors & Backgrounds
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Bootstrap provides color utilities for text and backgrounds.
           </p>
-          <CodeBlock code={colorExample}/>
+          <CodeBlock code={colorExample} />
         </section>
 
         <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Spacing</h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Use margin (<code>m</code>) and padding (<code>p</code>) classes with scale 0-5.
+            Use margin (<code>m</code>) and padding (<code>p</code>) classes
+            with scale 0-5.
           </p>
-          <CodeBlock code={spacingExample}/>
+          <CodeBlock code={spacingExample} />
         </section>
 
         <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Text Utilities</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Text Utilities
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Text alignment, transformation, weight, and style can be quickly applied with text utilities.
+            Text alignment, transformation, weight, and style can be quickly
+            applied with text utilities.
           </p>
-          <CodeBlock code={textExample}/>
+          <CodeBlock code={textExample} />
         </section>
 
         <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Display Utilities</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Display Utilities
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Control how elements are displayed with display classes.
           </p>
-          <CodeBlock code={displayExample}/>
+          <CodeBlock code={displayExample} />
         </section>
 
         <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Flex Utilities</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Flex Utilities
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Use flexbox utilities for alignment and distribution.
           </p>
-          <CodeBlock code={flexExample}/>
+          <CodeBlock code={flexExample} />
         </section>
 
         <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Sizing Utilities</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Sizing Utilities
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Set width and height with percentage-based classes.
           </p>
-          <CodeBlock code={sizingExample}/>
+          <CodeBlock code={sizingExample} />
         </section>
 
         <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
@@ -138,7 +150,7 @@ const Utilities = () => {
           <p className="text-gray-800 mb-4 leading-relaxed">
             Quickly add borders, remove them, or make them rounded.
           </p>
-          <CodeBlock code={borderExample}/>
+          <CodeBlock code={borderExample} />
         </section>
 
         <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
@@ -146,39 +158,30 @@ const Utilities = () => {
           <p className="text-gray-800 mb-4 leading-relaxed">
             Bootstrap offers shadow utilities for different levels of depth.
           </p>
-          <CodeBlock code={shadowExample}/>
+          <CodeBlock code={shadowExample} />
         </section>
 
         <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Position Utilities</h2>
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Position Utilities
+          </h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
             Use relative, absolute, fixed, sticky, and placement classes.
           </p>
-          <CodeBlock code={positionExample}/>
+          <CodeBlock code={positionExample} />
         </section>
 
         <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
           <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Visibility</h2>
           <p className="text-gray-800 mb-4 leading-relaxed">
-            Toggle element visibility with <code>.visible</code> and <code>.invisible</code>.
+            Toggle element visibility with <code>.visible</code> and{" "}
+            <code>.invisible</code>.
           </p>
-          <CodeBlock code={visibilityExample}/>
-        </section>
-
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
-            Now that you understand Bootstrap utilities, move on to{" "}
-            <Link to="/bootstrap/helpers" className="text-[#04AA6D] font-semibold hover:underline">
-              Helpers
-            </Link>{" "}
-            to learn additional helper classes that simplify development.
-          </p>
+          <CodeBlock code={visibilityExample} />
         </section>
 
         {/* Bottom Navigation */}
-         <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
             to="/bootstrap/carousel"
             className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"

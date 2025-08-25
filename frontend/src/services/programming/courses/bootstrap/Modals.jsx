@@ -1,10 +1,8 @@
-// src/pages/bootstrap/Modals.jsx
 import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Modals = () => {
-
   // Sample modal codes
   const basicModal = `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
   Launch Basic Modal
@@ -109,108 +107,105 @@ const Modals = () => {
   </div>
 </div>`;
   return (
-  <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
-    <div className="max-w-6xl mx-auto space-y-5 sm:space-y-10 lg:space-y-14">
+    <div className="relative min-h-screen bg-gradient-to-br from-white via-[#f9f9f9] to-[#f0f0f0] px-0 sm:px-4 lg:px-6 py-3 sm:py-10 lg:py-14">
+      <div className="max-w-6xl mx-auto space-y-5 sm:space-y-10 lg:space-y-14">
+        {/* Header */}
+        <div className="text-center">
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
+            Bootstrap Modals
+          </h1>
+          <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
+            Modals are dialog boxes that pop up over the main content. Bootstrap
+            modals support multiple sizes, scrolling content, centered
+            positioning, and rich interactive content.
+          </p>
+        </div>
 
-      {/* Header */}
-      <div className="text-center">
-        <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 text-[#04AA6D] drop-shadow">
-          Bootstrap Modals
-        </h1>
-        <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-          Modals are dialog boxes that pop up over the main content. Bootstrap modals support multiple sizes, scrolling content, centered positioning, and rich interactive content.
-        </p>
-      </div>
-
-      {/* Navigation Top */}
-      <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
-        <Link
-          to="/bootstrap/dropdowns"
-          className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
-        >
-          <FaChevronLeft /> Dropdowns
-        </Link>
-
-        <Link
-          to="/bootstrap/carousel"
-          className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
-        >
-          Carousel <FaChevronRight />
-        </Link>
-      </div>
-
-      {/* Basic Modal */}
-      <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-        <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Basic Modal</h2>
-        <p className="text-gray-800 mb-4 leading-relaxed">
-          A basic modal has a header, body, and footer. Use the <code>data-bs-toggle="modal"</code> attribute on a button to trigger the modal.
-        </p>
-        <CodeBlock code={basicModal} />
-      </section>
-
-      {/* Modal Sizes */}
-      <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
-        <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Modal Sizes</h2>
-        <p className="text-gray-800 mb-4 leading-relaxed">
-          Modals can be small, default, or large using <code>.modal-sm</code>, default, or <code>.modal-lg</code>.
-        </p>
-        <CodeBlock code={modalSizes} />
-      </section>
-
-      {/* Scrollable Modal */}
-      <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
-        <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Scrollable Modal</h2>
-        <p className="text-gray-800 mb-4 leading-relaxed">
-          Add <code>.modal-dialog-scrollable</code> to make the modal body scrollable while keeping the header and footer fixed.
-        </p>
-        <CodeBlock code={modalScrolling} />
-      </section>
-
-      {/* Vertically Centered Modal */}
-      <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
-        <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">Vertically Centered Modal</h2>
-        <p className="text-gray-800 mb-4 leading-relaxed">
-          Center modals vertically using <code>.modal-dialog-centered</code> to improve the user experience on larger screens.
-        </p>
-        <CodeBlock code={modalCentered} />
-      </section>
-
-      {/* Next Step */}
-      <section>
-        <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-        <p className="text-gray-700">
-          Now that you understand modals, the next topic is{" "}
+        {/* Navigation Top */}
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link
-            to="/bootstrap/pagination"
-            className="text-[#04AA6D] font-semibold hover:underline"
+            to="/bootstrap/dropdowns"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
           >
-            Pagination
-          </Link>{" "}
-          where you will learn about different pagination styles and alignment.
-        </p>
-      </section>
+            <FaChevronLeft /> Dropdowns
+          </Link>
 
-      {/* Bottom Navigation */}
-      <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
-        <Link
-          to="/bootstrap/dropdowns"
-          className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
-        >
-          <FaChevronLeft /> Dropdowns
-        </Link>
+          <Link
+            to="/bootstrap/carousel"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
+          >
+            Carousel <FaChevronRight />
+          </Link>
+        </div>
 
-        <Link
-          to="/bootstrap/carousel"
-          className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
-        >
-          Carousel <FaChevronRight />
-        </Link>
+        {/* Basic Modal */}
+        <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Basic Modal
+          </h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            A basic modal has a header, body, and footer. Use the{" "}
+            <code>data-bs-toggle="modal"</code> attribute on a button to trigger
+            the modal.
+          </p>
+          <CodeBlock code={basicModal} />
+        </section>
+
+        {/* Modal Sizes */}
+        <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Modal Sizes
+          </h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Modals can be small, default, or large using <code>.modal-sm</code>,
+            default, or <code>.modal-lg</code>.
+          </p>
+          <CodeBlock code={modalSizes} />
+        </section>
+
+        {/* Scrollable Modal */}
+        <section className="bg-[#D9EEE1] p-5 sm:p-10 rounded-2xl shadow-lg border border-[#04AA6D]/30">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Scrollable Modal
+          </h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Add <code>.modal-dialog-scrollable</code> to make the modal body
+            scrollable while keeping the header and footer fixed.
+          </p>
+          <CodeBlock code={modalScrolling} />
+        </section>
+
+        {/* Vertically Centered Modal */}
+        <section className="bg-white p-5 sm:p-10 rounded-2xl shadow-lg border border-gray-200">
+          <h2 className="text-3xl font-bold mb-5 text-[#04AA6D]">
+            Vertically Centered Modal
+          </h2>
+          <p className="text-gray-800 mb-4 leading-relaxed">
+            Center modals vertically using <code>.modal-dialog-centered</code>{" "}
+            to improve the user experience on larger screens.
+          </p>
+          <CodeBlock code={modalCentered} />
+        </section>
+
+        {/* Bottom Navigation */}
+        <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
+          <Link
+            to="/bootstrap/dropdowns"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
+          >
+            <FaChevronLeft /> Dropdowns
+          </Link>
+
+          <Link
+            to="/bootstrap/carousel"
+            className="flex items-center justify-center gap-2 bg-[#04AA6D] text-white font-semibold px-4 py-2 rounded-lg shadow hover:bg-[#03945f] transition transform hover:scale-105 text-sm sm:text-base"
+          >
+            Carousel <FaChevronRight />
+          </Link>
+        </div>
       </div>
-
     </div>
-  </div>
-);
-
+  );
 };
 
 export default Modals;

@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Buttons.jsx
 import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -187,21 +186,6 @@ const Buttons = () => {
             toggleable buttons.
           </p>
           <code>{toggleButtons}</code>
-        </section>
-
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
-            After buttons, the next topic is{" "}
-            <Link
-              to="/bootstrap/alerts"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Alerts
-            </Link>{" "}
-            where you will learn about Bootstrap alerts and messages.
-          </p>
         </section>
 
         {/* Bottom Navigation */}

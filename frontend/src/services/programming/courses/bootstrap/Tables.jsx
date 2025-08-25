@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Tables.jsx
 import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -183,23 +182,6 @@ const Tables = () => {
               </p>
             </div>
           ))}
-        </section>
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-xl md:text-2xl font-bold mb-4 text-[#04AA6D]">
-            Next Step
-          </h2>
-          <p className="text-gray-700 text-sm md:text-base">
-            Now that you’ve learned about tables, the next topic is{" "}
-            <Link
-              to="/bootstrap/images"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Images
-            </Link>{" "}
-            where you will learn how to style and make images responsive in
-            Bootstrap.
-          </p>
         </section>
         {/* Navigation Bottom */}
         <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">

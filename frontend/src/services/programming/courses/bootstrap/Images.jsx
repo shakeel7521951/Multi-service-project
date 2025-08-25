@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Images.jsx
 import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -53,8 +52,7 @@ const Images = () => {
             Use the <code>.img-fluid</code> class to make images scale with the
             parent element.
           </p>
-              <CodeBlock code={responsiveImageCode}/>
-          
+          <CodeBlock code={responsiveImageCode} />
         </section>
 
         {/* Rounded & Circle Images */}
@@ -70,8 +68,7 @@ const Images = () => {
             <p className="text-gray-700 mb-2">
               Add <code>.rounded</code> to create rounded corners.
             </p>
-                <CodeBlock code={roundedImageCode}/>
-            
+            <CodeBlock code={roundedImageCode} />
           </div>
 
           <div>
@@ -79,8 +76,7 @@ const Images = () => {
             <p className="text-gray-700 mb-2">
               Add <code>.rounded-circle</code> to make an image circular.
             </p>
-                <CodeBlock code={circleImageCode}/>
-            
+            <CodeBlock code={circleImageCode} />
           </div>
         </section>
 
@@ -93,8 +89,7 @@ const Images = () => {
             Add <code>.img-thumbnail</code> to display an image with a rounded
             border.
           </p>
-              <CodeBlock code={thumbnailImageCode}/>
-          
+          <CodeBlock code={thumbnailImageCode} />
         </section>
 
         {/* Figures */}
@@ -106,23 +101,7 @@ const Images = () => {
             Use <code>&lt;figure&gt;</code> and <code>.figure-caption</code> for
             captions.
           </p>
-              <CodeBlock code={figureImageCode}/>
-          
-        </section>
-
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
-            After learning images, the next topic is{" "}
-            <Link
-              to="/bootstrap/buttons"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Buttons
-            </Link>{" "}
-            where you will explore styling buttons in Bootstrap.
-          </p>
+          <CodeBlock code={figureImageCode} />
         </section>
 
         {/* Bottom Navigation */}

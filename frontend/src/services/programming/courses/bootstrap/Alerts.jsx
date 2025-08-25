@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Alerts.jsx
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CodeBlock from "./CodeBlock";
@@ -104,7 +103,7 @@ const Alerts = () => {
           </div>
 
           {/* Code Example */}
-          <CodeBlock code={basicAlerts}/>
+          <CodeBlock code={basicAlerts} />
         </section>
 
         {/* Dismissible Alerts */}
@@ -116,7 +115,7 @@ const Alerts = () => {
             Add <code>alert-dismissible fade show</code> and a{" "}
             <code>.btn-close</code> button to make alerts dismissible.
           </p>
-          <CodeBlock code={dismissibleAlerts}/>
+          <CodeBlock code={dismissibleAlerts} />
         </section>
 
         {/* Alerts with Links */}
@@ -127,7 +126,7 @@ const Alerts = () => {
           <p className="text-gray-800 mb-4 leading-relaxed">
             You can include links inside alerts with <code>.alert-link</code>.
           </p>
-          <CodeBlock code={alertsWithLinks}/>
+          <CodeBlock code={alertsWithLinks} />
         </section>
 
         {/* Alerts with Additional Content */}
@@ -139,22 +138,7 @@ const Alerts = () => {
             You can include headings, paragraphs, and horizontal rules inside
             alerts for more detailed messages.
           </p>
-          <CodeBlock code={alertsWithContent}/>
-        </section>
-
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
-            After alerts, the next topic is{" "}
-            <Link
-              to="/bootstrap/badges"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Badges
-            </Link>{" "}
-            where you will learn how to show count or label indicators.
-          </p>
+          <CodeBlock code={alertsWithContent} />
         </section>
 
         {/* Bottom Navigation */}

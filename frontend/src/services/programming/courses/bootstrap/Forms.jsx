@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Forms.jsx
 import CodeBlock from "./CodeBlock";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -173,23 +172,6 @@ const Forms = () => {
             <code>.invalid-feedback</code> for messages.
           </p>
           <CodeBlock code={formValidation} />
-        </section>
-
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#04AA6D]">
-            Next Step
-          </h2>
-          <p className="text-gray-700 text-sm sm:text-base">
-            After mastering forms, the next topic is{" "}
-            <Link
-              to="/bootstrap/buttons"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Buttons
-            </Link>{" "}
-            where you will learn about all types of Bootstrap buttons.
-          </p>
         </section>
 
         {/* Bottom Navigation */}

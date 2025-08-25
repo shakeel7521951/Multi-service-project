@@ -645,22 +645,6 @@ const Typography = () => {
           <CodeBlock code={colorsNote} />
         </section>
 
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
-            Explore{" "}
-            <Link
-              to="/bootstrap/colors-backgrounds"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Colors & Backgrounds
-            </Link>{" "}
-            to learn all color utilities, contextual helpers, and background
-            classes.
-          </p>
-        </section>
-
         {/* Bottom Navigation */}
         <div className="flex justify-between">
           <Link

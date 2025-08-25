@@ -327,21 +327,6 @@ const Colors = () => {
           <CodeBlock code={contrastTips} />
         </section>
 
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-2xl font-bold mb-4 text-[#04AA6D]">Next Step</h2>
-          <p className="text-gray-700">
-            Continue to{" "}
-            <Link
-              to="/bootstrap/tables"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Tables
-            </Link>{" "}
-            to learn how to style and format tabular data with Bootstrap.
-          </p>
-        </section>
-
         {/* Bottom Navigation */}
         <div className="flex sm:flex-row justify-between gap-4 sm:gap-0">
           <Link

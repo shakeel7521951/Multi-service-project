@@ -1,4 +1,3 @@
-// src/pages/bootstrap/Installation.jsx
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CodeBlock from "./CodeBlock";
@@ -157,23 +156,6 @@ const Installation = () => {
           <pre className="bg-white border-l-4 border-[#04AA6D] p-3 sm:p-4 font-mono text-xs sm:text-sm rounded-lg overflow-x-auto shadow mt-3">
             <code>import 'bootstrap/dist/css/bootstrap.min.css';</code>
           </pre>
-        </section>
-
-        {/* Next Steps */}
-        <section>
-          <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-[#04AA6D]">
-            Next Step
-          </h2>
-          <p className="text-gray-700 text-sm sm:text-base">
-            Once Bootstrap is included, the next step is to learn how to use{" "}
-            <Link
-              to="/bootstrap/containers"
-              className="text-[#04AA6D] font-semibold hover:underline"
-            >
-              Containers
-            </Link>{" "}
-            to structure your web pages effectively.
-          </p>
         </section>
 
         {/* Bottom Navigation */}
