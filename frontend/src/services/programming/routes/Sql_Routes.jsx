@@ -66,6 +66,10 @@ import MySQL_Functions from "../courses/sql/MySQL_Functions";
 import SqlServerFunctions from "../courses/sql/SqlServerFunctions";
 import MSAccessFunctions from "../courses/sql/MSAccessFunctions";
 import SqlQuickReference from "../courses/sql/SqlQuickReference";
+import SqlExamples from "../courses/sql/SqlExamples";
+import Sql_Online_Editor from "../courses/sql/Sql_Online_Editor";
+import Sql_Quiz from "../courses/sql/Sql_Quiz";
+import Sql_Exercises from "../courses/sql/Sql_Exercises";
 
 
 export const SqlLayout = () => (
@@ -147,7 +151,11 @@ export const SQLRoutes = {
     { path: "sqlfunctions", element: <MySQL_Functions /> },
     { path: "sqlserverfunctions", element: <SqlServerFunctions /> },
     { path: "sqlmsaccessfunctions", element: <MSAccessFunctions /> },
-    { path: "sqlquickreference", element: <SqlQuickReference /> }
+    { path: "sqlquickreference", element: <SqlQuickReference /> },
+    { path: "sqlexamples", element: <SqlExamples /> },
+    { path: "sqlonlineeditor", element: <Sql_Online_Editor /> },
+    { path: "sqlquiz", element: <Sql_Quiz /> },
+    { path: "sqlexercises", element: <Sql_Exercises /> }
  ],
 };
 
