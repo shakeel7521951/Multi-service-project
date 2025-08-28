@@ -150,7 +150,6 @@ export const SQLRoutes = {
     { path: "sqldates", element: <Sql_Dates /> },
     { path: "sqlviews", element: <Sql_Views /> },
     { path: "sqlinjection", element: <Sql_Injection /> },
-    { path: "sqlhosting", element: <Sql_Hosting /> },
     { path: "sqldatatypes", element: <SqlDataTypes /> },
     { path: "sqlkeywords", element: <Sql_Keywords /> },
     { path: "sqlfunctions", element: <MySQL_Functions /> },

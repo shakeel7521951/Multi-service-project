@@ -51,8 +51,29 @@ const TutorialArray = [
   { id: 47, topic: "Sql Unique", link: "sqlunique"},
   { id: 48, topic: "Sql Primary Key", link: "sqlprimarykey"},
   { id: 49, topic: "Sql Foreign Key", link: "sqlforeignkey"},
-  { id: 50, topic: "Sql Ceck", link: "sqlcheck"}
-];
+  { id: 50, topic: "Sql Ceck", link: "sqlcheck"},
+  { id: 51, topic: "Sql Default", link: "sqldefault"},
+  { id: 52, topic: "Sql Create Index", link: "sqlcreateindex"},
+  { id: 53, topic: "Sql Auto Increment", link: "sqlautoincrement"},
+  { id: 54, topic: "Sql Dates", link: "sqldates"},
+  { id: 54, topic: "Sql Views", link: "sqlviews"},
+  { id: 55, topic: "Sql Injection", link: "sqlinjection"},
+  { id: 56, topic: "Sql Data Types", link: "sqldatatypes"},
+  { id: 57, topic: "Sql keywords", link: "sqlKeywords"},
+  { id: 58, topic: "Sql Functions", link: "sqlfunctions"},
+  { id: 58, topic: "Sql Server Functions", link: "sqlserverfunctions"},
+  { id: 59, topic: "Sql MS Access Functions", link: "sqlmsaccessfunctions"},
+  { id: 60, topic: "Sql Quick Reference", link: "sqlquickreference"},
+  { id: 61, topic: "Sql Examples", link: "sqlexamples"},
+  { id: 62, topic: "Sql Online Editor", link: "sqlonlineeditor"},
+  { id: 63, topic: "Sql Quiz", link: "sqlquiz"},
+  { id: 64, topic: "Sql Exercises", link: "sqlexercises"},
+  { id: 65, topic: "Sql Syllabus", link: "sqlsyllabus"},
+  { id: 66, topic: "Sql Study Plan", link: "sqlstudyplan"},
+  { id: 67, topic: "Sql Bootcamp", link: "sqlbootcamp"},
+  { id: 68, topic: "Sql Certificate", link: "sqlcertificate"},
+  { id: 69, topic: "Sql Training", link: "sqltraining"}
+  ];
 
 const Sql_sidebar = () => {
   return (
