@@ -1,11 +1,62 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Sql_Sidebar = () => {
+const TutorialArray = [
+  { id: 1, topic: "Sql Intro", link: "sqlintro"},
+  { id: 2, topic: "Sql Syntax", link: "sqlsyntax"},
+  { id: 3, topic: "Sql Select", link: "sqlselect"},
+  { id: 4, topic: "Sql Select Distinct", link: "sqlselectdistinct"},
+  { id: 5, topic: "Sql Where", link: "sqlwhere"},
+  { id: 6, topic: "Sql Order By", link: "sqlorderby"},
+  { id: 7, topic: "Sql And", link: "sqland"},
+  { id: 8, topic: "Sql Or", link: "sqlor"},
+  { id: 9, topic: "Sql Not", link: "sqlnot"},
+  { id: 10, topic: "Sql Insert", link: "sqlinsert"},
+  { id: 11, topic: "Sql Null", link: "sqlnull"},
+  { id: 12, topic: "Sql Update", link: "sqlupdate"},
+  { id: 13, topic: "Sql Delete", link: "sqldelete"},
+  { id: 14, topic: "Sql Top Limit", link: "sqltoplimit"},
+  { id: 15, topic: "Sql Min Max", link: "sqlminmax"},
+  { id: 16, topic: "Sql Count", link: "sqlcount"},
+  { id: 17, topic: "Sql Sum", link: "sqlsum"},
+  { id: 18, topic: "Sql Avg", link: "sqlavg"},
+  { id: 19, topic: "Sql Like", link: "sqllike"},
+  { id: 20, topic: "Sql Wild Card", link: "sqlwildcard"},
+  { id: 21, topic: "Sql In", link: "sqlin"},
+  { id: 22, topic: "Sql Between", link: "sqlbetween"},
+  { id: 23, topic: "Sql Aliases", link: "sqlaliases"},
+  { id: 24, topic: "Sql Joins", link: "sqljoins"},
+  { id: 25, topic: "Sql Inner Join", link: "sqlinnerjoin"},
+  { id: 26, topic: "Sql Left Join", link: "sqlleftjoin"},
+  { id: 27, topic: "Sql Right Join", link: "sqlrightjoin"},
+  { id: 28, topic: "Sql Full Outer Join", link: "sqlfullouterjoin"},
+  { id: 29, topic: "Sql Self Join", link: "sqlselfjoin"},
+  { id: 30, topic: "Sql Union", link: "sqlunion"}
+];
+
+const Sql_sidebar = () => {
   return (
-    <div>
-      <h3>sql sidebar</h3>
+    <div className="w-[20vw] hidden lg:block sticky top-0 p-4 overflow-y-auto h-screen bg-[#E7E9EB] mt-28">
+      <ul className="flex flex-col gap-2">
+        {TutorialArray.map(link => (
+          <li
+            key={link.id}
+            className="w-full rounded-lg hover:bg-[#CCCCCC] transition-colors"
+          >
+            <Link
+              to={link.link ? `/sql/${link.link}` : "/sql"}
+              className="block p-2 w-full h-full text-left"
+            >
+              {link.topic}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Sql_Sidebar
+export default Sql_sidebar;
+
+
+

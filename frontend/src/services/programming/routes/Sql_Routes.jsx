@@ -70,6 +70,11 @@ import SqlExamples from "../courses/sql/SqlExamples";
 import Sql_Online_Editor from "../courses/sql/Sql_Online_Editor";
 import Sql_Quiz from "../courses/sql/Sql_Quiz";
 import Sql_Exercises from "../courses/sql/Sql_Exercises";
+import Sql_Syllabus from "../courses/sql/Sql_Syllabus";
+import Sql_StudyPlan from "../courses/sql/Sql_StudyPlan";
+import Sql_Bootcamp from "../courses/sql/Sql_Bootcamp";
+import Sql_Certificate from "../courses/sql/Sql_Certificate";
+import Sql_Training from "../courses/sql/Sql_Training";
 
 
 export const SqlLayout = () => (
@@ -155,7 +160,12 @@ export const SQLRoutes = {
     { path: "sqlexamples", element: <SqlExamples /> },
     { path: "sqlonlineeditor", element: <Sql_Online_Editor /> },
     { path: "sqlquiz", element: <Sql_Quiz /> },
-    { path: "sqlexercises", element: <Sql_Exercises /> }
+    { path: "sqlexercises", element: <Sql_Exercises /> },
+    { path: "sqlsyllabus", element: <Sql_Syllabus /> },
+    { path: "sqlstudyplan", element: <Sql_StudyPlan/> },
+    { path: "sqlbootcamp", element: <Sql_Bootcamp/> },
+    { path: "sqlcertificate", element: <Sql_Certificate/> },
+    { path: "sqltraining", element: <Sql_Training/> }
  ],
 };
 
