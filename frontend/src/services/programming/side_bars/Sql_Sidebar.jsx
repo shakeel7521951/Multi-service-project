@@ -31,7 +31,27 @@ const TutorialArray = [
   { id: 27, topic: "Sql Right Join", link: "sqlrightjoin"},
   { id: 28, topic: "Sql Full Outer Join", link: "sqlfullouterjoin"},
   { id: 29, topic: "Sql Self Join", link: "sqlselfjoin"},
-  { id: 30, topic: "Sql Union", link: "sqlunion"}
+  { id: 30, topic: "Sql Union", link: "sqlunion"},
+  { id: 31, topic: "Sql Union All", link: "sqlunionall"},
+  { id: 32, topic: "Sql Group By", link: "sqlgroupby"},
+  { id: 33, topic: "Sql Having", link: "sqlhaving"},
+  { id: 34, topic: "Sql Exists", link: "sqlexists"},
+  { id: 35, topic: "Sql Any All", link: "sqlanyall"},
+  { id: 36, topic: "Sql Select Into", link: "sqlselectinto"},
+  { id: 37, topic: "Sql Case", link: "sqlcase"},
+  { id: 38, topic: "Sql Null Functions", link: "sqlnullfunctions"},
+  { id: 39, topic: "Sql Stored Procedures", link: "sqlstoredprocedures"},
+  { id: 40, topic: "Sql Comments", link: "sqlcomments"},
+  { id: 41, topic: "Sql operators", link: "sqloperators"},
+  { id: 42, topic: "Sql Create DB", link: "sqlcreatedatabase"},
+  { id: 43, topic: "Sql Backup DB", link: "sqlbackupdatabase"},
+  { id: 44, topic: "Sql Create Table", link: "sqlcreatetable"},
+  { id: 45, topic: "Sql Constraints", link: "sqlconstraints"},
+  { id: 46, topic: "Sql Not Null", link: "sqlnotnull"},
+  { id: 47, topic: "Sql Unique", link: "sqlunique"},
+  { id: 48, topic: "Sql Primary Key", link: "sqlprimarykey"},
+  { id: 49, topic: "Sql Foreign Key", link: "sqlforeignkey"},
+  { id: 50, topic: "Sql Ceck", link: "sqlcheck"}
 ];
 
 const Sql_sidebar = () => {
@@ -57,6 +77,3 @@ const Sql_sidebar = () => {
 };
 
 export default Sql_sidebar;
-
-
-
