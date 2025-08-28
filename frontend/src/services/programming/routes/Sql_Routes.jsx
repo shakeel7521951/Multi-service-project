@@ -53,6 +53,19 @@ import Sql_Unique from "../courses/sql/Sql_Unique";
 import Sql_PrimaryKey from "../courses/sql/Sql_PrimaryKey";
 import Sql_ForeignKey from "../courses/sql/Sql_ForeignKey";
 import Sql_Check from "../courses/sql/Sql_Check";
+import Sql_Default from "../courses/sql/Sql_Default";
+import Sql_CreateIndex from "../courses/sql/Sql_CreateIndex";
+import Sql_AutoIncrement from "../courses/sql/Sql_AutoIncrement";
+import Sql_Dates from "../courses/sql/Sql_Dates";
+import Sql_Views from "../courses/sql/Sql_Views";
+import Sql_Injection from "../courses/sql/Sql_Injection";
+import Sql_Hosting from "../courses/sql/Sql_Hosting";
+import SqlDataTypes from "../courses/sql/SqlDataTypes";
+import Sql_Keywords from "../courses/sql/Sql_Keywords";
+import MySQL_Functions from "../courses/sql/MySQL_Functions";
+import SqlServerFunctions from "../courses/sql/SqlServerFunctions";
+import MSAccessFunctions from "../courses/sql/MSAccessFunctions";
+import SqlQuickReference from "../courses/sql/SqlQuickReference";
 
 
 export const SqlLayout = () => (
@@ -121,11 +134,22 @@ export const SQLRoutes = {
     { path: "sqlunique", element: <Sql_Unique /> },
     { path: "sqlprimarykey", element: <Sql_PrimaryKey /> },
     { path: "sqlforeignkey", element: <Sql_ForeignKey /> },
-    { path: "sqlcheck", element: <Sql_Check /> }
+    { path: "sqlcheck", element: <Sql_Check /> },
+    { path: "sqldefault", element: <Sql_Default /> },
+    { path: "sqlcreateindex", element: <Sql_CreateIndex /> },
+    { path: "sqlautoincrement", element: <Sql_AutoIncrement /> },
+    { path: "sqldates", element: <Sql_Dates /> },
+    { path: "sqlviews", element: <Sql_Views /> },
+    { path: "sqlinjection", element: <Sql_Injection /> },
+    { path: "sqlhosting", element: <Sql_Hosting /> },
+    { path: "sqldatatypes", element: <SqlDataTypes /> },
+    { path: "sqlkeywords", element: <Sql_Keywords /> },
+    { path: "sqlfunctions", element: <MySQL_Functions /> },
+    { path: "sqlserverfunctions", element: <SqlServerFunctions /> },
+    { path: "sqlmsaccessfunctions", element: <MSAccessFunctions /> },
+    { path: "sqlquickreference", element: <SqlQuickReference /> }
  ],
 };
 
 
-
-
-// jasa nichay wala data design ha wasa hi ais ko desgin kar do aur all text aya uper wala data ka aur nichy wala sa best desgin kar dana ais ko ...SQL IN Operator .. :
+// jasa nichay wala data design ha wasa hi ais ko desgin kar do aur all text aya uper wala data ka aur nichy wala sa best desgin kar dana ais ko ...  .. :
