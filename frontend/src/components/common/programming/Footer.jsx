@@ -5,7 +5,7 @@ import {
   FaDiscord,
   FaFacebook,
 } from "react-icons/fa";
-import { FaChevronRight } from "react-icons/fa"; // 👈 Arrow Icon import
+import { FaChevronRight } from "react-icons/fa";
 
 
 export default function Footer() {
