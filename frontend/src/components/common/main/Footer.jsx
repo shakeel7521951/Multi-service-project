@@ -14,68 +14,73 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gray-900 text-white pt-16 pb-8 overflow-hidden">
-      {/* Wave Background */}
-      <div className="absolute -top-12 left-0 w-full h-12 bg-gradient-to-t from-gray-900 to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-5 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10 relative z-10">
-        {/* About Section */}
+    <footer className="bg-[#0f172a] text-gray-300 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-5 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10">
+        {/* Logo / About */}
         <div>
-          <h2 className="text-2xl font-bold text-pink-600 mb-4">
-            Brand Name Or Logo
+          <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent mb-4">
+            Tab Creative Studio
           </h2>
-          <p className="mb-4 leading-relaxed opacity-90">
-            Your premier destination for creative expression and professional
-            production in the heart of Lucknow. We provide fully-equipped spaces
-            for artists, creators, and businesses.
+          <p className="mb-6 text-sm leading-relaxed opacity-80">
+            Your creative hub for music, production, and content creation. We
+            empower artists and brands to bring their ideas to life with
+            high-quality production spaces and professional support.
           </p>
 
-          {/* Social Links */}
           <div className="flex space-x-3">
-            {[
-              { icon: <FaFacebookF />, link: "#" },
-              { icon: <FaInstagram />, link: "#" },
-              { icon: <FaTwitter />, link: "#" },
-              { icon: <FaYoutube />, link: "#" },
-            ].map((social, index) => (
-              <a
-                key={index}
-                href={social.link}
-                className="w-10 h-10 bg-gray-700 bg-opacity-70 flex items-center justify-center rounded-full text-white transition-transform hover:-translate-y-1 hover:bg-pink-600"
-              >
-                {social.icon}
-              </a>
-            ))}
+            {[FaFacebookF, FaInstagram, FaTwitter, FaYoutube].map((Icon, i) => {
+              // even indexes (2nd, 4th) animate top→bottom
+              const isEven = (i + 1) % 2 === 0;
+
+              return (
+                <a
+                  key={i}
+                  href="#"
+                  className="relative w-9 h-9 border border-gray-700 flex items-center justify-center rounded-full overflow-hidden group"
+                >
+                  {/* background overlay animation */}
+                  <span
+                    className={`absolute inset-0 ${isEven
+                        ? "bg-gradient-to-b from-pink-500 to-blue-500 -translate-y-full group-hover:translate-y-0"
+                        : "bg-gradient-to-t from-pink-500 to-blue-500 translate-y-full group-hover:translate-y-0"
+                      } transition-transform duration-500 ease-in-out`}
+                  ></span>
+
+                  {/* icon */}
+                  <Icon className="relative text-white text-sm transition-transform duration-300 group-hover:scale-110" />
+                </a>
+              );
+            })}
           </div>
-        </div>
+          </div>
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-xl text-pink-600 mb-6 border-b-2 border-pink-600 pb-2">
-            Quick Links
-          </h3>
-          <ul className="space-y-3">
-            {["Home", "About Us", "Services", "Events", "Gallery"].map(
-              (item, i) => (
-                <li key={i}>
-                  <a
-                    href="#"
-                    className="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"
-                  >
-                    <FaChevronRight className="text-pink-600" /> {item}
-                  </a>
-                </li>
-              )
-            )}
+          <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
+          <ul className="space-y-3 text-sm">
+            {["Home", "About Us", "Services", "Events", "Gallery"].map((item, i) => (
+              <li key={i}>
+                <a
+                  href="#"
+                  className="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2"
+                >
+                  <FaChevronRight className="text-pink-500 group-hover:text-pink-400 group-hover:rotate-90 transition-all duration-300" />
+                  <span className="relative text-gray-300 group-hover:text-pink-400">
+                    {item}
+                    {/* underline animation */}
+                    <span className="absolute left-0 -bottom-0.5 w-0 h-[1px] bg-gradient-to-r from-blue-500 to-pink-500 group-hover:w-full transition-all duration-500"></span>
+                  </span>
+                </a>
+              </li>
+            ))}
           </ul>
+
         </div>
 
-        {/* Our Services */}
+        {/* Services */}
         <div>
-          <h3 className="text-xl text-pink-600 mb-6 border-b-2 border-pink-600 pb-2">
-            Our Services
-          </h3>
-          <ul className="space-y-3">
+          <h3 className="text-lg font-semibold text-white mb-4">Our Services</h3>
+          <ul className="space-y-3 text-sm">
             {[
               "Recording Studio",
               "Theatre Room",
@@ -86,75 +91,92 @@ const Footer = () => {
               <li key={i}>
                 <a
                   href="#"
-                  className="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"
+                  className="group flex items-center gap-2 transition-all duration-300 hover:translate-x-2"
                 >
-                  <FaChevronRight className="text-pink-600" /> {service}
+                  <FaChevronRight className="text-pink-500 group-hover:text-pink-400 group-hover:rotate-90 transition-all duration-300" />
+                  <span className="relative text-gray-300 group-hover:text-pink-400">
+                    {service}
+                    {/* underline animation */}
+                    <span className="absolute left-0 -bottom-0.5 w-0 h-[1px] bg-gradient-to-r from-blue-500 to-pink-500 group-hover:w-full transition-all duration-500"></span>
+                  </span>
                 </a>
               </li>
             ))}
           </ul>
+
         </div>
 
         {/* Contact + Newsletter */}
         <div>
-          <h3 className="text-xl text-pink-600 mb-6 border-b-2 border-pink-600 pb-2">
-            Contact Us
-          </h3>
-          <ul className="space-y-4 mb-6">
-            <li className="flex items-start gap-4">
-              <FaMapMarkerAlt className="text-pink-600 mt-1" />
-              <span>Pakistan</span>
+          <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
+          <ul className="space-y-3 text-sm mb-5">
+            {/* Location */}
+            <li className="flex items-start gap-3 group transition-all duration-300">
+              <FaMapMarkerAlt className="text-pink-500 mt-1 group-hover:text-pink-400 transition-all duration-300 group-hover:scale-110" />
+              <span className="text-gray-300 group-hover:text-pink-400 transition-all duration-300">
+                Pakistan
+              </span>
             </li>
-            <li className="flex items-start gap-4">
-              <FaPhoneAlt className="text-pink-600 mt-1" />
-              <div>
-                <a
-                  href="tel:+917307022824"
-                  className="block hover:underline opacity-90 hover:opacity-100"
-                >
-                  +92 023456789
-                </a>
-              </div>
+
+            {/* Phone */}
+            <li className="flex items-start gap-3 group transition-all duration-300">
+              <FaPhoneAlt className="text-pink-500 mt-1 group-hover:text-pink-400 transition-all duration-300 group-hover:scale-110" />
+              <a
+                href="tel:+92023456789"
+                className="text-gray-300 group-hover:text-pink-400 transition-all duration-300 relative"
+              >
+                +92 023456789
+                {/* underline animation */}
+                <span className="absolute left-0 -bottom-0.5 w-0 h-[1px] bg-gradient-to-r from-pink-500 to-blue-500 group-hover:w-full transition-all duration-500"></span>
+              </a>
             </li>
-            <li className="flex items-start gap-4">
-              <FaEnvelope className="text-pink-600 mt-1" />
-              <div>
-                <a
-                  href="bhattirajput333@gmail.com"
-                  className="block hover:underline opacity-90 hover:opacity-100"
-                >
-                  bhattirajput333@gmail.com
-                </a>
-              </div>
+
+            {/* Email */}
+            <li className="flex items-start gap-3 group transition-all duration-300">
+              <FaEnvelope className="text-pink-500 mt-1 group-hover:text-pink-400 transition-all duration-300 group-hover:scale-110" />
+              <a
+                href="mailto:bhattirajput333@gmail.com"
+                className="text-gray-300 group-hover:text-pink-400 transition-all duration-300 relative"
+              >
+                bhattirajput333@gmail.com
+                {/* underline animation */}
+                <span className="absolute left-0 -bottom-0.5 w-0 h-[1px] bg-gradient-to-r from-blue-500 to-pink-500 group-hover:w-full transition-all duration-500"></span>
+              </a>
             </li>
           </ul>
 
+
           {/* Newsletter */}
-             <h3 className="text-xl text-pink-600 mb-2 border-b-2 border-pink-600 pb-2">Newsletter</h3>
-      <p className="mb-4 opacity-70">Subscribe to get updates on our latest events and offers.</p>
-      <form onSubmit={(e) => {
+          <p className="text-sm mb-3 opacity-80">
+            Subscribe for updates and new offers.
+          </p>
+          <form
+            onSubmit={(e) => {
               e.preventDefault();
               alert("Subscribed successfully!");
-            }} class="flex">
-        <input type="email" placeholder="Your Email" required className="flex-1 bg-white text-black p-3 rounded-l-md focus:outline-none" />
-  
-          <button
+            }}
+            className="flex"
+          >
+            <input
+              type="email"
+              placeholder="Your Email"
+              required
+              className="flex-1 p-3 text-sm border border-gray-700 rounded-l-md text-gray-200 focus:outline-none"
+            />
+            <button
               type="submit"
-              className="bg-pink-600 hover:bg-pink-500 text-white p-3 rounded-r-md transition"
+              className="p-3 bg-gradient-to-r from-blue-500 to-pink-500 text-white rounded-r-md hover:opacity-90 transition"
             >
               <FaPaperPlane />
             </button>
-      </form>
-           
+          </form>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="mt-16 pt-8 border-t border-gray-700 text-center opacity-70 text-sm">
-        <p>
-          © 2024 Tab Creative Studio. All Rights Reserved. | Designed with{" "}
-          <FaHeart className="inline text-pink-600" /> by Your Team
-        </p>
+      <div className="mt-12 pt-6 border-t border-gray-700 text-center text-sm opacity-70">
+        © 2024 Tab Creative Studio | Designed with{" "}
+        <FaHeart className="inline text-pink-500 mx-1" /> by Your Team
       </div>
     </footer>
   );
