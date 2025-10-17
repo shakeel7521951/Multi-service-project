@@ -8,12 +8,19 @@ function Hero() {
          duration: 1000,
          once: false,
       });
+
+      // ✅ Prevent horizontal scroll due to AOS animation
+      document.body.style.overflowX = "hidden";
+
+      return () => {
+         document.body.style.overflowX = "auto";
+      };
    }, []);
 
    return (
       <>
          <section
-            className="bg-black py-10 md:py-25 px-4 md:px-20 relative"
+            className="bg-black py-10 md:py-25 px-4 md:px-20 relative overflow-hidden"
             style={{
                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 95%)",
             }}
@@ -43,7 +50,7 @@ function Hero() {
 
                {/* Right Illustration */}
                <div
-                  className="grid grid-cols-2 gap-4 pt-8 pb-20 md:py-0"
+                  className="grid grid-cols-2 gap-4 pt-8 pb-20 md:py-0 overflow-hidden"
                   data-aos="fade-left"
                >
                   <img
