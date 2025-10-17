@@ -1,0 +1,29 @@
+Calm Focus Blue.
+
+Core colors
+
+Primary (Study): #2563EB
+Primary hover: #1D4ED8
+Accent (secondary actions): #14B8A6
+Background: #F8FAFC
+Surface/Card: #FFFFFF
+Text: #0F172A
+Muted text: #475569
+Border: #E2E8F0
+Feedback: Success #22C55E • Warning #F59E0B • Error #EF4444 • Info #0EA5E9
+Section accents
+
+Study: #2563EB (tint #DBEAFE)
+Music: #14B8A6 (tint #CCFBF1)
+Books: #6366F1 (tint #EDE9FE)
+PDFs: #F59E0B (tint #FEF3C7)
+Gaming: #8B5CF6 (tint #F5F3FF)
+Dark mode
+
+Background: #0F172A
+Surface: #111827
+Text: #E5E7EB
+Muted: #94A3B8
+Border: #1F2937
+Primary: #60A5FA (hover #3B82F6)
+Accent: #2DD4BF
