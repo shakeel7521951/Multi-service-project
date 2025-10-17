@@ -169,4 +169,4 @@ export const SQLRoutes = {
 };
 
 
-// jasa nichay wala data design ha wasa hi ais ko desgin kar do aur all text aya uper wala data ka aur nichy wala sa best desgin kar dana ais ko ...  .. :
+// jasa nichay wala data design ha wasa hi ais ko desgin kar do aur all text aur uper wala data ka aur nichy wala sa best desgin kar dana ais ko ...  .. :
