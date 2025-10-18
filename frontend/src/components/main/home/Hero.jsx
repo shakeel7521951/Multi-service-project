@@ -76,7 +76,7 @@ function Hero() {
 
                   {/* Stats */}
                   <div 
-                     className="grid grid-cols-3 gap-6 pt-8"
+                     className="hidden md:grid grid-cols-3 gap-6 pt-8"
                      data-aos="fade-up"
                      data-aos-delay="600"
                   >
@@ -156,19 +156,6 @@ function Hero() {
                </div>
             </div>
 
-            {/* Scroll Indicator */}
-            {/* <div 
-               className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-               data-aos="fade-up"
-               data-aos-delay="1000"
-            >
-               <div className="flex flex-col items-center text-white/60 hover:text-white transition-colors cursor-pointer">
-                  <span className="text-sm mb-2">Scroll Down</span>
-                  <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-                     <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-bounce"></div>
-                  </div>
-               </div>
-            </div> */}
          </section>
       </>
    );
