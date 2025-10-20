@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 
 const Navbar = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  const toggleDropdown = (menu) => {
-    setActiveDropdown(activeDropdown === menu ? null : menu);
-  };
+   const toggleDropdown = (menu) => {
+      setActiveDropdown(activeDropdown === menu ? null : menu);
+   };
 
   return (
     <nav className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative z-50 border-b border-slate-700/50">
