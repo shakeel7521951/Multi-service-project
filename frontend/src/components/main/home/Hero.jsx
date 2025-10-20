@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { FiArrowRight } from "react-icons/fi";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -21,10 +22,8 @@ function Hero() {
    return (
       <>
          <section
-            className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-20 px-4 md:px-20 relative overflow-hidden"
-            style={{
-               clipPath: "polygon(0 0, 100% 0, 100% 90%, 0% 100%)",
-            }}
+            className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-12 md:py-20 px-4 md:px-20 relative overflow-hidden"
+           
          >
             {/* Animatedes Backgroundes Elements */}
             <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -50,7 +49,7 @@ function Hero() {
                      <p className="text-gray-300 text-xl leading-relaxed mb-8">
                         Explore study materials, read books, listen to calming
                         music, download PDFs, and play mind-refreshing games — 
-                         <span className="text-cyan-300 font-semibold">calm space</span>.
+                        all in one <span className="text-cyan-300 font-semibold">calm space</span>.
                      </p>
                   </div>
 
@@ -67,16 +66,15 @@ function Hero() {
                      <button className="border-2 border-white/30 text-white px-8 py-4 rounded-2xl hover:bg-white/10 hover:border-white/50 cursor-pointer backdrop-blur-sm transition-all duration-500 transform hover:scale-105 group">
                         <span className="flex items-center justify-center gap-2">
                            Explore All
-                           <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                           </svg>
+                          <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+
                         </span>
                      </button>
                   </div>
 
                   {/* Stats */}
                   <div 
-                     className="hidden md:grid grid-cols-3 gap-6 pt-8"
+                     className="grid grid-cols-3 gap-6 pt-8"
                      data-aos="fade-up"
                      data-aos-delay="600"
                   >

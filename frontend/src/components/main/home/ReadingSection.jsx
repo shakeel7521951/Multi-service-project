@@ -1,4 +1,10 @@
 import React, { useEffect } from "react";
+import { FiArrowRight } from "react-icons/fi";
+import { 
+  HiOutlineArrowDownTray, 
+  HiOutlineArrowUpTray, 
+  HiOutlineBars3 
+} from "react-icons/hi2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -17,20 +23,8 @@ function ReadingSection() {
          title: "Engaging Stories",
          desc: "Immerse yourself in meaningful stories that spark imagination and creativity.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 6v12m0 0l-3-3m3 3l3-3M9 6h6"
-               />
-            </svg>
+           <HiOutlineArrowDownTray className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
+
          ),
          gradient: "from-cyan-400 to-blue-500"
       },
@@ -38,20 +32,8 @@ function ReadingSection() {
          title: "Book Summaries",
          desc: "Quick insights from popular books — save time and gain key takeaways easily.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 6.253v13m0 0L8.5 16.253m3.5 3L15.5 16.253M4.5 6.75l7.5-4.5 7.5 4.5"
-               />
-            </svg>
+            <HiOutlineArrowUpTray className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
+
          ),
          gradient: "from-purple-400 to-pink-500"
       },
@@ -59,20 +41,8 @@ function ReadingSection() {
          title: "Reading Habits",
          desc: "Build a daily reading habit to improve knowledge, focus, and clarity of thought.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 5h18M3 12h18M3 19h18"
-               />
-            </svg>
+           <HiOutlineBars3 className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
+
          ),
          gradient: "from-cyan-500 to-purple-600"
       },
@@ -196,9 +166,8 @@ function ReadingSection() {
                   <button className="group relative bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold text-sm xs:text-base px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-xl xs:rounded-2xl hover:from-purple-600 hover:to-pink-700 cursor-pointer transition-all duration-500 transform hover:scale-105 shadow-xl xs:shadow-2xl hover:shadow-purple-500/25 w-full">
                      <span className="relative z-10 flex items-center justify-center gap-2 xs:gap-3">
                         Explore Books
-                        <svg className="w-4 h-4 xs:w-5 xs:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
+                        <FiArrowRight className="w-4 h-4 xs:w-5 xs:h-5 group-hover:translate-x-1 transition-transform" />
+
                      </span>
                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   </button>

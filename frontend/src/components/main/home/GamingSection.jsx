@@ -1,4 +1,10 @@
 import React, { useEffect } from "react";
+import { FiArrowRight } from "react-icons/fi";
+import { 
+  HiOutlinePauseCircle, 
+  HiOutlineArrowUpTray, 
+  HiOutlineUser 
+} from "react-icons/hi2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -17,25 +23,8 @@ function GamingSection() {
          title: "Mindful Gaming",
          desc: "Play games designed to relax your mind and improve focus — not just for fun, but for mental sharpness.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9.75 17a.75.75 0 01-.75-.75V7.75a.75.75 0 011.5 0v8.5a.75.75 0 01-.75.75zm4.5 0a.75.75 0 01-.75-.75V7.75a.75.75 0 011.5 0v8.5a.75.75 0 01-.75.75z"
-               />
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19.5 4.5H4.5A2.25 2.25 0 002.25 6.75v10.5A2.25 2.25 0 004.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5z"
-               />
-            </svg>
+           <HiOutlinePauseCircle className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
+
          ),
          gradient: "from-cyan-500 to-blue-600"
       },
@@ -43,20 +32,8 @@ function GamingSection() {
          title: "Fun Competitions",
          desc: "Join friendly tournaments and challenge yourself with puzzles and strategic games.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 6v12m0 0l3-3m-3 3l-3-3m0-6h6"
-               />
-            </svg>
+            <HiOutlineArrowUpTray className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
+
          ),
          gradient: "from-purple-500 to-pink-600"
       },
@@ -64,20 +41,8 @@ function GamingSection() {
          title: "Team Play",
          desc: "Collaborate with friends, build strategies, and enjoy teamwork-based challenges.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16 8a4 4 0 11-8 0 4 4 0 018 0zm-8 8a6 6 0 0112 0v2H8v-2z"
-               />
-            </svg>
+            <HiOutlineUser className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
+
          ),
          gradient: "from-cyan-400 to-purple-500"
       },
@@ -97,7 +62,7 @@ function GamingSection() {
                <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                   Mind
                </span>
-               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-20 xs:w-24 sm:w-28 md:w-32 h-0.5 xs:h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full"></span>
+               <span className="absolute bottom-0 md:-bottom-3 left-1/2 -translate-x-1/2 w-20 xs:w-24 sm:w-28 md:w-32 h-0.5 xs:h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full"></span>
             </h2>
             <p className="text-slate-300 text-sm xs:text-base sm:text-lg md:text-xl mt-4 xs:mt-6 max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-3xl mx-auto leading-relaxed">
                Gaming isn't just entertainment — it's a mental workout. Enhance
@@ -183,9 +148,8 @@ function GamingSection() {
                   <button className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm xs:text-base px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-xl xs:rounded-2xl hover:from-cyan-600 hover:to-blue-700 cursor-pointer transition-all duration-500 transform hover:scale-105 shadow-xl xs:shadow-2xl hover:shadow-cyan-500/25 w-full">
                      <span className="relative z-10 flex items-center justify-center gap-2 xs:gap-3">
                         Start Playing
-                        <svg className="w-4 h-4 xs:w-5 xs:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
+                       <FiArrowRight className="w-4 h-4 xs:w-5 xs:h-5 group-hover:translate-x-1 transition-transform" />
+
                      </span>
                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   </button>

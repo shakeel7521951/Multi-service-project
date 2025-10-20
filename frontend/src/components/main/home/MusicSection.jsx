@@ -1,4 +1,10 @@
 import React, { useEffect } from "react";
+import { FiArrowRight } from "react-icons/fi";
+import { 
+  HiOutlineMusicalNote, 
+  HiOutlineMicrophone, 
+  HiOutlineEnvelope 
+} from "react-icons/hi2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -17,20 +23,8 @@ function MusicSection() {
          title: "Focus & Productivity",
          desc: "Listen to curated playlists designed to improve focus and boost creativity.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-7 sm:h-7"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 19V6l12-2v13"
-               />
-            </svg>
+           <HiOutlineMusicalNote className="w-6 h-6 xs:w-7 xs:h-7 sm:w-7 sm:h-7" />
+
          ),
          gradient: "from-cyan-500 to-blue-600"
       },
@@ -38,20 +32,8 @@ function MusicSection() {
          title: "Relaxing Beats",
          desc: "Unwind after a busy day with calm and soothing instrumentals.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-7 sm:h-7"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 8c-1.657 0-3 1.343-3 3v6a3 3 0 106 0v-6c0-1.657-1.343-3-3-3z"
-               />
-            </svg>
+            <HiOutlineMicrophone className="w-6 h-6 xs:w-7 xs:h-7 sm:w-7 sm:h-7" />
+
          ),
          gradient: "from-purple-500 to-pink-600"
       },
@@ -59,20 +41,8 @@ function MusicSection() {
          title: "Discover New Tunes",
          desc: "Explore genres and artists from around the world with our discovery engine.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-7 sm:h-7"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 13V5"
-               />
-            </svg>
+           <HiOutlineEnvelope className="w-6 h-6 xs:w-7 xs:h-7 sm:w-7 sm:h-7" />
+
          ),
          gradient: "from-cyan-400 to-purple-500"
       },
@@ -148,9 +118,8 @@ function MusicSection() {
                   <button className="group relative bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold text-sm xs:text-base px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-xl xs:rounded-2xl hover:from-purple-600 hover:to-pink-700 cursor-pointer transition-all duration-500 transform hover:scale-105 shadow-xl xs:shadow-2xl hover:shadow-purple-500/25 w-full">
                      <span className="relative z-10 flex items-center justify-center gap-2 xs:gap-3">
                         Start Listening
-                        <svg className="w-4 h-4 xs:w-5 xs:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
+                        <FiArrowRight className="w-4 h-4 xs:w-5 xs:h-5 group-hover:translate-x-1 transition-transform" />
+
                      </span>
                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   </button>

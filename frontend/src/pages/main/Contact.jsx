@@ -1,9 +1,14 @@
 import React from 'react'
+import Hero from '../../components/main/contact/Hero'
+import ContactFrom from '../../components/main/contact/ContactFrom'
+import ContactMap from '../../components/main/contact/ContactMap'
 
 const Contact = () => {
   return (
     <div>
-      <h1>Contact</h1>
+      <Hero/>
+      <ContactFrom/>
+      <ContactMap/>
     </div>
   )
 }

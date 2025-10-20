@@ -1,4 +1,8 @@
 import React, { useEffect } from "react";
+import { FiPlus } from "react-icons/fi";
+import { FiClock } from "react-icons/fi";
+import { HiOutlineSparkles } from "react-icons/hi2";
+import { FiArrowRight } from "react-icons/fi";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -17,20 +21,8 @@ function StudySection() {
          title: "Smart Study Guides",
          desc: "Access concise, easy-to-follow guides to simplify complex topics.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 6v12m6-6H6"
-               />
-            </svg>
+            <FiPlus className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
+
          ),
          gradient: "from-cyan-500 to-blue-600"
       },
@@ -38,20 +30,8 @@ function StudySection() {
          title: "Time Management",
          desc: "Learn how to plan your study hours and stay consistent every day.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-               />
-            </svg>
+         <FiClock className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
+
          ),
          gradient: "from-purple-500 to-pink-600"
       },
@@ -59,20 +39,8 @@ function StudySection() {
          title: "Focus Techniques",
          desc: "Discover simple ways to improve concentration and reduce distractions.",
          icon: (
-            <svg
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               strokeWidth={2}
-               stroke="currentColor"
-               className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8"
-            >
-               <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 19l9 2-7-9 7-9-9 2L3 12l9 7z"
-               />
-            </svg>
+            <HiOutlineSparkles className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
+
          ),
          gradient: "from-cyan-400 to-purple-500"
       },
@@ -196,9 +164,8 @@ function StudySection() {
                   <button className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm xs:text-base px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-xl xs:rounded-2xl hover:from-cyan-600 hover:to-blue-700 cursor-pointer transition-all duration-500 transform hover:scale-105 shadow-xl xs:shadow-2xl hover:shadow-cyan-500/25 w-full">
                      <span className="relative z-10 flex items-center justify-center gap-2 xs:gap-3">
                         Start Smart Learning
-                        <svg className="w-4 h-4 xs:w-5 xs:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
+                       <FiArrowRight className="w-4 h-4 xs:w-5 xs:h-5 group-hover:translate-x-1 transition-transform" />
+
                      </span>
                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   </button>
