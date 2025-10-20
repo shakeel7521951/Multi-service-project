@@ -118,25 +118,28 @@ const ContactMap = () => {
           <div className="lg:col-span-2" data-aos="fade-left" data-aos-delay="200">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700/50 hover:border-slate-500/50 transition-all duration-300">
               {/* Map Header */}
-              <div className="bg-slate-800/80 backdrop-blur-sm px-6 py-4 border-b border-slate-700/50 flex justify-between items-center">
-                <h3 className="text-sm md:text-xl font-semibold text-white flex items-center gap-2">
-                  <div className="bg-gradient-to-r from-cyan-500 to-purple-600 p-1 rounded">
-                    <FaMapMarkerAlt className="text-white text-sm" />
-                  </div>
-                  Our Location
-                </h3>
-                <a
-                  href="https://maps.google.com/?q=Wickenburggasse+1,+1080+Wien"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg relative overflow-hidden group"
-                >
-                  {/* Shine Effect */}
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                  <FaDirections className="relative z-10" />
-                  <span className="relative z-10">Get Directions</span>
-                </a>
-              </div>
+              <div className="bg-slate-800/80 backdrop-blur-sm px-6 py-4 border-b border-slate-700/50 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+  {/* Location Title */}
+  <h3 className="text-xl md:text-xl font-semibold text-white flex items-center gap-2">
+    <div className="bg-gradient-to-r from-cyan-500 to-purple-600 p-1 rounded">
+      <FaMapMarkerAlt className="text-white text-xl" />
+    </div>
+    Our Location
+  </h3>
+
+  {/* Directions Button */}
+  <a
+    href="https://maps.google.com/?q=Wickenburggasse+1,+1080+Wien"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg relative overflow-hidden group w-full sm:w-auto"
+  >
+    {/* Shine Effect */}
+    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+    <FaDirections className="relative z-10" />
+    <span className="relative z-10">Get Directions</span>
+  </a>
+</div>
 
               {/* Google Map */}
               <div className="relative w-full h-96">

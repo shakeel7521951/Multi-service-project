@@ -21,7 +21,7 @@ export default function HeroContact() {
       <div className="absolute top-1/2 left-1/3 w-56 h-56 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-ping"></div>
 
       {/* Main Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center max-w-4xl mx-auto px-4 xs:px-6 sm:px-8 pt-8 md:pt-0">
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center max-w-4xl mx-auto px-4 xs:px-6 sm:px-8 pt-0 md:pt-0">
         {/* Badge */}
         <div
           className="hidden md:flex mb-8 px-4 py-2 rounded-full border border-cyan-400 bg-slate-800/60 backdrop-blur-sm"
@@ -33,7 +33,7 @@ export default function HeroContact() {
 
         {/* Heading */}
         <h1
-          className="text-white text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-6 mt-16 md:mt-0"
+          className="text-white text-3xl xs:text-3xl sm:text-4xl md:text-5xl font-bold mb-6 mt-8 md:mt-0"
           data-aos="fade-up"
           data-aos-delay="300"
         >
@@ -87,7 +87,7 @@ export default function HeroContact() {
 
         {/* Contact Features */}
         <div
-          className="flex flex-wrap justify-center gap-4 xs:gap-6 mt-3 px-2"
+          className="hidden md:flex flex-wrap justify-center gap-4 xs:gap-6 mt-3 px-2"
           data-aos="fade-up"
           data-aos-delay="600"
         >

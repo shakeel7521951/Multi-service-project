@@ -17,6 +17,8 @@ import MainNavbar from "./components/common/main/Navbar";
 import MainFooter from "./components/common/main/Footer";
 import MainHome from "./pages/main/Home";
 import Contact from "./pages/main/Contact";
+import LoginForm from "./pages/main/LoginForm";
+import SignupForm from "./pages/main/SignupForm";
 
 const MainLayout = () => (
   <>
@@ -44,6 +46,8 @@ const router = createBrowserRouter([
       { path: "about-us", element: <About /> },
       { path: "/services", element: <Services /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/loginform", element: <LoginForm /> },
+      { path: "/signupform", element: <SignupForm /> },
       { path: "/signIn", element: <SignIn /> },]
   },
   {

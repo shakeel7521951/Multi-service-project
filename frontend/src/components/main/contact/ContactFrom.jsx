@@ -27,7 +27,7 @@ export default function ContactFrom() {
       <div className="absolute bottom-20 right-10 w-44 h-44 xs:w-64 xs:h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-bounce"></div>
       <div className="absolute top-1/2 left-1/3 w-32 h-32 xs:w-48 xs:h-48 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-ping"></div>
 
-      <div className="relative container mx-auto px-4 xs:px-6 sm:px-8 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 md:gap-12 items-start z-10">
+      <div className="relative container mx-auto px-3 xs:px-6 sm:px-8 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 md:gap-12 items-start z-10">
         {/* Left Side: Contact Info */}
         <div data-aos="fade-right">
           <div className="mb-6 xs:mb-8">

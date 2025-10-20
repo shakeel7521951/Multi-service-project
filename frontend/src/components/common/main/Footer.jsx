@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaInstagram,
@@ -10,6 +11,7 @@ import {
   FaEnvelope,
   FaPaperPlane,
   FaHeart,
+  FaLinkedinIn,
 } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -24,7 +26,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-slate-300 pt-20 pb-8 relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-slate-300 pt-12 md:pt-20 pb-8 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute top-10 left-10 w-52 h-52 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-bounce"></div>
@@ -43,7 +45,7 @@ const Footer = () => {
           </p>
 
           <div className="flex space-x-3">
-            {[FaFacebookF, FaInstagram, FaTwitter, FaYoutube].map((Icon, i) => {
+            {[FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn,].map((Icon, i) => {
               const isEven = (i + 1) % 2 === 0;
 
               return (
@@ -75,54 +77,60 @@ const Footer = () => {
         <div data-aos="fade-up" data-aos-delay="200">
           <h3 className="text-xl font-semibold text-white mb-6">Quick Links</h3>
           <ul className="space-y-4 text-sm">
-            {["Home", "About Us", "Services", "Events", "Gallery"].map((item, i) => (
-              <li key={i} data-aos="fade-right" data-aos-delay={300 + i * 100}>
-                <a
-                  href="#"
-                  className="group flex items-center gap-3 transition-all duration-500 hover:translate-x-2"
-                >
-                  <div className="bg-gradient-to-r from-cyan-500 to-purple-600 p-2 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <FaChevronRight className="text-white text-xs group-hover:rotate-90 transition-all duration-300" />
-                  </div>
-                  <span className="relative text-slate-300 group-hover:text-white font-medium">
-                    {item}
-                    {/* Underline animation */}
-                    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:w-full transition-all duration-500"></span>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
+  {[
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Events", path: "/events" },
+    { name: "Gallery", path: "/gallery" },
+  ].map((item, i) => (
+    <li key={i} data-aos="fade-right" data-aos-delay={300 + i * 100}>
+      <Link
+        to={item.path}
+        className="group flex items-center gap-3 transition-all duration-500 hover:translate-x-2"
+      >
+        <div className="bg-gradient-to-r from-cyan-500 to-purple-600 p-2 rounded-lg group-hover:scale-110 transition-transform duration-300">
+          <FaChevronRight className="text-white text-xs group-hover:rotate-90 transition-all duration-300" />
+        </div>
+        <span className="relative text-slate-300 group-hover:text-white font-medium">
+          {item.name}
+          {/* Underline animation */}
+          <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:w-full transition-all duration-500"></span>
+        </span>
+      </Link>
+    </li>
+  ))}
+</ul>
         </div>
 
         {/* Services */}
         <div data-aos="fade-up" data-aos-delay="300">
           <h3 className="text-xl font-semibold text-white mb-6">Our Services</h3>
           <ul className="space-y-4 text-sm">
-            {[
-              "Recording Studio",
-              "Theatre Room",
-              "Workshop Space",
-              "Photoshoot Studio",
-              "Event Hosting",
-            ].map((service, i) => (
-              <li key={i} data-aos="fade-right" data-aos-delay={400 + i * 100}>
-                <a
-                  href="#"
-                  className="group flex items-center gap-3 transition-all duration-500 hover:translate-x-2"
-                >
-                  <div className="bg-gradient-to-r from-cyan-500 to-purple-600 p-2 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <FaChevronRight className="text-white text-xs group-hover:rotate-90 transition-all duration-300" />
-                  </div>
-                  <span className="relative text-slate-300 group-hover:text-white font-medium">
-                    {service}
-                    {/* Underline animation */}
-                    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:w-full transition-all duration-500"></span>
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
+  {[
+    { name: "Recording Studio", path: "/recording-studio" },
+    { name: "Theatre Room", path: "/theatre-room" },
+    { name: "Workshop Space", path: "/workshop-space" },
+    { name: "Photoshoot Studio", path: "/photoshoot-studio" },
+    { name: "Event Hosting", path: "/event-hosting" },
+  ].map((service, i) => (
+    <li key={i} data-aos="fade-right" data-aos-delay={400 + i * 100}>
+      <Link
+        to={service.path}
+        className="group flex items-center gap-3 transition-all duration-500 hover:translate-x-2"
+      >
+        <div className="bg-gradient-to-r from-cyan-500 to-purple-600 p-2 rounded-lg group-hover:scale-110 transition-transform duration-300">
+          <FaChevronRight className="text-white text-xs group-hover:rotate-90 transition-all duration-300" />
+        </div>
+        <span className="relative text-slate-300 group-hover:text-white font-medium">
+          {service.name}
+          {/* Underline animation */}
+          <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:w-full transition-all duration-500"></span>
+        </span>
+      </Link>
+    </li>
+  ))}
+</ul>
         </div>
 
         {/* Contact + Newsletter */}
@@ -207,7 +215,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div 
-        className="mt-16 pt-6 border-t border-slate-700/70 text-center text-sm opacity-70 relative z-10"
+        className="p-3 not-only:md:p-0 mt-16 pt-6 border-t border-slate-700/70 text-center text-sm opacity-70 relative z-10"
       >
         © 2024 Tab Creative Studio | Designed with{" "}
         <FaHeart className="inline text-pink-500 mx-1 animate-pulse" /> by Your Team
