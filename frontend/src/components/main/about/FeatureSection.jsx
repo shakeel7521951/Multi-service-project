@@ -47,13 +47,16 @@ export default function FeaturesSection() {
    ];
 
    return (
-      <section className="relative py-20 px-6 sm:px-10 bg-gradient-to-br from-white via-blue-50 to-blue-100 overflow-hidden">
+      <section
+         id="features"
+         className="scroll-mt-24 relative py-20 px-6 sm:px-10 bg-gradient-to-br from-white via-blue-50 to-blue-100 overflow-hidden"
+      >
          {/* Soft background decoration */}
          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.15),transparent_60%)]"></div>
 
          {/* Section Header */}
          <div className="text-center mb-14" data-aos="fade-up">
-            <h2 className="text-4xl sm:text-5xl font-bold text-blue-700 mb-4">
+            <h2 className=" text-4xl sm:text-5xl font-bold text-blue-700 mb-4">
                What You’ll Find Here
             </h2>
             <p className="text-gray-600 text-lg sm:text-xl max-w-2xl mx-auto">

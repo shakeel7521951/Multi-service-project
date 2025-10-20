@@ -25,7 +25,7 @@ const About = () => {
    }, []);
 
    return (
-      <div className="flex flex-col overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
+      <div className="flex flex-col overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white mt-18">
          <HeroSection />
          <IntroSection />
          <VisionSection />

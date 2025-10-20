@@ -2,7 +2,10 @@ import React from "react";
 
 export default function IntroSection() {
    return (
-      <section className="relative py-24 px-6 md:px-20 bg-gradient-to-b from-gray-900 via-indigo-900 to-gray-900 text-white overflow-hidden">
+      <section
+         id="introduction"
+         className="scroll-mt-24 relative py-24 px-6 md:px-20 bg-gradient-to-b from-gray-900 via-indigo-900 to-gray-900 text-white overflow-hidden"
+      >
          {/* 🌈 Animated background shapes */}
          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
          <div className="absolute bottom-0 right-0 w-72 h-72 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
@@ -23,9 +26,9 @@ export default function IntroSection() {
          {/* 🧠 Content Section */}
          <div
             data-aos="fade-up"
-            className="relative z-10 max-w-5xl mx-auto text-center"
+            className=" relative z-10 max-w-5xl mx-auto text-center"
          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#FFD700]">
+            <h2 className=" text-4xl md:text-5xl font-bold mb-6 text-[#FFD700]">
                Welcome to Your World of Creativity
             </h2>
             <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-16">

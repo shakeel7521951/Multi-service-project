@@ -15,7 +15,9 @@ export default function HeroSection() {
             data-aos="fade-right"
             className="relative z-10 md:w-1/2 text-center md:text-left space-y-6"
          >
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+            <h1
+               className="text-5xl md:text-6xl font-extrabold leading-tight"
+            >
                About <span className="text-[#FFD700]">Us</span>
             </h1>
             <p className="text-gray-200 text-lg md:text-xl max-w-lg mx-auto md:mx-0">

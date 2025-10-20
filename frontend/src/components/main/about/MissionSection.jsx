@@ -12,7 +12,10 @@ export default function MissionSection() {
    }, []);
 
    return (
-      <section className="relative overflow-hidden py-20 px-6 sm:px-12 bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500 text-white">
+      <section
+         id="our-mission"
+         className="scroll-mt-24 relative overflow-hidden py-20 px-6 sm:px-12 bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500 text-white"
+      >
          {/* Decorative gradient orbs */}
          <div className="absolute top-10 left-10 w-56 h-56 bg-white/10 rounded-full blur-3xl -z-10"></div>
          <div className="absolute bottom-10 right-10 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl -z-10"></div>
@@ -20,7 +23,7 @@ export default function MissionSection() {
          <div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-10">
             {/* Left Text Section */}
             <div data-aos="fade-right">
-               <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+               <h2 className="text-4xl sm:text-5xl font-bold mb-6 ">
                   Our <span className="text-yellow-300">Mission</span>
                </h2>
                <p className="text-lg sm:text-xl leading-relaxed text-white/90 mb-6">

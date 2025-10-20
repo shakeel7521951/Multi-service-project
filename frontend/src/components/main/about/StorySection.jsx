@@ -12,7 +12,10 @@ export default function StorySection() {
    }, []);
 
    return (
-      <section className="relative overflow-hidden py-20 px-6 sm:px-12 bg-gradient-to-br from-blue-50 via-white to-indigo-100">
+      <section
+         id="our-story"
+         className="scroll-mt-24 relative overflow-hidden py-20 px-6 sm:px-12 bg-gradient-to-br from-blue-50 via-white to-indigo-100"
+      >
          {/* Decorative gradient blur shapes */}
          <div className="absolute top-0 left-0 w-72 h-72 bg-blue-300/20 blur-3xl rounded-full -z-10"></div>
          <div className="absolute bottom-0 right-0 w-80 h-80 bg-indigo-400/20 blur-3xl rounded-full -z-10"></div>
@@ -32,7 +35,7 @@ export default function StorySection() {
 
             {/* Right Text Section */}
             <div data-aos="fade-left" className="text-center md:text-left">
-               <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-blue-700">
+               <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-blue-700  ">
                   Our <span className="text-indigo-600">Story</span>
                </h2>
                <p className="text-gray-700 text-lg sm:text-xl leading-relaxed mb-4">

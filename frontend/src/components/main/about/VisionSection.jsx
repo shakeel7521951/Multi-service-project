@@ -12,7 +12,10 @@ export default function VisionSection() {
    }, []);
 
    return (
-      <section className="relative overflow-hidden py-20 px-6 sm:px-12 bg-gradient-to-br from-indigo-50 via-white to-blue-100">
+      <section
+         id="our-vision"
+         className="scroll-mt-24 relative overflow-hidden py-20 px-6 sm:px-12 bg-gradient-to-br from-indigo-50 via-white to-blue-100"
+      >
          {/* Decorative blurred shapes */}
          <div className="absolute top-0 right-0 w-72 h-72 bg-blue-300/20 blur-3xl rounded-full -z-10"></div>
          <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-400/20 blur-3xl rounded-full -z-10"></div>
@@ -20,7 +23,7 @@ export default function VisionSection() {
          <div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-12">
             {/* Left Text Section */}
             <div data-aos="fade-right">
-               <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-indigo-700">
+               <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-indigo-700 ">
                   Our <span className="text-blue-600">Vision</span>
                </h2>
                <p className="text-gray-700 text-lg sm:text-xl leading-relaxed mb-4">
