@@ -8,8 +8,8 @@ function Hero() {
       AOS.init({
          duration: 1200,
          once: false,
-         easing: 'ease-out-cubic',
-         mirror: true
+         easing: "ease-out-cubic",
+         mirror: true,
       });
 
       document.body.style.overflowX = "hidden";
@@ -21,10 +21,7 @@ function Hero() {
 
    return (
       <>
-         <section
-            className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-12 md:py-20 px-4 md:px-20 relative overflow-hidden"
-           
-         >
+         <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-12 md:py-20 px-4 md:px-20 relative overflow-hidden">
             {/* Animatedes Backgroundes Elements */}
             <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
             <div className="absolute bottom-32 right-10 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-bounce"></div>
@@ -48,54 +45,67 @@ function Hero() {
 
                      <p className="text-gray-300 text-xl leading-relaxed mb-8">
                         Explore study materials, read books, listen to calming
-                        music, download PDFs, and play mind-refreshing games — 
-                        all in one <span className="text-cyan-300 font-semibold">calm space</span>.
+                        music, download PDFs, and play mind-refreshing games —
+                        all in one{" "}
+                        <span className="text-cyan-300 font-semibold">
+                           calm space
+                        </span>
+                        .
                      </p>
                   </div>
 
-                  <div 
+                  <div
                      className="flex flex-col sm:flex-row gap-4"
-                     data-aos="fade-up" 
+                     data-aos="fade-up"
                      data-aos-delay="400"
                   >
                      <button className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold px-8 py-4 rounded-2xl hover:from-cyan-600 hover:to-blue-700 cursor-pointer transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-cyan-500/25">
                         <span className="relative z-10">Get Started</span>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                      </button>
-                     
+
                      <button className="border-2 border-white/30 text-white px-8 py-4 rounded-2xl hover:bg-white/10 hover:border-white/50 cursor-pointer backdrop-blur-sm transition-all duration-500 transform hover:scale-105 group">
                         <span className="flex items-center justify-center gap-2">
                            Explore All
-                          <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-
+                           <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </span>
                      </button>
                   </div>
 
                   {/* Stats */}
-                  <div 
+                  <div
                      className="grid grid-cols-3 gap-6 pt-8"
                      data-aos="fade-up"
                      data-aos-delay="600"
                   >
                      <div className="text-center">
-                        <div className="text-2xl font-bold text-cyan-400">50K+</div>
-                        <div className="text-gray-400 text-sm">Active Users</div>
+                        <div className="text-2xl font-bold text-cyan-400">
+                           50K+
+                        </div>
+                        <div className="text-gray-400 text-sm">
+                           Active Users
+                        </div>
                      </div>
                      <div className="text-center">
-                        <div className="text-2xl font-bold text-purple-400">10K+</div>
+                        <div className="text-2xl font-bold text-purple-400">
+                           10K+
+                        </div>
                         <div className="text-gray-400 text-sm">Resources</div>
                      </div>
                      <div className="text-center">
-                        <div className="text-2xl font-bold text-pink-400">99%</div>
-                        <div className="text-gray-400 text-sm">Satisfaction</div>
+                        <div className="text-2xl font-bold text-pink-400">
+                           99%
+                        </div>
+                        <div className="text-gray-400 text-sm">
+                           Satisfaction
+                        </div>
                      </div>
                   </div>
                </div>
 
                {/* Right Illustration - Enhanced Grid */}
                <div className="relative">
-                  <div 
+                  <div
                      className="grid grid-cols-2 gap-6 relative z-10"
                      data-aos="zoom-in"
                      data-aos-delay="300"
@@ -103,25 +113,25 @@ function Hero() {
                      {/* Floating Cards with Staggered Animation */}
                      {[
                         {
-                           src: "https://images.unsplash.com/photo-1664188613064-7eea761238f0?auto=format&fit=crop&q=80&w=500",
-                           alt: "Reading",
-                           delay: 0
-                        },
-                        {
-                           src: "https://images.unsplash.com/photo-1647288020413-dc15f04ce1a2?auto=format&fit=crop&q=80&w=500",
+                           src: "/imgs/study1.jpg",
                            alt: "Study",
-                           delay: 100
+                           delay: 0,
                         },
                         {
-                           src: "https://images.unsplash.com/photo-1499415479124-43c32433a620?auto=format&fit=crop&q=80&w=500",
+                           src: "/imgs/reading1.jpg",
+                           alt: "Reading",
+                           delay: 100,
+                        },
+                        {
+                           src: "/imgs/music1.jpg",
                            alt: "Music",
-                           delay: 200
+                           delay: 200,
                         },
                         {
-                           src: "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=500",
+                           src: "/imgs/gaming1.jpg",
                            alt: "Gaming",
-                           delay: 300
-                        }
+                           delay: 300,
+                        },
                      ].map((image, index) => (
                         <div
                            key={index}
@@ -141,19 +151,18 @@ function Hero() {
                   </div>
 
                   {/* Floating Elements */}
-                  <div 
+                  <div
                      className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-400 rounded-full animate-bounce"
                      data-aos="fade-down"
                      data-aos-delay="800"
                   ></div>
-                  <div 
+                  <div
                      className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-400 rounded-full animate-pulse"
                      data-aos="fade-up"
                      data-aos-delay="900"
                   ></div>
                </div>
             </div>
-
          </section>
       </>
    );

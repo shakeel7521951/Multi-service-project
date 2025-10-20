@@ -130,7 +130,7 @@ function MusicSection() {
             <div data-aos="fade-left" className="relative order-1 lg:order-2">
                <div className="relative overflow-hidden rounded-2xl xs:rounded-3xl shadow-xl xs:shadow-2xl border border-slate-700/50 group">
                   <img
-                     src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=700"
+                     src="/imgs/music1.jpg"
                      alt="Listening to Music"
                      className="w-full h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-96 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                   />

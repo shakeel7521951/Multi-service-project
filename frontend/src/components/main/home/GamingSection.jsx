@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { FiArrowRight } from "react-icons/fi";
-import { 
-  HiOutlinePauseCircle, 
-  HiOutlineArrowUpTray, 
-  HiOutlineUser 
+import {
+   HiOutlinePauseCircle,
+   HiOutlineArrowUpTray,
+   HiOutlineUser,
 } from "react-icons/hi2";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,7 +14,7 @@ function GamingSection() {
          duration: 1200,
          once: false,
          mirror: true,
-         easing: "ease-out-cubic"
+         easing: "ease-out-cubic",
       });
    }, []);
 
@@ -23,28 +23,25 @@ function GamingSection() {
          title: "Mindful Gaming",
          desc: "Play games designed to relax your mind and improve focus — not just for fun, but for mental sharpness.",
          icon: (
-           <HiOutlinePauseCircle className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
-
+            <HiOutlinePauseCircle className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
          ),
-         gradient: "from-cyan-500 to-blue-600"
+         gradient: "from-cyan-500 to-blue-600",
       },
       {
          title: "Fun Competitions",
          desc: "Join friendly tournaments and challenge yourself with puzzles and strategic games.",
          icon: (
             <HiOutlineArrowUpTray className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
-
          ),
-         gradient: "from-purple-500 to-pink-600"
+         gradient: "from-purple-500 to-pink-600",
       },
       {
          title: "Team Play",
          desc: "Collaborate with friends, build strategies, and enjoy teamwork-based challenges.",
          icon: (
             <HiOutlineUser className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8" />
-
          ),
-         gradient: "from-cyan-400 to-purple-500"
+         gradient: "from-cyan-400 to-purple-500",
       },
    ];
 
@@ -56,7 +53,10 @@ function GamingSection() {
          <div className="absolute top-1/3 left-1/4 w-32 h-32 xs:w-56 xs:h-56 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-ping"></div>
 
          {/* Heading */}
-         <div className="text-center mb-8 xs:mb-12 sm:mb-16 relative z-10" data-aos="fade-up">
+         <div
+            className="text-center mb-8 xs:mb-12 sm:mb-16 relative z-10"
+            data-aos="fade-up"
+         >
             <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white inline-block relative pb-2 xs:pb-3">
                Level Up Your{" "}
                <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
@@ -73,10 +73,13 @@ function GamingSection() {
          {/* Grid Layout */}
          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 xs:gap-8 sm:gap-10 lg:gap-12 items-center relative z-10">
             {/* Left - Image */}
-            <div data-aos="fade-right" className="relative group order-1 lg:order-1">
+            <div
+               data-aos="fade-right"
+               className="relative group order-1 lg:order-1"
+            >
                <div className="relative overflow-hidden rounded-2xl xs:rounded-3xl shadow-xl xs:shadow-2xl border border-slate-700/50">
                   <img
-                     src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=700"
+                     src="/imgs/gaming3.jpg"
                      alt="Gaming"
                      className="w-full h-48 xs:h-56 sm:h-64 md:h-72 lg:h-80 xl:h-96 object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
@@ -97,14 +100,27 @@ function GamingSection() {
 
                {/* Game Controller Icon */}
                <div className="absolute -top-2 xs:-top-3 -right-2 xs:-right-3 w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl xs:shadow-2xl animate-pulse">
-                  <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  <svg
+                     className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6 text-white"
+                     fill="none"
+                     stroke="currentColor"
+                     viewBox="0 0 24 24"
+                  >
+                     <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                     />
                   </svg>
                </div>
             </div>
 
             {/* Right - Features */}
-            <div data-aos="fade-left" className="space-y-4 xs:space-y-5 sm:space-y-6 order-2 lg:order-2">
+            <div
+               data-aos="fade-left"
+               className="space-y-4 xs:space-y-5 sm:space-y-6 order-2 lg:order-2"
+            >
                {features.map((f, i) => (
                   <div
                      key={i}
@@ -114,14 +130,14 @@ function GamingSection() {
                   >
                      {/* Glow Effect */}
                      <div className="absolute -inset-0.5 xs:-inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl xs:rounded-2xl blur opacity-30 group-hover:opacity-70 transition duration-1000 group-hover:duration-200"></div>
-                     
+
                      {/* Feature Card */}
                      <div className="relative bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-5 md:p-6 hover:border-slate-500/50 transition-all duration-500 group-hover:scale-105">
                         <div className="flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left gap-3 xs:gap-4 sm:gap-5">
-                           <div className={`bg-gradient-to-r ${f.gradient} p-2 xs:p-3 sm:p-4 rounded-lg xs:rounded-xl sm:rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                              <div className="text-white">
-                                 {f.icon}
-                              </div>
+                           <div
+                              className={`bg-gradient-to-r ${f.gradient} p-2 xs:p-3 sm:p-4 rounded-lg xs:rounded-xl sm:rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                           >
+                              <div className="text-white">{f.icon}</div>
                            </div>
                            <div className="flex-1">
                               <h4 className="font-bold text-base xs:text-lg sm:text-xl md:text-2xl text-white mb-1 xs:mb-2 sm:mb-3">
@@ -135,12 +151,16 @@ function GamingSection() {
                      </div>
 
                      {/* Floating Dot */}
-                     <div className={`absolute -top-1 xs:-top-2 -right-1 xs:-right-2 w-2 h-2 xs:w-3 xs:h-3 bg-${f.gradient.split(' ')[0].replace('from-', '')} rounded-full animate-ping`}></div>
+                     <div
+                        className={`absolute -top-1 xs:-top-2 -right-1 xs:-right-2 w-2 h-2 xs:w-3 xs:h-3 bg-${f.gradient
+                           .split(" ")[0]
+                           .replace("from-", "")} rounded-full animate-ping`}
+                     ></div>
                   </div>
                ))}
 
                {/* CTA Button */}
-               <div 
+               <div
                   className="pt-4 xs:pt-5 sm:pt-6"
                   data-aos="fade-up"
                   data-aos-delay="600"
@@ -148,8 +168,7 @@ function GamingSection() {
                   <button className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm xs:text-base px-4 xs:px-6 sm:px-8 py-2 xs:py-3 sm:py-4 rounded-xl xs:rounded-2xl hover:from-cyan-600 hover:to-blue-700 cursor-pointer transition-all duration-500 transform hover:scale-105 shadow-xl xs:shadow-2xl hover:shadow-cyan-500/25 w-full">
                      <span className="relative z-10 flex items-center justify-center gap-2 xs:gap-3">
                         Start Playing
-                       <FiArrowRight className="w-4 h-4 xs:w-5 xs:h-5 group-hover:translate-x-1 transition-transform" />
-
+                        <FiArrowRight className="w-4 h-4 xs:w-5 xs:h-5 group-hover:translate-x-1 transition-transform" />
                      </span>
                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   </button>
@@ -158,20 +177,37 @@ function GamingSection() {
          </div>
 
          {/* Gaming Stats */}
-         <div 
+         <div
             className="grid grid-cols-2 sm:grid-cols-4 gap-3 xs:gap-4 sm:gap-5 md:gap-6 mt-8 xs:mt-12 sm:mt-16 max-w-4xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="400"
          >
             {[
-               { number: "50K+", label: "Active Players", color: "text-cyan-400" },
+               {
+                  number: "50K+",
+                  label: "Active Players",
+                  color: "text-cyan-400",
+               },
                { number: "200+", label: "Games", color: "text-purple-400" },
                { number: "95%", label: "Satisfaction", color: "text-pink-400" },
-               { number: "24/7", label: "Availability", color: "text-blue-400" }
+               {
+                  number: "24/7",
+                  label: "Availability",
+                  color: "text-blue-400",
+               },
             ].map((stat, index) => (
-               <div key={index} className="text-center bg-slate-800/50 backdrop-blur-sm rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-5 md:p-6 border border-slate-700/30 hover:border-slate-500/50 transition-all duration-300">
-                  <div className={`text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold ${stat.color} mb-1 xs:mb-2`}>{stat.number}</div>
-                  <div className="text-slate-300 text-xs xs:text-sm md:text-base">{stat.label}</div>
+               <div
+                  key={index}
+                  className="text-center bg-slate-800/50 backdrop-blur-sm rounded-xl xs:rounded-2xl p-3 xs:p-4 sm:p-5 md:p-6 border border-slate-700/30 hover:border-slate-500/50 transition-all duration-300"
+               >
+                  <div
+                     className={`text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold ${stat.color} mb-1 xs:mb-2`}
+                  >
+                     {stat.number}
+                  </div>
+                  <div className="text-slate-300 text-xs xs:text-sm md:text-base">
+                     {stat.label}
+                  </div>
                </div>
             ))}
          </div>
