@@ -26,7 +26,7 @@ function Hero() {
                clipPath: "polygon(0 0, 100% 0, 100% 90%, 0% 100%)",
             }}
          >
-            {/* Animated Background Elements */}
+            {/* Animatedes Backgroundes Elements */}
             <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
             <div className="absolute bottom-32 right-10 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-bounce"></div>
             <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-ping"></div>
@@ -50,7 +50,7 @@ function Hero() {
                      <p className="text-gray-300 text-xl leading-relaxed mb-8">
                         Explore study materials, read books, listen to calming
                         music, download PDFs, and play mind-refreshing games — 
-                        all in one <span className="text-cyan-300 font-semibold">calm space</span>.
+                         <span className="text-cyan-300 font-semibold">calm space</span>.
                      </p>
                   </div>
 
