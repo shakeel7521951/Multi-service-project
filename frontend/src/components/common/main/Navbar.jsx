@@ -111,24 +111,24 @@ const Navbar = () => {
                         <div className="p-3">
                            {[
                               {
-                                 name: "Web & App Development",
-                                 path: "/web-app-development",
+                                 name: "Learn & Grow",
+                                 path: "/study-services",
                               },
                               {
-                                 name: "Recording Studio",
-                                 path: "/recording-studio",
+                                 name: "Read & Relax",
+                                 path: "/reading-services",
                               },
                               {
-                                 name: "Event Production",
-                                 path: "/event-production",
+                                 name: "Tune & Create",
+                                 path: "/music-services",
                               },
                               {
-                                 name: "Creative Branding",
-                                 path: "/creative-branding",
+                                 name: "Play & Chill",
+                                 path: "/gaming-services",
                               },
                               {
-                                 name: "Photography & Videography",
-                                 path: "/photography-videography",
+                                 name: "Inspire & Create",
+                                 path: "/creative-services",
                               },
                            ].map((item) => (
                               <Link

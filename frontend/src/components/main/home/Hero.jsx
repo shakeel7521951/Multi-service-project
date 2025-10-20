@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 function Hero() {
    useEffect(() => {
@@ -65,10 +66,10 @@ function Hero() {
                      </button>
 
                      <button className="border-2 border-white/30 text-white px-8 py-4 rounded-2xl hover:bg-white/10 hover:border-white/50 cursor-pointer backdrop-blur-sm transition-all duration-500 transform hover:scale-105 group">
-                        <span className="flex items-center justify-center gap-2">
+                        <Link to={"/services"} className="flex items-center justify-center gap-2">
                            Explore All
                            <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </span>
+                        </Link>
                      </button>
                   </div>
 
