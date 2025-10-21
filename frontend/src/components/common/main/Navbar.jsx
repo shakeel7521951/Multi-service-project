@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 
 const Navbar = () => {
    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
    const [activeDropdown, setActiveDropdown] = useState(null);
+   const [hoveredService, setHoveredService] = useState(null);
    const location = useLocation();
+   const navigate = useNavigate();
 
    const toggleDropdown = (menu) => {
       setActiveDropdown(activeDropdown === menu ? null : menu);
    };
 
-   // ✅ Smooth scroll with offset for fixed navbar
    const scrollToSection = (id) => {
       const section = document.getElementById(id);
       const navbarHeight = document.querySelector("nav").offsetHeight;
-
       if (section) {
          const topPosition =
             section.getBoundingClientRect().top +
@@ -29,16 +29,18 @@ const Navbar = () => {
       }
    };
 
-   // ✅ Helper for dropdown item click
    const handleScrollClick = (id) => {
-      // If we’re already on About page
       if (location.pathname === "/about-us") {
          scrollToSection(id);
       } else {
-         // Navigate first, then scroll after small delay
          window.location.href = `/about-us#${id}`;
          setTimeout(() => scrollToSection(id), 500);
       }
+   };
+
+   const handleServiceHover = (serviceName) => {
+      setHoveredService(serviceName);
+      localStorage.setItem("activeService", serviceName);
    };
 
    return (
@@ -48,7 +50,6 @@ const Navbar = () => {
                {/* Logo */}
                <Link to="/" className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg relative overflow-hidden">
-                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                      <span className="text-white font-bold text-lg relative z-10">
                         T
                      </span>
@@ -67,7 +68,7 @@ const Navbar = () => {
                      Home
                   </Link>
 
-                  {/* ✅ About Dropdown (Updated) */}
+                  {/* About Dropdown */}
                   <div className="relative group">
                      <button
                         onClick={() => toggleDropdown("about")}
@@ -76,7 +77,6 @@ const Navbar = () => {
                         About{" "}
                         <FaChevronDown className="ml-1 text-xs transition-transform group-hover:rotate-180" />
                      </button>
-
                      <div className="absolute left-0 mt-2 w-56 bg-slate-800/80 backdrop-blur-sm rounded-lg shadow-xl border border-slate-700/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                         <div className="p-3">
                            {[
@@ -110,31 +110,35 @@ const Navbar = () => {
                      <div className="absolute left-0 mt-2 w-56 bg-slate-800/80 backdrop-blur-sm rounded-lg shadow-xl border border-slate-700/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                         <div className="p-3">
                            {[
-                              {
-                                 name: "Learn & Grow",
-                                 path: "/study-services",
-                              },
+                              { name: "Learn & Grow", path: "#study-services" },
                               {
                                  name: "Read & Relax",
-                                 path: "/reading-services",
+                                 path: "#reading-services",
                               },
                               {
                                  name: "Tune & Create",
-                                 path: "/music-services",
+                                 path: "#music-services",
                               },
                               {
                                  name: "Play & Chill",
-                                 path: "/gaming-services",
+                                 path: "#gaming-services",
                               },
                               {
                                  name: "Inspire & Create",
-                                 path: "/creative-services",
+                                 path: "#creative-services",
                               },
                            ].map((item) => (
                               <Link
                                  key={item.name}
                                  to={item.path}
-                                 className="block px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-md text-sm transition duration-200"
+                                 onMouseEnter={() =>
+                                    handleServiceHover(item.name)
+                                 }
+                                 className={`block px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-md text-sm transition duration-200 ${
+                                    hoveredService === item.name
+                                       ? "bg-slate-700/50 text-white"
+                                       : ""
+                                 }`}
                               >
                                  {item.name}
                               </Link>
@@ -143,7 +147,6 @@ const Navbar = () => {
                      </div>
                   </div>
 
-                  {/* Contact */}
                   <Link
                      to="/contact"
                      className="px-4 py-2 text-white hover:text-slate-300 font-semibold transition duration-200"
@@ -185,12 +188,13 @@ const Navbar = () => {
             </div>
          </div>
 
-         {/* ✅ Mobile Menu (About Updated) */}
+         {/* ✅ Mobile Menu */}
          {mobileMenuOpen && (
             <div className="md:hidden bg-slate-800/80 backdrop-blur-sm border-t border-slate-700/50 shadow-inner">
                <div className="px-4 py-3 space-y-2">
                   <Link
                      to="/"
+                     onClick={() => setMobileMenuOpen(false)}
                      className="block px-4 py-3 text-white font-semibold rounded-lg hover:bg-slate-700/50 transition duration-200"
                   >
                      Home
@@ -233,13 +237,83 @@ const Navbar = () => {
                      )}
                   </div>
 
+                  {/* Services */}
+                  <div className="border-t border-slate-700/50 pt-2">
+                     <button
+                        onClick={() => toggleDropdown("services")}
+                        className="w-full flex justify-between items-center px-4 py-3 text-white font-semibold rounded-lg hover:bg-slate-700/50 transition duration-200"
+                     >
+                        Services
+                        <FaChevronDown
+                           className={`transition-transform duration-300 ${
+                              activeDropdown === "services" ? "rotate-180" : ""
+                           }`}
+                        />
+                     </button>
+                     {activeDropdown === "services" && (
+                        <div className="px-4 pb-2 space-y-1">
+                           {[
+                              { name: "Learn & Grow", path: "#study-services" },
+                              {
+                                 name: "Read & Relax",
+                                 path: "#reading-services",
+                              },
+                              {
+                                 name: "Tune & Create",
+                                 path: "#music-services",
+                              },
+                              {
+                                 name: "Play & Chill",
+                                 path: "#gaming-services",
+                              },
+                              {
+                                 name: "Inspire & Create",
+                                 path: "#creative-services",
+                              },
+                           ].map((item) => (
+                              <button
+                                 key={item.name}
+                                 onClick={() => {
+                                    handleServiceHover(item.name);
+                                    navigate(item.path);
+                                    setMobileMenuOpen(false);
+                                 }}
+                                 className="block w-full text-left px-4 py-2 text-slate-300 hover:text-white hover:bg-slate-700/50 rounded-md text-sm transition duration-200"
+                              >
+                                 {item.name}
+                              </button>
+                           ))}
+                        </div>
+                     )}
+                  </div>
+
                   {/* Contact */}
                   <Link
                      to="/contact"
+                     onClick={() => setMobileMenuOpen(false)}
                      className="block px-4 py-3 text-white font-semibold rounded-lg hover:bg-slate-700/50 transition duration-200 border-t border-slate-700/50"
                   >
                      Contact
                   </Link>
+
+                  {/* ✅ Mobile Auth Buttons */}
+                  <div className="flex flex-col space-y-2 border-t border-slate-700/50 pt-3">
+                     <Link
+                        to="/loginform"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block text-center px-4 py-2 text-slate-200 font-semibold border rounded-lg hover:text-white hover:bg-slate-700/50 transition-all duration-200"
+                     >
+                        Login
+                     </Link>
+                     <Link
+                        to="/signupform"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block text-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200 relative overflow-hidden group"
+                     >
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                        <span className="relative z-10">Sign Up</span>
+                     </Link>
+                  </div>
                </div>
             </div>
          )}

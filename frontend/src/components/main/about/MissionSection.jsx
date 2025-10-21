@@ -34,7 +34,7 @@ export default function MissionSection() {
             >
                <div className="relative w-72 sm:w-[500px]">
                   <img
-                     src="https://images.unsplash.com/photo-1521316730702-829a8e30dfd0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8T3VyJTIwTWlzc2lvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500"
+                     src="/imgs/mission.jpg"
                      alt="Mission"
                      className="rounded-3xl w-full h-full object-cover shadow-2xl transform hover:scale-105 transition-all duration-500 border-2 border-slate-700/50"
                   />
