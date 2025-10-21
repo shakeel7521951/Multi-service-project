@@ -17,6 +17,8 @@ import MainNavbar from "./components/common/main/Navbar";
 import MainFooter from "./components/common/main/Footer";
 import MainHome from "./pages/main/Home";
 import Contact from "./pages/main/Contact";
+import TermsConditions from "./pages/main/TermsConditions";
+import PrivacyPolicy from "./pages/main/PrivacyPolicy";
 import LoginForm from "./pages/main/LoginForm";
 import SignupForm from "./pages/main/SignupForm";
 
@@ -46,6 +48,8 @@ const router = createBrowserRouter([
       { path: "about-us", element: <About /> },
       { path: "/services", element: <Services /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/termsconditions", element: <TermsConditions /> },
+      { path: "/privacypolicy", element: <PrivacyPolicy /> },
       { path: "/loginform", element: <LoginForm /> },
       { path: "/signupform", element: <SignupForm /> },
       { path: "/signIn", element: <SignIn /> },]

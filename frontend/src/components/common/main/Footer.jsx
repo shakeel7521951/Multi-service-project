@@ -176,7 +176,7 @@ const Footer = () => {
                   href="mailto:bhattirajput333@gmail.com"
                   className="text-slate-300 group-hover:text-white transition-all duration-300 pt-1 relative"
                 >
-                  bhattirajput333@gmail.com
+                  support@calmspace.com
                   {/* Underline animation */}
                   <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 group-hover:w-full transition-all duration-500"></span>
                 </a>
