@@ -75,7 +75,7 @@ export default function HeroContact() {
           </a>
 
           <a
-            href="mailto:hello@examplemail.com"
+            href="support@calmspace.com"
             className="border-2 border-slate-400/30 text-white px-6 xs:px-8 py-3 xs:py-4 rounded-xl xs:rounded-2xl hover:bg-white/10 hover:border-slate-200/50 font-semibold transition-all duration-500 transform hover:scale-105 group w-full sm:w-auto text-center"
           >
             <span className="flex items-center justify-center gap-2">

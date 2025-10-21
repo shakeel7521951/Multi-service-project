@@ -1,4 +1,3 @@
-// src/components/previews/GamingPreview.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -12,38 +11,48 @@ export default function GamingPreview() {
    return (
       <section
          id="preview-gaming"
-         className="py-16 px-6 md:px-20 bg-gradient-to-b from-violet-50 to-white"
+         className="py-16 px-6 md:px-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden"
       >
-         <div className="max-w-6xl mx-auto">
+         {/* Background decorative elements */}
+         <div className="absolute top-10 right-10 w-60 h-60 bg-cyan-400/20 blur-3xl rounded-full -z-10 animate-pulse"></div>
+         <div className="absolute bottom-10 left-10 w-72 h-72 bg-purple-400/20 blur-3xl rounded-full -z-10"></div>
+         <div className="absolute top-1/3 left-1/4 w-48 h-48 bg-pink-400/15 blur-3xl rounded-full -z-10"></div>
+
+         {/* Floating Elements */}
+         <div className="absolute top-20 left-20 w-4 h-4 bg-cyan-400 rounded-full opacity-60 animate-bounce"></div>
+         <div className="absolute bottom-32 right-20 w-6 h-6 bg-purple-400 rounded-full opacity-40 animate-pulse"></div>
+         <div className="absolute top-1/2 right-40 w-3 h-3 bg-pink-400 rounded-full opacity-50 animate-ping"></div>
+
+         <div className="max-w-6xl mx-auto relative z-10">
             <div
-               className="flex items-center justify-between mb-8"
+               className="flex flex-col md:flex-row items-center justify-between mb-12"
                data-aos="fade-up"
             >
-               <h3 className="text-3xl font-bold text-violet-700">
+               <h3 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-4 md:mb-0">
                   Gaming Services
                </h3>
-               <p className="text-gray-600">
+               <p className="text-slate-300 text-center md:text-right max-w-md">
                   Play short games that refresh the mind — open full gaming zone
                   for more.
                </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                {samples.map((s, i) => (
                   <div
                      key={i}
                      data-aos="fade-up"
                      data-aos-delay={i * 80}
-                     className="p-5 bg-white rounded-2xl shadow hover:shadow-2xl transition transform hover:-translate-y-1"
+                     className="p-6 bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 hover:border-slate-500/50"
                   >
-                     <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                     <h4 className="text-lg font-semibold text-white mb-2">
                         {s.title}
                      </h4>
-                     <p className="text-sm text-gray-500 mb-4">{s.meta}</p>
+                     <p className="text-sm text-slate-400 mb-4">{s.meta}</p>
                      <div className="text-right">
                         <Link
                            to="/gaming"
-                           className="text-sm font-medium text-violet-600 hover:underline"
+                           className="text-sm font-medium bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent hover:from-cyan-300 hover:to-purple-400 transition-all duration-300"
                         >
                            Play →
                         </Link>
@@ -52,12 +61,14 @@ export default function GamingPreview() {
                ))}
             </div>
 
-            <div className="mt-8 text-center" data-aos="fade-up">
+            <div className="mt-12 text-center" data-aos="fade-up">
                <Link
                   to="/gaming"
-                  className="inline-block bg-violet-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:shadow-lg transition"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden group"
                >
-                  Open Gaming Zone
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                  <span className="relative z-10">Open Gaming Zone</span>
                </Link>
             </div>
          </div>

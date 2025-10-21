@@ -15,7 +15,7 @@ export default function SignupForm() {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-2 sm:px-8 md:px-12 lg:px-16 py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen flex items-center justify-center px-2 sm:px-8 md:px-12 lg:px-16  py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Background Overlay */}
       <div 
         className="absolute inset-0 opacity-20"
@@ -50,7 +50,7 @@ export default function SignupForm() {
         </div>
 
         {/* Form Body */}
-        <div className="p-3 md:p-8 pt-10 md:pt-0">
+        <div className="p-3 md:p-8 pt-10 md:pt-8">
           {/* Full Name Field */}
           <div className="mb-6" data-aos="fade-right" data-aos-delay="300">
             <label className="block text-white font-semibold mb-3 text-sm uppercase tracking-wide">
@@ -136,11 +136,11 @@ export default function SignupForm() {
               />
               <span>
                 I agree to the{" "}
-                <Link to="/terms" className="text-cyan-400 hover:text-cyan-300 underline">
+                <Link to="/termsconditions" className="text-cyan-400 hover:text-cyan-300 underline">
                   Terms & Conditions
                 </Link>{" "}
                 and{" "}
-                <Link to="/privacy" className="text-cyan-400 hover:text-cyan-300 underline">
+                <Link to="/privacypolicy" className="text-cyan-400 hover:text-cyan-300 underline">
                   Privacy Policy
                 </Link>
               </span>
