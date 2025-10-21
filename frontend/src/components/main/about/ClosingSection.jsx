@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { FaHome } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -12,44 +13,43 @@ export default function ClosingSection() {
    }, []);
 
    return (
-      <section className="relative overflow-hidden py-20 px-6 sm:px-10 bg-gradient-to-br from-blue-600 via-indigo-600 to-cyan-500 text-white text-center">
-         {/* Background orbs */}
-         <div className="absolute top-10 left-10 w-60 h-60 bg-white/10 rounded-full blur-3xl -z-10"></div>
-         <div className="absolute bottom-10 right-10 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl -z-10"></div>
+      <section className="relative overflow-hidden py-20 px-6 sm:px-10 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white text-center">
+         {/* Background orbs - Changed positions */}
+         <div className="absolute top-20 right-20 w-60 h-60 bg-cyan-400/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+         <div className="absolute bottom-20 left-20 w-72 h-72 bg-purple-400/20 rounded-full blur-3xl -z-10"></div>
+         <div className="absolute top-1/3 left-1/3 w-48 h-48 bg-pink-400/15 rounded-full blur-3xl -z-10"></div>
+
+         {/* Floating Elements */}
+         <div className="absolute md:top-32 md:left-32 w-4 h-4 bg-cyan-400 rounded-full opacity-60 animate-bounce"></div>
+         <div className="absolute bottom-42 right-5 md:bottom-40 md:right-40 w-6 h-6 bg-purple-400 rounded-full opacity-40 animate-bounce md:animate-pulse"></div>
+         <div className="hidden md:flex absolute top-1/2 right-32 w-3 h-3 bg-pink-400 rounded-full opacity-50 animate-ping"></div>
 
          {/* Content */}
          <div className="relative z-20 max-w-3xl mx-auto" data-aos="zoom-in">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-               Start <span className="text-yellow-300">Exploring</span> Today!
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+               Start <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Exploring</span> Today!
             </h2>
 
-            <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
-               Whether you’re here to study, read, listen, or play — we’re happy
+            <p className="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed">
+               Whether you're here to study, read, listen, or play — we're happy
                to have you as part of our growing community of curious and
                creative minds.
             </p>
 
             <a
                href="/"
-               className="inline-block bg-white text-blue-700 px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-2xl hover:bg-yellow-300 hover:text-blue-900 transition-all transform hover:-translate-y-1 duration-300"
+               className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1 duration-300 relative overflow-hidden group"
                data-aos="flip-up"
             >
-               Go to Home
+               {/* Shine effect */}
+               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+               <FaHome className="text-lg relative z-10" />
+               <span className="relative z-10">Go to Home</span>
             </a>
          </div>
 
-         {/* Decorative wave divider at bottom */}
-         <svg
-            className="absolute bottom-0 left-0 w-full -z-10"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 320"
-         >
-            <path
-               fill="#ffffff"
-               fillOpacity="1"
-               d="M0,224L48,208C96,192,192,160,288,138.7C384,117,480,107,576,122.7C672,139,768,181,864,192C960,203,1056,181,1152,165.3C1248,149,1344,139,1392,133.3L1440,128V320H1392C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320H0Z"
-            ></path>
-         </svg>
+         {/* Gradient divider at bottom */}
+         <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-cyan-500 to-purple-500 -z-10"></div>
       </section>
    );
 }
