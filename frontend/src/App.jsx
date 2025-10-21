@@ -22,20 +22,13 @@ import PrivacyPolicy from "./pages/main/PrivacyPolicy";
 import LoginForm from "./pages/main/LoginForm";
 import SignupForm from "./pages/main/SignupForm";
 import { ReadingRoutes } from "./services/reading/routes/ReadingRoute";
+import { MusicRoutes } from "./services/music/routes/MusicRoute";
 
 const MainLayout = () => (
   <>
     <MainNavbar />
     <Outlet />
     <MainFooter />
-  </>
-);
-
-const ReadingLayout = () => (
-  <>
-    <Navbar />
-    <Outlet />
-    <Footer />
   </>
 );
 
@@ -78,6 +71,7 @@ const router = createBrowserRouter([
     ],
   },
   ReadingRoutes,
+  MusicRoutes
 ]);
 
 export default function App() {
