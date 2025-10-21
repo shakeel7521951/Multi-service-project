@@ -19,12 +19,21 @@ import MainHome from "./pages/main/Home";
 import Contact from "./pages/main/Contact";
 import LoginForm from "./pages/main/LoginForm";
 import SignupForm from "./pages/main/SignupForm";
+import { ReadingRoutes } from "./services/reading/routes/ReadingRoute";
 
 const MainLayout = () => (
   <>
     <MainNavbar />
     <Outlet />
     <MainFooter />
+  </>
+);
+
+const ReadingLayout = () => (
+  <>
+    <Navbar />
+    <Outlet />
+    <Footer />
   </>
 );
 
@@ -64,6 +73,7 @@ const router = createBrowserRouter([
       SQLRoutes,
     ],
   },
+  ReadingRoutes,
 ]);
 
 export default function App() {
