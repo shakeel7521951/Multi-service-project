@@ -47,7 +47,7 @@ const ReactLayout = () => (
 );
 
 export const reactroutes = {
-  path: "react",
+  path: "",
   element: <ReactLayout />,
   children: [
     { index: true, element: <Default /> },

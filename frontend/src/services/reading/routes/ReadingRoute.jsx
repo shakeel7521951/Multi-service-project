@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
-import ReadingNavbar from "../navbar/ReadingNavbar";
+import ReadingNavbar from "../common/navbar/ReadingNavbar";
 import ReadingHome from "../pages/ReadingHome";
+import ReadingFooter from "../common/footer/ReadingFooter";
 
 
 const ReadingLayout = () => (
     <>
         <ReadingNavbar />
         <Outlet />
+        <ReadingFooter/>
     </>
 );
 
