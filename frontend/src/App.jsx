@@ -21,12 +21,21 @@ import TermsConditions from "./pages/main/TermsConditions";
 import PrivacyPolicy from "./pages/main/PrivacyPolicy";
 import LoginForm from "./pages/main/LoginForm";
 import SignupForm from "./pages/main/SignupForm";
+import { ReadingRoutes } from "./services/reading/routes/ReadingRoute";
 
 const MainLayout = () => (
   <>
     <MainNavbar />
     <Outlet />
     <MainFooter />
+  </>
+);
+
+const ReadingLayout = () => (
+  <>
+    <Navbar />
+    <Outlet />
+    <Footer />
   </>
 );
 
@@ -45,7 +54,7 @@ const router = createBrowserRouter([
     element: <MainLayout />,
     children: [
       { index: true, element: <MainHome /> },
-      { path: "about-us", element: <About /> },
+      { path: "/about-us", element: <About /> },
       { path: "/services", element: <Services /> },
       { path: "/contact", element: <Contact /> },
       { path: "/termsconditions", element: <TermsConditions /> },
@@ -68,6 +77,7 @@ const router = createBrowserRouter([
       SQLRoutes,
     ],
   },
+  ReadingRoutes,
 ]);
 
 export default function App() {
