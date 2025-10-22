@@ -53,7 +53,7 @@ const StudyResources = () => {
             <span className="mt-3 w-14 h-0.5 xs:h-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"></span>
 
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Study Resources
+             Our Services
             </h2>
 
             {/* Right line */}
