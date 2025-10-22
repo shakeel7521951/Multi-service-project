@@ -83,6 +83,6 @@ const CtaSection = () => {
       </div>
     </div>
   );
-};
+};     
 
 export default CtaSection;
