@@ -1,10 +1,11 @@
+import HeroSection from "../components/Home/HeroSection"
 
-const ReadingHome = () => {
+const  MusicHome = () => {
   return (
     <div>
-      <h1>Reading Home</h1>
+      <HeroSection/>
     </div>
   )
 }
 
-export default ReadingHome
+export default MusicHome

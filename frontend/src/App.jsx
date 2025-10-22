@@ -23,57 +23,82 @@ import LoginForm from "./pages/main/LoginForm";
 import SignupForm from "./pages/main/SignupForm";
 import { ReadingRoutes } from "./services/reading/routes/ReadingRoute";
 import { MusicRoutes } from "./services/music/routes/MusicRoute";
+import StudyNavBar from "./services/study/common/NavBar";
+import StudyFooter from "./services/study/common/Footer";
+import StudyHome from "./services/study/pages/Home";
+import StudyAbout from "./services/study/pages/About";
+import CoursesPage from "./services/study/pages/Courses";
+import CourseDetails from "./services/study/pages/CourseDetails";
+import StudyContact from "./services/study/pages/Contact";
 
 const MainLayout = () => (
-  <>
-    <MainNavbar />
-    <Outlet />
-    <MainFooter />
-  </>
+   <>
+      <MainNavbar />
+      <Outlet />
+      <MainFooter />
+   </>
 );
 
 const ProgrammingLayout = () => (
-  <>
-    <Navbar />
-    <Outlet />
-    <Footer />
-  </>
+   <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+   </>
+);
+const StudyLayout = () => (
+   <>
+      <StudyNavBar />
+      <Outlet />
+      <StudyFooter />
+   </>
 );
 
-
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainLayout />,
-    children: [
-      { index: true, element: <MainHome /> },
-      { path: "/about-us", element: <About /> },
-      { path: "/services", element: <Services /> },
-      { path: "/contact", element: <Contact /> },
-      { path: "/termsconditions", element: <TermsConditions /> },
-      { path: "/privacypolicy", element: <PrivacyPolicy /> },
-      { path: "/loginform", element: <LoginForm /> },
-      { path: "/signupform", element: <SignupForm /> },
-      { path: "/signIn", element: <SignIn /> },]
-  },
-  {
-    path: "/programming",
-    element: <ProgrammingLayout />,
-    children: [
-      { index: true, element: <Index /> },
-      htmlRoutes,
-      cssRoutes,
-      JsRoutes,
-      reactroutes,
-      BootstrapRoutes,
-      TailwindRoutes,
-      SQLRoutes,
-    ],
-  },
-  ReadingRoutes,
-  MusicRoutes
+   {
+      path: "/",
+      element: <MainLayout />,
+      children: [
+         { index: true, element: <MainHome /> },
+         { path: "/about-us", element: <About /> },
+         { path: "/services", element: <Services /> },
+         { path: "/contact", element: <Contact /> },
+         { path: "/termsconditions", element: <TermsConditions /> },
+         { path: "/privacypolicy", element: <PrivacyPolicy /> },
+         { path: "/loginform", element: <LoginForm /> },
+         { path: "/signupform", element: <SignupForm /> },
+         { path: "/signIn", element: <SignIn /> },
+      ],
+   },
+   {
+      path: "/programming",
+      element: <ProgrammingLayout />,
+      children: [
+         { index: true, element: <Index /> },
+         htmlRoutes,
+         cssRoutes,
+         JsRoutes,
+         reactroutes,
+         BootstrapRoutes,
+         TailwindRoutes,
+         SQLRoutes,
+      ],
+   },
+   {
+      path: "/study",
+      element: <StudyLayout />,
+      children: [
+         { index: true, element: <StudyHome /> }, // /study
+         { path: "study-about", element: <StudyAbout /> }, // /study/study-about
+         { path: "study-courses", element: <CoursesPage /> }, // /study/study-courses
+         { path: "course-details", element: <CourseDetails /> }, // /study/course-details
+         { path: "study-contact", element: <StudyContact /> }, // /study/study-contact
+      ],
+   },
+   ReadingRoutes,
+   MusicRoutes,
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+   return <RouterProvider router={router} />;
 }
