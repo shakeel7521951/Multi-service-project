@@ -3,7 +3,7 @@ import { FaTwitter, FaInstagram, FaFacebook, FaMusic, FaEnvelope, FaPhone, FaMap
 
 export default function MusicFooter() {
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-slate-300 border-t border-slate-700/50 mt-20">
+    <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-slate-300 border-t border-slate-700/50 ">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
