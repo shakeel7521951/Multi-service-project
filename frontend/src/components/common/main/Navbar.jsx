@@ -110,22 +110,18 @@ const Navbar = () => {
                      <div className="absolute left-0 mt-2 w-56 bg-slate-800/80 backdrop-blur-sm rounded-lg shadow-xl border border-slate-700/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                         <div className="p-3">
                            {[
-                              { name: "Learn & Grow", path: "#study-services" },
+                              { name: "Study", path: "/study/" },
                               {
-                                 name: "Read & Relax",
-                                 path: "#reading-services",
+                                 name: "Reading",
+                                 path: "/reading/",
                               },
                               {
-                                 name: "Tune & Create",
-                                 path: "#music-services",
+                                 name: "Music",
+                                 path: "/music/",
                               },
                               {
-                                 name: "Play & Chill",
-                                 path: "#gaming-services",
-                              },
-                              {
-                                 name: "Inspire & Create",
-                                 path: "#creative-services",
+                                 name: "Gaming",
+                                 path: "/gaming/",
                               },
                            ].map((item) => (
                               <Link
