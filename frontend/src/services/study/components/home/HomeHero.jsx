@@ -34,14 +34,14 @@ export default function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
                <Link
-                  to="/courses"
+                  to="/study/study-courses"
                   className="bg-yellow-300 text-indigo-900 font-semibold px-6 py-3 rounded-full hover:scale-105 transition-transform duration-300"
                >
                   Start Learning
                </Link>
 
                <Link
-                  to="/about"
+                  to="/study/study-about"
                   className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-700 transition-all duration-300"
                >
                   Learn More

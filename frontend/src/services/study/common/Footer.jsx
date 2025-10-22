@@ -24,7 +24,7 @@ export default function StudyFooter() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                {/* Company Info */}
                <div className="lg:col-span-1">
-                  <Link to="/" className="text-2xl font-bold mb-4 inline-block">
+                  <Link to="/study/" className="text-2xl font-bold mb-4 inline-block">
                      Study<span className="text-yellow-300">Hub</span>
                   </Link>
                   <p className="text-gray-400 mb-6 leading-relaxed">
@@ -58,11 +58,10 @@ export default function StudyFooter() {
                   </h3>
                   <ul className="space-y-3">
                      {[
-                        { name: "Home", path: "/" },
-                        { name: "About Us", path: "/about" },
-                        { name: "All Courses", path: "/courses" },
-                        { name: "Pricing", path: "/pricing" },
-                        { name: "Contact", path: "/contact" },
+                        { name: "Home", path: "/study/" },
+                        { name: "About Us", path: "/study/study-about" },
+                        { name: "All Courses", path: "/study/study-courses" },
+                        { name: "Contact", path: "/study/study-contact" },
                      ].map((link, index) => (
                         <li key={index}>
                            <Link

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {
@@ -12,6 +13,7 @@ import {
 
 export default function FAQSection() {
    const [activeIndex, setActiveIndex] = useState(null);
+   const navigate = useNavigate();
 
    const toggleFAQ = (index) => {
       setActiveIndex(activeIndex === index ? null : index);
@@ -222,7 +224,12 @@ export default function FAQSection() {
                         </div>
                      </div>
 
-                     <button className="w-full mt-6 bg-white text-indigo-600 font-semibold py-3 rounded-xl hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105">
+                     <button
+                        onClick={() => {
+                           navigate("/study/study-contact");
+                        }}
+                        className="w-full mt-6 bg-white cursor-pointer text-indigo-600 font-semibold py-3 rounded-xl hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105"
+                     >
                         Contact Support
                      </button>
                   </div>
