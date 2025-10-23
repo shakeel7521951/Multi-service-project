@@ -45,22 +45,6 @@ const CtaSection = () => {
             </p>
           </div>
 
-          {/* Stats with individual animations */}
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
-            <div className="text-center" data-aos="flip-up" data-aos-delay="400">
-              <div className="text-2xl font-bold text-cyan-400 mb-1">10K+</div>
-              <div className="text-slate-400 text-sm">Students</div>
-            </div>
-            <div className="text-center" data-aos="flip-up" data-aos-delay="500">
-              <div className="text-2xl font-bold text-purple-400 mb-1">50+</div>
-              <div className="text-slate-400 text-sm">Courses</div>
-            </div>
-            <div className="text-center" data-aos="flip-up" data-aos-delay="600">
-              <div className="text-2xl font-bold text-pink-400 mb-1">100+</div>
-              <div className="text-slate-400 text-sm">Mentors</div>
-            </div>
-          </div>
-
           {/* CTA Button with enhanced effects */}
           <div className="text-center" data-aos="fade-up" data-aos-delay="700">
             <button className="group px-10 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-lg hover:scale-105 transition-all duration-300 relative overflow-hidden shadow-2xl">

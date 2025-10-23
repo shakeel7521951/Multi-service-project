@@ -1,142 +1,106 @@
-import React, { useEffect, useState } from "react";
-import { FaSearch, FaClock, FaPlayCircle } from "react-icons/fa";
+import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FaStar, FaArrowRight, FaPlay } from "react-icons/fa";
 
 export default function HeroSection() {
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-out-cubic",
+    });
   }, []);
 
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const courses = [
-    {
-      id: 1,
-      title: "Vocal Training - Beginner",
-      level: "Beginner",
-      duration: "6 Weeks",
-      image:
-        "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=60",
-    },
-    {
-      id: 2,
-      title: "Guitar Chords & Rhythm",
-      level: "Intermediate",
-      duration: "5 Weeks",
-      image:
-        "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=60",
-    },
-    {
-      id: 3,
-      title: "Music Production Basics",
-      level: "Beginner",
-      duration: "8 Weeks",
-      image:
-        "https://images.unsplash.com/photo-1497032205916-ac775f0649ae?auto=format&fit=crop&w=800&q=60",
-    },
-    {
-      id: 4,
-      title: "Advanced Piano Skills",
-      level: "Advanced",
-      duration: "10 Weeks",
-      image:
-        "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=60",
-    },
-    {
-      id: 5,
-      title: "Digital Music Composition",
-      level: "Intermediate",
-      duration: "7 Weeks",
-      image:
-        "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=800&q=60",
-    },
-  ];
-
-  const filteredCourses = courses.filter((c) =>
-    c.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   return (
-    <div className="max-w-7xl mx-auto px-6 py-20">
-      {/* HEADER SECTION */}
-      <div className="text-center mb-10" data-aos="fade-up">
-        <h1 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
-          Explore Our Music Courses
-        </h1>
-        <p className="text-slate-300 mt-4 text-lg">
-          Learn from expert tutors and take your music skills to the next level.
-        </p>
-      </div>
-
-      {/* SEARCH BAR */}
-      <div className="max-w-xl mx-auto mb-12" data-aos="fade-up">
-        <div className="relative">
-          <FaSearch className="absolute top-3 left-4 text-slate-400" />
-          <input
-            type="text"
-            placeholder="Search courses..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 rounded-full bg-slate-700/50 border border-slate-600/50 text-white placeholder:text-slate-400 focus:ring-2 focus:ring-cyan-500 outline-none"
-          />
-        </div>
-      </div>
-
-      {/* COURSES GRID */}
-      <div className="grid md:grid-cols-3 gap-8">
-        {filteredCourses.map((course) => (
-          <div
-            key={course.id}
-            className="bg-slate-800/80 border border-slate-700/50 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-slate-500/50 transition"
-            data-aos="zoom-in"
-          >
-            <img
-              src={course.image}
-              alt={course.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-5">
-              <h3 className="text-lg font-semibold mb-1">{course.title}</h3>
-              <p className="text-slate-400 text-sm mb-3">{course.level}</p>
-              <div className="flex justify-between items-center text-slate-300 mb-4">
-                <div className="flex items-center gap-2">
-                  <FaClock /> {course.duration}
-                </div>
-                <div className="flex items-center gap-2">
-                  <FaPlayCircle /> Lessons
-                </div>
-              </div>
-              <button className="w-full px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold hover:scale-105 transition">
-                Enroll Now
-              </button>
-            </div>
-          </div>
-        ))}
-
-        {filteredCourses.length === 0 && (
-          <div className="col-span-3 text-center text-slate-400" data-aos="fade-up">
-            No courses found.
-          </div>
-        )}
-      </div>
-
-      {/* CTA SECTION */}
+    <section className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden flex items-center justify-center">
+      {/* FLOATING ELEMENTS */}
       <div
-        className="mt-16 text-center bg-slate-800/80 border border-slate-700/50 rounded-2xl p-10 backdrop-blur-sm"
-        data-aos="zoom-in"
-      >
-        <h2 className="text-3xl font-bold mb-4">
-          Ready to start your musical journey?
-        </h2>
-        <p className="text-slate-300 mb-6">
-          Choose your course and begin learning from top mentors today.
+        className="absolute top-20 left-10 w-5 h-5 bg-cyan-400 rounded-full opacity-60 animate-bounce"
+        data-aos="fade-down"
+      ></div>
+      <div
+        className="hidden md:flex absolute top-1/3 right-20 w-8 h-8 bg-purple-400 rounded-full opacity-40 animate-pulse"
+        data-aos="fade-left"
+      ></div>
+      <div
+        className="hidden md:flex absolute bottom-32 left-20 w-6 h-6 bg-pink-400 rounded-full opacity-50 animate-bounce"
+        data-aos="fade-up"
+      ></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto pt-30 px-3 md:px-6 py-20 text-center">
+        {/* HEADER TEXT */}
+        <h1
+          className="text-4xl md:text-7xl font-extrabold mb-6 leading-tight"
+          data-aos="fade-up"
+        >
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
+            Explore Our
+          </span>
+          <br />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-400">
+            Music Courses
+          </span>
+        </h1>
+
+        <p
+          className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          Learn from expert instructors, master your favorite instruments, and
+          take your sound to the next level with our world-class curriculum.
         </p>
-        <button className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold hover:scale-105 transition">
-          Join Now
-        </button>
+
+        {/* RATINGS */}
+        <div
+          className="flex justify-center items-center gap-3 mt-8"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div className="flex text-yellow-400">
+            {[...Array(5)].map((_, i) => (
+              <FaStar key={i} className="text-xl" />
+            ))}
+          </div>
+          <span className="text-slate-300 text-sm md:text-base">
+            4.9/5 from 2,000+ students
+          </span>
+        </div>
+
+        {/* BUTTONS */}
+        <div
+          className="flex flex-col sm:flex-row justify-center gap-5 mt-12"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          {/* Primary Button with Shine */}
+          <button className="group relative bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center">
+  <span className="relative z-10 flex items-center justify-center sm:justify-start gap-2">
+    Get Started Now
+    <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
+  </span>
+
+  {/* Shine Effect */}
+  <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></span>
+  <span className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500"></span>
+</button>
+
+
+          {/* Secondary Button */}
+          <button className="relative flex items-center justify-center gap-2 border border-slate-600/50 text-slate-300 px-8 py-4 rounded-full font-semibold backdrop-blur-sm bg-slate-800/50 hover:border-slate-500/50 hover:text-white transition-all duration-300 group">
+            <FaPlay className="text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
+            View Free Lessons
+          </button>
+        </div>
+
+        {/* ACCENT DIVIDER */}
+        <div
+          className="hidden md:flex mt-16 w-40 h-1 mx-auto bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        ></div>
       </div>
-    </div>
+    </section>
   );
 }
-

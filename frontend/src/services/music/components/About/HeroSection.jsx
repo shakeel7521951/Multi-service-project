@@ -80,7 +80,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom Gradient Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-purple-800/60 to-transparent"></div>
     </div>
   );
 }

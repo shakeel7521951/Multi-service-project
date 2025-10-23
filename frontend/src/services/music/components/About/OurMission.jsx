@@ -120,9 +120,6 @@ const OurMission = () => {
 
         </section>
       </div>
-
-      {/* Bottom Gradient Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-slate-900 to-transparent"></div>
     </div>
   )
 }
