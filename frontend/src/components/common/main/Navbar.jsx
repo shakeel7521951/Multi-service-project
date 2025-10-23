@@ -249,22 +249,18 @@ const Navbar = () => {
                      {activeDropdown === "services" && (
                         <div className="px-4 pb-2 space-y-1">
                            {[
-                              { name: "Learn & Grow", path: "#study-services" },
+                              { name: "Study", path: "/study-services" },
                               {
-                                 name: "Read & Relax",
+                                 name: "Reading",
                                  path: "#reading-services",
                               },
                               {
-                                 name: "Tune & Create",
+                                 name: "Music",
                                  path: "#music-services",
                               },
                               {
-                                 name: "Play & Chill",
+                                 name: "Gaming",
                                  path: "#gaming-services",
-                              },
-                              {
-                                 name: "Inspire & Create",
-                                 path: "#creative-services",
                               },
                            ].map((item) => (
                               <button
