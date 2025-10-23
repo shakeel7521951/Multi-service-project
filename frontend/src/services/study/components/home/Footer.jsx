@@ -24,7 +24,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                {/* Company Info */}
                <div className="lg:col-span-1">
-                  <Link to="/" className="text-2xl font-bold mb-4 inline-block">
+                  <Link to="/study/" className="text-2xl font-bold mb-4 inline-block">
                      Study<span className="text-yellow-300">Hub</span>
                   </Link>
                   <p className="text-gray-400 mb-6 leading-relaxed">

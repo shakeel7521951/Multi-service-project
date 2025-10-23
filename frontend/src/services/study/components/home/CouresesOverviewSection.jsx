@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { FaBook, FaUserGraduate, FaClock, FaStar, FaSearch, FaFilter } from "react-icons/fa";
+import {
+   FaBook,
+   FaUserGraduate,
+   FaClock,
+   FaStar,
+   FaSearch,
+   FaFilter,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function AcademicCoursesSection() {
    const [searchTerm, setSearchTerm] = useState("");
@@ -31,7 +39,7 @@ export default function AcademicCoursesSection() {
          price: 8999,
          originalPrice: 12999,
          subjects: ["Physics", "Chemistry", "Mathematics", "Biology"],
-         color: "from-blue-500 to-cyan-500"
+         color: "from-blue-500 to-cyan-500",
       },
       {
          id: 2,
@@ -44,8 +52,14 @@ export default function AcademicCoursesSection() {
          rating: 4.6,
          price: 6999,
          originalPrice: 9999,
-         subjects: ["English", "Urdu", "Islamiat", "Pakistan Studies", "General Math"],
-         color: "from-purple-500 to-pink-500"
+         subjects: [
+            "English",
+            "Urdu",
+            "Islamiat",
+            "Pakistan Studies",
+            "General Math",
+         ],
+         color: "from-purple-500 to-pink-500",
       },
       {
          id: 3,
@@ -59,7 +73,7 @@ export default function AcademicCoursesSection() {
          price: 14999,
          originalPrice: 19999,
          subjects: ["Biology", "Chemistry", "Physics", "English"],
-         color: "from-green-500 to-teal-500"
+         color: "from-green-500 to-teal-500",
       },
       {
          id: 4,
@@ -73,7 +87,7 @@ export default function AcademicCoursesSection() {
          price: 15999,
          originalPrice: 21999,
          subjects: ["Mathematics", "Physics", "Chemistry", "English"],
-         color: "from-orange-500 to-red-500"
+         color: "from-orange-500 to-red-500",
       },
       {
          id: 5,
@@ -87,7 +101,7 @@ export default function AcademicCoursesSection() {
          price: 13999,
          originalPrice: 17999,
          subjects: ["Computer Science", "Mathematics", "Physics", "English"],
-         color: "from-indigo-500 to-purple-500"
+         color: "from-indigo-500 to-purple-500",
       },
       {
          id: 6,
@@ -101,7 +115,7 @@ export default function AcademicCoursesSection() {
          price: 11999,
          originalPrice: 15999,
          subjects: ["Accounting", "Business Studies", "Economics", "Computer"],
-         color: "from-yellow-500 to-orange-500"
+         color: "from-yellow-500 to-orange-500",
       },
       {
          id: 7,
@@ -115,7 +129,7 @@ export default function AcademicCoursesSection() {
          price: 9999,
          originalPrice: 13999,
          subjects: ["English Literature", "Psychology", "Sociology", "History"],
-         color: "from-pink-500 to-rose-500"
+         color: "from-pink-500 to-rose-500",
       },
       {
          id: 8,
@@ -129,28 +143,44 @@ export default function AcademicCoursesSection() {
          price: 7999,
          originalPrice: 11999,
          subjects: ["Biology", "Chemistry", "Physics", "English"],
-         color: "from-red-500 to-pink-500"
-      }
+         color: "from-red-500 to-pink-500",
+      },
    ];
 
    // Filter courses based on search and filters
-   const filteredCourses = courses.filter(course => {
-      const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           course.subjects.some(subject => subject.toLowerCase().includes(searchTerm.toLowerCase()));
-      
-      const matchesCategory = selectedCategory === "All" || course.category === selectedCategory;
-      const matchesLevel = selectedLevel === "All" || course.level === selectedLevel;
-      
-      const matchesPrice = priceRange === "All" || 
-                          (priceRange === "Under 10K" && course.price < 10000) ||
-                          (priceRange === "10K-15K" && course.price >= 10000 && course.price <= 15000) ||
-                          (priceRange === "Above 15K" && course.price > 15000);
+   const filteredCourses = courses.filter((course) => {
+      const matchesSearch =
+         course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+         course.subjects.some((subject) =>
+            subject.toLowerCase().includes(searchTerm.toLowerCase())
+         );
+
+      const matchesCategory =
+         selectedCategory === "All" || course.category === selectedCategory;
+      const matchesLevel =
+         selectedLevel === "All" || course.level === selectedLevel;
+
+      const matchesPrice =
+         priceRange === "All" ||
+         (priceRange === "Under 10K" && course.price < 10000) ||
+         (priceRange === "10K-15K" &&
+            course.price >= 10000 &&
+            course.price <= 15000) ||
+         (priceRange === "Above 15K" && course.price > 15000);
 
       return matchesSearch && matchesCategory && matchesLevel && matchesPrice;
    });
 
    const categories = ["All", "Matriculation", "Intermediate", "Competitive"];
-   const levels = ["All", "Grade 9-10", "FSC", "ICS", "I.Com", "FA", "Entry Test"];
+   const levels = [
+      "All",
+      "Grade 9-10",
+      "FSC",
+      "ICS",
+      "I.Com",
+      "FA",
+      "Entry Test",
+   ];
    const priceRanges = ["All", "Under 10K", "10K-15K", "Above 15K"];
 
    const renderStars = (rating) => {
@@ -180,10 +210,14 @@ export default function AcademicCoursesSection() {
             {/* Section Header */}
             <div className="text-center mb-12" data-aos="fade-down">
                <h2 className="text-3xl md:text-5xl font-bold text-gray-800 dark:text-white">
-                  Featured <span className="text-indigo-600 dark:text-indigo-400">Academic Courses</span>
+                  Featured{" "}
+                  <span className="text-indigo-600 dark:text-indigo-400">
+                     Academic Courses
+                  </span>
                </h2>
                <p className="text-gray-600 dark:text-gray-300 mt-4 text-lg max-w-2xl mx-auto">
-                  Comprehensive preparation for Matric, Intermediate, and competitive exams with expert faculty
+                  Comprehensive preparation for Matric, Intermediate, and
+                  competitive exams with expert faculty
                </p>
             </div>
 
@@ -211,7 +245,9 @@ export default function AcademicCoursesSection() {
                         className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
                      >
                         <FaFilter className="text-indigo-600" />
-                        <span className="text-gray-700 dark:text-gray-300 font-medium">Filters</span>
+                        <span className="text-gray-700 dark:text-gray-300 font-medium">
+                           Filters
+                        </span>
                      </button>
 
                      {/* Active Filters Display */}
@@ -219,32 +255,44 @@ export default function AcademicCoursesSection() {
                         {selectedCategory !== "All" && (
                            <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-sm px-3 py-1 rounded-full flex items-center gap-1">
                               {selectedCategory}
-                              <button onClick={() => setSelectedCategory("All")}>×</button>
+                              <button
+                                 onClick={() => setSelectedCategory("All")}
+                              >
+                                 ×
+                              </button>
                            </span>
                         )}
                         {selectedLevel !== "All" && (
                            <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-sm px-3 py-1 rounded-full flex items-center gap-1">
                               {selectedLevel}
-                              <button onClick={() => setSelectedLevel("All")}>×</button>
+                              <button onClick={() => setSelectedLevel("All")}>
+                                 ×
+                              </button>
                            </span>
                         )}
                         {priceRange !== "All" && (
                            <span className="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 text-sm px-3 py-1 rounded-full flex items-center gap-1">
                               {priceRange}
-                              <button onClick={() => setPriceRange("All")}>×</button>
+                              <button onClick={() => setPriceRange("All")}>
+                                 ×
+                              </button>
                            </span>
                         )}
                      </div>
                   </div>
 
                   <div className="text-gray-600 dark:text-gray-400">
-                     Showing {filteredCourses.length} of {courses.length} courses
+                     Showing {filteredCourses.length} of {courses.length}{" "}
+                     courses
                   </div>
                </div>
 
                {/* Expandable Filters */}
                {showFilters && (
-                  <div className="mt-6 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700" data-aos="fade-up">
+                  <div
+                     className="mt-6 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
+                     data-aos="fade-up"
+                  >
                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {/* Category Filter */}
                         <div>
@@ -252,10 +300,12 @@ export default function AcademicCoursesSection() {
                               Category
                            </label>
                            <div className="space-y-2">
-                              {categories.map(category => (
+                              {categories.map((category) => (
                                  <button
                                     key={category}
-                                    onClick={() => setSelectedCategory(category)}
+                                    onClick={() =>
+                                       setSelectedCategory(category)
+                                    }
                                     className={`block w-full text-left px-3 py-2 rounded-lg transition-all duration-200 ${
                                        selectedCategory === category
                                           ? "bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 font-semibold"
@@ -274,7 +324,7 @@ export default function AcademicCoursesSection() {
                               Education Level
                            </label>
                            <div className="space-y-2">
-                              {levels.map(level => (
+                              {levels.map((level) => (
                                  <button
                                     key={level}
                                     onClick={() => setSelectedLevel(level)}
@@ -296,7 +346,7 @@ export default function AcademicCoursesSection() {
                               Price Range
                            </label>
                            <div className="space-y-2">
-                              {priceRanges.map(range => (
+                              {priceRanges.map((range) => (
                                  <button
                                     key={range}
                                     onClick={() => setPriceRange(range)}
@@ -345,7 +395,7 @@ export default function AcademicCoursesSection() {
                         <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 flex items-center justify-center">
                            <FaBook className="text-6xl text-white opacity-50" />
                         </div>
-                        
+
                         {/* Category Badge */}
                         <div className="absolute top-4 left-4">
                            <span className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
@@ -356,7 +406,11 @@ export default function AcademicCoursesSection() {
                         {/* Discount Badge */}
                         <div className="absolute top-4 right-4">
                            <span className="bg-gradient-to-r from-red-500 to-pink-600 text-white text-xs font-bold px-2 py-1 rounded-full">
-                              SAVE {Math.round((1 - course.price / course.originalPrice) * 100)}%
+                              SAVE{" "}
+                              {Math.round(
+                                 (1 - course.price / course.originalPrice) * 100
+                              )}
+                              %
                            </span>
                         </div>
                      </div>
@@ -384,14 +438,16 @@ export default function AcademicCoursesSection() {
                         {/* Subjects */}
                         <div className="mb-4">
                            <div className="flex flex-wrap gap-1">
-                              {course.subjects.slice(0, 3).map((subject, idx) => (
-                                 <span 
-                                    key={idx}
-                                    className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded"
-                                 >
-                                    {subject}
-                                 </span>
-                              ))}
+                              {course.subjects
+                                 .slice(0, 3)
+                                 .map((subject, idx) => (
+                                    <span
+                                       key={idx}
+                                       className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded"
+                                    >
+                                       {subject}
+                                    </span>
+                                 ))}
                               {course.subjects.length > 3 && (
                                  <span className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded">
                                     +{course.subjects.length - 3} more
@@ -423,7 +479,9 @@ export default function AcademicCoursesSection() {
                      </div>
 
                      {/* Hover Gradient Border */}
-                     <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${course.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-md`}></div>
+                     <div
+                        className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${course.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-md`}
+                     ></div>
                   </div>
                ))}
             </div>
@@ -431,21 +489,27 @@ export default function AcademicCoursesSection() {
             {/* No Results Message */}
             {filteredCourses.length === 0 && (
                <div className="text-center py-12" data-aos="fade-up">
-                  <div className="text-gray-400 dark:text-gray-500 text-6xl mb-4">🔍</div>
+                  <div className="text-gray-400 dark:text-gray-500 text-6xl mb-4">
+                     🔍
+                  </div>
                   <h3 className="text-xl font-semibold text-gray-600 dark:text-gray-400 mb-2">
                      No courses found
                   </h3>
                   <p className="text-gray-500 dark:text-gray-500">
-                     Try adjusting your search or filters to find what you're looking for.
+                     Try adjusting your search or filters to find what you're
+                     looking for.
                   </p>
                </div>
             )}
 
             {/* View All Button */}
-            <div className="text-center mt-12" data-aos="fade-up">
-               <button className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold px-8 py-4 rounded-full hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl">
+            <div className="text-center mt-18" data-aos="fade-up">
+               <Link
+                  to={"/study/study-courses"}
+                  className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold px-8 py-4 rounded-full hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl"
+               >
                   View All Academic Courses
-               </button>
+               </Link>
             </div>
          </div>
       </section>

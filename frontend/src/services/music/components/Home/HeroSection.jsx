@@ -8,150 +8,73 @@ export default function HeroSection() {
     AOS.init({ duration: 800, once: true });
   }, []);
 
-  const features = [
-    {
-      icon: <FaMusic />,
-      title: "Learn Music",
-      desc: "Join structured courses designed by top musicians and certified tutors.",
-    },
-    {
-      icon: <FaAward />,
-      title: "Compete & Win",
-      desc: "Take part in online music competitions and showcase your talent globally.",
-    },
-    {
-      icon: <FaUserGraduate />,
-      title: "Connect with Mentors",
-      desc: "Book live sessions with professional tutors for feedback and coaching.",
-    },
-  ];
-
-  const courses = [
-    { title: "Vocal Training - Beginner", duration: "6 Weeks" },
-    { title: "Guitar Chords & Rhythm", duration: "5 Weeks" },
-    { title: "Music Production Basics", duration: "8 Weeks" },
-  ];
-
-  const competitions = [
-    { title: "Solo Singing Challenge", date: "Nov 25, 2025", prize: "Cash + Trophy" },
-    { title: "Online Band Battle", date: "Dec 10, 2025", prize: "Studio Recording" },
-  ];
-
   return (
-    <div className="pt-10">
+    <div className="pt-10 md:pt-16 md:pb-8 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+      {/* Floating Background Elements */}
+      <div
+        className="fixed top-20 left-10 w-4 h-4 bg-cyan-400 rounded-full opacity-40 animate-pulse"
+        data-aos="zoom-in"
+      ></div>
+      <div
+        className="fixed top-1/3 right-20 w-6 h-6 bg-purple-400 rounded-full opacity-30 animate-bounce"
+        data-aos="zoom-in"
+        data-aos-delay="300"
+      ></div>
+
       {/* HERO SECTION */}
       <section
-        className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center"
+        className="max-w-7xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-center"
         data-aos="fade-up"
       >
-        <div>
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
-            Discover, Learn & Compete in Music
+        <div className="text-center md:text-left">
+          <h1
+            className="text-3xl md:text-6xl text-white font-extrabold leading-tight"
+            data-aos="fade-right"
+          >
+            Discover, Learn &{" "}
+            <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Compete
+            </span>{" "}
+            in Music
           </h1>
-          <p className="mt-5 text-slate-300 text-lg">
-            Join MusicStudents — an online platform for music learners and performers.
-            Practice, upload, and participate in live competitions.
+
+          <p
+            className="mt-6 text-slate-300 text-lg max-w-2xl"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Join MusicStudents — an online platform for music learners and
+            performers. Practice, upload, and participate in live competitions.
           </p>
-          <div className="mt-6 flex gap-4">
-            <button className="px-6 py-3 rounded-full font-semibold bg-gradient-to-r from-cyan-500 to-purple-600 shadow-md hover:scale-105 transition">
-              Join Now
+
+          <div
+            className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <button className="cursor-pointer px-8 py-4 rounded-full font-semibold bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg hover:scale-105 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              Join Now Free
             </button>
-            <button className="px-6 py-3 rounded-full border border-slate-700/50 text-slate-300 hover:text-white">
+            <button className="cursor-pointer px-8 py-4 rounded-full border border-slate-600/80 text-slate-300 hover:text-white hover:border-slate-500/80 transition-all duration-300">
               Explore Courses
             </button>
           </div>
         </div>
 
-        <div className="relative" data-aos="fade-left">
-          <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-400 blur-3xl opacity-20 rounded-full" />
+        <div className="relative group" data-aos="fade-left">
+          {/* Glowing blobs */}
+          <div className="absolute -top-6 -left-6 w-32 h-32 bg-cyan-400 blur-3xl opacity-20 rounded-full" />
+          <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-500 blur-3xl opacity-20 rounded-full" />
+
+          {/* Image with gentle zoom effect */}
           <img
             src="https://images.unsplash.com/photo-1511379938547-c1f69419868d"
             alt="music hero"
-            className="relative rounded-2xl shadow-lg border border-slate-700/50"
+            className="relative rounded-3xl shadow-2xl border border-slate-700/50 hover:border-slate-500/80 w-full max-w-xl mx-auto transform transition duration-700 ease-in-out group-hover:scale-[1.03] group-hover:shadow-cyan-500/20"
           />
         </div>
-      </section>
-
-      {/* FEATURES SECTION */}
-      <section className="max-w-7xl mx-auto px-6 py-12" data-aos="fade-up">
-        <h2 className="text-3xl font-bold mb-8 text-center">Why Join MusicStudents?</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {features.map((f, i) => (
-            <div
-              key={i}
-              data-aos="zoom-in"
-              className="bg-slate-800/80 border border-slate-700/50 p-6 rounded-2xl backdrop-blur-sm hover:border-slate-500/50 transition"
-            >
-              <div className="p-3 text-3xl bg-cyan-400/10 border border-slate-700/40 rounded-lg inline-block mb-3">
-                {f.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
-              <p className="text-slate-300 text-sm">{f.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* FEATURED COURSES */}
-      <section className="max-w-7xl mx-auto px-6 py-12" data-aos="fade-up">
-        <h2 className="text-3xl font-bold mb-8 text-center">Featured Courses</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {courses.map((course, i) => (
-            <div
-              key={i}
-              className="bg-slate-800/80 border border-slate-700/50 p-6 rounded-2xl backdrop-blur-sm hover:border-slate-500/50 transition"
-              data-aos="zoom-in"
-            >
-              <h3 className="text-lg font-semibold mb-2">{course.title}</h3>
-              <p className="text-slate-300 text-sm mb-4">Duration: {course.duration}</p>
-              <button className="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold">
-                Enroll Now
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* UPCOMING COMPETITIONS */}
-      <section className="max-w-7xl mx-auto px-6 py-12" data-aos="fade-up">
-        <h2 className="text-3xl font-bold mb-8 text-center">Upcoming Competitions</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {competitions.map((comp, i) => (
-            <div
-              key={i}
-              className="bg-slate-800/80 border border-slate-700/50 p-6 rounded-2xl backdrop-blur-sm hover:border-slate-500/50 transition flex justify-between items-center"
-              data-aos="fade-right"
-            >
-              <div>
-                <h3 className="text-lg font-semibold">{comp.title}</h3>
-                <p className="text-slate-300 text-sm">
-                  {comp.date} • Prize: {comp.prize}
-                </p>
-              </div>
-              <button className="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold">
-                Register
-              </button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA SECTION */}
-      <section
-        className="max-w-5xl mx-auto px-6 py-16 text-center bg-slate-800/80 border border-slate-700/50 rounded-2xl backdrop-blur-sm"
-        data-aos="zoom-in"
-      >
-        <h2 className="text-3xl font-bold mb-4">
-          Ready to start your musical journey?
-        </h2>
-        <p className="text-slate-300 mb-6">
-          Learn from the best, compete in events, and grow with our music community.
-        </p>
-        <button className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold">
-          Join MusicStudents Now
-        </button>
       </section>
     </div>
   );
 }
-

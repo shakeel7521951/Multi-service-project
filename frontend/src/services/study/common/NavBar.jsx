@@ -23,7 +23,7 @@ export default function StudyNavBar() {
          <div className="max-w-7xl mx-auto px-6 py-4  flex justify-between items-center">
             {/* Logo */}
             <Link
-               to="/"
+               to="/study/"
                className="text-2xl font-bold text-white cursor-pointer hover:scale-105 transition-transform"
             >
                Study<span className="text-yellow-300">Hub</span>
