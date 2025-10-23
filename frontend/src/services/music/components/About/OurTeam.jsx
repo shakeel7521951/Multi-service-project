@@ -4,17 +4,10 @@ import { FaTwitter, FaLinkedin, FaInstagram, FaMusic, FaUserTie, FaStar } from "
 const OurTeam = () => {
   const team = [
     {
-      name: "Ali Khan",
+      name: "Kinza Fatima",
       role: "Founder & Vocal Coach",
       img: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=60",
       bio: "15+ years in vocal training and music education. Passionate about making music accessible everyone.",
-      social: { twitter: "#", linkedin: "#", instagram: "#" }
-    },
-    {
-      name: "Sara Malik",
-      role: "Music Producer",
-      img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=500&q=60",
-      bio: "Award-winning producer with expertise in digital music production and sound engineering.",
       social: { twitter: "#", linkedin: "#", instagram: "#" }
     },
     {
@@ -24,6 +17,14 @@ const OurTeam = () => {
       bio: "Multi-instrumentalist with 10+ years teaching experience. Specializes in guitar and piano.",
       social: { twitter: "#", linkedin: "#", instagram: "#" }
     },
+    {
+      name: "Sara Malik",
+      role: "Music Producer",
+      img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=500&q=60",
+      bio: "Award-winning producer with expertise in digital music production and sound engineering.",
+      social: { twitter: "#", linkedin: "#", instagram: "#" }
+    },
+    
   ];
 
   return (

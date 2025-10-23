@@ -1,142 +1,246 @@
 import React, { useEffect } from "react";
-import { FaTrophy, FaCalendarAlt, FaUsers, FaMusic } from "react-icons/fa";
+import { FaTrophy, FaCalendarAlt, FaUsers, FaMusic, FaStar } from "react-icons/fa";
+import { FaArrowRight, FaCrown, FaGlobe, FaGem} from "react-icons/fa";
+import { IoMdMusicalNotes } from "react-icons/io";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function HeroSection() {
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ 
+      duration: 1000, 
+      once: true,
+      easing: 'ease-out-cubic'
+    });
   }, []);
 
-  const upcoming = [
+  const competitions = [
     {
-      title: "Solo Singing Challenge",
-      date: "Nov 25, 2025",
-      participants: 120,
-      prize: "Cash + Trophy",
-      image:
-        "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=800&q=60",
+      icon: <FaTrophy className="text-2xl" />,
+      title: "Global Music Championship",
+      date: "Jan 15-20, 2024",
+      participants: "2,500+",
+      prize: "$50,000",
+      category: "All Instruments",
+      status: "Upcoming",
+      featured: true
     },
     {
-      title: "Online Band Battle",
-      date: "Dec 10, 2025",
-      participants: 80,
-      prize: "Studio Recording Deal",
-      image:
-        "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=60",
+      icon: <FaCrown className="text-2xl" />,
+      title: "Vocal Excellence Awards",
+      date: "Dec 10-12, 2024",
+      participants: "1,800+",
+      prize: "$25,000",
+      category: "Vocals",
+      status: "Registration Open",
+      featured: false
     },
     {
-      title: "Digital Composition Contest",
-      date: "Jan 5, 2026",
-      participants: 60,
-      prize: "Music Gear Pack",
-      image:
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=60",
+      icon: <IoMdMusicalNotes className="text-2xl" />,
+      title: "Electronic Beat Contest",
+      date: "Feb 5-8, 2024",
+      participants: "3,200+",
+      prize: "$30,000",
+      category: "Electronic",
+      status: "Upcoming",
+      featured: true
     },
+    {
+      icon: <FaMusic className="text-2xl" />,
+      title: "Classical Masters",
+      date: "Nov 20-25, 2024",
+      participants: "950+",
+      prize: "$20,000",
+      category: "Classical",
+      status: "Registration Open",
+      featured: false
+    }
   ];
 
-  const past = [
-    {
-      title: "Summer Talent Show 2025",
-      winner: "Aisha Malik",
-      prize: "Scholarship + Certificate",
-    },
-    {
-      title: "Global Guitar Fest",
-      winner: "Rohit Sharma",
-      prize: "Recording Studio Session",
-    },
-    {
-      title: "Virtual Piano Challenge",
-      winner: "Sara Khan",
-      prize: "Digital Keyboard",
-    },
+  const stats = [
+    { number: "50+", label: "Competitions", icon: <FaTrophy /> },
+    { number: "10K+", label: "Participants", icon: <FaUsers /> },
+    { number: "$2M+", label: "Prize Money", icon: <FaGem /> },
+    { number: "15+", label: "Countries", icon: <FaGlobe /> }
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-20">
-      {/* PAGE HEADER */}
-      <div className="text-center mb-12" data-aos="fade-up">
-        <h1 className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
-          Music Competitions
-        </h1>
-        <p className="text-slate-300 mt-4 text-lg">
-          Participate in thrilling online music events and showcase your talent to the world.
-        </p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      {/* Floating Elements */}
+      <div className="absolute top-20 left-10 w-4 h-4 bg-cyan-400 rounded-full opacity-60 animate-bounce" data-aos="fade-down"></div>
+      <div className="absolute top-40 right-20 w-6 h-6 bg-purple-400 rounded-full opacity-40 animate-pulse" data-aos="fade-left"></div>
+      <div className="absolute bottom-40 left-20 w-5 h-5 bg-pink-400 rounded-full opacity-50 animate-bounce" data-aos="fade-up"></div>
+      <div className="absolute top-1/2 right-1/4 w-3 h-3 bg-cyan-400 rounded-full opacity-70 animate-ping" data-aos="zoom-in"></div>
+      
+      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
+        {/* PAGE HEADER */}
+        <div className="text-center mb-16" data-aos="fade-up">
+          <div className="inline-flex items-center gap-2 bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 px-4 py-2 rounded-full mb-6 hover:border-slate-500/50 transition-all duration-300" data-aos="zoom-in">
+            <FaTrophy className="text-cyan-400" />
+            <span className="text-slate-300 text-sm">Showcase Your Talent Globally</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6" data-aos="fade-up">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
+              Music
+            </span>
+            <br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-400">
+              Competitions
+            </span>
+          </h1>
+          
+          <p className="text-slate-300 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-8" data-aos="fade-up" data-aos-delay="200">
+            Participate in thrilling online music events and showcase your talent to the world. 
+            Win amazing prizes and get recognized by industry professionals.
+          </p>
 
-      {/* UPCOMING COMPETITIONS */}
-      <section className="mb-16" data-aos="fade-up">
-        <h2 className="text-3xl font-bold mb-8 text-center">🎤 Upcoming Competitions</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {upcoming.map((comp, i) => (
-            <div
-              key={i}
-              className="bg-slate-800/80 border border-slate-700/50 rounded-2xl overflow-hidden backdrop-blur-sm hover:border-slate-500/50 transition"
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12" data-aos="fade-up" data-aos-delay="300">
+            <button className="group relative bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <span className="relative z-10 flex items-center gap-2">
+                Register Now
+                <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+            </button>
+            
+            <button className="border border-slate-600/50 text-slate-300 px-8 py-4 rounded-full font-semibold backdrop-blur-sm bg-slate-800/50 hover:border-slate-500/50 hover:text-white transition-all duration-300">
+              View Schedule
+            </button>
+          </div>
+        </div>
+
+        {/* STATS SECTION */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20" data-aos="fade-up">
+          {stats.map((stat, index) => (
+            <div 
+              key={index}
+              className="bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center hover:border-slate-500/50 transition-all duration-300 group"
               data-aos="zoom-in"
+              data-aos-delay={index * 100}
             >
-              <img
-                src={comp.image}
-                alt={comp.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-lg font-semibold mb-2">{comp.title}</h3>
-                <div className="flex justify-between text-slate-300 text-sm mb-4">
-                  <div className="flex items-center gap-2">
-                    <FaCalendarAlt /> {comp.date}
+              <div className="bg-gradient-to-br from-cyan-500 to-purple-600 w-12 h-12 rounded-xl flex items-center justify-center text-white mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                {stat.icon}
+              </div>
+              <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
+                {stat.number}
+              </div>
+              <div className="text-slate-300 text-sm">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* COMPETITIONS GRID */}
+        <div className="mb-16">
+          <div className="text-center mb-12" data-aos="fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Featured <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">Competitions</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {competitions.map((competition, index) => (
+              <div 
+                key={index}
+                className={`bg-slate-800/80 backdrop-blur-sm border rounded-2xl p-6 hover:border-slate-500/50 transition-all duration-300 group hover:scale-105 ${
+                  competition.featured 
+                    ? 'border-cyan-500/50 shadow-2xl shadow-cyan-500/20' 
+                    : 'border-slate-700/50'
+                }`}
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
+              >
+                {competition.featured && (
+                  <div className="flex items-center gap-2 mb-4">
+                    <FaStar className="text-yellow-400" />
+                    <span className="text-cyan-400 text-sm font-semibold">Featured Event</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <FaUsers /> {comp.participants} Participants
+                )}
+                
+                <div className="flex items-start justify-between mb-4">
+                  <div className="bg-gradient-to-br from-cyan-500 to-purple-600 w-14 h-14 rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                    {competition.icon}
+                  </div>
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    competition.status === 'Upcoming' 
+                      ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'
+                      : 'bg-purple-500/20 text-purple-400 border border-purple-500/30'
+                  }`}>
+                    {competition.status}
+                  </span>
+                </div>
+
+                <h3 className="text-white text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                  {competition.title}
+                </h3>
+
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-3 text-slate-300">
+                    <FaCalendarAlt className="text-cyan-400" />
+                    <span>{competition.date}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-300">
+                    <FaUsers className="text-purple-400" />
+                    <span>{competition.participants} Participants</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-300">
+                    <FaGem className="text-yellow-400" />
+                    <span className="font-semibold text-cyan-400">{competition.prize} Prize Pool</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-300">
+                    <FaMusic className="text-pink-400" />
+                    <span>{competition.category}</span>
                   </div>
                 </div>
-                <p className="text-slate-400 mb-4">🏆 Prize: {comp.prize}</p>
-                <button className="w-full px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold hover:scale-105 transition">
-                  Register Now
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
-      {/* PAST COMPETITIONS */}
-      <section data-aos="fade-up">
-        <h2 className="text-3xl font-bold mb-8 text-center">🏅 Past Competitions</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {past.map((p, i) => (
-            <div
-              key={i}
-              className="bg-slate-800/80 border border-slate-700/50 p-6 rounded-2xl backdrop-blur-sm hover:border-slate-500/50 transition"
-              data-aos="fade-right"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <FaMusic className="text-cyan-400 text-xl" />
-                <h3 className="text-lg font-semibold">{p.title}</h3>
+                <div className="flex gap-3">
+                  <button className="flex-1 bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                    Register Now
+                  </button>
+                  <button className="px-4 border border-slate-600/50 text-slate-300 rounded-xl font-semibold text-sm backdrop-blur-sm bg-slate-800/50 hover:border-slate-500/50 hover:text-white transition-all duration-300">
+                    Details
+                  </button>
+                </div>
               </div>
-              <p className="text-slate-300 text-sm mb-2">
-                🥇 Winner: <span className="text-white font-medium">{p.winner}</span>
-              </p>
-              <p className="text-slate-400 text-sm">Prize: {p.prize}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </section>
 
-      {/* CTA SECTION */}
-      <div
-        className="mt-20 text-center bg-slate-800/80 border border-slate-700/50 rounded-2xl p-10 backdrop-blur-sm"
-        data-aos="zoom-in"
-      >
-        <h2 className="text-3xl font-bold mb-4">
-          Ready to Compete and Show Your Talent?
-        </h2>
-        <p className="text-slate-300 mb-6">
-          Register today and perform in front of thousands of music enthusiasts.
-        </p>
-        <button className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold hover:scale-105 transition">
-          Join a Competition
-        </button>
+        {/* JUDGES SECTION */}
+        <div className="text-center" data-aos="fade-up">
+          <div className="inline-flex items-center gap-4 mb-8">
+            <div className="w-12 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"></div>
+            <span className="text-slate-300 uppercase tracking-wider text-sm">Meet Our Judges</span>
+            <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
+          </div>
+          
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
+            World-Class <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">Judging Panel</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {[
+              { name: "Industry Professionals", icon: <FaUsers /> },
+              { name: "Award-Winning Artists", icon: <FaTrophy /> },
+              { name: "Music Producers", icon: <FaMusic /> }
+            ].map((item, index) => (
+              <div 
+                key={index} 
+                className="bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 hover:border-slate-500/50 transition-all duration-300"
+                data-aos="zoom-in"
+                data-aos-delay={index * 200}
+              >
+                <div className="bg-gradient-to-br from-cyan-500 to-purple-600 w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-4 mx-auto">
+                  {item.icon}
+                </div>
+                <h4 className="text-white font-semibold text-lg">{item.name}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
