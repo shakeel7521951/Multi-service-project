@@ -2,6 +2,7 @@ import React from 'react'
 import HeroSection from "../components/Competitions/HeroSection"
 import ComingCompetitions from "../components/Competitions/ComingCompetitions"
 import PastCompetitions from "../components/Competitions/PastCompetitions"
+import FeaturedCompetitions from "../components/Competitions/FeaturedCompetitions"
 
 const MusicCompetitions = () => {
   return (
@@ -9,6 +10,7 @@ const MusicCompetitions = () => {
       <HeroSection/>
       <ComingCompetitions/>
       <PastCompetitions/>
+      <FeaturedCompetitions/>
     </div>
   )
 }
