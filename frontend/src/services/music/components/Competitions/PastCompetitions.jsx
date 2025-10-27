@@ -1,5 +1,16 @@
 import React, { useEffect } from "react";
-import { FaTrophy, FaCrown, FaAward, FaMusic, FaCalendarAlt, FaStar, FaRegClock, FaGift, FaUser, FaArrowRight } from "react-icons/fa";
+import { 
+  FaMedal,      // 🥇 replaced FaTrophy with FaMedal
+  FaCrown, 
+  FaAward, 
+  FaMusic, 
+  FaCalendarAlt, 
+  FaStar, 
+  FaRegClock, 
+  FaGift, 
+  FaUser, 
+  FaArrowRight 
+} from "react-icons/fa";
 import { IoMdRibbon } from "react-icons/io";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -67,7 +78,7 @@ const PastCompetitions = () => {
       category: "Percussion",
       winnerAvatar: "🥁",
       featured: true,
-      icon: <FaTrophy />
+      icon: <FaMedal />   // ✅ replaced here too
     },
     {
       title: "Classical Symphony",
@@ -94,8 +105,8 @@ const PastCompetitions = () => {
         {/* HEADER SECTION */}
         <div className="text-center mb-16" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 px-4 py-2 rounded-full mb-6 hover:border-slate-500/50 transition-all duration-300" data-aos="zoom-in">
-            <FaTrophy className="text-cyan-400" />
-            <span className="text-slate-300 text-sm">Celebratings Musical Excellence</span>
+            <FaMedal className="text-cyan-400" />  {/* ✅ replaced here */}
+            <span className="text-slate-300 text-sm"> Celebrating Musical Excellence</span>
           </div>
           
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6" data-aos="fade-up">

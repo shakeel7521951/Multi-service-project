@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaCalendarAlt, FaUsers, FaMusic, FaStar,FaGem,FaCrown,FaCalendarAlt } from "react-icons/fa";
+import { FaCalendarAlt, FaUsers, FaMusic, FaStar,FaGem,FaCrown} from "react-icons/fa";
 import { IoMdMusicalNotes } from "react-icons/io";
 
 
