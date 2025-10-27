@@ -109,7 +109,7 @@ const PastCompetitions = () => {
           </h2>
           
           <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-            Relive the glory of our previous musical & g battles and get inspired by the incredible talents that have graced our stage.
+            Relive the glory of our previous musical battles and get inspired by the incredible talents that have graced our stage.
           </p>
 
           {/* Stats Bar */}
