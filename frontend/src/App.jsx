@@ -30,6 +30,13 @@ import StudyAbout from "./services/study/pages/About";
 import CoursesPage from "./services/study/pages/Courses";
 import CourseDetails from "./services/study/pages/CourseDetails";
 import StudyContact from "./services/study/pages/Contact";
+import GamingNavBar from "./services/gaming/common/GamingNavBar";
+import GamingFooter from "./services/gaming/common/GamingFooter";
+import GamingHome from "./services/gaming/pages/GamingHome";
+import GamesPage from "./services/gaming/pages/GamesPage";
+import PlayNowPage from "./services/gaming/pages/PlayNowPage";
+import SupportPage from "./services/gaming/pages/SupportPage";
+import ProfilePage from "./services/gaming/pages/ProfilePage";
 
 const MainLayout = () => (
    <>
@@ -53,7 +60,13 @@ const StudyLayout = () => (
       <StudyFooter />
    </>
 );
-
+const GamingLayout = () => (
+   <>
+      <GamingNavBar />
+      <Outlet />
+      <GamingFooter />
+   </>
+);
 const router = createBrowserRouter([
    {
       path: "/",
@@ -93,6 +106,17 @@ const router = createBrowserRouter([
          { path: "study-courses", element: <CoursesPage /> }, // /study/study-courses
          { path: "course-details", element: <CourseDetails /> }, // /study/course-details
          { path: "study-contact", element: <StudyContact /> }, // /study/study-contact
+      ],
+   },
+   {
+      path: "/gaming",
+      element: <GamingLayout />,
+      children: [
+         { index: true, element: <GamingHome /> }, // /study
+         { path: "games", element: <GamesPage /> }, // /study/study-about
+         { path: "play-now", element: <PlayNowPage /> }, // /study/study-courses
+         { path: "support", element: <SupportPage /> }, // /study/course-details
+         { path: "profile", element: <ProfilePage /> }, // /study/study-contact
       ],
    },
    ReadingRoutes,
