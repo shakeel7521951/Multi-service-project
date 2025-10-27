@@ -95,7 +95,7 @@ const PastCompetitions = () => {
         <div className="text-center mb-16" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 px-4 py-2 rounded-full mb-6 hover:border-slate-500/50 transition-all duration-300" data-aos="zoom-in">
             <FaTrophy className="text-cyan-400" />
-            <span className="text-slate-300 text-sm">Celebrating Musical Excellence</span>
+            <span className="text-slate-300 text-sm">Celebratings Musical Excellence</span>
           </div>
           
           <h2 className="text-4xl md:text-6xl font-extrabold mb-6" data-aos="fade-up">
@@ -109,7 +109,7 @@ const PastCompetitions = () => {
           </h2>
           
           <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-            Relive the glory of our previous musical battles and get inspired by the incredible talents that have graced our stage.
+            Relive the glory of our previous musical battles and get inspired by the incredible talents that have graced our stage .
           </p>
 
           {/* Stats Bar */}
