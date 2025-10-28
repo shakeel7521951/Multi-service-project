@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaSearch, FaClock, FaPlayCircle, FaAward } from "react-icons/fa";
+import co1 from '../../../../assets/co1.avif'
+import co2 from '../../../../assets/co2.avif'
+import co3 from '../../../../assets/co3.avif'
+import co4 from '../../../../assets/co4.avif'
+import co5 from '../../../../assets/co5.avif'
+import co6 from '../../../../assets/co6.avif'
+import co7 from '../../../../assets/co7.avif'
+import co8 from '../../../../assets/co8.avif'
+import co9 from '../../../../assets/co9.avif'
+import co10 from '../../../../assets/co10.avif'
+import co11 from '../../../../assets/co11.avif'
+import co12 from '../../../../assets/co12.avif'
 
 const CoursesCards = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,7 +34,7 @@ const CoursesCards = () => {
       level: "Beginner",
       duration: "6 Weeks",
       image:
-        "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=60",
+        co4,
     },
     {
       id: 2,
@@ -30,7 +42,7 @@ const CoursesCards = () => {
       level: "Intermediate",
       duration: "5 Weeks",
       image:
-        "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=60",
+        co1,
     },
     {
       id: 3,
@@ -38,7 +50,7 @@ const CoursesCards = () => {
       level: "Beginner",
       duration: "8 Weeks",
       image:
-        "https://images.unsplash.com/photo-1497032205916-ac775f0649ae?auto=format&fit=crop&w=800&q=60",
+        co2,
     },
     {
       id: 4,
@@ -46,7 +58,7 @@ const CoursesCards = () => {
       level: "Advanced",
       duration: "10 Weeks",
       image:
-        "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=60",
+       co3,
     },
     {
       id: 5,
@@ -54,7 +66,7 @@ const CoursesCards = () => {
       level: "Intermediate",
       duration: "7 Weeks",
       image:
-        "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=800&q=60",
+       co12,
     },
     {
       id: 6,
@@ -62,7 +74,7 @@ const CoursesCards = () => {
       level: "Intermediate",
       duration: "9 Weeks",
       image:
-        "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=800&q=60",
+       co5,
     },
     {
       id: 7,
@@ -70,7 +82,7 @@ const CoursesCards = () => {
       level: "Advanced",
       duration: "12 Weeks",
       image:
-        "https://images.unsplash.com/photo-1529625051060-0bcd6c6e7a8f?auto=format&fit=crop&w=800&q=60",
+       co6,
     },
     {
       id: 8,
@@ -78,7 +90,7 @@ const CoursesCards = () => {
       level: "Beginner",
       duration: "6 Weeks",
       image:
-        "https://images.unsplash.com/photo-1525286116112-b59af11adad1?auto=format&fit=crop&w=800&q=60",
+        co7,
     },
     {
       id: 9,
@@ -86,7 +98,7 @@ const CoursesCards = () => {
       level: "Intermediate",
       duration: "8 Weeks",
       image:
-        "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=60",
+        co8,
     },
     {
       id: 10,
@@ -94,7 +106,7 @@ const CoursesCards = () => {
       level: "Advanced",
       duration: "10 Weeks",
       image:
-        "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=800&q=60",
+        co10,
     },
     {
       id: 11,
@@ -102,7 +114,7 @@ const CoursesCards = () => {
       level: "Beginner",
       duration: "5 Weeks",
       image:
-        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=60",
+        co11,
     },
     {
       id: 12,
@@ -110,7 +122,7 @@ const CoursesCards = () => {
       level: "Intermediate",
       duration: "9 Weeks",
       image:
-        "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=60",
+       co9,
     },
   ];
 

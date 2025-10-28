@@ -4,6 +4,14 @@ import { IoMdMusicalNote } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import cm1 from '../../../../assets/cm1.avif'
+import cm2 from '../../../../assets/cm2.avif'
+import cm3 from '../../../../assets/cm3.avif'
+import cm4 from '../../../../assets/cm4.avif'
+import cm5 from '../../../../assets/cm5.avif'
+import cm6 from '../../../../assets/cm6.avif'
+
+
 
 const ComingCompetitions = () => {
   useEffect(() => {
@@ -20,7 +28,7 @@ const ComingCompetitions = () => {
       date: "Nov 25, 2025",
       participants: 120,
       prize: "Cash + Trophy",
-      image: "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=800&q=60",
+      image: cm1,
       category: "Vocals",
       deadline: "Nov 20, 2025",
       status: "Registration Open",
@@ -32,7 +40,7 @@ const ComingCompetitions = () => {
       date: "Dec 10, 2025",
       participants: 80,
       prize: "Studio Recording Deal",
-      image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=60",
+      image: cm2,
       category: "Bands",
       deadline: "Dec 5, 2025",
       status: "Early Bird",
@@ -44,7 +52,7 @@ const ComingCompetitions = () => {
       date: "Jan 5, 2026",
       participants: 60,
       prize: "Music Gear Pack",
-      image: "https://cdn.pixabay.com/photo/2015/08/26/10/03/synthesizer-908298_640.jpg",
+      image: cm3,
       category: "Production",
       deadline: "Dec 28, 2025",
       status: "Coming Soon",
@@ -56,7 +64,7 @@ const ComingCompetitions = () => {
       date: "Feb 15, 2026",
       participants: 95,
       prize: "Signature Guitar",
-      image: "https://cdn.pixabay.com/photo/2023/02/06/01/29/man-7770930_640.jpg",
+      image: cm4,
       category: "Strings",
       deadline: "Feb 10, 2026",
       status: "Registration Open",
@@ -68,7 +76,7 @@ const ComingCompetitions = () => {
       date: "Mar 8, 2026",
       participants: 150,
       prize: "DJ Equipment Set",
-      image: "https://cdn.pixabay.com/photo/2021/04/07/13/09/headphones-6159058_640.jpg",
+      image: cm5,
       category: "Electronic",
       deadline: "Mar 1, 2026",
       status: "Early Bird",
@@ -80,7 +88,7 @@ const ComingCompetitions = () => {
       date: "Apr 22, 2026",
       participants: 75,
       prize: "Concert Performance",
-      image: "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=800&q=60",
+      image: cm6,
       category: "Classical",
       deadline: "Apr 15, 2026",
       status: "Coming Soon",

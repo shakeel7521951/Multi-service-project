@@ -2,6 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FaHeart, FaComment, FaUpload, FaUserCircle, FaPlay, FaPause, FaMusic } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import pf1 from '../../../../assets/pf1.mp4'
+import pf2 from '../../../../assets/pf2.mp4'
+import pf3 from '../../../../assets/pf3.mp4'
+import pf4 from '../../../../assets/pf4.mp4'
+import pf5 from '../../../../assets/pf5.mp4'
+import pf6 from '../../../../assets/pf6.mp4'
 
 const PostFeed = () => {
   useEffect(() => {
@@ -17,7 +23,7 @@ const PostFeed = () => {
       id: 1,
       user: "Ali Khan",
       title: "My Guitar Solo 🎸",
-      video: "https://cdn.pixabay.com/video/2020/04/13/35862-408654167_tiny.mp4",
+      video: pf1,
       likes: 152,
       comments: 18,
       type: "instrumental",
@@ -27,7 +33,7 @@ const PostFeed = () => {
       id: 2,
       user: "Sara Malik",
       title: "Vocal Warm-up Session 🎤",
-      video: "https://media.istockphoto.com/id/2152202856/video/female-student-engages-in-singing-under-guidance-of-tutor.mp4?s=mp4-640x640-is&k=20&c=LHQh2K9Rr747HzWEnMJPNY2nyXpUJQyjDiQD4d7InyQ=",
+      video: pf2,
       likes: 220,
       comments: 25,
       type: "vocal",
@@ -37,7 +43,7 @@ const PostFeed = () => {
       id: 3,
       user: "Rohit Sharma",
       title: "Remix Beat Experiment 🎧",
-      video: "https://media.istockphoto.com/id/2231794504/video/fans-cheering-hands-before-concert-stage-lights-flickering.mp4?s=mp4-640x640-is&k=20&c=jDnGJeAmTYzdjmz1Bbe55NQEtEHhCSlnlB6Vy2w5Tgs=",
+      video: pf3,
       likes: 97,
       comments: 9,
       type: "electronic",
@@ -47,7 +53,7 @@ const PostFeed = () => {
       id: 4,
       user: "Ayesha Noor",
       title: "Piano Classics Collection 🎹",
-      video: "https://cdn.pixabay.com/video/2017/11/22/13042-244747053_tiny.mp4",
+      video: pf4,
       likes: 189,
       comments: 32,
       type: "classical",
@@ -57,7 +63,7 @@ const PostFeed = () => {
       id: 5,
       user: "David Chen",
       title: "Jazz Improvisation 🎷",
-      video: "https://cdn.pixabay.com/video/2016/06/09/3427-170235981_tiny.mp4",
+      video: pf5,
       likes: 275,
       comments: 41,
       type: "jazz",
@@ -67,7 +73,7 @@ const PostFeed = () => {
       id: 6,
       user: "Maya Patel",
       title: "Bollywood Fusion Mix 🪘",
-      video: "https://cdn.pixabay.com/video/2022/09/11/130911-748586188_tiny.mp4",
+      video: pf6,
       likes: 312,
       comments: 56,
       type: "fusion",
