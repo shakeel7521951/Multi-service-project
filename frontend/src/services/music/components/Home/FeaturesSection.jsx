@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FaMusic, FaAward, FaUserGraduate, FaClock, FaArrowRight } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -152,13 +153,13 @@ const FeaturesSection = () => {
                 </div>
                 
                 {/* Enroll Button */}
-                <button className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group/btn" data-aos="zoom-in" data-aos-delay={i * 300}>
+                <Link to="/music/joinnow" className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group/btn" data-aos="zoom-in" data-aos-delay={i * 300}>
                   <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                   <span className="relative flex items-center justify-center gap-2">
                     Enroll Now
                     <FaArrowRight className="text-sm group-hover/btn:translate-x-1 transition-transform duration-300" />
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -166,9 +167,9 @@ const FeaturesSection = () => {
         
         {/* View All Courses Button */}
         <div className="text-center mt-12" data-aos="fade-up">
-          <button className="px-8 py-3 rounded-full border border-slate-600/80  text-slate-300 hover:text-white hover:border-slate-500/80 transition-all duration-300 hover:scale-105">
+          <Link to="/music/courses" className="px-8 py-3 rounded-full border border-slate-600/80  text-slate-300 hover:text-white hover:border-slate-500/80 transition-all duration-300 hover:scale-105">
             View All Courses
-          </button>
+          </Link>
         </div>
       </section>
     </div>

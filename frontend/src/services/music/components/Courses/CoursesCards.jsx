@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaSearch, FaClock, FaPlayCircle, FaAward } from "react-icons/fa";
@@ -188,11 +189,21 @@ const CoursesCards = () => {
                 </div>
 
                 {/* ENROLL BUTTON WITH SHINE EFFECT */}
-                <button className="relative w-full py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold overflow-hidden transition-all duration-300 group-hover:shadow-lg group-hover:scale-[1.03]">
-                  <span className="relative z-10">Enroll Now</span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></span>
-                  <span className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500"></span>
-                </button>
+               <div className="w-full sm:w-auto" data-aos="fade-right">
+      <Link
+        to="/music/joinnow"
+        className="relative block w-full sm:w-auto px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-center overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.03] group"
+      >
+        {/* Text Layer */}
+        <span className="relative z-10">Enroll Now</span>
+
+        {/* Inner Glow */}
+        <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></span>
+
+        {/* Outer Blur Glow */}
+        <span className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500"></span>
+      </Link>
+    </div>
               </div>
             </div>
           ))}

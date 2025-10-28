@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { FaTrophy, FaCalendarAlt, FaUsers, FaMusic, FaStar, FaGem, FaCrown, FaRegClock, FaAward, FaFire } from "react-icons/fa";
 import { IoMdMusicalNotes } from "react-icons/io";
+import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -123,13 +124,12 @@ const FeaturedCompetitions = () => {
         {/* COMPETITIONS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {competitions.map((competition, index) => (
-            <div 
+            <div
               key={index}
-              className={`group relative bg-slate-800/80 backdrop-blur-sm border rounded-2xl p-3 md:p-6 hover:border-slate-500/50 transition-all duration-300 transform hover:scale-105 ${
-                competition.featured 
-                  ? 'border-cyan-500/50 shadow-2xl shadow-cyan-500/20' 
+              className={`group relative bg-slate-800/80 backdrop-blur-sm border rounded-2xl p-3 md:p-6 hover:border-slate-500/50 transition-all duration-300 transform hover:scale-105 ${competition.featured
+                  ? 'border-cyan-500/50 shadow-2xl shadow-cyan-500/20'
                   : 'border-slate-700/50'
-              }`}
+                }`}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
@@ -149,11 +149,10 @@ const FeaturedCompetitions = () => {
                   {competition.icon}
                 </div>
                 <div className="flex flex-col items-end gap-2">
-                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                    competition.status === 'Upcoming' 
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${competition.status === 'Upcoming'
                       ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'
                       : 'bg-purple-500/20 text-purple-400 border border-purple-500/30'
-                  }`}>
+                    }`}>
                     {competition.status}
                   </span>
                   <span className={`text-xs px-2 py-1 rounded-full bg-gradient-to-r ${getDifficultyColor(competition.difficulty)} text-white`}>
@@ -199,7 +198,7 @@ const FeaturedCompetitions = () => {
                     <span>65%</span>
                   </div>
                   <div className="w-full bg-slate-700/50 rounded-full h-2">
-                    <div 
+                    <div
                       className="bg-gradient-to-r from-cyan-500 to-purple-600 h-2 rounded-full transition-all duration-1000"
                       style={{ width: '65%' }}
                     ></div>
@@ -208,15 +207,24 @@ const FeaturedCompetitions = () => {
               )}
 
               {/* ACTION BUTTONS */}
-              <div className="flex gap-3">
-                <button className="group relative flex-1 bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                {/* Register Now Button */}
+                <Link
+                  to="/music/joinnow"
+                  className="group relative flex-1 block text-center bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 overflow-hidden"
+                >
                   <span className="relative z-10">Register Now</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute -inset-full top-0 bg-white/20 group-hover:animate-shine"></div>
-                </button>
-                <button className="px-4 border border-slate-600/50 text-slate-300 rounded-xl font-semibold text-sm backdrop-blur-sm bg-slate-800/50 hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300 transform hover:scale-105">
-                  Details
-                </button>
+                  <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 group-hover:animate-shine"></div>
+                </Link>
+
+                {/* Details Button */}
+                <Link
+  to="/music/courses"
+  className="flex-1 sm:flex-none px-4 py-3 border border-slate-600/50 text-slate-300 rounded-xl font-semibold text-sm backdrop-blur-sm bg-slate-800/50 hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300 transform hover:scale-105 text-center"
+>
+  Details
+</Link>
               </div>
 
               {/* HOVER GLOW EFFECT */}

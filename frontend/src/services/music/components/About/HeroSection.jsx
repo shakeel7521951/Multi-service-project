@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -68,14 +69,14 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12" data-aos="fade-up" data-aos-delay="400">
-          <button className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group shadow-2xl">
+          <Link to="/music/community" className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group shadow-2xl">
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-            <span className="relative">Join Our Community</span>
-          </button>
+            <span className="relative">Join Community</span>
+          </Link>
           
-          <button className="px-8 py-4 rounded-full border border-slate-700/50 text-slate-300 hover:text-white hover:border-slate-500/50 transition-all duration-300 hover:scale-105">
-            Meet Our Team
-          </button>
+          <Link to="/music/joinnow" className="px-8 py-4 rounded-full border border-slate-600/80 text-slate-300 hover:text-white hover:border-slate-500/50 transition-all duration-300 hover:scale-105">
+           Join Now
+          </Link>
         </div>
       </div>
 

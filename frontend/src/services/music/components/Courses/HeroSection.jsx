@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaStar, FaArrowRight, FaPlay } from "react-icons/fa";
@@ -75,7 +76,7 @@ export default function HeroSection() {
           data-aos-delay="400"
         >
           {/* Primary Button with Shine */}
-          <button className="group relative bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center">
+          <Link to="/" className="group relative bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto text-center">
   <span className="relative z-10 flex items-center justify-center sm:justify-start gap-2">
     Get Started Now
     <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -84,14 +85,14 @@ export default function HeroSection() {
   {/* Shine Effect */}
   <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-500"></span>
   <span className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-30 blur-2xl transition-opacity duration-500"></span>
-</button>
+</Link>
 
 
           {/* Secondary Button */}
-          <button className="relative flex items-center justify-center gap-2 border border-slate-600/50 text-slate-300 px-8 py-4 rounded-full font-semibold backdrop-blur-sm bg-slate-800/50 hover:border-slate-500/50 hover:text-white transition-all duration-300 group">
+          <Link to="/music/community" className="relative flex items-center justify-center gap-2 border border-slate-600/50 text-slate-300 px-8 py-4 rounded-full font-semibold backdrop-blur-sm bg-slate-800/50 hover:border-slate-500/50 hover:text-white transition-all duration-300 group">
             <FaPlay className="text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
             View Free Lessons
-          </button>
+          </Link>
         </div>
 
         {/* ACCENT DIVIDER */}

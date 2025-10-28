@@ -82,12 +82,6 @@ const FeatureSection = () => {
             </div>
           ))}
         </div>
-
-        {/* GRADIENT DIVIDER BOTTOM */}
-        <div
-          className="hidden md:flex mt-20 h-1 w-40 mx-auto bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"
-          data-aos="fade-up"
-        ></div>
       </div>
     </section>
   );

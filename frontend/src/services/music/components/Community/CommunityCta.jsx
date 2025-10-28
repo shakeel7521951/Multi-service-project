@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FaMusic, FaUsers, FaHeart, FaComments, FaStar, FaArrowRight, FaQuoteLeft } from "react-icons/fa";
 
 const CommunityCta = () => {
@@ -50,10 +51,10 @@ const CommunityCta = () => {
     <div className="py-10 md:py-16 px-4 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
       {/* Floating Animated Elements */}
       <div className="absolute top-10 left-5 w-6 h-6 bg-cyan-400 rounded-full opacity-60 animate-pulse" data-aos="fade-right"></div>
-      <div className="absolute bottom-20 right-8 w-8 h-8 bg-purple-400 rounded-full opacity-40 animate-bounce" data-aos="fade-left"></div>
+      <div className="hidden md:flex absolute bottom-20 right-8 w-8 h-8 bg-purple-400 rounded-full opacity-40 animate-bounce" data-aos="fade-left"></div>
       <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-pink-400 rounded-full opacity-70 animate-ping" data-aos="zoom-in"></div>
-      <div className="absolute bottom-10 left-1/3 w-5 h-5 bg-cyan-300 rounded-full opacity-50 animate-pulse" data-aos="fade-up"></div>
-      
+      <div className="hidden md:flex absolute bottom-10 left-1/3 w-5 h-5 bg-cyan-300 rounded-full opacity-50 animate-pulse" data-aos="fade-up"></div>
+
       {/* Main CTA Container */}
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
@@ -118,7 +119,7 @@ const CommunityCta = () => {
           </div>
 
           {/* Right Content - Main CTA */}
-          <div 
+          <div
             className="relative"
             data-aos="fade-left"
             data-aos-delay="200"
@@ -127,7 +128,7 @@ const CommunityCta = () => {
               {/* Background Pattern */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-400/10 rounded-full translate-y-12 -translate-x-12"></div>
-              
+
               <div className="relative z-10">
                 <div className="text-center mb-6">
                   <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center">
@@ -158,16 +159,26 @@ const CommunityCta = () => {
                 </div>
 
                 {/* CTA Button */}
-                <div className="text-center">
-                  <button className="group relative px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 overflow-hidden">
+                <div className="text-center" data-aos="fade-right">
+                  {/* Gradient CTA Button */}
+                  <Link
+                    to="/music/joinnow"
+                    className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold text-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 overflow-hidden"
+                  >
+                    {/* Button Text & Icon */}
                     <span className="relative z-10 flex items-center justify-center gap-3">
                       Join the Community
-                      <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                      <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
                     </span>
+
+                    {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    {/* Shine Effect (optional custom animation) */}
                     <div className="absolute inset-0 shine-effect"></div>
-                  </button>
-                  
+                  </Link>
+
+                  {/* Subtext */}
                   <p className="text-slate-400 text-sm mt-4">
                     Free forever. No credit card required.
                   </p>
@@ -193,7 +204,7 @@ const CommunityCta = () => {
             <div className="bg-slate-800/40 border border-slate-700/30 rounded-2xl p-4 md:p-8 backdrop-blur-sm relative overflow-hidden">
               {/* Quote Icon */}
               <FaQuoteLeft className="hidden md:flex text-cyan-400/20 text-6xl absolute top-4 left-6" />
-              
+
               <div className="relative z-10">
                 {/* Stars */}
                 <div className="flex items-center justify-center gap-1 text-amber-400 mb-4">
@@ -203,7 +214,7 @@ const CommunityCta = () => {
                 </div>
 
                 {/* Testimonial Content with Transition */}
-                <div 
+                <div
                   key={currentTestimonial}
                   className="text-center transition-all duration-500 ease-in-out"
                 >
@@ -226,11 +237,10 @@ const CommunityCta = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial 
-                      ? 'bg-gradient-to-r from-cyan-500 to-purple-600 scale-125' 
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentTestimonial
+                      ? 'bg-gradient-to-r from-cyan-500 to-purple-600 scale-125'
                       : 'bg-slate-600 hover:bg-slate-500'
-                  }`}
+                    }`}
                 />
               ))}
             </div>
@@ -242,11 +252,10 @@ const CommunityCta = () => {
                   {[...Array(5)].map((_, i) => (
                     <div
                       key={i}
-                      className={`w-1 h-1 rounded-full transition-all duration-300 ${
-                        i === currentTestimonial % 5 
-                          ? '' 
+                      className={`w-1 h-1 rounded-full transition-all duration-300 ${i === currentTestimonial % 5
+                          ? ''
                           : ''
-                      }`}
+                        }`}
                     />
                   ))}
                 </div>

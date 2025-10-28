@@ -26,8 +26,8 @@ export default function MusicNavbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link 
-          to="/music" 
+        <Link
+          to="/music"
           className="flex items-center gap-3 group relative"
         >
           <div className="relative">
@@ -48,10 +48,9 @@ export default function MusicNavbar() {
               <NavLink
                 to={link.path}
                 className={({ isActive }) =>
-                  `relative px-1 py-2 text-sm font-medium transition-all duration-500 group ${
-                    isActive
-                      ? "text-white"
-                      : "text-slate-300 hover:text-white"
+                  `relative px-1 py-2 text-sm font-medium transition-all duration-500 group ${isActive
+                    ? "text-white"
+                    : "text-slate-300 hover:text-white"
                   }`
                 }
               >
@@ -73,8 +72,8 @@ export default function MusicNavbar() {
 
         {/* Buttons */}
         <div className="hidden md:flex items-center gap-3">
-  
-                <Link to='/music/joinnow' className="px-8 py-2.5 text-sm font-semibold text-white rounded-full relative overflow-hidden group bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 transition-all duration-500 shadow-lg hover:shadow-cyan-500/25 hover:scale-105">
+
+          <Link to='/music/joinnow' className="px-8 py-2.5 text-sm font-semibold text-white rounded-full relative overflow-hidden group bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 transition-all duration-500 shadow-lg hover:shadow-cyan-500/25 hover:scale-105">
             <span className="relative z-10 group-hover:scale-105 transition-transform duration-300">Join Now</span>
             {/* Shine Effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
@@ -84,7 +83,7 @@ export default function MusicNavbar() {
         </div>
 
         {/* Mobile Menu Icon */}
-        <div 
+        <div
           className="md:hidden text-xl p-2 rounded-lg bg-slate-700/50 border border-slate-600/50 text-white hover:bg-cyan-500/20 hover:border-cyan-400/50 hover:scale-110 transition-all duration-300 relative overflow-hidden group"
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -104,15 +103,14 @@ export default function MusicNavbar() {
                   to={link.path}
                   onClick={() => setMenuOpen(false)}
                   className={({ isActive }) =>
-                    `block px-6 py-3 text-slate-300 hover:text-white transition-all duration-500 border-l-2 hover:bg-slate-700/50 hover:translate-x-2 hover:pl-8 ${
-                      isActive
-                        ? "text-white bg-slate-700/50 border-gradient-to-b from-cyan-500 to-purple-500"
-                        : "border-transparent"
+                    `block px-6 py-3 text-center text-slate-300 hover:text-white transition-all duration-500 border-l-2 hover:bg-slate-700/50 hover:translate-x-0 ${isActive
+                      ? "text-white bg-slate-700/50 border-gradient-to-b from-cyan-500 to-purple-500"
+                      : "border-transparent"
                     }`
                   }
                   style={{ transitionDelay: `${index * 50}ms` }}
                 >
-                  <span className="flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center gap-3">
                     <div className="w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     {link.name}
                   </span>
@@ -120,10 +118,11 @@ export default function MusicNavbar() {
               </li>
             ))}
             <div className="flex gap-3 px-6 py-4 border-t border-slate-700/50 mt-2">
-              {/* <Link to='/music/login'  className="flex-1 px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-white border border-slate-600/50 rounded-full hover:border-cyan-400/50 transition-all duration-500 hover:scale-105 hover:bg-cyan-500/10">
-                Login
-              </Link> */}
-              <Link to='/music/joinnow' className="flex-1 px-4 py-2.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-cyan-500/25">
+
+              <Link
+                to="/music/joinnow"
+                className="flex-1 px-4 py-2.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-cyan-500/25 text-center"
+              >
                 Join Now
               </Link>
             </div>

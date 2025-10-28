@@ -1,7 +1,24 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { FaTwitter, FaInstagram, FaFacebook, FaMusic, FaEnvelope, FaPhone, FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
 
 export default function MusicFooter() {
+  const links = [
+    { name: "Home", path: "/music" },
+    { name: "About", path: "/music/about" },
+    { name: "Courses", path: "/music/courses" },
+    { name: "Competitions", path: "/music/competitions" },
+    { name: "Community", path: "/music/community" },
+    { name: "Join Now", path: "/music/joinnow" },
+  ];
+   const resources = [
+    { name: "Guitar Mastery", path: "/music/courses" },
+    { name: "Drum Techniques", path: "/music/courses" },
+    { name: "Vocal Training", path: "/music/courses" },
+    { name: "Music Production", path: "/music/courses" },
+    { name: "DJ Skills", path: "/music/courses" },
+    { name: "Music Theory", path: "/music/courses" },
+  ];
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-slate-300 border-t border-slate-700/50 ">
       {/* Main Footer Content */}
@@ -44,45 +61,47 @@ export default function MusicFooter() {
 
           {/* Quick Links */}
           <div className="lg:col-span-1">
-            <h4 className="text-white text-xl font-bold mb-6 relative inline-block">
-              Quick Links
-              <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"></span>
-            </h4>
-            <ul className="space-y-3">
-              {["Home", "About","Courses", "Competitions", "Community","Join Now"].map((link, index) => (
-                <li key={link}>
-                  <a 
-                    href="#" 
-                    className="flex items-center gap-2 text-slate-400 hover:text-white group transition-all duration-300 hover:translate-x-2"
-                  >
-                    <FaArrowRight className="text-cyan-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span>{link}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <h4 className="text-white text-xl font-bold mb-6 relative inline-block">
+        Quick Links
+        <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"></span>
+      </h4>
+
+      <ul className="space-y-3">
+        {links.map(({ name, path }) => (
+          <li key={name}>
+            <Link
+              to={path}
+              className="flex items-center gap-2 text-slate-400 hover:text-white group transition-all duration-300 hover:translate-x-2"
+            >
+              <FaArrowRight className="text-cyan-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span>{name}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
 
           {/* Resources */}
-          <div className="lg:col-span-1">
-            <h4 className="text-white text-xl font-bold mb-6 relative inline-block">
-              Resources
-              <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"></span>
-            </h4>
-            <ul className="space-y-3">
-              {["Guitar Mastery", "Drum Techniques", "Vocal Training", "Music Production", "DJ Skills", "Music Theory"].map((resource, index) => (
-                <li key={resource}>
-                  <a 
-                    href="#" 
-                    className="flex items-center gap-2 text-slate-400 hover:text-white group transition-all duration-300 hover:translate-x-2"
-                  >
-                    <FaArrowRight className="text-cyan-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <span>{resource}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+           <div className="lg:col-span-1">
+      <h4 className="text-white text-xl font-bold mb-6 relative inline-block">
+        Resources
+        <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"></span>
+      </h4>
+
+      <ul className="space-y-3">
+        {resources.map(({ name, path }) => (
+          <li key={name}>
+            <Link
+              to={path}
+              className="flex items-center gap-2 text-slate-400 hover:text-white group transition-all duration-300 hover:translate-x-2"
+            >
+              <FaArrowRight className="text-cyan-400 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span>{name}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
 
           {/* Contact Info */}
           <div className="lg:col-span-1">

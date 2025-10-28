@@ -7,6 +7,7 @@ import {
   FaGlobe,
   FaGem,
 } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -78,7 +79,7 @@ export default function HeroSection() {
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            <button className="group relative bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+            <Link to="/music/joinnow" className="group relative bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
               <span className="relative z-10 flex items-center gap-2 justify-center">
                 Register Now
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -86,11 +87,11 @@ export default function HeroSection() {
               {/* Shine Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-            </button>
+            </Link>
 
-            <button className="border border-slate-600/50 text-slate-300 px-8 py-4 rounded-full font-semibold backdrop-blur-sm bg-slate-800/50 hover:border-slate-500/50 hover:text-white transition-all duration-300">
+            <Link to="/music/courses" className="border border-slate-600/50 text-slate-300 px-8 py-4 rounded-full font-semibold backdrop-blur-sm bg-slate-800/50 hover:border-slate-500/50 hover:text-white transition-all duration-300">
               View Schedule
-            </button>
+            </Link>
           </div>
         </div>
 

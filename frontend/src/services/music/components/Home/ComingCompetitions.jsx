@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { FaTrophy, FaCalendarAlt, FaUsers, FaArrowRight } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -122,7 +123,7 @@ const ComingCompetitions = () => {
                 </div>
 
                 {/* Register Button */}
-                <button
+                <Link to="/music/joinnow"
                   className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group/btn"
                   data-aos="fade-up"
                   data-aos-delay={i * 450}
@@ -132,19 +133,22 @@ const ComingCompetitions = () => {
                     Register Now
                     <FaArrowRight className="text-sm group-hover/btn:translate-x-1 transition-transform duration-300" />
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           ))}
         </div>
 
         {/* View All Competitions */}
-        <div className="text-center mt-12" data-aos="fade-up">
-          <button className="px-6 py-4 rounded-full border border-slate-600/80 text-slate-300 hover:text-white hover:border-slate-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-2 mx-auto">
-            View All Competitions
-            <FaArrowRight className="text-sm" />
-          </button>
-        </div>
+          <div className="text-center mt-12" data-aos="fade-up">
+      <Link
+        to="/music/competitions"
+        className="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-slate-600/80 text-slate-300 hover:text-white hover:border-slate-500/50 transition-all duration-300 hover:scale-105 mx-auto"
+      >
+        View All Competitions
+        <FaArrowRight className="text-sm" />
+      </Link>
+    </div>
       </section>
     </div>
   )

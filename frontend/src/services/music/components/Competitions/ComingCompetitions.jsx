@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { FaCalendarAlt, FaUsers, FaTrophy, FaClock, FaArrowRight, FaMusic, FaMicrophone, FaGuitar, FaDrum, FaRegStar, FaStar } from "react-icons/fa";
 import { IoMdMusicalNote } from "react-icons/io";
+import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const ComingCompetitions = () => {
   useEffect(() => {
-    AOS.init({ 
-      duration: 1000, 
+    AOS.init({
+      duration: 1000,
       once: true,
       easing: 'ease-out-cubic'
     });
@@ -108,21 +109,21 @@ const ComingCompetitions = () => {
       <div className="hidden md:flex absolute top-1/2 right-12 w-6 h-6 bg-purple-400 rounded-full opacity-40 animate-pulse" data-aos="fade-left"></div>
       <div className="hidden md:flex absolute bottom-48 left-1/3 w-5 h-5 bg-pink-400 rounded-full opacity-50 animate-bounce" data-aos="fade-up"></div>
       <div className="hidden md:flex absolute top-64 right-1/4 w-3 h-3 bg-cyan-400 rounded-full opacity-70 animate-ping" data-aos="zoom-in"></div>
-      
+
       <div className="max-w-7xl mx-auto px-3 md:px-6 pt-10 relative z-10">
         {/* HEADER SECTION */}
         <div className="text-center mb-16" data-aos="fade-up">
 
-<h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400">
               Upcoming Competitions
             </span>
           </h2>
 
-<div className="w-32 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full mb-6" data-aos="fade-up" data-aos-delay="200"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full mb-6" data-aos="fade-up" data-aos-delay="200"></div>
 
 
-        <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+          <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
             Get ready for the most exciting music competitions of the year. Showcase your talent, win amazing prizes, and make your mark in the music world.
           </p>
 
@@ -149,11 +150,10 @@ const ComingCompetitions = () => {
           {upcoming.map((comp, index) => (
             <div
               key={index}
-              className={`bg-slate-800/80 backdrop-blur-sm border rounded-2xl overflow-hidden hover:border-slate-500/50 transition-all duration-300 group hover:scale-105 hover:shadow-2xl ${
-                comp.featured 
-                  ? 'border-cyan-500/50 shadow-xl shadow-cyan-500/10' 
+              className={`bg-slate-800/80 backdrop-blur-sm border rounded-2xl overflow-hidden hover:border-slate-500/50 transition-all duration-300 group hover:scale-105 hover:shadow-2xl ${comp.featured
+                  ? 'border-cyan-500/50 shadow-xl shadow-cyan-500/10'
                   : 'border-slate-700/50'
-              }`}
+                }`}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
@@ -230,14 +230,22 @@ const ComingCompetitions = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className="group relative w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-3 rounded-xl font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    Register Now
-                    <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                </button>
+                <div className="w-full sm:w-auto" data-aos="fade-up">
+                  <Link
+                    to="/music/joinnow"
+                    className="group relative block w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-3 px-8 rounded-xl font-semibold overflow-hidden text-center transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  >
+                    {/* Button content */}
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      Register Now
+                      <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+
+                    {/* Hover glow layers */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-500 blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}

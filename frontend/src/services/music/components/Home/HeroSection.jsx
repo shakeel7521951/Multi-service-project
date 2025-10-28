@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import { FaMusic, FaAward, FaUserGraduate } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import mh from '../../../../assets/mh.jpg'
 
 export default function HeroSection() {
   useEffect(() => {
@@ -52,13 +53,13 @@ export default function HeroSection() {
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            <button className="cursor-pointer px-8 py-4 rounded-full font-semibold bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg hover:scale-105 transition-all duration-300 relative overflow-hidden group">
+            <Link to="/music/joinnow" className="cursor-pointer px-8 py-4 rounded-full font-semibold bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg hover:scale-105 transition-all duration-300 relative overflow-hidden group">
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
               Join Now Free
-            </button>
-            <button className="cursor-pointer px-8 py-4 rounded-full border border-slate-600/80 text-slate-300 hover:text-white hover:border-slate-500/80 transition-all duration-300">
+            </Link>
+            <Link to="/music/courses" className="cursor-pointer px-8 py-4 rounded-full border border-slate-600/80 text-slate-300 hover:text-white hover:border-slate-500/80 transition-all duration-300">
               Explore Courses
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -69,7 +70,7 @@ export default function HeroSection() {
 
           {/* Image with gentle zoom effect */}
           <img
-            src="https://images.unsplash.com/photo-1511379938547-c1f69419868d"
+            src={mh}
             alt="music hero"
             className="relative rounded-3xl shadow-2xl border border-slate-700/50 hover:border-slate-500/80 w-full max-w-xl mx-auto transform transition duration-700 ease-in-out group-hover:scale-[1.03] group-hover:shadow-cyan-500/20"
           />

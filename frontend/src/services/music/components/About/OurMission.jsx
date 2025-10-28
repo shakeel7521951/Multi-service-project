@@ -1,5 +1,8 @@
 import React from 'react'
 import { FaBullseye, FaRocket, FaUsers, FaHeart } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import mh from '../../../../assets/mh.jpg'
+
 
 const OurMission = () => {
   return (
@@ -77,15 +80,22 @@ const OurMission = () => {
             </div>
 
             {/* CTA Button */}
-            <div data-aos="fade-right" data-aos-delay="400">
-              <button className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group shadow-2xl">
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                <span className="relative flex items-center gap-2">
-                  Join Our Journey
-                  <FaRocket className="text-sm group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-              </button>
-            </div>
+           <div
+      data-aos="fade-right"
+      data-aos-delay="400"
+      className="w-full px-4 sm:px-8 md:px-12 lg:px-16"
+    >
+      <Link
+        to="/music/joinnow"
+        className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group shadow-2xl"
+      >
+        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+        <span className="relative flex items-center gap-2 text-sm sm:text-base">
+          Join Our Journey
+          <FaRocket className="text-sm group-hover:translate-x-1 transition-transform duration-300" />
+        </span>
+      </Link>
+    </div>
           </div>
 
           {/* Image Section - Now on RIGHT */}
@@ -96,7 +106,7 @@ const OurMission = () => {
             {/* Main Image Container */}
             <div className="relative bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 hover:border-cyan-500/30 transition-all duration-500 group">
               <img
-                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=60"
+                src={mh}
                 alt="Music community collaboration"
                 className="rounded-xl shadow-2xl border border-slate-600/50 group-hover:scale-105 transition-transform duration-500"
               />

@@ -33,7 +33,7 @@ const CoreValues = () => {
   ];
 
   return (
-    <div className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-10 overflow-hidden">
+    <div className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py- overflow-hidden">
       
       {/* Floating Background Elements */}
       <div className="hidden md:flex absolute top-20 left-10 w-6 h-6 bg-cyan-400 rounded-full opacity-40 animate-pulse"></div>

@@ -12,6 +12,7 @@ import {
   FaArrowRight 
 } from "react-icons/fa";
 import { IoMdRibbon } from "react-icons/io";
+import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -202,10 +203,10 @@ const PastCompetitions = () => {
                   <FaMusic className="text-pink-400" />
                   <span>{competition.category}</span>
                 </div>
-                <button className="text-cyan-400 hover:text-cyan-300 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                <Link to="/music/courses" className="text-cyan-400 hover:text-cyan-300 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   View Highlights
                   <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
+                </Link>
               </div>
             </div>
           ))}

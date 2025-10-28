@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -41,14 +42,14 @@ const CtaSection = () => {
             Learn from the best, compete in events, and grow with our music community.
           </p>
 
-          <button
+          <Link to="/music/joinnow"
             className="px-10 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-lg hover:scale-105 transition-all duration-300 relative overflow-hidden group"
             data-aos="zoom-in-up"
             data-aos-delay="600"
           >
             <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
             Join Now
-          </button>
+          </Link>
         </div>
       </section>
     </div>

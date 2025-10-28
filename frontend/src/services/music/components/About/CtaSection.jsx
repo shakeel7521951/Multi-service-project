@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaMusic, FaGuitar, FaDrum, FaHeadphones, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const CtaSection = () => {
   return (
@@ -47,16 +48,21 @@ const CtaSection = () => {
 
           {/* CTA Button with enhanced effects */}
           <div className="text-center" data-aos="fade-up" data-aos-delay="700">
-            <button className="group px-10 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-lg hover:scale-105 transition-all duration-300 relative overflow-hidden shadow-2xl">
-              {/* Shine effect */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-              
-              {/* Button content */}
-              <span className="relative flex items-center justify-center gap-3 text-nowrap">
-                Get Started Free
-                <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </button>
+            <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16" data-aos="fade-up">
+      <Link
+        to="/"
+        className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-lg hover:scale-105 transition-all duration-300 relative overflow-hidden shadow-2xl"
+      >
+        {/* Shine effect */}
+        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+
+        {/* Button content */}
+        <span className="relative flex items-center justify-center gap-3 text-nowrap">
+          Get Started Free
+          <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
+        </span>
+      </Link>
+    </div>
             
             {/* Secondary text */}
             <p className="text-slate-400 text-sm mt-4" data-aos="fade-up" data-aos-delay="800">

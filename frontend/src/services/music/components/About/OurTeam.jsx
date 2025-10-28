@@ -1,26 +1,31 @@
 import React from 'react'
 import { FaTwitter, FaLinkedin, FaInstagram, FaMusic, FaUserTie, FaStar } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import mt1 from '../../../../assets/mt1.avif'
+import mt2 from '../../../../assets/mt2.avif'
+import mt3 from '../../../../assets/mt3.avif'
+
 
 const OurTeam = () => {
   const team = [
     {
       name: "Kinza Fatima",
       role: "Founder & Vocal Coach",
-      img: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=500&q=60",
+      img: mt1,
       bio: "15+ years in vocal training and music education. Passionate about making music accessible everyone.",
       social: { twitter: "#", linkedin: "#", instagram: "#" }
     },
     {
       name: "Rohit Sharma",
       role: "Instrumental Trainer",
-      img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=60",
+      img: mt2,
       bio: "Multi-instrumentalist with 10+ years teaching experience. Specializes in guitar and piano.",
       social: { twitter: "#", linkedin: "#", instagram: "#" }
     },
     {
       name: "Sara Malik",
       role: "Music Producer",
-      img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=500&q=60",
+      img: mt3,
       bio: "Award-winning producer with expertise in digital music production and sound engineering.",
       social: { twitter: "#", linkedin: "#", instagram: "#" }
     },
@@ -139,10 +144,10 @@ const OurTeam = () => {
               <p className="text-slate-300 mb-6">
                 We're always looking for passionate musicians and educators to help us grow.
               </p>
-              <button className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group">
+              <Link to="/music/competitions" className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition-all duration-300 relative overflow-hidden group">
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                 <span className="relative">View Open Positions</span>
-              </button>
+              </Link>
             </div>
           </div>
         </section>

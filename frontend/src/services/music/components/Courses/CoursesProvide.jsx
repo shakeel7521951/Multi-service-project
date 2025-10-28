@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {
@@ -95,7 +96,7 @@ const CoursesProvide = () => {
       </p>
 
       {/* BUTTON WITH SHINE EFFECT */}
-      <button
+      <Link to="/music/joinnow"
         className="relative inline-flex items-center justify-center gap-2 text-white font-semibold px-5 py-2 rounded-full 
         bg-gradient-to-r from-cyan-500 to-purple-600 overflow-hidden 
         transition-all duration-300 group-hover:scale-105 w-full sm:w-auto"
@@ -105,7 +106,7 @@ const CoursesProvide = () => {
           <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
         </span>
         <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 blur-sm animate-pulse transition-opacity duration-500"></span>
-      </button>
+      </Link>
     </div>
   ))}
 </div>
