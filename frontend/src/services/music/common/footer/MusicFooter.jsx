@@ -49,7 +49,7 @@ export default function MusicFooter() {
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"></span>
             </h4>
             <ul className="space-y-3">
-              {["Home", "Courses", "Competitions", "Community", "About", "Contact"].map((link, index) => (
+              {["Home", "About","Courses", "Competitions", "Community","Join Now"].map((link, index) => (
                 <li key={link}>
                   <a 
                     href="#" 
@@ -70,7 +70,7 @@ export default function MusicFooter() {
               <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"></span>
             </h4>
             <ul className="space-y-3">
-              {["Blog", "Tutorials", "Webinars", "E-books", "Sheet Music", "Instruments"].map((resource, index) => (
+              {["Guitar Mastery", "Drum Techniques", "Vocal Training", "Music Production", "DJ Skills", "Music Theory"].map((resource, index) => (
                 <li key={resource}>
                   <a 
                     href="#" 

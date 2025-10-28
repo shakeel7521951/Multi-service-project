@@ -34,7 +34,7 @@ export default function HeroSection() {
         data-aos="fade-down"
       ></div>
       <div
-        className="absolute top-40 right-20 w-6 h-6 bg-purple-400 rounded-full opacity-40 animate-pulse"
+        className="hidden md:flex absolute top-40 right-20 w-6 h-6 bg-purple-400 rounded-full opacity-40 animate-pulse"
         data-aos="fade-left"
       ></div>
       <div
@@ -46,21 +46,11 @@ export default function HeroSection() {
         data-aos="zoom-in"
       ></div>
 
-      <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-3 md:px-6 pt-30 py-0 relative z-10">
         {/* Header Section */}
         <div data-aos="fade-up" className="mb-16">
-          <div
-            className="inline-flex items-center gap-2 bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 px-4 py-2 rounded-full mb-6 hover:border-slate-500/50 transition-all duration-300"
-            data-aos="zoom-in"
-          >
-            <FaTrophy className="text-cyan-400" />
-            <span className="text-slate-300 text-sm">
-              Showcase Your Talent Globally
-            </span>
-          </div>
-
-          <h1
-            className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight"
+<h1
+            className="text-4xl md:text-7xl font-extrabold mb-6 leading-tight"
             data-aos="fade-up"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
@@ -112,7 +102,7 @@ export default function HeroSection() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 w-full max-w-[180px] text-center hover:border-slate-500/50 transition-all duration-300 group"
+              className="bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-3 md:p-6 w-full max-w-[180px] text-center hover:border-slate-500/50 transition-all duration-300 group"
               data-aos="zoom-in"
               data-aos-delay={index * 100}
             >
@@ -125,46 +115,6 @@ export default function HeroSection() {
               <div className="text-slate-300 text-sm">{stat.label}</div>
             </div>
           ))}
-        </div>
-
-        {/* Judges */}
-        <div className="text-center" data-aos="fade-up">
-          <div className="inline-flex items-center gap-4 mb-8">
-            <div className="w-12 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full"></div>
-            <span className="text-slate-300 uppercase tracking-wider text-sm">
-              Meet Our Judges
-            </span>
-            <div className="w-12 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full"></div>
-          </div>
-
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
-            World-Class{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
-              Judging Panel
-            </span>
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto justify-items-center">
-            {[
-              { name: "Industry Professionals", icon: <FaUsers /> },
-              { name: "Award-Winning Artists", icon: <FaTrophy /> },
-              { name: "Music Producers", icon: <FaMusic /> },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 w-full hover:border-slate-500/50 transition-all duration-300 text-center"
-                data-aos="zoom-in"
-                data-aos-delay={index * 200}
-              >
-                <div className="bg-gradient-to-br from-cyan-500 to-purple-600 w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-4 mx-auto shadow-md">
-                  {item.icon}
-                </div>
-                <h4 className="text-white font-semibold text-lg">
-                  {item.name}
-                </h4>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </div>

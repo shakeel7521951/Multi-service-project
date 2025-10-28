@@ -17,7 +17,6 @@ export default function MusicNavbar() {
     { name: "Courses", path: "/music/courses" },
     { name: "Competitions", path: "/music/competitions" },
     { name: "Community", path: "/music/community" },
-    { name: "Contact", path: "/music/contact" },
   ];
 
   return (
@@ -74,16 +73,8 @@ export default function MusicNavbar() {
 
         {/* Buttons */}
         <div className="hidden md:flex items-center gap-3">
-          <Link to='/music/login' className="px-5 py-2.5 text-sm font-medium text-slate-300 hover:text-white border border-slate-600/50 rounded-full hover:border-cyan-400/50 transition-all duration-500 hover:scale-105 hover:bg-cyan-500/10 relative overflow-hidden group">
-            <span className="relative z-10">Login</span>
-            {/* Button Hover Effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-400/10 to-purple-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-            {/* Border Animation */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-            <div className="absolute inset-[1px] rounded-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 -z-10"></div>
-          </Link>
-          
-          <Link to='/music/signup' className="px-6 py-2.5 text-sm font-semibold text-white rounded-full relative overflow-hidden group bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 transition-all duration-500 shadow-lg hover:shadow-cyan-500/25 hover:scale-105">
+  
+                <Link to='/music/joinnow' className="px-8 py-2.5 text-sm font-semibold text-white rounded-full relative overflow-hidden group bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 transition-all duration-500 shadow-lg hover:shadow-cyan-500/25 hover:scale-105">
             <span className="relative z-10 group-hover:scale-105 transition-transform duration-300">Join Now</span>
             {/* Shine Effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
@@ -129,10 +120,10 @@ export default function MusicNavbar() {
               </li>
             ))}
             <div className="flex gap-3 px-6 py-4 border-t border-slate-700/50 mt-2">
-              <Link to='/music/login'  className="flex-1 px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-white border border-slate-600/50 rounded-full hover:border-cyan-400/50 transition-all duration-500 hover:scale-105 hover:bg-cyan-500/10">
+              {/* <Link to='/music/login'  className="flex-1 px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-white border border-slate-600/50 rounded-full hover:border-cyan-400/50 transition-all duration-500 hover:scale-105 hover:bg-cyan-500/10">
                 Login
-              </Link>
-              <Link to='/music/signup' className="flex-1 px-4 py-2.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-cyan-500/25">
+              </Link> */}
+              <Link to='/music/joinnow' className="flex-1 px-4 py-2.5 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-cyan-500/25">
                 Join Now
               </Link>
             </div>

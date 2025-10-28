@@ -43,7 +43,7 @@ const ComingCompetitions = () => {
       date: "Jan 5, 2026",
       participants: 60,
       prize: "Music Gear Pack",
-      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=60",
+      image: "https://cdn.pixabay.com/photo/2015/08/26/10/03/synthesizer-908298_640.jpg",
       category: "Production",
       deadline: "Dec 28, 2025",
       status: "Coming Soon",
@@ -55,7 +55,7 @@ const ComingCompetitions = () => {
       date: "Feb 15, 2026",
       participants: 95,
       prize: "Signature Guitar",
-      image: "https://images.unsplash.com/photo-1558098329-a08c8a7b9b6a?auto=format&fit=crop&w=800&q=60",
+      image: "https://cdn.pixabay.com/photo/2023/02/06/01/29/man-7770930_640.jpg",
       category: "Strings",
       deadline: "Feb 10, 2026",
       status: "Registration Open",
@@ -67,7 +67,7 @@ const ComingCompetitions = () => {
       date: "Mar 8, 2026",
       participants: 150,
       prize: "DJ Equipment Set",
-      image: "https://images.unsplash.com/photo-1571266028245-6a5d37f5ed7c?auto=format&fit=crop&w=800&q=60",
+      image: "https://cdn.pixabay.com/photo/2021/04/07/13/09/headphones-6159058_640.jpg",
       category: "Electronic",
       deadline: "Mar 1, 2026",
       status: "Early Bird",
@@ -102,32 +102,27 @@ const ComingCompetitions = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden py-20">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden md:py-10">
       {/* Floating Elements */}
-      <div className="absolute top-32 left-8 w-4 h-4 bg-cyan-400 rounded-full opacity-60 animate-bounce" data-aos="fade-down"></div>
-      <div className="absolute top-1/2 right-12 w-6 h-6 bg-purple-400 rounded-full opacity-40 animate-pulse" data-aos="fade-left"></div>
-      <div className="absolute bottom-48 left-1/3 w-5 h-5 bg-pink-400 rounded-full opacity-50 animate-bounce" data-aos="fade-up"></div>
-      <div className="absolute top-64 right-1/4 w-3 h-3 bg-cyan-400 rounded-full opacity-70 animate-ping" data-aos="zoom-in"></div>
+      <div className="hidden md:flex absolute top-32 left-8 w-4 h-4 bg-cyan-400 rounded-full opacity-60 animate-bounce" data-aos="fade-down"></div>
+      <div className="hidden md:flex absolute top-1/2 right-12 w-6 h-6 bg-purple-400 rounded-full opacity-40 animate-pulse" data-aos="fade-left"></div>
+      <div className="hidden md:flex absolute bottom-48 left-1/3 w-5 h-5 bg-pink-400 rounded-full opacity-50 animate-bounce" data-aos="fade-up"></div>
+      <div className="hidden md:flex absolute top-64 right-1/4 w-3 h-3 bg-cyan-400 rounded-full opacity-70 animate-ping" data-aos="zoom-in"></div>
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-3 md:px-6 pt-10 relative z-10">
         {/* HEADER SECTION */}
         <div className="text-center mb-16" data-aos="fade-up">
-          <div className="inline-flex items-center gap-2 bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 px-4 py-2 rounded-full mb-6 hover:border-slate-500/50 transition-all duration-300" data-aos="zoom-in">
-            <FaClock className="text-cyan-400" />
-            <span className="text-slate-300 text-sm">Don't Miss Out - Register Today!</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-6" data-aos="fade-up">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
-              Upcoming
-            </span>
-            <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-400">
-              Competitions
+
+<h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400">
+              Upcoming Competitions
             </span>
           </h2>
-          
-          <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+
+<div className="w-32 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full mb-6" data-aos="fade-up" data-aos-delay="200"></div>
+
+
+        <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
             Get ready for the most exciting music competitions of the year. Showcase your talent, win amazing prizes, and make your mark in the music world.
           </p>
 
@@ -188,7 +183,7 @@ const ComingCompetitions = () => {
               </div>
 
               {/* Content Section */}
-              <div className="p-6">
+              <div className="p-3 md:p-6">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-white font-bold text-xl group-hover:text-cyan-400 transition-colors duration-300">
                     {comp.title}
@@ -246,29 +241,6 @@ const ComingCompetitions = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* CTA SECTION */}
-        <div className="text-center" data-aos="fade-up">
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-            Ready to <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">Compete?</span>
-          </h3>
-          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-            Don't wait! Register for multiple competitions and increase your chances of winning amazing prizes and recognition.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group relative bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
-              <span className="relative z-10 flex items-center gap-2">
-                View All Competitions
-                <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-            <button className="border border-slate-600/50 text-slate-300 px-8 py-4 rounded-full font-semibold backdrop-blur-sm bg-slate-800/50 hover:border-slate-500/50 hover:text-white transition-all duration-300">
-              Download Schedule
-            </button>
-          </div>
         </div>
       </div>
     </div>

@@ -12,9 +12,7 @@ import MusicAbout from "../pages/MusicAbout";
 import CoursesMusic from "../pages/CoursesMusic";
 import MusicCompetitions from "../pages/MusicCompetitions";
 import MusicCommunity from "../pages/MusicCommunity";
-import MusicContact from "../pages/MusicContact";
-import MusicLogin from "../pages/MusicLogin";
-import MusicSignup from "../pages/MusicSignup";
+import JoinNow from "../pages/JoinNow";
 
 // ---------- Layout Component ----------
 const MusicLayout = () => (
@@ -35,40 +33,9 @@ export const MusicRoutes = {
     { path: "courses", element: <CoursesMusic /> },       // /music/courses
     { path: "competitions", element: <MusicCompetitions /> }, // /music/competitions
     { path: "community", element: <MusicCommunity /> },   // /music/community
-    { path: "contact", element: <MusicContact /> },       // /music/contact
-    { path: "login", element: <MusicLogin /> },           // /music/login
-    { path: "signup", element: <MusicSignup /> },         // /music/signup
+    { path: "joinnow", element: <JoinNow /> },   // /music/joinnow
   ],
 };
-
-
-
-
-
-
-
-{/* <div
-        className="mt-20 text-center bg-slate-800/80 border border-slate-700/50 rounded-2xl p-10 backdrop-blur-sm"
-        data-aos="zoom-in"
-      >
-        <h2 className="text-3xl font-bold mb-4">
-          Ready to Compete and Show Your Talent?
-        </h2>
-        <p className="text-slate-300 mb-6">
-          Register today and perform in front of thousands of music enthusiasts.
-        </p>
-        <button className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold hover:scale-105 transition">
-          Join a Competition
-        </button>
-      </div> */}
-
-
-
-
-
-
-
-
 
 
 
