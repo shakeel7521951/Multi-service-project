@@ -93,7 +93,7 @@ export default function MusicFooter() {
                 },
                 {
                   icon: FaPhone,
-                  label: "Phone",
+                  label: "Phones",
                   value: "+92 300 0000000",
                   color: "purple",
                 },
@@ -129,7 +129,7 @@ export default function MusicFooter() {
 
             {/* Newsletter */}
             <div className="mt-8 p-4 rounded-xl bg-slate-900/60 border border-slate-800/50 shadow-inner">
-              <p className="text-white font-semibold mb-2">Stay Updateds</p>
+              <p className="text-white font-semibold mb-2">Stay Updated</p>
               <div className="flex gap-2">
                 <input
                   type="email"
