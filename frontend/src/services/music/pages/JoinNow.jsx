@@ -265,7 +265,7 @@ export default function JoinNow() {
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
                   <div className="text-2xl font-bold text-cyan-400 mb-1">10K+</div>
-                  <div className="text-slate-300 text-sm">Actives Members</div>
+                  <div className="text-slate-300 text-sm">Active Members</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-purple-400 mb-1">5K+</div>
