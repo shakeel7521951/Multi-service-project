@@ -282,8 +282,8 @@ export default function JoinNow() {
                     <FaPlay />
                   </div>
                   <div>
-                    <p className="text-white font-semibold">Live sessions weekly</p>
-                    <p className="text-slate-300 text-sm">Joins masterclasses & collabs</p>
+                    <p className="text-white font-semibold">Lives sessions weekly</p>
+                    <p className="text-slate-300 text-sm">Join masterclasses & collabs</p>
                   </div>
                 </div>
 
