@@ -129,7 +129,7 @@ export default function MusicFooter() {
 
             {/* Newsletter */}
             <div className="mt-8 p-4 rounded-xl bg-slate-900/60 border border-slate-800/50 shadow-inner">
-              <p className="text-white font-semibold mb-2">Stay Updated</p>
+              <p className="text-white font-semibold mb-2">Stay Updateds</p>
               <div className="flex gap-2">
                 <input
                   type="email"
@@ -148,7 +148,7 @@ export default function MusicFooter() {
       {/* Bottom Bar */}
       <div className="border-t border-slate-800/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-300">
-          <span>© {new Date().getFullYear()} MusicStudentsss. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} MusicStudents. All rights reserved.</span>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
               (item, idx) => (
