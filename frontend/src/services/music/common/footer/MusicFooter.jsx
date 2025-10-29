@@ -93,7 +93,7 @@ export default function MusicFooter() {
                 },
                 {
                   icon: FaPhone,
-                  label: "Phones",
+                  label: "Phone",
                   value: "+92 300 0000000",
                   color: "purple",
                 },
