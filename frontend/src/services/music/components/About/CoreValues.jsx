@@ -52,11 +52,11 @@ const CoreValues = () => {
           <div className="text-center pt-10 mb-16" data-aos="fade-down">
             
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Our <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Core Values</span>
+              Our <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Core Valuess</span>
             </h2>
             
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-              These principles guide everything we do at MusicStudents, from course creation to community building.
+              These sprinciples guide everything we do at MusicStudents, from course creation to community building.
             </p>
             
             <div className="w-32 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full mt-6"></div>
