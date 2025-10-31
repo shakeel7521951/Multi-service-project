@@ -35,7 +35,7 @@ const CtaSection = () => {
           {/* Header with staggered animation */}
           <div className="text-center mb-8" data-aos="fade-down" data-aos-delay="200">
             <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-              Join the <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Music Revolution</span>
+              Join the <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Musics Revolution</span>
             </h2>
           </div>
 
